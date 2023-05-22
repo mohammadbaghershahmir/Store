@@ -1,0 +1,12 @@
+E:\Stor-Project\Store\Store.Common\bin\Debug\net6.0\Store.Common.deps.json
+E:\Stor-Project\Store\Store.Common\bin\Debug\net6.0\Store.Common.dll
+E:\Stor-Project\Store\Store.Common\bin\Debug\net6.0\Store.Common.pdb
+E:\Stor-Project\Store\Store.Common\obj\Debug\net6.0\Store.Common.csproj.AssemblyReference.cache
+E:\Stor-Project\Store\Store.Common\obj\Debug\net6.0\Store.Common.GeneratedMSBuildEditorConfig.editorconfig
+E:\Stor-Project\Store\Store.Common\obj\Debug\net6.0\Store.Common.AssemblyInfoInputs.cache
+E:\Stor-Project\Store\Store.Common\obj\Debug\net6.0\Store.Common.AssemblyInfo.cs
+E:\Stor-Project\Store\Store.Common\obj\Debug\net6.0\Store.Common.csproj.CoreCompileInputs.cache
+E:\Stor-Project\Store\Store.Common\obj\Debug\net6.0\Store.Common.dll
+E:\Stor-Project\Store\Store.Common\obj\Debug\net6.0\refint\Store.Common.dll
+E:\Stor-Project\Store\Store.Common\obj\Debug\net6.0\Store.Common.pdb
+E:\Stor-Project\Store\Store.Common\obj\Debug\net6.0\ref\Store.Common.dll

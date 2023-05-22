@@ -1,0 +1,1829 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\EndPointStore.bundle.scp.css",
+      "PackagePath": "staticwebassets\\EndPointStore.bundle.scp.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\additional-methods.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\additional-methods.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\additional-methods.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\jquery-validation-sri.json",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\jquery-validation-sri.json"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\jquery.validate.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\jquery.validate.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ar.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ar.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ar.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ar.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_az.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_az.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_az.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_az.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_bg.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_bg.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_bg.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_bg.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_bn_BD.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_bn_BD.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_bn_BD.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_bn_BD.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ca.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ca.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ca.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ca.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_cs.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_cs.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_cs.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_cs.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_da.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_da.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_da.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_da.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_de.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_de.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_de.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_de.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_el.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_el.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_el.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_el.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_es.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_es.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_es.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_es.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_es_AR.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_es_AR.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_es_AR.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_es_AR.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_es_PE.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_es_PE.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_es_PE.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_es_PE.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_et.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_et.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_et.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_et.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_eu.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_eu.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_eu.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_eu.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_fa.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_fa.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_fa.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_fa.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_fi.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_fi.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_fi.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_fi.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_fr.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_fr.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_fr.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_fr.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ge.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ge.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ge.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ge.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_gl.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_gl.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_gl.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_gl.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_he.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_he.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_he.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_he.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_hr.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_hr.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_hr.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_hr.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_hu.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_hu.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_hu.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_hu.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_hy_AM.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_hy_AM.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_hy_AM.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_hy_AM.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_id.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_id.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_id.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_id.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_is.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_is.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_is.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_is.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_it.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_it.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_it.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_it.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ja.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ja.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ja.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ja.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ka.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ka.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ka.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ka.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_kk.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_kk.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_kk.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_kk.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ko.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ko.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ko.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ko.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_lt.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_lt.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_lt.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_lt.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_lv.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_lv.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_lv.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_lv.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_mk.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_mk.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_mk.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_mk.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_my.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_my.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_my.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_my.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_nl.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_nl.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_nl.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_nl.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_no.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_no.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_no.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_no.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_pl.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_pl.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_pl.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_pl.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_pt_BR.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_pt_BR.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_pt_BR.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_pt_BR.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_pt_PT.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_pt_PT.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_pt_PT.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_pt_PT.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ro.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ro.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ro.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ro.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ru.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ru.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ru.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ru.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sd.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sd.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sd.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sd.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_si.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_si.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_si.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_si.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sk.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sk.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sk.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sk.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sl.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sl.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sl.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sl.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sr.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sr.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sr.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sr.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sr_lat.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sr_lat.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sr_lat.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sr_lat.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sv.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sv.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sv.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_sv.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_th.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_th.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_th.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_th.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_tj.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_tj.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_tj.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_tj.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_tr.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_tr.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_tr.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_tr.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_uk.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_uk.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_uk.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_uk.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ur.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ur.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ur.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_ur.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_vi.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_vi.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_vi.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_vi.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_zh.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_zh.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_zh.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_zh.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_zh_TW.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_zh_TW.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_zh_TW.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\messages_zh_TW.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_de.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_de.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_de.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_de.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_es_CL.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_es_CL.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_es_CL.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_es_CL.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_fi.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_fi.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_fi.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_fi.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_it.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_it.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_it.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_it.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_nl.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_nl.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_nl.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_nl.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_pt.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_pt.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_pt.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validate\\localization\\methods_pt.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\toastify-js\\toastify-es.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\toastify-js\\toastify-es.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\toastify-js\\toastify-es.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\toastify-js\\toastify-es.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\toastify-js\\toastify.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\toastify-js\\toastify.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\toastify-js\\toastify.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\toastify-js\\toastify.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\toastify-js\\toastify.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\toastify-js\\toastify.min.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\Library\\toastify-js\\toastify.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\Library\\toastify-js\\toastify.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\Sweetalert2\\sweetalert2.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\Sweetalert2\\sweetalert2.min.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\Sweetalert2\\sweetalert2.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\Sweetalert2\\sweetalert2.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\css\\app.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\css\\app.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\css\\persian-datepicker.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\css\\persian-datepicker.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\css\\persian-datepicker.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\css\\persian-datepicker.min.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\css\\persian-datepicker.min.css.map",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\css\\persian-datepicker.min.css.map"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\css\\theme\\persian-datepicker-blue.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\css\\theme\\persian-datepicker-blue.min.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\css\\theme\\persian-datepicker-blue.min.css.map",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\css\\theme\\persian-datepicker-blue.min.css.map"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\css\\theme\\persian-datepicker-cheerup.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\css\\theme\\persian-datepicker-cheerup.min.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\css\\theme\\persian-datepicker-cheerup.min.css.map",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\css\\theme\\persian-datepicker-cheerup.min.css.map"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\css\\theme\\persian-datepicker-dark.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\css\\theme\\persian-datepicker-dark.min.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\css\\theme\\persian-datepicker-dark.min.css.map",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\css\\theme\\persian-datepicker-dark.min.css.map"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\css\\theme\\persian-datepicker-redblack.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\css\\theme\\persian-datepicker-redblack.min.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\css\\theme\\persian-datepicker-redblack.min.css.map",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\css\\theme\\persian-datepicker-redblack.min.css.map"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\fonts\\iranyekanwebbold-1.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\fonts\\iranyekanwebbold-1.eot"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\fonts\\iranyekanwebbold.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\fonts\\iranyekanwebbold.eot"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\fonts\\iranyekanwebbold.ttf",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\fonts\\iranyekanwebbold.ttf"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\fonts\\iranyekanwebbold.woff",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\fonts\\iranyekanwebbold.woff"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\fonts\\iranyekanwebbold.woff2",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\fonts\\iranyekanwebbold.woff2"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\fonts\\iranyekanweblight-1.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\fonts\\iranyekanweblight-1.eot"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\fonts\\iranyekanweblight.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\fonts\\iranyekanweblight.eot"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\fonts\\iranyekanweblight.ttf",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\fonts\\iranyekanweblight.ttf"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\fonts\\iranyekanweblight.woff",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\fonts\\iranyekanweblight.woff"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\fonts\\iranyekanweblight.woff2",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\fonts\\iranyekanweblight.woff2"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\fonts\\iranyekanwebregular-1.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\fonts\\iranyekanwebregular-1.eot"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\fonts\\iranyekanwebregular.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\fonts\\iranyekanwebregular.eot"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\fonts\\iranyekanwebregular.ttf",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\fonts\\iranyekanwebregular.ttf"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\fonts\\iranyekanwebregular.woff",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\fonts\\iranyekanwebregular.woff"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\bg-login-page-dark.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\bg-login-page-dark.svg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\bg-login-page.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\bg-login-page.svg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\error-illustration.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\error-illustration.svg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\food-beverage-1.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\food-beverage-1.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\food-beverage-10.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\food-beverage-10.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\food-beverage-11.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\food-beverage-11.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\food-beverage-14.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\food-beverage-14.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\food-beverage-15.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\food-beverage-15.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\food-beverage-16.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\food-beverage-16.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\food-beverage-19.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\food-beverage-19.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\food-beverage-3.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\food-beverage-3.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\food-beverage-4.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\food-beverage-4.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\food-beverage-5.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\food-beverage-5.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\food-beverage-6.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\food-beverage-6.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\food-beverage-7.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\food-beverage-7.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\food-beverage-9.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\food-beverage-9.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\illustration.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\illustration.svg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\logo.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\logo.svg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\phone-illustration.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\phone-illustration.svg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\preview-1.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\preview-1.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\preview-10.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\preview-10.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\preview-11.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\preview-11.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\preview-12.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\preview-12.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\preview-13.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\preview-13.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\preview-14.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\preview-14.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\preview-15.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\preview-15.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\preview-2.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\preview-2.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\preview-3.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\preview-3.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\preview-4.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\preview-4.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\preview-5.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\preview-5.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\preview-6.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\preview-6.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\preview-7.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\preview-7.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\preview-8.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\preview-8.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\preview-9.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\preview-9.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\profile-1.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\profile-1.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\profile-10.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\profile-10.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\profile-11.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\profile-11.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\profile-12.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\profile-12.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\profile-13.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\profile-13.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\profile-14.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\profile-14.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\profile-15.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\profile-15.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\profile-2.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\profile-2.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\profile-3.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\profile-3.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\profile-4.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\profile-4.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\profile-5.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\profile-5.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\profile-6.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\profile-6.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\profile-7.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\profile-7.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\profile-8.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\profile-8.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\profile-9.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\profile-9.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\images\\woman-illustration.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\images\\woman-illustration.svg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\js\\app.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\js\\app.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\js\\jquery.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\js\\jquery.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\js\\main.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\js\\main.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\js\\persian-date.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\js\\persian-date.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\js\\persian-datepicker.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\js\\persian-datepicker.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\js\\persian-datepicker.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\js\\persian-datepicker.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\about.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\about.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\all-category.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\all-category.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\blog-author.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\blog-author.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\blog-details.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\blog-details.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\blog-grid.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\blog-grid.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\blog-standard.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\blog-standard.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\brand-list.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\brand-list.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\brand-single.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\brand-single.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\checkout.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\checkout.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\coming-soon.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\coming-soon.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\compare.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\compare.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\contact.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\contact.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\error.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\error.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\faq.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\faq.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\home-category.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\home-category.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\home-classic.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\home-classic.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\home-grid.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\home-grid.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\home-standard.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\home-standard.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\index.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\index.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\invoice.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\invoice.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\main.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\main.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\orderlist.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\orderlist.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\privacy.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\privacy.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\product-details.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\product-details.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\product-grid.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\product-grid.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\profile.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\profile.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\shabnam.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\shabnam.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\user-auth.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\user-auth.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\wallet.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\wallet.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\wishlist.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\wishlist.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\flaticon\\Flaticon.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\flaticon\\Flaticon.eot"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\flaticon\\Flaticon.eot@",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\flaticon\\Flaticon.eot@"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\flaticon\\Flaticon.svg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\flaticon\\Flaticon.svg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\flaticon\\Flaticon.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\flaticon\\Flaticon.ttf"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\flaticon\\Flaticon.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\flaticon\\Flaticon.woff"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\flaticon\\Flaticon.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\flaticon\\Flaticon.woff2"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\flaticon\\flaticon.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\flaticon\\flaticon.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-brands-400.eot"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-brands-400.eot@",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-brands-400.eot@"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-brands-400.svg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-brands-400.woff"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-regular-400.eot"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-regular-400.eot@",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-regular-400.eot@"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-regular-400.svg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-regular-400.woff"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-solid-900.eot"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-solid-900.eot@",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-solid-900.eot@"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-solid-900.svg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-solid-900.woff"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome\\fontawesome.min.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome\\fontawesome.min.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\icofont\\icofont.min.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\icofont\\icofont.min.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\icofont\\icofont.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\icofont\\icofont.woff"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\icofont\\icofont.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\icofont\\icofont.woff2"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-Bold-FD.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-Bold-FD.eot"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-Bold-FD.eot@",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-Bold-FD.eot@"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-FD.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-FD.eot"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-FD.eot@",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-FD.eot@"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-Light-FD.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-Light-FD.eot"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-Light-FD.eot@",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-Light-FD.eot@"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-Medium-FD.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-Medium-FD.eot"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-Medium-FD.eot@",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-Medium-FD.eot@"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-Thin-FD.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-Thin-FD.eot"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-Thin-FD.eot@",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\eot\\Shabnam-Thin-FD.eot@"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\ttf\\Shabnam-Bold-FD.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\ttf\\Shabnam-Bold-FD.ttf"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\ttf\\Shabnam-FD.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\ttf\\Shabnam-FD.ttf"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\ttf\\Shabnam-Light-FD.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\ttf\\Shabnam-Light-FD.ttf"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\ttf\\Shabnam-Medium-FD.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\ttf\\Shabnam-Medium-FD.ttf"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\ttf\\Shabnam-Thin-FD.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\ttf\\Shabnam-Thin-FD.ttf"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\woff2\\Shabnam-Bold-FD.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\woff2\\Shabnam-Bold-FD.woff2"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\woff2\\Shabnam-FD.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\woff2\\Shabnam-FD.woff2"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\woff2\\Shabnam-Light-FD.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\woff2\\Shabnam-Light-FD.woff2"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\woff2\\Shabnam-Medium-FD.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\woff2\\Shabnam-Medium-FD.woff2"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\woff2\\Shabnam-Thin-FD.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\woff2\\Shabnam-Thin-FD.woff2"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\woff\\Shabnam-Bold-FD.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\woff\\Shabnam-Bold-FD.woff"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\woff\\Shabnam-FD.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\woff\\Shabnam-FD.woff"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\woff\\Shabnam-Light-FD.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\woff\\Shabnam-Light-FD.woff"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\woff\\Shabnam-Medium-FD.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\woff\\Shabnam-Medium-FD.woff"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\fonts\\shabnam\\woff\\Shabnam-Thin-FD.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\shabnam\\woff\\Shabnam-Thin-FD.woff"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\about\\01.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\about\\01.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\about\\02.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\about\\02.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\about\\03.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\about\\03.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\about\\04.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\about\\04.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\app-store.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\app-store.png"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\avatar\\01.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\avatar\\01.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\avatar\\02.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\avatar\\02.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\avatar\\03.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\avatar\\03.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\avatar\\04.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\avatar\\04.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\banner-shape.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\banner-shape.png"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\blog-widget\\01.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog-widget\\01.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\blog-widget\\02.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog-widget\\02.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\blog-widget\\03.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog-widget\\03.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\blog-widget\\04.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog-widget\\04.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\blog-widget\\05.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog-widget\\05.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\blog\\01.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog\\01.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\blog\\02.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog\\02.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\blog\\03.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog\\03.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\blog\\04.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog\\04.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\blog\\05.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog\\05.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\blog\\06.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog\\06.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\blog\\07.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog\\07.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\blog\\08.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog\\08.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\branch\\01.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\branch\\01.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\branch\\02.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\branch\\02.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\branch\\03.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\branch\\03.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\branch\\04.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\branch\\04.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\brand\\01.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\brand\\01.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\brand\\02.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\brand\\02.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\brand\\03.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\brand\\03.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\brand\\04.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\brand\\04.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\brand\\05.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\brand\\05.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\brand\\06.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\brand\\06.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\category\\dairy.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\category\\dairy.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\category\\drinks.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\category\\drinks.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\category\\fastfoods.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\category\\fastfoods.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\category\\fish.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\category\\fish.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\category\\fruits.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\category\\fruits.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\category\\groceries.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\category\\groceries.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\category\\meat.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\category\\meat.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\category\\seafoods.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\category\\seafoods.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\category\\vegetables.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\category\\vegetables.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\coming-soon.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\coming-soon.png"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\countdown.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\countdown.png"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\error.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\error.png"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\favicon.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\favicon.png"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\google-store.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\google-store.png"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\home\\category\\01.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\home\\category\\01.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\home\\category\\02.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\home\\category\\02.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\home\\category\\03.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\home\\category\\03.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\home\\classic\\01.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\home\\classic\\01.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\home\\classic\\02.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\home\\classic\\02.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\home\\classic\\03.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\home\\classic\\03.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\home\\grid\\01.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\home\\grid\\01.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\home\\grid\\02.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\home\\grid\\02.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\home\\index\\01.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\home\\index\\01.png"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\home\\index\\02.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\home\\index\\02.png"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\home\\index\\03.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\home\\index\\03.png"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\logo.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\logo.png"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\newsletter.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\newsletter.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\offer\\01.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\offer\\01.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\offer\\02.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\offer\\02.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\offer\\03.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\offer\\03.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\offer\\04.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\offer\\04.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\offer\\05.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\offer\\05.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\offer\\06.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\offer\\06.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\offer\\07.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\offer\\07.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\offer\\08.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\offer\\08.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\offer\\09.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\offer\\09.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\offer\\10.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\offer\\10.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\offer\\11.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\offer\\11.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\payment\\jpg\\01.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\payment\\jpg\\01.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\payment\\jpg\\02.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\payment\\jpg\\02.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\payment\\jpg\\03.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\payment\\jpg\\03.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\payment\\jpg\\04.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\payment\\jpg\\04.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\payment\\png\\01.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\payment\\png\\01.png"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\payment\\png\\02.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\payment\\png\\02.png"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\payment\\png\\03.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\payment\\png\\03.png"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\01.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\01.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\02.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\02.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\03.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\03.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\04.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\04.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\05.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\05.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\06.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\06.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\07.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\07.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\08.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\08.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\09.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\09.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\10.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\10.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\11.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\11.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\12.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\12.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\13.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\13.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\14.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\14.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\15.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\15.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\16.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\16.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\17.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\17.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\18.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\18.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\19.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\19.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\product\\20.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\product\\20.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\promo\\blog\\01.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\promo\\blog\\01.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\promo\\home\\01.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\promo\\home\\01.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\promo\\home\\02.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\promo\\home\\02.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\promo\\home\\03.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\promo\\home\\03.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\promo\\home\\04.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\promo\\home\\04.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\promo\\home\\05.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\promo\\home\\05.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\promo\\home\\06.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\promo\\home\\06.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\promo\\home\\07.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\promo\\home\\07.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\promo\\home\\08.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\promo\\home\\08.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\promo\\home\\09.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\promo\\home\\09.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\promo\\shop\\01.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\promo\\shop\\01.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\promo\\shop\\03.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\promo\\shop\\03.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\single-banner.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\single-banner.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\suggest\\01.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\suggest\\01.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\suggest\\02.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\suggest\\02.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\suggest\\03.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\suggest\\03.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\suggest\\04.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\suggest\\04.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\suggest\\05.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\suggest\\05.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\suggest\\06.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\suggest\\06.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\suggest\\07.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\suggest\\07.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\suggest\\08.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\suggest\\08.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\team\\01.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\team\\01.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\team\\02.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\team\\02.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\team\\03.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\team\\03.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\team\\04.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\team\\04.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\team\\05.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\team\\05.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\testimonial\\01.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\testimonial\\01.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\testimonial\\02.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\testimonial\\02.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\user.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\user.png"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\video.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\video.jpg"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\js\\accordion.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\accordion.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\js\\countdown.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\countdown.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\js\\main.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\main.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\js\\nice-select.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\nice-select.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\js\\slick.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\slick.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\js\\venobox.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\venobox.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\vendor\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\vendor\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\vendor\\bootstrap\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\vendor\\bootstrap\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\vendor\\bootstrap\\jquery-1.12.4.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\vendor\\bootstrap\\jquery-1.12.4.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\vendor\\bootstrap\\popper.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\vendor\\bootstrap\\popper.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\vendor\\countdown\\countdown.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\vendor\\countdown\\countdown.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\vendor\\niceselect\\nice-select.min.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\vendor\\niceselect\\nice-select.min.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\vendor\\niceselect\\nice-select.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\vendor\\niceselect\\nice-select.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\vendor\\slickslider\\slick.min.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\vendor\\slickslider\\slick.min.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\vendor\\slickslider\\slick.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\vendor\\slickslider\\slick.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\vendor\\venobox\\venobox.min.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\vendor\\venobox\\venobox.min.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\vendor\\venobox\\venobox.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\vendor\\venobox\\venobox.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.EndPointStore.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.EndPointStore.props",
+      "PackagePath": "build\\EndPointStore.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.EndPointStore.props",
+      "PackagePath": "buildMultiTargeting\\EndPointStore.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.EndPointStore.props",
+      "PackagePath": "buildTransitive\\EndPointStore.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
