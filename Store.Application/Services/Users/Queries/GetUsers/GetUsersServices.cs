@@ -18,15 +18,13 @@ namespace Store.Application.Services.Users.Queries.GetUsers
         }
         public async Task<ResultGetUsersDto> Execute(RequestGetUsersDto request)
         {
-            var users = _databaseContext.Users.Include(y=>y.Contacts).ThenInclude(c=>c.ContactType).AsQueryable();
-         
+            var users = _databaseContext.Users.Include(y => y.Contacts).ThenInclude(c => c.ContactType).AsQueryable();
+
             if (!string.IsNullOrWhiteSpace(request.SearchKey))
             {
                 users = users.Where(p => p.FullName.Contains(request.SearchKey) || p.LastName.Contains(request.SearchKey));
-                
-               
             }
-            var contact =await _databaseContext.Contacts.Where(r=>r.UserId==r.Id).ToListAsync();
+            var contact = await _databaseContext.Contacts.Where(r => r.UserId == r.Id).ToListAsync();
             int RowsCount = 0;
             var userslistt = users.ToPaged(request.Page, 20, out RowsCount).Select(p => new GetUsersDto
 
@@ -34,22 +32,18 @@ namespace Store.Application.Services.Users.Queries.GetUsers
                 FullName = p.FullName,
                 Id = p.Id,
                 IsActived = p.IsActive,
-                Contacts =p.Contacts.Select(r => new ContactDto()
-                       {
+                Contacts = p.Contacts.Select(r => new ContactDto()
+                {
 
-                           IconContact = r.ContactType.Icon,
-                           ContactValue = r.Value
-                       }).ToList(),
-               
-
+                    IconContact = r.ContactType.Icon,
+                    ContactValue = r.Value
+                }).ToList(),
             }
-
             ).ToList();
             return new ResultGetUsersDto
             {
                 Rows = RowsCount,
                 Users = userslistt,
-
             };
         }
     }

@@ -28,7 +28,7 @@ namespace Store.Application.Services.Users.Queries.Edit
         public string? Phone { get; set; }
         public string? Address { get; set; }
         public long[] IdesInRole { get; set; }
-      
+
         public List<LoginDto> Login { get; set; }
 
 

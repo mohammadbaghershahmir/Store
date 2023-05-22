@@ -17,13 +17,13 @@ namespace Store.Application.Services.Commands
         {
             _context = context;
         }
-        public async Task<List<FindDtailMobileDto>> Execute(string Mobile,long id)
+        public async Task<List<FindDtailMobileDto>> Execute(string Mobile, long Id)
         {
-            var Email = await _context.Contacts.Include(t => t.ContactType)
+            var mobile = await _context.Contacts.Include(t => t.ContactType)
               .Where(r => r.Value == Mobile && r.ContactTypeId == (long)ContactTypeEnum.Mobail).ToListAsync();
-            if (id == 0)
+            if (Id == 0)
             {
-                var listItem = Email.Select(y => new FindDtailMobileDto()
+                var listItem = mobile.Select(y => new FindDtailMobileDto()
                 {
                     Mobile = y.Value,
                     UserId = y.UserId
@@ -32,7 +32,7 @@ namespace Store.Application.Services.Commands
             }
             else
             {
-                var listItem = Email.Where(p => p.UserId != id).Select(y => new FindDtailMobileDto()
+                var listItem = mobile.Where(p => p.UserId != Id).Select(y => new FindDtailMobileDto()
                 {
                     Mobile = y.Value,
                     UserId = y.UserId

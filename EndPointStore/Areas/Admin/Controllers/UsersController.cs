@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.Build.Framework;
 using Microsoft.EntityFrameworkCore;
 using Store.Application.Interfaces.Contexs;
 using Store.Application.Services.Commands.CheckEmail;
@@ -30,17 +29,15 @@ namespace EndPointStore.Areas.Admin.Controllers
         private readonly IGetEditUserService _geteditUserService;
         private readonly IEditUserService _editUserService;
         private readonly ICheckEmailService _checkEmailService;
-        private readonly IDatabaseContext _databaseContext; 
+        private readonly IDatabaseContext _databaseContext;
         public UsersController(IGetUsersServices getUsersServices,
             IGetRolesService rolesService
-            ,IRegisterUserService registerUserService
-            ,IRemoveService removeService
-            ,IGetEditUserService geteditUserService
-            ,IEditUserService editUserService
+            , IRegisterUserService registerUserService
+            , IRemoveService removeService
+            , IGetEditUserService geteditUserService
+            , IEditUserService editUserService
             , ICheckEmailService checkEmailService
-            ,IDatabaseContext databaseContext
-
-
+            , IDatabaseContext databaseContext
             )
         {
             _rolesService = rolesService;
@@ -48,15 +45,14 @@ namespace EndPointStore.Areas.Admin.Controllers
             _registerUserService = registerUserService;
             _removeService = removeService;
             _geteditUserService = geteditUserService;
-            _editUserService= editUserService;
-            _checkEmailService=checkEmailService;
-            _databaseContext= databaseContext;
+            _editUserService = editUserService;
+            _checkEmailService = checkEmailService;
+            _databaseContext = databaseContext;
 
         }
-       
-        public async Task<IActionResult> Index(string serchkey,int page=1)
+        public async Task<IActionResult> Index(string serchkey, int page = 1)
         {
-            var t =await _usersServices.Execute(
+            var t = await _usersServices.Execute(
 
                 new RequestGetUsersDto
                 {
@@ -66,55 +62,50 @@ namespace EndPointStore.Areas.Admin.Controllers
                 }
                 );
             return View(await _usersServices.Execute(
-                
-                new RequestGetUsersDto { 
-                
-                Page = page,
-                SearchKey=serchkey,
+
+                new RequestGetUsersDto
+                {
+
+                    Page = page,
+                    SearchKey = serchkey,
                 }
                 ));
         }
         [HttpGet]
-        public  IActionResult Create()
+        public IActionResult Create()
         {
-            ViewBag.Roles = new SelectList( _rolesService.Execute().Data, "Id", "Title");
-            
+            ViewBag.Roles = new SelectList(_rolesService.Execute().Data, "Id", "Title");
+
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Requestrequest request)
+        public async Task<IActionResult> Create([FromBody] CreateDto request)
         {
-
-          
-                if (ModelState.IsValid)
+            if (ModelState.IsValid)
+            {
+                var result = await _registerUserService.Execute(new RequestRegisterUserDto
                 {
-                    var result =await _registerUserService.Execute(new RequestRegisterUserDto
-
-                    {
-
-                        Name = request.Name,
-                        LastName = request.LastName,
-                        UserName = request.UserName,
-                        Password = request.Password,
-                        RePassword = request.RePassword,
-                        IsActive = request.IsActive,
-                        Gender = request.Gender,
-                        Mobile = request.Mobile,
-                        Email = request.Email,
-                        Address = request.Address,
-                        Phone = request.Phone,
-                        RolesId = request.RolesId,
-                    }
-
-                   );
-                    return Json(result);
+                    Name = request.Name,
+                    LastName = request.LastName,
+                    UserName = request.UserName,
+                    Password = request.Password,
+                    RePassword = request.RePassword,
+                    IsActive = request.IsActive,
+                    Gender = request.Gender,
+                    Mobile = request.Mobile,
+                    Email = request.Email,
+                    Address = request.Address,
+                    Phone = request.Phone,
+                    RolesId = request.RolesId,
                 }
-                return Json(new ResultDto
-                {IsSuccess = false,
-                Message="ثبت ناموفق"
-                });
-
-
+               );
+                return Json(result);
+            }
+            return Json(new ResultDto
+            {
+                IsSuccess = false,
+                Message = "ثبت ناموفق"
+            });
         }
         [HttpPost]
         public async Task<IActionResult> Delete(long UserId)
@@ -125,14 +116,13 @@ namespace EndPointStore.Areas.Admin.Controllers
         public async Task<IActionResult> Edit(long Id)
         {
             ViewBag.Roles = new SelectList(_rolesService.Execute().Data, "Id", "Title");
-            var result =await _geteditUserService.Execute(Id);
+            var result = await _geteditUserService.Execute(Id);
             return View(result);
         }
-     
         [HttpPost]
         public async Task<IActionResult> Edit([FromBody] EditUserDto request)
         {
-            var result =await _editUserService.Execute(new EditUserDto
+            var result = await _editUserService.Execute(new EditUserDto
             {
                 Id = request.Id,
                 Name = request.Name,
@@ -148,36 +138,9 @@ namespace EndPointStore.Areas.Admin.Controllers
            );
             return Json(new ResultDto
             {
-                IsSuccess= true,
-                Message=MessageInUser.MessageUpdate
+                IsSuccess = true,
+                Message = MessageInUser.MessageUpdate
             });
         }
-    }
-    public class Requestrequest
-    {
-        public long Id { get; set; }
-
-        [Required]
-        public string? Name { get; set; }
-        [Required]
-        public string? LastName { get; set; }
-        [Required]
-        [Remote(action: "IsUserExits", controller:"Common",AdditionalFields =nameof(Id))]
-        public string? UserName { get; set; }
-        [Required]
-        public string? Password { get; set; }
-        [Required]
-        public string? RePassword { get; set; }
-        public bool IsActive { get; set; }
-        public int Gender { get; set; }
-        [Required]
-        [Remote(action: "IsMobileExits", controller: "Common", AdditionalFields = nameof(Id))]
-        public string Mobile { get; set; }
-        [Required]
-        [Remote(action: "IsEmailExits", controller: "Common", AdditionalFields = nameof(Id))]
-        public string Email { get; set; }
-        public string? Address { get; set; }
-        public string? Phone { get; set; }
-        public long[] RolesId { get; set; }
     }
 }

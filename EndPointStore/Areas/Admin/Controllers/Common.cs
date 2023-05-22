@@ -16,43 +16,42 @@ namespace EndPointStore.Areas.Admin.Controllers
         private readonly ICheckUserExitsService _userExitsServices;
         private readonly ICheckEmailService _checkEmailService;
         private readonly ICheckMobileExitsService _checkMobileExitsService;
-        
+
         public Common(ICheckUserExitsService userExitsServices,
             ICheckMobileExitsService checkMobileExitsService,
-            ICheckEmailService checkEmailService  
-           
+            ICheckEmailService checkEmailService
+
         )
         {
             _userExitsServices = userExitsServices;
             _checkEmailService = checkEmailService;
             _checkMobileExitsService = checkMobileExitsService;
-          
+
         }
         public async Task<IActionResult> IsUserExits(string UserName)
         {
-            var result =await _userExitsServices.Execute(UserName);
-            if(result == null||result.Count<=0)
-            {
-
-                return Json(true);
-            }
-           else return Json($"نام کاربری {UserName} تکراری است!");
-        }
-        [HttpGet]
-        public async Task<IActionResult> IsEmailExits(string Email, long Id)
-        {
-          
-                var result =await _checkEmailService.Execute(Email, Id);
+            var result = await _userExitsServices.Execute(UserName);
             if (result == null || result.Count <= 0)
             {
 
                 return Json(true);
             }
-            else return Json($"ایمیل {Email} تکراری است!");               
+            else return Json($"نام کاربری {UserName} تکراری است!");
         }
-        public async Task<IActionResult> IsMobileExits(string Mobile,long id)
+        [HttpGet]
+        public async Task<IActionResult> IsEmailExits(string Email, long Id)
         {
-            var result =await _checkMobileExitsService.Execute(Mobile,id);
+            var result = await _checkEmailService.Execute(Email, Id);
+            if (result == null || result.Count <= 0)
+            {
+
+                return Json(true);
+            }
+            else return Json($"ایمیل {Email} تکراری است!");
+        }
+        public async Task<IActionResult> IsMobileExits(string Mobile, long Id)
+        {
+            var result = await _checkMobileExitsService.Execute(Mobile, Id);
             if (result == null || result.Count <= 0)
             {
 
@@ -60,6 +59,6 @@ namespace EndPointStore.Areas.Admin.Controllers
             }
             else return Json($"شماره همراه {Mobile} تکراری است!");
         }
-       
+
     }
 }

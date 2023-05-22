@@ -18,25 +18,25 @@ namespace Store.Application.Services.Commands.CheckEmail
             _context = context;
         }
 
-        public async Task<List<FindDtailEmailDto>> Execute(string email, long id)
+        public async Task<List<FindDtailEmailDto>> Execute(string Email, long Id)
         {
-            var Email = await _context.Contacts.Include(t => t.ContactType)
-                .Where(r => r.Value == email && r.ContactTypeId == (long)ContactTypeEnum.Email).ToListAsync();
-            if (id == 0)
+            var email = await _context.Contacts.Include(t => t.ContactType)
+                .Where(r => r.Value == Email && r.ContactTypeId == (long)ContactTypeEnum.Email).ToListAsync();
+            if (Id == 0)
             {
-                var listItem = Email.Select(y => new FindDtailEmailDto()
+                var listItem = email.Select(y => new FindDtailEmailDto()
                 {
                     Email = y.Value,
-                    IdUser = y.UserId
+                    UserId = y.UserId
                 }).ToList();
                 return listItem;
             }
             else
             {
-                var listItem = Email.Where(p => p.UserId != id).Select(y => new FindDtailEmailDto()
+                var listItem = email.Where(p => p.UserId != Id).Select(y => new FindDtailEmailDto()
                 {
                     Email = y.Value,
-                    IdUser = y.UserId
+                    UserId = y.UserId
                 }).ToList();
                 return listItem;
             }

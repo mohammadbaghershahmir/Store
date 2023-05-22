@@ -12,6 +12,6 @@ namespace Store.Application.Services.Users.Command.RegisterUser
     {
 
 
-       Task<ResultDto<ResultRegisterUserDto>> Execute(RequestRegisterUserDto request);
+        Task<ResultDto<ResultRegisterUserDto>> Execute(RequestRegisterUserDto request);
     }
 }

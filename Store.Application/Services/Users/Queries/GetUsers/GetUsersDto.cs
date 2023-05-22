@@ -9,14 +9,9 @@ namespace Store.Application.Services.Users.Queries.GetUsers
     public class GetUsersDto
     {
         public long Id { get; set; }
-        public string? FullName { get; set; }   
+        public string? FullName { get; set; }
         public bool? Gender { get; set; }
         public bool IsActived { get; set; }
         public List<ContactDto> Contacts { get; set; }
-    }
-    public class ContactDto
-    {
-            public string? IconContact { get; set; }
-            public string? ContactValue { get; set; }
     }
 }

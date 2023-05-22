@@ -51,6 +51,7 @@ namespace Store.Persistence.Contexs
             modelBuilder.Entity<Role>().HasData(new Role { Id = 2, NameRole = UserRoles.Operator, Title = UserRoleTitle.Operator });
             modelBuilder.Entity<Role>().HasData(new Role { Id = 3, NameRole = UserRoles.Customer, Title = UserRoleTitle.Customer });
             //End Role
+            //Filter Is Removed
             modelBuilder.Entity<User>().HasQueryFilter(p => !p.IsRemoved);
         }
     }

@@ -8,7 +8,7 @@ namespace Store.Application.Services.Commands.CheckEmail
 {
     public class FindDtailEmailDto
     {
-        public long IdUser { get; set; }
+        public long UserId { get; set; }
         public string Email { get; set; }
         
     }

@@ -10,6 +10,6 @@ namespace Store.Application.Services.Users.Command.EditUser
 {
     public interface IEditUserService
     {
-   Task<ResultDto>  Execute(EditUserDto requestEditUserService);
+        Task<ResultDto> Execute(EditUserDto EditUserService);
     }
 }

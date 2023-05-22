@@ -19,10 +19,11 @@ namespace Store.Application.Services.Users.Command.RegisterUser
         {
             _context = context;
         }
-       
+
         public async Task<ResultDto<ResultRegisterUserDto>> Execute(RequestRegisterUserDto request)
         {
-            if(request.Password!=request.RePassword)
+            //Check Password
+            if (request.Password != request.RePassword)
             {
                 return new ResultDto<ResultRegisterUserDto>()
                 {
@@ -31,19 +32,20 @@ namespace Store.Application.Services.Users.Command.RegisterUser
                         UserId = 0,
                     },
                     IsSuccess = false,
-                    Message =MessageInUser.MessagePass
+                    Message = MessageInUser.MessagePass
                 };
             }
-            User user = new User() {
+            //Add User
+            User user = new User()
+            {
                 Name = request.Name,
-                LastName =request.LastName,
-                Gender=request.Gender,
-                IsActive=request.IsActive,
-                FullName=request.Name+" "+request.LastName,
-                InsertTime=DateTime.Now
+                LastName = request.LastName,
+                Gender = request.Gender,
+                IsActive = request.IsActive,
+                FullName = request.Name + " " + request.LastName,
+                InsertTime = DateTime.Now
             };
-
-           
+            //Add UserInRole
             List<UserInRole> userInRoles = new List<UserInRole>();
             foreach (var item in request.RolesId)
             {
@@ -56,14 +58,14 @@ namespace Store.Application.Services.Users.Command.RegisterUser
                     UserId = roles.Id,
                 });
             }
-           
+            //Add Contacts And Check Email&&Mobile
             List<Contact> contact = new List<Contact>();
             contact.Add(new Contact()
 
 
             {
-               
-                ContactTypeId =(long)ContactTypeEnum.Mobail,
+
+                ContactTypeId = (long)ContactTypeEnum.Mobail,
                 User = user,
                 UserId = user.Id,
                 Value = request.Mobile,
@@ -109,21 +111,22 @@ namespace Store.Application.Services.Users.Command.RegisterUser
                 Title = ContactsTypeTitle.Email
             }
                );
-            user.UserInRoles=userInRoles;
-          
+            user.UserInRoles = userInRoles;
+            //Add Login
             Login login = new Login()
             {
-                User= user,
+                User = user,
                 UserId = user.Id,
                 UserName = request.UserName,
-                Password =request.Password
-            };  
+                Password = request.Password
+            };
+            //Add And SaveChanges
             await _context.Users.AddAsync(user);
             await _context.Logins.AddAsync(login);
-           await _context.UserInRoles.AddRangeAsync(userInRoles);
-           await _context.Contacts.AddRangeAsync(contact);
-           await _context.SaveChangesAsync();
-
+            await _context.UserInRoles.AddRangeAsync(userInRoles);
+            await _context.Contacts.AddRangeAsync(contact);
+            await _context.SaveChangesAsync();
+            //Show Result
             return new ResultDto<ResultRegisterUserDto>()
             {
                 Data = new ResultRegisterUserDto()

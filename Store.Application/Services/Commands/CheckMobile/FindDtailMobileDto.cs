@@ -10,6 +10,6 @@ namespace Store.Application.Services.Commands
     {
         public long UserId { get; set; }
         public string Mobile { get; set; }
-      
+
     }
 }

@@ -9,6 +9,6 @@ namespace Store.Application.Services.Users.Command.DeleteUser
 {
     public interface IRemoveService
     {
-       Task<ResultDto> Execute(long id);
+        Task<ResultDto> Execute(long Id);
     }
 }

@@ -9,6 +9,6 @@ namespace Store.Application.Services.Commands.CheckEmail
 {
     public interface ICheckEmailService
     {
-       Task<List<FindDtailEmailDto>> Execute(string email, long id);
+        Task<List<FindDtailEmailDto>> Execute(string Email, long Id);
     }
 }

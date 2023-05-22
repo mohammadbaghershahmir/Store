@@ -16,24 +16,27 @@ namespace Store.Application.Services.Users.Command.DeleteUser
         {
             _databaseContext = removeService;
         }
-        public async Task<ResultDto> Execute(long id)
+        public async Task<ResultDto> Execute(long Id)
         {
-            var user =await _databaseContext.Users.FindAsync(id);
-            if(user == null)
+            var user = await _databaseContext.Users.FindAsync(Id);
+            //Find User
+            if (user == null)
             {
                 return new ResultDto()
                 {
                     IsSuccess = false,
-                    Message=MessageInUser.MessageNotFind
+                    Message = MessageInUser.MessageNotFind
                 };
             }
-           user.RemoveTime = DateTime.Now;
+            //Remove Logical
+            user.RemoveTime = DateTime.Now;
             user.IsRemoved = true;
-           await _databaseContext.SaveChangesAsync();
+            await _databaseContext.SaveChangesAsync();
+            //Show Result
             return new ResultDto()
             {
-                IsSuccess=true,
-                Message=MessageInUser.MessageDelete
+                IsSuccess = true,
+                Message = MessageInUser.MessageDelete
             };
 
         }

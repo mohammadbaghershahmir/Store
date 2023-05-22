@@ -18,7 +18,7 @@ namespace Store.Application.Services.Commands
         }
         public async Task<List<FindDtailUserDto>> Execute(string UserName)
         {
-            var result =await _context.Logins.Include(t => t.User)
+            var result = await _context.Logins.Include(t => t.User)
                 .Where(r => r.UserName == UserName)
                 .Select(y => new FindDtailUserDto()
                 {

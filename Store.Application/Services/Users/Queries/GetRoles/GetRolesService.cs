@@ -17,19 +17,16 @@ namespace Store.Application.Services.Users.Queries.GetRoles
         {
             _context = context;
         }
-       
         public ResultDto<List<RolesDto>> Execute()
         {
-            
-                var roles = _context.Roles.Select(p => new RolesDto
-                {
-                    Id = p.Id,
-                    NameRole = p.NameRole,
-                    Description= p.Description,
-                    Title= p.Title,
-                    
-                }).ToList();
-           
+            var roles = _context.Roles.Select(p => new RolesDto
+            {
+                Id = p.Id,
+                NameRole = p.NameRole,
+                Description = p.Description,
+                Title = p.Title,
+
+            }).ToList();
             return new ResultDto<List<RolesDto>>()
             {
                 Data = roles,
