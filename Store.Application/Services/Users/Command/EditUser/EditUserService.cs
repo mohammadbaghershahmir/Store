@@ -23,6 +23,7 @@ namespace Store.Application.Services.Users.Command.EditUser
         public EditUserService(IDatabaseContext context)
         {
             _context = context;
+
         }
 
 
