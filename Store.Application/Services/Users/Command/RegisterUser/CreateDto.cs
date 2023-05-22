@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
-namespace EndPointStore.Areas.Admin.Controllers
+namespace Store.Application.Services.Users.Command.RegisterUser.CreateDto
 {
     public class CreateDto
     {

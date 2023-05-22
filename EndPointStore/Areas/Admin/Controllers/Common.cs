@@ -40,7 +40,7 @@ namespace EndPointStore.Areas.Admin.Controllers
         }
         [HttpGet]
         public async Task<IActionResult> IsEmailExits(string Email, long Id)
-        {
+       {
             var result = await _checkEmailService.Execute(Email, Id);
             if (result == null || result.Count <= 0)
             {

@@ -7,6 +7,7 @@ using Store.Application.Services.Commands.CheckUser;
 using Store.Application.Services.Users.Command.DeleteUser;
 using Store.Application.Services.Users.Command.EditUser;
 using Store.Application.Services.Users.Command.RegisterUser;
+using Store.Application.Services.Users.Command.RegisterUser.CreateDto;
 using Store.Application.Services.Users.Queries.Edit;
 using Store.Application.Services.Users.Queries.GetRoles;
 using Store.Application.Services.Users.Queries.GetUsers;
@@ -50,7 +51,7 @@ namespace EndPointStore.Areas.Admin.Controllers
             _databaseContext = databaseContext;
 
         }
-        public async Task<IActionResult> Index(string serchkey, int page = 1)
+        public async Task<IActionResult> Index(string searchkey, int page = 1)
         {
             var t = await _usersServices.Execute(
 
@@ -58,16 +59,15 @@ namespace EndPointStore.Areas.Admin.Controllers
                 {
 
                     Page = page,
-                    SearchKey = serchkey,
+                    SearchKey = searchkey,
                 }
                 );
             return View(await _usersServices.Execute(
 
                 new RequestGetUsersDto
                 {
-
                     Page = page,
-                    SearchKey = serchkey,
+                    SearchKey = searchkey,
                 }
                 ));
         }

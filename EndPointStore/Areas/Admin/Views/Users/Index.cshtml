@@ -26,12 +26,15 @@
             </div>
         </div>
         <div class="hidden md:block mx-auto text-gray-600">نمایش 1 تا 10 از 150 داده</div>
-        <div class="w-full sm:w-auto mt-3 sm:mt-0 sm:ml-auto md:ml-0">
+        <form method="get" class="w-full sm:w-auto mt-3 sm:mt-0 sm:ml-auto md:ml-0">
             <div class="w-56 relative text-gray-700 dark:text-gray-300">
-                <input type="text" class="form-control w-56 box pl-10 placeholder-theme-13" placeholder="جستجو...">
-                <i class="w-4 h-4 absolute my-auto inset-y-0 ml-3 left-0" data-feather="search"></i>
+                <fieldset>
+                    <input name="searchkey" type="search" class="form-control w-56 box pl-10 placeholder-theme-13" placeholder="جستجو...">
+                    <i class="w-4 h-4 absolute my-auto inset-y-0 ml-3 left-0" data-feather="search"></i>
+                </fieldset>
+                
             </div>
-        </div>
+        </form>
     </div>
     <!-- BEGIN: Users Layout -->
   

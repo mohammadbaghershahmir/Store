@@ -1,6 +1,5 @@
-﻿@using EndPointStore.Areas.Admin.Controllers;
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@model EndPointStore.Areas.Admin.Controllers.CreateDto;
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Store.Application.Services.Users.Command.RegisterUser.CreateDto.CreateDto
 @{
     ViewData["Title"] = "ثبت نام کاربر جدید";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
@@ -144,7 +143,6 @@
                 var data = {
                     Name, LastName, UserName, Password, RePassword, IsActive, Gender, Mobile, Email,Address,Phone,RolesId
                 }
-               
                 //ajax request
                 ajaxFunc("Create", data, "POST",
                     function (result) {
