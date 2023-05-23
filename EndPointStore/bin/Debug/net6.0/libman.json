@@ -17,6 +17,10 @@
     {
       "library": "jquery@3.7.0",
       "destination": "wwwroot/SiteTemplate/Library/jquery/"
+    },
+    {
+      "library": "toastr.js@2.1.4",
+      "destination": "wwwroot/SiteTemplate/Library/toastr.js/"
     }
   ]
 }

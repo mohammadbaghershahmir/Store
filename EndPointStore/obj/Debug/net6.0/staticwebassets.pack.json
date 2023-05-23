@@ -1413,6 +1413,30 @@
       "PackagePath": "staticwebassets\\SiteTemplate\\Library\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\Library\\jquery\\jquery.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\Library\\jquery\\jquery.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\Library\\jquery\\jquery.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\Library\\jquery\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\Library\\jquery\\jquery.min.map",
+      "PackagePath": "staticwebassets\\SiteTemplate\\Library\\jquery\\jquery.min.map"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\Library\\jquery\\jquery.slim.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\Library\\jquery\\jquery.slim.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\Library\\jquery\\jquery.slim.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\Library\\jquery\\jquery.slim.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\Library\\jquery\\jquery.slim.min.map",
+      "PackagePath": "staticwebassets\\SiteTemplate\\Library\\jquery\\jquery.slim.min.map"
+    },
+    {
       "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\Library\\toastify-js\\toastify-es.js",
       "PackagePath": "staticwebassets\\SiteTemplate\\Library\\toastify-js\\toastify-es.js"
     },
@@ -1435,6 +1459,14 @@
     {
       "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\Library\\toastify-js\\toastify.min.js",
       "PackagePath": "staticwebassets\\SiteTemplate\\Library\\toastify-js\\toastify.min.js"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\Sweetalert2\\sweetalert2.min.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\Sweetalert2\\sweetalert2.min.css"
+    },
+    {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\Sweetalert2\\sweetalert2.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\Sweetalert2\\sweetalert2.min.js"
     },
     {
       "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\about.css",

@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.EntityFrameworkCore;
 using Store.Application.Interfaces.Contexs;
-using Store.Application.Services.Users.Command.RegisterUser;
+using Store.Application.Services.Users.Command.EditUser;
 using Store.Common;
 using Store.Common.Constant;
 using Store.Common.Dto;
@@ -20,107 +20,66 @@ namespace Store.Application.Services.Users.Command.Site.SignInUser
 		{
 			_context = context;
 		}
-		public async Task<ResultDto<ResultRegisterUserDto>> Execute(RequestSignInUserDto Request)
+		public async Task<ResultDto<ResultUserLoginDto>> Execute(string username, string password)
 		{
-			try
+			//Query
+			var user = await _context.Contacts.
+				Include(w => w.User)
+				.ThenInclude(u => u.UserInRoles)
+				.ThenInclude(r=>r.Role)
+				.Include(l => l.User)
+				.ThenInclude(l => l.Logins)
+				.Where(q => q.Value.Equals(username) && (q.ContactTypeId == (long)ContactTypeEnum.Email || q.ContactTypeId == (long)ContactTypeEnum.Mobail))
+				.FirstOrDefaultAsync();
+			//Check User
+			if (user == null)
 			{
-				if (Request.Password != Request.RePassword)
+				return new ResultDto<ResultUserLoginDto>()
 				{
-					//Check Password
-					return new ResultDto<ResultRegisterUserDto>()
+					Data = new ResultUserLoginDto()
 					{
-						Data = new ResultRegisterUserDto()
-						{
-							UserId = 0,
-						},
-						IsSuccess = false,
-						Message = MessageInUser.MessagePass
-					};
-				}
-				//Add User
 
-				User user = new User()
-				{
-					FullName = Request.FullName,
-					IsActive = true,
-					InsertTime = DateTime.Now
-				};
-				await _context.Users.AddAsync(user);
-				//Add  Mobile
-				List<Contact> contact = new List<Contact>();
-				contact.Add(new Contact()
-
-
-				{
-
-					ContactTypeId = (long)ContactTypeEnum.Mobail,
-					User = user,
-					UserId = user.Id,
-					Value = Request.Mobile,
-					Title = ContactsTypeTitle.Mobail
-				}
-					);
-				//Add  Email
-				contact.Add(new Contact()
-
-
-				{
-					ContactTypeId = (long)ContactTypeEnum.Email,
-					User = user,
-					UserId = user.Id,
-					Value = Request.Email,
-					Title = ContactsTypeTitle.Email
-				}
-				  );
-				await _context.Contacts.AddRangeAsync(contact);
-				//Add UserInRole
-				List<UserInRole> userInRoles = new List<UserInRole>();
-				userInRoles.Add(new UserInRole
-				{
-					
-					RoleId =3,
-					User = user,
-					UserId = user.Id,
-				});
-				user.UserInRoles = userInRoles;
-				await _context.UserInRoles.AddRangeAsync(userInRoles);
-				//Hash Password
-				var passwordHasher = new PasswordHasher();
-				var hashedPassword = passwordHasher.HashPassword(Request.Password);
-				//Add Login
-				Login login = new Login()
-				{
-					User = user,
-					UserId = user.Id,
-					Password = hashedPassword
-				};
-				//Add SaveChanges
-				await _context.Logins.AddAsync(login);
-				await _context.SaveChangesAsync();
-				//Show Result
-				return new ResultDto<ResultRegisterUserDto>()
-				{
-					Data = new ResultRegisterUserDto()
-					{
-						UserId = user.Id,
-					},
-					IsSuccess = true,
-					Message = MessageInUser.MessageInsert,
-				};
-			}
-			catch (Exception)
-			{
-				return new ResultDto<ResultRegisterUserDto>()
-				{
-					Data = new ResultRegisterUserDto()
-					{
-						UserId = 0,
 					},
 					IsSuccess = false,
-					Message = MessageInUser.MessageInvalidOperation,
+					Message = MessageInUser.MessageNotfindUser,
 				};
-
 			}
+			//Check Password
+			var verifyd = await _context.Logins.Where(t => t.UserId == user.UserId).FirstOrDefaultAsync();
+			var passwordHasher = new PasswordHasher();
+			bool resultVerifyPassword = passwordHasher.VerifyPassword(verifyd.Password, password);
+			if (resultVerifyPassword == false)
+			{
+				return new ResultDto<ResultUserLoginDto>()
+				{
+					Data = new ResultUserLoginDto()
+					{
+
+					},
+					IsSuccess = false,
+					Message = MessageInUser.MessageInvalidPass,
+				};
+			}
+			//Check Role
+			string roles = "";
+
+			foreach (var item in user.User.UserInRoles)
+			{
+				roles += $"{item.Role.NameRole}";
+            }
+
+			//Login
+			return new ResultDto<ResultUserLoginDto>()
+			{
+				Data = new ResultUserLoginDto()
+				{
+					Roles = roles,
+					UserId = user.Id,
+					FullName = user.User.FullName
+				},
+				IsSuccess = true,
+				Message = "ورود به سایت با موفقیت انجام شد",
+			};
 		}
 	}
 }

@@ -232,34 +232,25 @@ $('.payment-card.payment').on('click', function(){
     $('.payment-card.payment').removeClass('active');
     $(this).addClass('active');
 });
-function ajaxFunc(url, data, type, callback, error) {
+// ajax function for retrive special step and other request
+function ajaxFunc(url, model, type, callback, error) {
+    ajaxFunc(url, model, type, callback, error, true);
+}
+// ajax function for retrive special step and other request
+function ajaxFunc(url, model, type, callback, error, async) {
     $.ajax({
         type: type,
+        //beforeSend: function (xhr) {
+        //    xhr.setRequestHeader("RequestVerificationToken",
+        //        $('input:hidden[name="__RequestVerificationToken"]').val());
+        //},
         url: url,
-        contentType: "application/json; charset=utf-8",
         dataType: "json",
-        data: JSON.stringify(data),
+        data: model,
         success: callback,
-        error: error
+        error: error,
+        async: async
     });
 }
-var successToastify = Toastify({
-    node: $("#success-notification-content").clone().removeClass("hidden")[0],
-    duration: 3000,
-    newWindow: true,
-    close: true,
-    gravity: "top",
-    position: "right",
-    stopOnFocus: true
-});
 
-var dangerToastify = Toastify({
-    node: $("#failed-notification-content").clone().removeClass("hidden")[0],
-    duration: 3000,
-    newWindow: true,
-    close: true,
-    gravity: "top",
-    position: "right",
-    stopOnFocus: true
-});
 

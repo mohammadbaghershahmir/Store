@@ -1,4 +1,5 @@
 E:\Stor-Project\Store\Store.Application\bin\Debug\net6.0\Store.Application.deps.json
+E:\Stor-Project\Store\Store.Application\bin\Debug\net6.0\Store.Application.runtimeconfig.json
 E:\Stor-Project\Store\Store.Application\bin\Debug\net6.0\Store.Application.dll
 E:\Stor-Project\Store\Store.Application\bin\Debug\net6.0\Store.Application.pdb
 E:\Stor-Project\Store\Store.Application\bin\Debug\net6.0\Store.Common.dll
@@ -14,4 +15,5 @@ E:\Stor-Project\Store\Store.Application\obj\Debug\net6.0\Store.Application.cspro
 E:\Stor-Project\Store\Store.Application\obj\Debug\net6.0\Store.Application.dll
 E:\Stor-Project\Store\Store.Application\obj\Debug\net6.0\refint\Store.Application.dll
 E:\Stor-Project\Store\Store.Application\obj\Debug\net6.0\Store.Application.pdb
+E:\Stor-Project\Store\Store.Application\obj\Debug\net6.0\Store.Application.genruntimeconfig.cache
 E:\Stor-Project\Store\Store.Application\obj\Debug\net6.0\ref\Store.Application.dll

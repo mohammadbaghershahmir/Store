@@ -12,6 +12,7 @@ using Store.Application.Services.Commands.CheckEmail;
 using Store.Application.Services.Commands;
 using Store.Application.Services.Users.Command.Site.SignInUser;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Store.Application.Services.Users.Command.Site.SignUpUser;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,7 @@ builder.Services.AddScoped<ICheckUserExitsService,CheckUserService>();
 builder.Services.AddScoped<ICheckEmailService, CheckEmailService>();
 builder.Services.AddScoped<ICheckMobileExitsService, CheckMobileService>();
 builder.Services.AddScoped<ICheckEmailService,CheckEmailService>();
+builder.Services.AddScoped<ISignUpUserService, SignUpUserService>();
 builder.Services.AddScoped<ISignInUserService, SignInUserService>();
 builder.Services.AddAuthentication(options =>
 {

@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
-
+using Microsoft.Build.Framework;
 namespace Store.Application.Services.Users.Command.RegisterUser.CreateDto
 {
     public class CreateDto
@@ -22,10 +21,10 @@ namespace Store.Application.Services.Users.Command.RegisterUser.CreateDto
         public int Gender { get; set; }
         [Required]
         [Remote(action: "IsMobileExits", controller: "Common", AdditionalFields = nameof(Id))]
-        public string Mobile { get; set; }
+        public string? Mobile { get; set; }
         [Required]
         [Remote(action: "IsEmailExits", controller: "Common", AdditionalFields = nameof(Id))]
-        public string Email { get; set; }
+        public string? Email { get; set; }
         public string? Address { get; set; }
         public string? Phone { get; set; }
         public long[] RolesId { get; set; }

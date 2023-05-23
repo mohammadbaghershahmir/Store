@@ -1,5 +1,5 @@
-﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@model Store.Application.Services.Users.Command.RegisterUser.CreateDto.CreateDto
+﻿@model Store.Application.Services.Users.Command.RegisterUser.CreateDto.CreateDto
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "ثبت نام کاربر جدید";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
@@ -28,12 +28,12 @@
             <div class="grid grid-cols-12 gap-4 gap-y-5 mt-5">
                     <div class="input-form  intro-y col-span-12 sm:col-span-6">
                         <label asp-for="Name"  class="form-label w-full flex flex-col sm:flex-row"><span class="sm:mr-auto mt-1 sm:mt-0 text-xs text-gray-600"> حداقل 2 کاراکتر لازم است.</span> </label>
-                        <input asp-for="Name"  type="text"  class="form-control" placeholder="علی" minlength="2" required="">
+                        <input asp-for="Name"  type="text"  class="form-control" placeholder="علی" minlength="2" required>
                         <span asp-validation-for="Name"></span>
                     </div>
                     <div class="input-form  intro-y col-span-12 sm:col-span-6">
                         <label asp-for="LastName" class="form-label w-full flex flex-col sm:flex-row"><span class="sm:mr-auto mt-1 sm:mt-0 text-xs text-gray-600">حداقل 2 کاراکتر لازم است.</span> </label>
-                        <input asp-for="LastName" type="text" class="form-control" placeholder="علوی" minlength="2" required="">
+                        <input asp-for="LastName" type="text" class="form-control" placeholder="علوی" minlength="2" required>
                     <span asp-validation-for="LastName"></span>
                     </div>
                     <div class="mt-3 intro-y col-span-12 sm:col-span-6">
@@ -65,31 +65,31 @@
                     </div>
                     <div class="input-form mt-3 intro-y col-span-12 sm:col-span-6">
                         <label asp-for="UserName" class="form-label w-full flex flex-col sm:flex-row">  <span class="sm:mr-auto mt-1 sm:mt-0 text-xs text-gray-600"> الزامی است ،بایدحداقل 4 کارکتر باشد </span> </label>
-                       <input  asp-for="UserName" type="text" class="form-control" placeholder="نام کاربری" minlength="4" required="">
+                       <input  asp-for="UserName" type="text" class="form-control" placeholder="نام کاربری" minlength="4" required>
                        <span asp-validation-for="UserName" class="text-danger"></span>
                     </div>
                     <div class="input-form mt-3  intro-y col-span-12 sm:col-span-6">
                         <label asp-for="Password" class="form-label w-full flex flex-col sm:flex-row">  <span class="sm:mr-auto mt-1 sm:mt-0 text-xs text-gray-600"> الزامی است ،بایدحداقل 6 کارکتر باشد </span> </label>
-                        <input asp-for="Password" type=password  class="form-control" placeholder="رمز" minlength="6" required="">
+                        <input asp-for="Password" type=password  class="form-control" placeholder="رمز" minlength="6" required>
                         <span asp-validation-for="Password"></span>
                     </div>
                 <div class="input-form mt-3  intro-y col-span-12 sm:col-span-6">
                         <label asp-for="RePassword" class="form-label w-full flex flex-col sm:flex-row"> <span class="sm:mr-auto mt-1 sm:mt-0 text-xs text-gray-600"> تکرار رمز باید با رمز مطابقت داشته باشد </span> </label>
-                        <input asp-for="RePassword" type=password  class="form-control" placeholder="تکرار رمز" minlength="6" required="">
+                        <input asp-for="RePassword" type=password  class="form-control" placeholder="تکرار رمز" minlength="6" required>
                         <span asp-validation-for="RePassword"></span>
                     </div>
                 <div class="input-form mt-3  intro-y col-span-12 sm:col-span-6">
                     <label asp-for="Mobile" class="form-label w-full flex flex-col sm:flex-row"> <span class="sm:mr-auto mt-1 sm:mt-0 text-xs text-gray-600"> </span> </label>
-                    <input asp-for="Mobile" type="text" class="form-control" placeholder="موبایل">
+                    <input asp-for="Mobile" type="text" class="form-control" placeholder="موبایل" required>
                     <span asp-validation-for="Mobile"></span>
                 </div>
                 <div class="input-form mt-3  intro-y col-span-12 sm:col-span-6">
                         <label asp-for="Email" class="form-label w-full flex flex-col sm:flex-row"> <span class="sm:mr-auto mt-1 sm:mt-0 text-xs text-gray-600"> الزامی است ،باید مطابق قالب آدرس ایمیل باشد</span> </label>
-                        <input asp-for="Email" type="email" class="form-control" placeholder="example@gmail.com">
+                        <input asp-for="Email" type="email" class="form-control" placeholder="example@gmail.com" required>
                     <span asp-validation-for="Email"></span>
                     </div>
                     <div class="mt-3 intro-y col-span-12 sm:col-span-6">
-                        <label asp-for="Phone" class="form-label"></label>
+                        @*<label asp-for="Phone" class="form-label"></label>*@
                         <input asp-for="Phone" type="text" class="form-control" placeholder="تلفن">
                     </div>
 
@@ -99,7 +99,6 @@
                 </div>
                 <div class="mt-3 intro-y col-span-12 sm:col-span-6">
                     <button type="submit"  class="btn btn-primary ">ثبت نام</button>
-
                 </div>
                 </div>
             
