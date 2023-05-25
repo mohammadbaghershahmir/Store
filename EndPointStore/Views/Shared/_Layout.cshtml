@@ -69,15 +69,29 @@
                     <a href="index.html"><img src="/SiteTemplate/assets/images/logo.png" alt="logo"></a>
                     <button class="header-src"><i class="fas fa-search"></i></button>
                 </div>
-
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a  class="header-widget" title=@User.Identity.Name>
+                     <img src="/SiteTemplate/assets/images/user.png" alt="user">             
+                    </a>
+                }
+                else
+                {
                 <a href="index.html" class="header-logo">
                     <img src="/SiteTemplate/assets/images/logo.png" alt="logo">
                 </a>
-                <a href="login.html" class="header-widget" title="My Account">
-                    <img src="/SiteTemplate/assets/images/user.png" alt="user">
-                    <span>ورود</span>
+                <a href="~/authentication/signin" class="header-widget" title="My Account">
+@*                    <img src="/SiteTemplate/assets/images/user.png" alt="user">
+*@                    <span>ورود</span>
                 </a>
+                <div class="header-widget">
+                <span>|</span>
 
+                </div>
+                <a href="~/authentication/signup" class="header-widget" title="My Account">
+                    <span>ثبت نام</span>
+                </a>
+                }
                 <form class="header-form">
                     <input type="text" placeholder="جست و جو کن ...">
                     <button><i class="fas fa-search"></i></button>

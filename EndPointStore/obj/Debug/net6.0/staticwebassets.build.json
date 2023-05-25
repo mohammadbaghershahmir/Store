@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "X0+gsdoiEMYvWcGQnWJp54KJpZcLhAeix4FCmVAY3ok=",
+  "Hash": "H25jzY5kM39Mjd07fnV/g6Yg81U5mGQNsSbEBuUfY38=",
   "Source": "EndPointStore",
   "BasePath": "_content/EndPointStore",
   "Mode": "Default",
@@ -4027,6 +4027,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\SiteTemplate\\assets\\css\\contact.css"
+    },
+    {
+      "Identity": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\custom-toastify.css",
+      "SourceId": "EndPointStore",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\",
+      "BasePath": "_content/EndPointStore",
+      "RelativePath": "SiteTemplate/assets/css/custom-toastify.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\SiteTemplate\\assets\\css\\custom-toastify.css"
     },
     {
       "Identity": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\error.css",

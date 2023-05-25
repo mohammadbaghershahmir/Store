@@ -79,7 +79,7 @@ namespace EndPointStore.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateDto request)
+        public async Task<IActionResult> Create(CreateDto request)
         {
             if (ModelState.IsValid)
             {
@@ -120,7 +120,7 @@ namespace EndPointStore.Areas.Admin.Controllers
             return View(result);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit([FromBody] EditUserDto request)
+        public async Task<IActionResult> Edit(EditUserDto request)
         {
             var result = await _editUserService.Execute(new EditUserDto
             {

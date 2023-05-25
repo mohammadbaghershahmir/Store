@@ -1,12 +1,21 @@
-﻿function ajaxFunc(url, data, type, callback, error) {
-     $.ajax({
+﻿// ajax function for retrive special step and other request
+function ajaxFunc(url, model, type, callback, error) {
+    ajaxFunc(url, model, type, callback, error, true);
+}
+// ajax function for retrive special step and other request
+function ajaxFunc(url, model, type, callback, error, async) {
+    $.ajax({
         type: type,
+        //beforeSend: function (xhr) {
+        //    xhr.setRequestHeader("RequestVerificationToken",
+        //        $('input:hidden[name="__RequestVerificationToken"]').val());
+        //},
         url: url,
-        contentType: "application/json; charset=utf-8",
         dataType: "json",
-        data: JSON.stringify(data),
+        data: model,
         success: callback,
-        error: error
+        error: error,
+        async: async
     });
 }
 var successToastify = Toastify({

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -8,6 +9,8 @@ using Store.Application.Services.Users.Command.RegisterUser;
 using Microsoft.AspNetCore.Identity;
 using Store.Common.Constant.Roles;
 using Store.Application.Services.Users.Command.Site.SignUpUser;
+using Microsoft.AspNetCore.Authorization;
+using Store.Domain.Entities.Users;
 
 namespace EndPointStore.Controllers
 {
@@ -15,11 +18,13 @@ namespace EndPointStore.Controllers
 	{
 		private readonly ISignUpUserService _signUpUserService;
 		private readonly ISignInUserService _signInUserService;
-		public AuthenticationController(ISignUpUserService signUpUserService, ISignInUserService signInUserService)
+		private readonly SignInManager<Login> _signInManager;
+        public AuthenticationController(ISignUpUserService signUpUserService, ISignInUserService signInUserService, SignInManager<Login> signInManager)
 		{
 			_signUpUserService = signUpUserService;
 			_signInUserService = signInUserService;
-		}
+			_signInManager = signInManager;
+        }
 		[HttpGet]
 		public async Task<IActionResult> SignUp()
 		{
@@ -60,35 +65,49 @@ namespace EndPointStore.Controllers
 			}
 			return Json(signeinResult);
 		}
-	
-		public async Task<IActionResult> SignIn(string ReturnUrl = "/")
+		[HttpGet]
+		public IActionResult Login(string ReturnUrl = "/")
 		{
 			ViewBag.Url = ReturnUrl;
 			return View();
 		}
 		[HttpPost]
-		public async Task<IActionResult> SignIn(SignInViewModel signInUser)
+		public IActionResult Login(SignInViewModel signInUser)
 		{
-			var signIn =await _signInUserService.Execute(signInUser.UserName, signInUser.Password);
-			if (signIn.IsSuccess == true)
+			var signIn =  _signInUserService.Execute(signInUser.UserName, signInUser.Password);
+		    var resul=   	_signInManager.PasswordSignInAsync(signIn.Result.Data.UserName, signInUser.Password, false, true);
+			if(resul.Result.Succeeded)
 			{
-				var clims = new List<Claim>()
-				{
-					new Claim(ClaimTypes.NameIdentifier, signIn.Data.UserId.ToString()),
-					new Claim(ClaimTypes.Email, signInUser.UserName),
-					new Claim(ClaimTypes.Name, signIn.Data.FullName),
-                        new Claim(ClaimTypes.Role, signIn.Data.Roles),
-                };
-				var identity = new ClaimsIdentity(clims, CookieAuthenticationDefaults.AuthenticationScheme);
-				var principal = new ClaimsPrincipal(identity);
-				var properties = new AuthenticationProperties()
-				{
-					IsPersistent = true,
-					ExpiresUtc = DateTime.Now.AddDays(5),
-				};
-				 HttpContext.SignInAsync(principal, properties);
+				return Json(signIn);
 			}
-			return Json(signIn);
+			else
+			{
+				return Json(signIn);
+			}
+			//if (signIn.IsSuccess == true)
+			//{
+			//	var clims = new List<Claim>()
+			//	{
+			//		new Claim(ClaimTypes.NameIdentifier, signIn.Data.UserId.ToString()),
+			//		new Claim(ClaimTypes.Email, signInUser.UserName),
+			//		new Claim(ClaimTypes.Name, signIn.Data.FullName),
+			//                 new Claim(ClaimTypes.Role, signIn.Data.Roles),
+			//             };
+			//	var identity = new ClaimsIdentity(clims, CookieAuthenticationDefaults.AuthenticationScheme);
+			//	var principal = new ClaimsPrincipal(identity);
+			//	var properties = new AuthenticationProperties()
+			//	{
+			//		IsPersistent = true,
+			//		ExpiresUtc = DateTime.Now.AddDays(5),
+			//	};
+
+			//             HttpContext.SignInAsync(principal, properties);
+			//}
+			//         if (User.Identity.IsAuthenticated)
+			//{
+			//	return Json("true");
+			//}
+			//return Json(signIn);
 
 		}
 	}

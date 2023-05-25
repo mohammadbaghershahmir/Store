@@ -1517,6 +1517,10 @@
       "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\contact.css"
     },
     {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\custom-toastify.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\custom-toastify.css"
+    },
+    {
       "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\css\\error.css",
       "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\error.css"
     },

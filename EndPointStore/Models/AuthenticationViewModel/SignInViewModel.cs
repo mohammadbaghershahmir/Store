@@ -1,9 +1,12 @@
-﻿namespace EndPointStore.Models.AuthenticationViewModel
+﻿using Microsoft.Build.Framework;
+namespace EndPointStore.Models.AuthenticationViewModel
 {
 	public class SignInViewModel
 	{
-        public string? UserName { get; set; }
-        public string? Password { get; set; }
+        [Required]
+        public string UserName { get; set; }
+        [Required]
+        public string Password { get; set; }
         public string Url { get; set; } = "/";
     }
 }

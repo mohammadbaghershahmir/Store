@@ -173,16 +173,37 @@
 				ajaxFunc("SignUp", data, "POST",
 					function (result) {
 						if (result.isSuccess) {
-							toastr.success(result, "موفق");
+							Toastify({
+								text: result.message,
+								className: "success",
+								duration: 3000,
+								style: {
+									background: "linear-gradient(to right, #00b09b, #96c93d)",
+								}
+							}).showToast();
 							setTimeout(function () {
 								window.location.replace("/");
 							}, 2000)
 						} else {
-							toastr.warning(result, "هشدار");
+							Toastify({
+								text: result.message,
+								className: "success",
+								duration: 3000,
+								style: {
+									background: "linear-gradient(to right, #00b09b, #96c93d)",
+								}
+							}).showToast();
 						}
 					},
 					function (error) {
-						toastr.danger(result, "ناموفق");
+						Toastify({
+							text: result.message,
+							className: "success",
+							duration: 3000,
+							style: {
+								background: "linear-gradient(to right, #00b09b, #96c93d)",
+							}
+						}).showToast();
 						
 					}
 				)
