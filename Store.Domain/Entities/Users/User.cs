@@ -1,25 +1,29 @@
-﻿using Store.Domain.Entities.Commons;
+﻿using Microsoft.AspNetCore.Identity;
+using Store.Domain.Entities.Commons;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Store.Domain.Entities.Users
 {
-    public class User:BaseEntity
+    public class User: IdentityUser,IBaseEntity
     {
-    
-        public string? Name { get; set; }
+         
+        public string? FirstName { get; set; }
         public string? LastName { get; set; }
-        public string? FullName { get; set; }
+        public string?    FullName { get; set; }
+        public int? Gender { get; set; } = 0;
+        public bool IsActive { get; set; }
         public DateTime? BirthDay { get; set; }
-        public int? Gender { get; set; }
-        public string? Avatar { get; set; }
-        public bool IsActive { get; set; } = true;
-        public ICollection<UserInRole> UserInRoles { get; set; }
+        public string? ProfileImage { get; set; }
+        public DateTime? InsertTime { get ; set ; }
+        public DateTime? UpdateTime { get ; set ; }
+        public bool IsRemoved { get ; set; }
+        public DateTime? RemoveTime { get ; set; }
         public ICollection<Contact> Contacts { get; set; }
-        public ICollection<Login> Logins { get; set; }
 
     }
 }

@@ -20,67 +20,72 @@ namespace Store.Application.Services.Users.Command.Site.SignInUser
 		{
 			_context = context;
 		}
-		public async Task<ResultDto<ResultUserLoginDto>> Execute(string username, string password)
-		{
-			//Query
-			var user = await _context.Contacts.
-				Include(w => w.User)
-				.ThenInclude(u => u.UserInRoles)
-				.ThenInclude(r=>r.Role)
-				.Include(l => l.User)
-				.ThenInclude(l => l.Logins)
-				.Where(q => q.Value.Equals(username) && (q.ContactTypeId == (long)ContactTypeEnum.Email || q.ContactTypeId == (long)ContactTypeEnum.Mobail))
-				.FirstOrDefaultAsync();
-			//Check User
-			if (user == null)
-			{
-				return new ResultDto<ResultUserLoginDto>()
-				{
-					Data = new ResultUserLoginDto()
-					{
 
-					},
-					IsSuccess = false,
-					Message = MessageInUser.MessageNotfindUser,
-				};
-			}
-			//Check Password
-			var verifyd = await _context.Logins.Where(t => t.UserId == user.UserId).FirstOrDefaultAsync();
-			var passwordHasher = new PasswordHasher();
-			bool resultVerifyPassword = passwordHasher.VerifyPassword(verifyd.Password, password);
-			if (resultVerifyPassword == false)
-			{
-				return new ResultDto<ResultUserLoginDto>()
-				{
-					Data = new ResultUserLoginDto()
-					{
+        public Task<ResultDto<ResultUserLoginDto>> Execute(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+        //public async Task<ResultDto<ResultUserLoginDto>> Execute(string username, string password)
+        //{
+        //	//Query
+        //	var user = await _context.Contacts.
+        //		Include(w => w.User)
+        //		.ThenInclude(u => u.UserInRoles)
+        //		.ThenInclude(r=>r.Role)
+        //		.Include(l => l.User)
+        //		.ThenInclude(l => l.Logins)
+        //		.Where(q => q.Value.Equals(username) && (q.ContactTypeId == (long)ContactTypeEnum.Email || q.ContactTypeId == (long)ContactTypeEnum.Mobail))
+        //		.FirstOrDefaultAsync();
+        //	//Check User
+        //	if (user == null)
+        //	{
+        //		return new ResultDto<ResultUserLoginDto>()
+        //		{
+        //			Data = new ResultUserLoginDto()
+        //			{
 
-					},
-					IsSuccess = false,
-					Message = MessageInUser.MessageInvalidPass,
-				};
-			}
-			//Check Role
-			string roles = "";
+        //			},
+        //			IsSuccess = false,
+        //			Message = MessageInUser.MessageNotfindUser,
+        //		};
+        //	}
+        //	//Check Password
+        //	var verifyd = await _context.Logins.Where(t => t.UserId == user.UserId).FirstOrDefaultAsync();
+        //	var passwordHasher = new PasswordHasher();
+        //	bool resultVerifyPassword = passwordHasher.VerifyPassword(verifyd.Password, password);
+        //	if (resultVerifyPassword == false)
+        //	{
+        //		return new ResultDto<ResultUserLoginDto>()
+        //		{
+        //			Data = new ResultUserLoginDto()
+        //			{
 
-			foreach (var item in user.User.UserInRoles)
-			{
-				roles += $"{item.Role.NameRole}";
-            }
+        //			},
+        //			IsSuccess = false,
+        //			Message = MessageInUser.MessageInvalidPass,
+        //		};
+        //	}
+        //	//Check Role
+        //	string roles = "";
 
-			//Login
-			return new ResultDto<ResultUserLoginDto>()
-			{
-				Data = new ResultUserLoginDto()
-				{
-					Roles = roles,
-					UserId = user.Id,
-					FullName = user.User.FullName,
-					UserName=user.Value
-				},
-				IsSuccess = true,
-				Message = "ورود به سایت با موفقیت انجام شد",
-			};
-		}
-	}
+        //	foreach (var item in user.User.UserInRoles)
+        //	{
+        //		roles += $"{item.Role.NameRole}";
+        //          }
+
+        //	//Login
+        //	return new ResultDto<ResultUserLoginDto>()
+        //	{
+        //		Data = new ResultUserLoginDto()
+        //		{
+        //			Roles = roles,
+        //			UserId = user.Id,
+        //			FullName = user.User.FullName,
+        //			UserName=user.Value
+        //		},
+        //		IsSuccess = true,
+        //		Message = "ورود به سایت با موفقیت انجام شد",
+        //	};
+        //}
+    }
 }

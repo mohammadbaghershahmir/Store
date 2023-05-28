@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Store.Application.Interfaces.Contexs;
 using Store.Common.Constant;
+using Store.Domain.Entities.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,35 +14,26 @@ namespace Store.Application.Services.Commands.CheckEmail
 {
     public class CheckEmailService : ICheckEmailService
     {
-        private readonly IDatabaseContext _context;
-        public CheckEmailService(IDatabaseContext context)
+        private readonly UserManager<User> _userManager;
+       
+        public CheckEmailService(UserManager<User> userManager)
         {
-            _context = context;
+            _userManager = userManager;
         }
 
-        public async Task<List<FindDtailEmailDto>> Execute(string Email, long Id)
+        public async Task<bool> Execute(string Email, string Id)
         {
-            var email = await _context.Contacts.Include(t => t.ContactType)
-                .Where(r => r.Value == Email && r.ContactTypeId == (long)ContactTypeEnum.Email).ToListAsync();
-            if (Id == 0)
+            var email =  _userManager.FindByEmailAsync(Email).Result;
+            var user= _userManager.FindByIdAsync(Id).Result;
+            if(user==null&&email==null&&Id==null)
             {
-                var listItem = email.Select(y => new FindDtailEmailDto()
-                {
-                    Email = y.Value,
-                    UserId = y.UserId
-                }).ToList();
-                return listItem;
+                return false;
             }
-            else
+           else
             {
-                var listItem = email.Where(p => p.UserId != Id).Select(y => new FindDtailEmailDto()
-                {
-                    Email = y.Value,
-                    UserId = y.UserId
-                }).ToList();
-                return listItem;
+              return  true;
             }
-
+           
         }
     }
 }

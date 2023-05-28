@@ -11,10 +11,6 @@ namespace Store.Application.Interfaces.Contexs
 {
     public interface IDatabaseContext
     {
-        DbSet<User> Users { get; set; }
-        DbSet<Role> Roles { get; set; }
-        DbSet<UserInRole> UserInRoles { get; set; }
-        DbSet<Login> Logins { get; set; }
         DbSet<Contact> Contacts { get; set; }
         DbSet<ContactType> ContactTypes { get; set; }
         int SaveChanges(bool acceptAllChangesOnSuccess);

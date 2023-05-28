@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Store.Application.Interfaces.Contexs;
 using Store.Application.Services.Commands.CheckEmail;
 using Store.Common.Constant;
+using Store.Domain.Entities.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,33 +14,26 @@ namespace Store.Application.Services.Commands
 {
     public class CheckMobileService : ICheckMobileExitsService
     {
-        private readonly IDatabaseContext _context;
-        public CheckMobileService(IDatabaseContext context)
+        private readonly UserManager<User> _userManager;
+
+        public CheckMobileService(UserManager<User> userManager)
         {
-            _context = context;
+            _userManager=userManager;
         }
-        public async Task<List<FindDtailMobileDto>> Execute(string Mobile, long Id)
+
+        public async Task<bool> Execute(string Mobile, string Id)
         {
-            var mobile = await _context.Contacts.Include(t => t.ContactType)
-              .Where(r => r.Value == Mobile && r.ContactTypeId == (long)ContactTypeEnum.Mobail).ToListAsync();
-            if (Id == 0)
+            var mobile = _userManager.Users.Where(r=>r.PhoneNumber==Mobile).ToList();
+            var user =  _userManager.FindByIdAsync(Id).Result;
+            if (user == null && mobile.Count<=0&& Id == null)
             {
-                var listItem = mobile.Select(y => new FindDtailMobileDto()
-                {
-                    Mobile = y.Value,
-                    UserId = y.UserId
-                }).ToList();
-                return listItem;
+                return false;
             }
             else
             {
-                var listItem = mobile.Where(p => p.UserId != Id).Select(y => new FindDtailMobileDto()
-                {
-                    Mobile = y.Value,
-                    UserId = y.UserId
-                }).ToList();
-                return listItem;
+                return true;
             }
+
         }
     }
 }

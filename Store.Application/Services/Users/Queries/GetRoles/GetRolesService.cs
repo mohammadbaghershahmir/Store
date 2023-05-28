@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Store.Application.Interfaces.Contexs;
 using Store.Application.Services.Users.Queries.GetRoles;
@@ -11,22 +12,24 @@ namespace Store.Application.Services.Users.Queries.GetRoles
 {
     public class GetRolesService : IGetRolesService
     {
-        private readonly IDatabaseContext _context;
+        private readonly RoleManager<Role> _roleManager;
 
-        public GetRolesService(IDatabaseContext context)
+        public GetRolesService(RoleManager<Role> roleManager)
         {
-            _context = context;
+          _roleManager = roleManager;
         }
+
         public ResultDto<List<RolesDto>> Execute()
         {
-            var roles = _context.Roles.Select(p => new RolesDto
-            {
-                Id = p.Id,
-                NameRole = p.NameRole,
-                Description = p.Description,
-                Title = p.Title,
-
-            }).ToList();
+            var roles = _roleManager.Roles.Select(
+                o=>new RolesDto
+                {
+                    Name = o.Name,
+                    PersianTitle = o.PersianTitle,
+                    Description = o.Description,
+                    Id=o.Id
+                }
+                ).ToList();
             return new ResultDto<List<RolesDto>>()
             {
                 Data = roles,
@@ -34,5 +37,22 @@ namespace Store.Application.Services.Users.Queries.GetRoles
                 Message = "",
             };
         }
+        //public ResultDto<List<RolesDto>> Execute()
+        //{
+        //    var roles = _context.Roles.Select(p => new RolesDto
+        //    {
+        //        Id = p.Id,
+        //        NameRole = p.NameRole,
+        //        Description = p.Description,
+        //        Title = p.Title,
+
+        //    }).ToList();
+        //    return new ResultDto<List<RolesDto>>()
+        //    {
+        //        Data = roles,
+        //        IsSuccess = true,
+        //        Message = "",
+        //    };
+        //}
     }
 }

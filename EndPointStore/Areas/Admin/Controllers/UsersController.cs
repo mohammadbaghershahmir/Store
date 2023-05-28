@@ -74,8 +74,7 @@ namespace EndPointStore.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            ViewBag.Roles = new SelectList(_rolesService.Execute().Data, "Id", "Title");
-
+            ViewBag.Roles = new SelectList(_rolesService.Execute().Data, "Name", "PersianTitle");
             return View();
         }
         [HttpPost]
@@ -96,7 +95,7 @@ namespace EndPointStore.Areas.Admin.Controllers
                     Email = request.Email,
                     Address = request.Address,
                     Phone = request.Phone,
-                    RolesId = request.RolesId,
+                    Roles = request.Roles,
                 }
                );
                 return Json(result);
@@ -108,14 +107,14 @@ namespace EndPointStore.Areas.Admin.Controllers
             });
         }
         [HttpPost]
-        public async Task<IActionResult> Delete(long UserId)
+        public async Task<IActionResult> Delete(string UserId)
         {
             return Json(await _removeService.Execute(UserId));
         }
         [HttpGet]
         public async Task<IActionResult> Edit(long Id)
         {
-            ViewBag.Roles = new SelectList(_rolesService.Execute().Data, "Id", "Title");
+            ViewBag.Roles = new SelectList(_rolesService.Execute().Data, "Name", "Title");
             var result = await _geteditUserService.Execute(Id);
             return View(result);
         }

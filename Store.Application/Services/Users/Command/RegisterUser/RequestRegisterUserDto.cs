@@ -20,6 +20,6 @@ namespace Store.Application.Services.Users.Command.RegisterUser
         public string? Mobile { get; set; }
         public string? Phone { get; set; }
         public string? Address { get; set; }
-        public long[]? RolesId { get; set; }
+        public string[]? Roles { get; set; }
     }
 }

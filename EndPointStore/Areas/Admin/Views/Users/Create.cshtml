@@ -58,7 +58,7 @@
                         نقش کاربر
                         <div >
                             <div class="preview">
-                            <select asp-for="RolesId"  data-placeholder="نقش کاربر را انتخاب کنید" data-search="true" class="tail-select w-full bg-gray-100" multiple="" asp-items=@ViewBag.Roles>
+                            <select asp-for="Roles"  data-placeholder="نقش کاربر را انتخاب کنید" data-search="true" class="tail-select w-full bg-gray-100" multiple="" asp-items=@ViewBag.Roles>
                                 </select>
                             </div>
                         </div>
@@ -122,13 +122,13 @@
             event.preventDefault();
             if ($(this).valid()) {
                 let rollsItem = [];
-                $('#RolesId :selected').each(function (i, sel) {
-                    rollsItem.push(parseInt($(sel).val()));
+                $('#Roles :selected').each(function (i, sel) {
+                    rollsItem.push($(sel).val());
                 });
                 let elementItems = e.target;
                 let Name = elementItems.Name.value
                 let LastName = elementItems.LastName.value
-                let RolesId = rollsItem
+                let Roles = rollsItem
                 let Gender = elementItems.Gender.value
                 let IsActive = $('#IsActive').is(':checked') ? true : false
                 let Mobile = elementItems.Mobile.value
@@ -140,7 +140,7 @@
                 let Address = elementItems.Address.value
 
                 var data = {
-                    Name, LastName, UserName, Password, RePassword, IsActive, Gender, Mobile, Email,Address,Phone,RolesId
+                    Name, LastName, UserName, Password, RePassword, IsActive, Gender, Mobile, Email,Address,Phone,Roles
                 }
                 //ajax request
                 ajaxFunc("Create", data, "POST",

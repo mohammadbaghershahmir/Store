@@ -20,27 +20,32 @@ namespace Store.Application.Services.Users.Queries.Edit
         {
             _context = context;
         }
-        public async Task<EditUserDto> Execute(long Id)
+
+        public Task<EditUserDto> Execute(long Id)
         {
-            var usrlist =await _context.Users.Include(p => p.Logins)
-                .Include(p => p.Contacts)
-                .Include(p => p.UserInRoles)
-                .Where(p => p.Id == Id)
-                .FirstOrDefaultAsync();
-            //Fill To Field
-            return new EditUserDto
-            {
-                Id = Id,
-                Name = usrlist.Name,
-                LastName = usrlist.LastName,
-                Gender = usrlist.Gender,   
-                Mobile = usrlist.Contacts.Where(p => p.ContactTypeId == (long)ContactTypeEnum.Mobail).FirstOrDefault()?.Value,
-                Email = usrlist.Contacts.Where(p => p.ContactTypeId == (long)ContactTypeEnum.Email).FirstOrDefault()?.Value,
-                Phone = usrlist.Contacts.Where(p => p.ContactTypeId == (long)ContactTypeEnum.Phone).FirstOrDefault()?.Value,
-                Address = usrlist.Contacts.Where(p => p.ContactTypeId == (long)ContactTypeEnum.Address).FirstOrDefault()?.Value,
-                IsActive = usrlist.IsActive,
-                IdesInRole = usrlist.UserInRoles.Select(i=>i.RoleId).ToArray()
-            };
+            throw new NotImplementedException();
         }
+        //public async Task<EditUserDto> Execute(long Id)
+        //{
+        //    var usrlist =await _context.Users.Include(p => p.Logins)
+        //        .Include(p => p.Contacts)
+        //        .Include(p => p.UserInRoles)
+        //        .Where(p => p.Id == Id)
+        //        .FirstOrDefaultAsync();
+        //    //Fill To Field
+        //    return new EditUserDto
+        //    {
+        //        Id = Id,
+        //        Name = usrlist.Name,
+        //        LastName = usrlist.LastName,
+        //        Gender = usrlist.Gender,   
+        //        Mobile = usrlist.Contacts.Where(p => p.ContactTypeId == (long)ContactTypeEnum.Mobail).FirstOrDefault()?.Value,
+        //        Email = usrlist.Contacts.Where(p => p.ContactTypeId == (long)ContactTypeEnum.Email).FirstOrDefault()?.Value,
+        //        Phone = usrlist.Contacts.Where(p => p.ContactTypeId == (long)ContactTypeEnum.Phone).FirstOrDefault()?.Value,
+        //        Address = usrlist.Contacts.Where(p => p.ContactTypeId == (long)ContactTypeEnum.Address).FirstOrDefault()?.Value,
+        //        IsActive = usrlist.IsActive,
+        //        IdesInRole = usrlist.UserInRoles.Select(i=>i.RoleId).ToArray()
+        //    };
+        //}
     }
 }

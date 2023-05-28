@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hMUpjA/N6ZCRFJbu7IdxHSq5lG5w8iK06QKglCWrdzwBuFwVdsBKz6aHFTUViydImx4nnC2EBadRNVMFl0EYKA==",
+  "dgSpecHash": "MDrquTVKGudoxfDNLQH3ER03zLx+zBdYnwja0lGJRmlXJT0R0ecyCKWWKE4uhg1iUiT9/tM3N9cpuLNKL82eWQ==",
   "success": true,
   "projectFilePath": "E:\\Stor-Project\\Store\\EndPointStore\\EndPointStore.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "C:\\Users\\moham\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.http.extensions\\2.1.1\\microsoft.aspnetcore.http.extensions.2.1.1.nupkg.sha512",
     "C:\\Users\\moham\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "C:\\Users\\moham\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.0\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.jsonpatch\\2.1.1\\microsoft.aspnetcore.jsonpatch.2.1.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.localization\\2.1.1\\microsoft.aspnetcore.localization.2.1.1.nupkg.sha512",
     "C:\\Users\\moham\\.nuget\\packages\\microsoft.aspnetcore.mvc\\2.1.3\\microsoft.aspnetcore.mvc.2.1.3.nupkg.sha512",
@@ -93,6 +94,8 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.extensions.fileproviders.composite\\2.1.1\\microsoft.extensions.fileproviders.composite.2.1.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.extensions.filesystemglobbing\\2.1.1\\microsoft.extensions.filesystemglobbing.2.1.1.nupkg.sha512",
     "C:\\Users\\moham\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\2.2.0\\microsoft.extensions.hosting.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\moham\\.nuget\\packages\\microsoft.extensions.identity.core\\6.0.0\\microsoft.extensions.identity.core.6.0.0.nupkg.sha512",
+    "C:\\Users\\moham\\.nuget\\packages\\microsoft.extensions.identity.stores\\6.0.0\\microsoft.extensions.identity.stores.6.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.extensions.localization\\2.1.1\\microsoft.extensions.localization.2.1.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.extensions.localization.abstractions\\2.1.1\\microsoft.extensions.localization.abstractions.2.1.1.nupkg.sha512",
     "C:\\Users\\moham\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",

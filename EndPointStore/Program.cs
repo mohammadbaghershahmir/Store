@@ -16,21 +16,16 @@ using Store.Application.Services.Users.Command.Site.SignUpUser;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.OAuth;
 using System.Net;
+using Store.Domain.Entities.Users;
+using Identity.Bugeto.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-}).AddCookie(options =>
-{
-    options.LoginPath = new PathString("/");
-    options.ExpireTimeSpan = TimeSpan.FromMinutes(5.0);
-});
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DatabaseContex>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("CmsConnectionString")));
+builder.Services.AddIdentity<User, Role>()
+              .AddEntityFrameworkStores<DatabaseContex>()
+              .AddDefaultTokenProviders();
 //Scopeds
 builder.Services.AddScoped<IDatabaseContext, DatabaseContex>();
 builder.Services.AddScoped<IGetUsersServices, GetUsersServices>();

@@ -19,107 +19,112 @@ namespace Store.Application.Services.Users.Command.Site.SignUpUser
 		{
 			_context = context;
 		}
-		public async Task<ResultDto<ResultRegisterUserDto>> Execute(RequestSignUpUserDto Request)
-		{
-			try
-			{
-				if (Request.Password != Request.RePassword)
-				{
-					//Check Password
-					return new ResultDto<ResultRegisterUserDto>()
-					{
-						Data = new ResultRegisterUserDto()
-						{
-							UserId = 0,
-						},
-						IsSuccess = false,
-						Message = MessageInUser.MessagePass
-					};
-				}
-				//Add User
 
-				User user = new User()
-				{
-					FullName = Request.FullName,
-					IsActive = true,
-					InsertTime = DateTime.Now
-				};
-				await _context.Users.AddAsync(user);
-				//Add  Mobile
-				List<Contact> contact = new List<Contact>();
-				contact.Add(new Contact()
+        public Task<ResultDto<ResultRegisterUserDto>> Execute(RequestSignUpUserDto Request)
+        {
+            throw new NotImplementedException();
+        }
+        //public async Task<ResultDto<ResultRegisterUserDto>> Execute(RequestSignUpUserDto Request)
+        //{
+        //	try
+        //	{
+        //		if (Request.Password != Request.RePassword)
+        //		{
+        //			//Check Password
+        //			return new ResultDto<ResultRegisterUserDto>()
+        //			{
+        //				Data = new ResultRegisterUserDto()
+        //				{
+        //					UserId = 0,
+        //				},
+        //				IsSuccess = false,
+        //				Message = MessageInUser.MessagePass
+        //			};
+        //		}
+        //		//Add User
 
-
-				{
-
-					ContactTypeId = (long)ContactTypeEnum.Mobail,
-					User = user,
-					UserId = user.Id,
-					Value = Request.Mobile,
-					Title = ContactsTypeTitle.Mobail
-				}
-					);
-				//Add  Email
-				contact.Add(new Contact()
+        //		User user = new User()
+        //		{
+        //			FullName = Request.FullName,
+        //			IsActive = true,
+        //			InsertTime = DateTime.Now
+        //		};
+        //		await _context.Users.AddAsync(user);
+        //		//Add  Mobile
+        //		List<Contact> contact = new List<Contact>();
+        //		contact.Add(new Contact()
 
 
-				{
-					ContactTypeId = (long)ContactTypeEnum.Email,
-					User = user,
-					UserId = user.Id,
-					Value = Request.Email,
-					Title = ContactsTypeTitle.Email
-				}
-				  );
-				await _context.Contacts.AddRangeAsync(contact);
-				//Add UserInRole
-				List<UserInRole> userInRoles = new List<UserInRole>();
-				userInRoles.Add(new UserInRole
-				{
-					
-					RoleId =3,
-					User = user,
-					UserId = user.Id,
-				});
-				user.UserInRoles = userInRoles;
-				await _context.UserInRoles.AddRangeAsync(userInRoles);
-				//Hash Password
-				var passwordHasher = new PasswordHasher();
-				var hashedPassword = passwordHasher.HashPassword(Request.Password);
-				//Add Login
-				Login login = new Login()
-				{
-					User = user,
-					UserId = user.Id,
-					Password = hashedPassword
-				};
-				//Add SaveChanges
-				await _context.Logins.AddAsync(login);
-				await _context.SaveChangesAsync();
-				//Show Result
-				return new ResultDto<ResultRegisterUserDto>()
-				{
-					Data = new ResultRegisterUserDto()
-					{
-						UserId = user.Id,
-					},
-					IsSuccess = true,
-					Message = MessageInUser.MessageInsert,
-				};
-			}
-			catch (Exception)
-			{
-				return new ResultDto<ResultRegisterUserDto>()
-				{
-					Data = new ResultRegisterUserDto()
-					{
-						UserId = 0,
-					},
-					IsSuccess = false,
-					Message = MessageInUser.MessageInvalidOperation,
-				};
+        //		{
 
-			}
-		}
-	}
+        //			ContactTypeId = (long)ContactTypeEnum.Mobail,
+        //			User = user,
+        //			UserId = user.Id,
+        //			Value = Request.Mobile,
+        //			Title = ContactsTypeTitle.Mobail
+        //		}
+        //			);
+        //		//Add  Email
+        //		contact.Add(new Contact()
+
+
+        //		{
+        //			ContactTypeId = (long)ContactTypeEnum.Email,
+        //			User = user,
+        //			UserId = user.Id,
+        //			Value = Request.Email,
+        //			Title = ContactsTypeTitle.Email
+        //		}
+        //		  );
+        //		await _context.Contacts.AddRangeAsync(contact);
+        //		//Add UserInRole
+        //		List<UserInRole> userInRoles = new List<UserInRole>();
+        //		userInRoles.Add(new UserInRole
+        //		{
+
+        //			RoleId =3,
+        //			User = user,
+        //			UserId = user.Id,
+        //		});
+        //		user.UserInRoles = userInRoles;
+        //		await _context.UserInRoles.AddRangeAsync(userInRoles);
+        //		//Hash Password
+        //		var passwordHasher = new PasswordHasher();
+        //		var hashedPassword = passwordHasher.HashPassword(Request.Password);
+        //		//Add Login
+        //		Login login = new Login()
+        //		{
+        //			User = user,
+        //			UserId = user.Id,
+        //			Password = hashedPassword
+        //		};
+        //		//Add SaveChanges
+        //		await _context.Logins.AddAsync(login);
+        //		await _context.SaveChangesAsync();
+        //		//Show Result
+        //		return new ResultDto<ResultRegisterUserDto>()
+        //		{
+        //			Data = new ResultRegisterUserDto()
+        //			{
+        //				UserId = user.Id,
+        //			},
+        //			IsSuccess = true,
+        //			Message = MessageInUser.MessageInsert,
+        //		};
+        //	}
+        //	catch (Exception)
+        //	{
+        //		return new ResultDto<ResultRegisterUserDto>()
+        //		{
+        //			Data = new ResultRegisterUserDto()
+        //			{
+        //				UserId = 0,
+        //			},
+        //			IsSuccess = false,
+        //			Message = MessageInUser.MessageInvalidOperation,
+        //		};
+
+        //	}
+        //}
+    }
 }

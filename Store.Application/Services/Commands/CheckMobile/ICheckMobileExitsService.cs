@@ -8,6 +8,6 @@ namespace Store.Application.Services.Commands
 {
     public interface ICheckMobileExitsService
     {
-        Task<List<FindDtailMobileDto>> Execute(string Mobile, long Id);
+        Task<bool> Execute(string Mobile, string Id);
     }
 }

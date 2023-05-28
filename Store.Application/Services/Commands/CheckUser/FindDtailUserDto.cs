@@ -8,7 +8,7 @@ namespace Store.Application.Services.Commands.CheckUser
 {
     public class FindDtailUserDto
     {
-        public long UserId { get; set; }
+        public string UserId { get; set; }
         public string FullName { get; set; }
         public bool IsActive { get; set; }
     }

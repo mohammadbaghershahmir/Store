@@ -58,7 +58,7 @@
                         <div class="dropdown-menu w-40" style="z-index:1000">
                             <div  class="dropdown-menu__content box dark:bg-dark-1 p-2">
                                 <a href="~/admin/users/edit/@item.Id"  class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="edit-2" class="w-4 h-4 ml-2"></i> ویرایش</a>
-                                <a onclick="DeleteUser(@item.Id)"  class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="trash" class="w-4 h-4 ml-2"></i> حذف </a>
+                                <button data-itemid="@item.Id" id="remove-user" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="trash" class="w-4 h-4 ml-2"></i> حذف </button>
                             </div>
                         </div>
                     </div>
@@ -68,10 +68,15 @@
                   <span class="text-xs px-1 rounded-full @(item.IsActived? "bg-theme-9":"bg-theme-6") text-white mr-1">@(item.IsActived ? "فعال" : "غیر فعال")</span>
                 </div>
                 <div class="text-center lg:text-right p-5">
-                    @foreach (var contactItem in item.Contacts)
+                  @*  @foreach (var contactItem in item.Contacts)
                     {
                         <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1"> <i data-feather=@contactItem.IconContact class="w-3 h-3 ml-2"></i> @contactItem.ContactValue </div>
-                    }
+                    }*@
+                    
+                
+                        <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1"> <i data-feather="email" class="w-3 h-3 ml-2"></i> @item.Email </div>
+                        <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1"> <i data-feather="phone" class="w-3 h-3 ml-2"></i> @item.PhoneNumber </div>
+                 
                 </div>
                 <div class="text-center lg:text-left p-5 border-t border-gray-200 dark:border-dark-5">
                     <button class="btn btn-primary py-1 px-2 ml-2">پیام</button>
@@ -118,11 +123,17 @@
     <link href="~/AdminTemplate/assets/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
     <script src="~/AdminTemplate/assets/js/jquery.js"></script>
     <script src="~/AdminTemplate/assets/Sweetalert2/sweetalert2.min.js"></script>
+    <script src="~/AdminTemplate/Library/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/AdminTemplate/Library/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/AdminTemplate/Library/jquery-validate/localization/messages_fa.min.js"></script>
+    <script src="~/AdminTemplate/Library/toastify-js/toastify.min.js"></script>
     <script src="~/AdminTemplate/assets/js/main.js"></script>
 
 
     <script>
-        function DeleteUser(UserId) {
+            $(document).on('click', '#remove-user', function () {
+                let currentItemId = $(this).attr('data-itemid');
+                    /* Read more about isConfirmed, isDenied below */
             swal.fire({
                 title: 'حذف کاربر',
                 text: "کاربر گرامی از حذف کاربر مطمئن هستید؟",
@@ -135,7 +146,7 @@
             }).then((result) => {
                 if (result.value) {
                     var postData = {
-                        'UserId': UserId,
+                        'UserId': currentItemId,
                     };
 
                     $.ajax({
@@ -173,6 +184,6 @@
 
                 }
             })
-        }
+            });
     </script>
-}
+}      

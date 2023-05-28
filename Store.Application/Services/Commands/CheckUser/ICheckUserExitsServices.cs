@@ -8,6 +8,6 @@ namespace Store.Application.Services.Commands.CheckUser
 {
     public interface ICheckUserExitsService
     {
-       Task<List<FindDtailUserDto>> Execute(string UserName);
+       Task<bool> Execute(string UserName);
     }
 }
