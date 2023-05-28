@@ -13,7 +13,7 @@ namespace Store.Application.Services.Users.Queries.Edit
 {
     public class EditUserDto
     {
-        public long Id { get; set; }
+        public string Id { get; set; }
         [Required]
         public string? Name { get; set; }
 		[Required]
@@ -28,7 +28,7 @@ namespace Store.Application.Services.Users.Queries.Edit
         public string? Mobile { get; set; }
         public string? Phone { get; set; }
         public string? Address { get; set; }
-        public long[] IdesInRole { get; set; }
+        public string[] IdesInRole { get; set; }
 
         public List<LoginDto> Login { get; set; }
 

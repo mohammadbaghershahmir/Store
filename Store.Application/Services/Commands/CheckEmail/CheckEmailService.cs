@@ -21,19 +21,29 @@ namespace Store.Application.Services.Commands.CheckEmail
             _userManager = userManager;
         }
 
-        public async Task<bool> Execute(string Email, string Id)
+        public async Task<List<FindDtailEmailDto>> Execute(string Email, string Id)
         {
-            var email =  _userManager.FindByEmailAsync(Email).Result;
-            var user= _userManager.FindByIdAsync(Id).Result;
-            if(user==null&&email==null&&Id==null)
+            var email = await _userManager.Users
+                .Where(r => r.Email == Email).ToListAsync();
+            if (Id == null)
             {
-                return false;
+                var listItem = email.Select(y => new FindDtailEmailDto()
+                {
+                    Email = y.Email,
+                    UserId = y.Id
+                }).ToList();
+                return listItem;
             }
-           else
+            else
             {
-              return  true;
+                var listItem = email.Where(p => p.Id != Id).Select(y => new FindDtailEmailDto()
+                {
+                    Email = y.Email,
+                    UserId = y.Id
+                }).ToList();
+                return listItem;
             }
-           
+
         }
     }
 }

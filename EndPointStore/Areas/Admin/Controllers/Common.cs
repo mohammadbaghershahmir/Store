@@ -41,22 +41,22 @@ namespace EndPointStore.Areas.Admin.Controllers
 		}
 		public async Task<IActionResult> IsEmailExits(string Email, string Id)
 		{
-			var result = await _checkEmailService.Execute(Email, Id);
-			if (!result)
-			{
-				return Json(true);
-			}
-			else return Json($"ایمیل {Email} تکراری است!");
-		}
+            var result = await _checkEmailService.Execute(Email, Id);
+            if (result == null || result.Count <= 0)
+            {
+                return Json(true);
+            }
+            else return Json($"ایمیل {Email} تکراری است!");
+        }
 		public async Task<IActionResult> IsMobileExits(string Mobile, string Id)
 		{
-			var result = await _checkMobileExitsService.Execute(Mobile, Id);
-			if (!result)
-			{
-				return Json(true);
-			}
-			else return Json($"شماره همراه {Mobile} تکراری است!");
-		}
+            var result = await _checkMobileExitsService.Execute(Mobile, Id);
+            if (result == null || result.Count <= 0)
+            {
+                return Json(true);
+            }
+            else return Json($"شماره همراه {Mobile} تکراری است!");
+        }
 
 	}
 }

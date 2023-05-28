@@ -10,7 +10,7 @@ namespace Store.Application.Services.Users.Queries.Edit
 {
     public interface IGetEditUserService
     {
-        Task<EditUserDto> Execute(long Id);
+        Task<EditUserDto> Execute(string Id);
 
     }
 

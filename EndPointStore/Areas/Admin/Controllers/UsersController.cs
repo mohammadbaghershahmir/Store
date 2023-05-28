@@ -112,9 +112,9 @@ namespace EndPointStore.Areas.Admin.Controllers
             return Json(await _removeService.Execute(UserId));
         }
         [HttpGet]
-        public async Task<IActionResult> Edit(long Id)
+        public async Task<IActionResult> Edit(string Id)
         {
-            ViewBag.Roles = new SelectList(_rolesService.Execute().Data, "Name", "Title");
+            ViewBag.Roles = new SelectList(_rolesService.Execute().Data, "Name", "PersianTitle");
             var result = await _geteditUserService.Execute(Id);
             return View(result);
         }

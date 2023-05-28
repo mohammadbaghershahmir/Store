@@ -21,17 +21,27 @@ namespace Store.Application.Services.Commands
             _userManager=userManager;
         }
 
-        public async Task<bool> Execute(string Mobile, string Id)
+        public async Task<List<FindDtailMobileDto>> Execute(string Mobile, string Id)
         {
-            var mobile = _userManager.Users.Where(r=>r.PhoneNumber==Mobile).ToList();
-            var user =  _userManager.FindByIdAsync(Id).Result;
-            if (user == null && mobile.Count<=0&& Id == null)
+            var mobile = await _userManager.Users
+                .Where(r => r.PhoneNumber == Mobile).ToListAsync();
+            if (Id == null)
             {
-                return false;
+                var listItem = mobile.Select(y => new FindDtailMobileDto()
+                {
+                    Mobile = y.PhoneNumber,
+                    UserId = y.Id
+                }).ToList();
+                return listItem;
             }
             else
             {
-                return true;
+                var listItem = mobile.Where(p => p.Id != Id).Select(y => new FindDtailMobileDto()
+                {
+                    Mobile = y.PhoneNumber,
+                    UserId = y.Id
+                }).ToList();
+                return listItem;
             }
 
         }

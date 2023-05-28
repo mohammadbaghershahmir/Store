@@ -116,7 +116,7 @@
             if ($(this).valid()) {
                 let rollsItem = [];
                 $('#IdesInRole :selected').each(function (i, sel) {
-                    rollsItem.push(parseInt($(sel).val()));
+                    rollsItem.push($(sel).val());
                 });
                 let elementItems = e.target;
                 let Id = elementItems.Id.value
