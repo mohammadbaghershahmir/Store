@@ -31,14 +31,14 @@ namespace EndPointStore.Areas.Admin.Controllers
 		}
 		public async Task<IActionResult> IsUserExits(string UserName)
 		{
-			var result = await _userExitsServices.Execute(UserName);
-			if (!result)
-			{
+            var result = await _userExitsServices.Execute(UserName);
+            if (result == null || result.Count <= 0)
+            {
 
-				return Json(true);
-			}
-			else return Json($"نام کاربری {UserName} تکراری است!");
-		}
+                return Json(true);
+            }
+            else return Json($"نام کاربری {UserName} تکراری است!");
+        }
 		public async Task<IActionResult> IsEmailExits(string Email, string Id)
 		{
             var result = await _checkEmailService.Execute(Email, Id);

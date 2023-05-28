@@ -9,6 +9,6 @@ namespace Store.Application.Services.Users.Command.Site.SignInUser
 {
 	public interface ISignInUserService
 	{
-		Task<ResultDto<ResultUserLoginDto>> Execute(string username, string password);
+		Task<ResultDto<ResultUserLoginDto>> Execute(RequestSignInUserDto requestSignInUserDto );
 	}
 }

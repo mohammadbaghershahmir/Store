@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Store.Application.Interfaces.Contexs;
 using Store.Application.Services.Users.Command.EditUser;
 using Store.Common;
@@ -7,7 +8,9 @@ using Store.Common.Dto;
 using Store.Domain.Entities.Users;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,77 +18,99 @@ namespace Store.Application.Services.Users.Command.Site.SignInUser
 {
 	public class SignInUserService : ISignInUserService
 	{
-		private readonly IDatabaseContext _context;
-		public SignInUserService(IDatabaseContext context)
+		
+		private readonly SignInManager<User> _signInManager;
+        private readonly UserManager<User> _userManager;
+		public SignInUserService(SignInManager<User> signInManager,UserManager<User> userManager)
 		{
-			_context = context;
+			_userManager= userManager;
+            _signInManager = signInManager;
 		}
-
-        public Task<ResultDto<ResultUserLoginDto>> Execute(string username, string password)
+        public async Task<ResultDto<ResultUserLoginDto>> Execute(RequestSignInUserDto request)
         {
-            throw new NotImplementedException();
-        }
-        //public async Task<ResultDto<ResultUserLoginDto>> Execute(string username, string password)
-        //{
-        //	//Query
-        //	var user = await _context.Contacts.
-        //		Include(w => w.User)
-        //		.ThenInclude(u => u.UserInRoles)
-        //		.ThenInclude(r=>r.Role)
-        //		.Include(l => l.User)
-        //		.ThenInclude(l => l.Logins)
-        //		.Where(q => q.Value.Equals(username) && (q.ContactTypeId == (long)ContactTypeEnum.Email || q.ContactTypeId == (long)ContactTypeEnum.Mobail))
-        //		.FirstOrDefaultAsync();
-        //	//Check User
-        //	if (user == null)
-        //	{
-        //		return new ResultDto<ResultUserLoginDto>()
-        //		{
-        //			Data = new ResultUserLoginDto()
-        //			{
+            //Query
+            var user=await _userManager.FindByEmailAsync(request.UserName);
+            var pass = await _userManager.CheckPasswordAsync(user,request.Password);
+            var GetRol = await _userManager.GetRolesAsync(user);
+            //Check User
+            if (user==null)
+            {
+                return new ResultDto<ResultUserLoginDto>()
+                {
+                    Data = new ResultUserLoginDto()
+                    {
 
-        //			},
-        //			IsSuccess = false,
-        //			Message = MessageInUser.MessageNotfindUser,
-        //		};
-        //	}
-        //	//Check Password
-        //	var verifyd = await _context.Logins.Where(t => t.UserId == user.UserId).FirstOrDefaultAsync();
-        //	var passwordHasher = new PasswordHasher();
-        //	bool resultVerifyPassword = passwordHasher.VerifyPassword(verifyd.Password, password);
-        //	if (resultVerifyPassword == false)
-        //	{
-        //		return new ResultDto<ResultUserLoginDto>()
-        //		{
-        //			Data = new ResultUserLoginDto()
-        //			{
+                    },
+                    IsSuccess = false,
+                    Message = MessageInUser.MessageNotfindUser,
+                };
+            }
 
-        //			},
-        //			IsSuccess = false,
-        //			Message = MessageInUser.MessageInvalidPass,
-        //		};
-        //	}
-        //	//Check Role
-        //	string roles = "";
+            try
+            {
+                if (pass)
+                {
+                    var result = _signInManager.SignInAsync(user, true, authenticationMethod:null);
+                    {
+                        List<string> roles = new List<string>();
+                        //Check Role
+                        try
+                        {
+                           
+                            roles.AddRange(GetRol);
 
-        //	foreach (var item in user.User.UserInRoles)
-        //	{
-        //		roles += $"{item.Role.NameRole}";
-        //          }
+                        }
+                        catch (Exception)
+                        {
 
-        //	//Login
-        //	return new ResultDto<ResultUserLoginDto>()
-        //	{
-        //		Data = new ResultUserLoginDto()
-        //		{
-        //			Roles = roles,
-        //			UserId = user.Id,
-        //			FullName = user.User.FullName,
-        //			UserName=user.Value
-        //		},
-        //		IsSuccess = true,
-        //		Message = "ورود به سایت با موفقیت انجام شد",
-        //	};
-        //}
+                            throw;
+                        }
+
+                        //Login
+                        return new ResultDto<ResultUserLoginDto>()
+                        {
+                            Data = new ResultUserLoginDto()
+                            {
+                                Roles = roles,
+                                UserId = user.Id,
+                                FullName = user.FullName,
+                                UserName = user.UserName
+                            },
+                            IsSuccess = true,
+                            Message = "ورود به سایت با موفقیت انجام شد",
+                        };
+                        //if (!result.Succeeded)
+                        //{
+                        //    //foreach (var item in result.ToList())
+                        //    //{
+                        //    //	message += item.Description + Environment.NewLine;
+                        //    //}
+                        //}
+                    }
+                }
+                
+            }
+            catch (AggregateException ex)
+            {
+
+              
+            }
+	
+			return new ResultDto<ResultUserLoginDto>()
+			{
+				Data = new ResultUserLoginDto()
+				{
+					
+					UserId = user.Id,
+					FullName = user.FullName,
+					UserName = user.UserName
+				},
+				IsSuccess = true,
+				Message = MessageInUser.MessageInvalidOperation,
+			};
+
+
+
+		}
     }
 }

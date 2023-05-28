@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using Store.Domain.Entities.Users;
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManage
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <!--=====================================
@@ -69,7 +73,7 @@
                     <a href="index.html"><img src="/SiteTemplate/assets/images/logo.png" alt="logo"></a>
                     <button class="header-src"><i class="fas fa-search"></i></button>
                 </div>
-                @if (User.Identity.IsAuthenticated)
+                @if (SignInManager.IsSignedIn(User))
                 {
                     <a  class="header-widget" title=@User.Identity.Name>
                      <img src="/SiteTemplate/assets/images/user.png" alt="user">             
@@ -80,7 +84,7 @@
                 <a href="index.html" class="header-logo">
                     <img src="/SiteTemplate/assets/images/logo.png" alt="logo">
                 </a>
-                <a href="~/authentication/signin" class="header-widget" title="My Account">
+                <a href="~/authentication/login" class="header-widget" title="My Account">
 @*                    <img src="/SiteTemplate/assets/images/user.png" alt="user">
 *@                    <span>ورود</span>
                 </a>

@@ -18,18 +18,17 @@ namespace Store.Application.Services.Commands
         {
            _userManager = userManager;
         }
-        public async Task<bool> Execute(string UserName)
+        public async Task<List<FindDtailUserDto>> Execute(string UserName)
         {
-            var username =  _userManager.FindByEmailAsync(UserName).Result;
-            if(username == null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-         
+            var result = await _userManager.Users
+                 .Where(r => r.UserName == UserName)
+                 .Select(y => new FindDtailUserDto()
+                 {
+                     FullName = y.FullName,
+                     UserId = y.Id,
+                     IsActive = y.IsActive
+                 }).ToListAsync();
+            return result;
         }
     }
 }

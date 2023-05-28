@@ -284,3 +284,5 @@ E:\Stor-Project\Store\EndPointStore\obj\Debug\net6.0\EndPointStore.genruntimecon
 E:\Stor-Project\Store\EndPointStore\obj\Debug\net6.0\ref\EndPointStore.dll
 E:\Stor-Project\Store\EndPointStore\bin\Debug\net6.0\appsettings.Development.json
 E:\Stor-Project\Store\EndPointStore\bin\Debug\net6.0\appsettings.json
+E:\Stor-Project\Store\EndPointStore\bin\Debug\net6.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+E:\Stor-Project\Store\EndPointStore\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll

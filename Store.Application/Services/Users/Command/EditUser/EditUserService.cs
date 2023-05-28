@@ -21,11 +21,13 @@ namespace Store.Application.Services.Users.Command.EditUser
     public class EditUserService : IEditUserService
     {
         private readonly IDatabaseContext _context;
-        private readonly UserManager<User> _userManager;  
-        public EditUserService(IDatabaseContext context, UserManager<User> userManager)
+        private readonly UserManager<User> _userManager;
+        private readonly RoleManager<Role> _roleManager;  
+        public EditUserService(IDatabaseContext context, UserManager<User> userManager, RoleManager<Role> roleManager)
         {
             _context = context;
-            _userManager= userManager;
+            _userManager = userManager;
+            _roleManager = roleManager;
         }
 
         public async Task<ResultDto> Execute(EditUserDto EditUserService)
@@ -51,6 +53,8 @@ namespace Store.Application.Services.Users.Command.EditUser
             usrlist.Email = EditUserService.Email;
             usrlist.PhoneNumber = EditUserService.Mobile;
             //Add UserInRole
+          var rolePast= await _userManager.GetRolesAsync(usrlist);
+            await _userManager.RemoveFromRolesAsync(usrlist, rolePast);
             await _userManager.AddToRolesAsync(usrlist, EditUserService.IdesInRole);
             await _userManager.UpdateAsync(usrlist);
             //Show Result

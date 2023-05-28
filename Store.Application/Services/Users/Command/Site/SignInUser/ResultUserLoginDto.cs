@@ -8,9 +8,9 @@ namespace Store.Application.Services.Users.Command.Site.SignInUser
 {
 	public class ResultUserLoginDto
 	{
-        public long UserId { get; set; }
+        public string UserId { get; set; }
         public string UserName { get; set; }
         public string? FullName { get; set; }
-        public string Roles { get; set; }
+        public List<string> Roles { get; set; }
     }
 }

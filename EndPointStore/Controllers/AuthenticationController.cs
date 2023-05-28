@@ -11,6 +11,9 @@ using Store.Common.Constant.Roles;
 using Store.Application.Services.Users.Command.Site.SignUpUser;
 using Microsoft.AspNetCore.Authorization;
 using Store.Domain.Entities.Users;
+using Store.Common.Dto;
+using Store.Common.Constant;
+using Store.Application.Services.Users.Queries.GetRoles;
 
 namespace EndPointStore.Controllers
 {
@@ -40,75 +43,33 @@ namespace EndPointStore.Controllers
 				FullName = Request.FullName,
 				Password = Request.Password,
 				RePassword = Request.RePassword,
-				RolesId = 3
+				RolesId =UserRolesName.Customer
 			});
-
-			if (signeinResult.IsSuccess == true)
-			{
-				var claims = new List<Claim>()
-			{
-				new Claim(ClaimTypes.NameIdentifier,signeinResult.Data.UserId.ToString()),
-				new Claim(ClaimTypes.Email, Request.Email),
-				new Claim(ClaimTypes.MobilePhone, Request.Mobile),
-				new Claim(ClaimTypes.Name, Request.FullName),
-				new Claim(ClaimTypes.Role, "Customer"),
-			};
-
-				var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-				var principal = new ClaimsPrincipal(identity);
-				var properties = new AuthenticationProperties()
-				{
-					IsPersistent = true
-				};
-				 HttpContext.SignInAsync(principal, properties);
-
-			}
 			return Json(signeinResult);
 		}
 		[HttpGet]
 		public IActionResult Login(string ReturnUrl = "/")
 		{
-			ViewBag.Url = ReturnUrl;
-			return View();
+			return View(new RequestSignInUserDto
+            {
+                Url = ReturnUrl,
+            });
 		}
-		//[HttpPost]
-		//public IActionResult Login(SignInViewModel signInUser)
-		//{
-		//	var signIn =  _signInUserService.Execute(signInUser.UserName, signInUser.Password);
-		//    //var resul=   	_signInManager.PasswordSignInAsync(signIn.Result.Data.UserName, signInUser.Password, false, true);
-		//	//if(resul.Result.Succeeded)
-		//	//{
-		//	//	return Json(signIn);
-		//	//}
-		//	//else
-		//	//{
-		//	//	return Json(signIn);
-		//	//}
-		//	//if (signIn.IsSuccess == true)
-		//	//{
-		//	//	var clims = new List<Claim>()
-		//	//	{
-		//	//		new Claim(ClaimTypes.NameIdentifier, signIn.Data.UserId.ToString()),
-		//	//		new Claim(ClaimTypes.Email, signInUser.UserName),
-		//	//		new Claim(ClaimTypes.Name, signIn.Data.FullName),
-		//	//                 new Claim(ClaimTypes.Role, signIn.Data.Roles),
-		//	//             };
-		//	//	var identity = new ClaimsIdentity(clims, CookieAuthenticationDefaults.AuthenticationScheme);
-		//	//	var principal = new ClaimsPrincipal(identity);
-		//	//	var properties = new AuthenticationProperties()
-		//	//	{
-		//	//		IsPersistent = true,
-		//	//		ExpiresUtc = DateTime.Now.AddDays(5),
-		//	//	};
-
-		//	//             HttpContext.SignInAsync(principal, properties);
-		//	//}
-		//	//         if (User.Identity.IsAuthenticated)
-		//	//{
-		//	//	return Json("true");
-		//	//}
-		//	//return Json(signIn);
-
-		//}
+		[HttpPost]
+		[AllowAnonymous]
+		public async Task<IActionResult> Login(RequestSignInUserDto signInUser)
+		{
+		  var result=await _signInUserService.Execute(
+			  new RequestSignInUserDto() {
+				  Password = signInUser.Password
+				  ,UserName=signInUser.UserName,
+				  Url=signInUser.Url});
+            HttpContext.Response.Cookies.Append(
+            "cookieKey",
+            "cookieValue",
+            new CookieOptions { IsEssential = true }
+        );
+            return Json(result);
+		}
 	}
 }

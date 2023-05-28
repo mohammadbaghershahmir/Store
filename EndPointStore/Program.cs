@@ -18,14 +18,17 @@ using Microsoft.AspNetCore.Authentication.OAuth;
 using System.Net;
 using Store.Domain.Entities.Users;
 using Identity.Bugeto.Helpers;
+using Microsoft.AspNetCore.StaticFiles.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDbContext<DatabaseContex>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("CmsConnectionString")));
-builder.Services.AddIdentity<User, Role>()
+builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true).AddRoles<Role>()
               .AddEntityFrameworkStores<DatabaseContex>()
               .AddDefaultTokenProviders();
+builder.Services.AddRazorPages();
 //Scopeds
 builder.Services.AddScoped<IDatabaseContext, DatabaseContex>();
 builder.Services.AddScoped<IGetUsersServices, GetUsersServices>();
@@ -55,6 +58,8 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+app.MapRazorPages();
+
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
