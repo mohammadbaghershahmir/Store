@@ -6,6 +6,7 @@ using Store.Application.Interfaces.Contexs;
 using Store.Common.Constant;
 using Store.Common.Constant.Roles;
 using Store.Domain.Entities.Commons;
+using Store.Domain.Entities.Products;
 using Store.Domain.Entities.Users;
 using System;
 using System.Collections.Generic;
@@ -22,9 +23,9 @@ namespace Store.Persistence.Contexs
         public DatabaseContex(DbContextOptions options) : base(options)
         {
         }
-
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<ContactType> ContactTypes { get; set; }
+        public DbSet<Categories> Categories { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             //modelBuilder.Entity<User>().HasQueryFilter(p => !p.IsRemoved);
@@ -147,20 +148,31 @@ namespace Store.Persistence.Contexs
                 // Maps to the AspNetUserRoles table
                 b.ToTable("UserRoles");
             });
-            //Query Fillter
-            //modelBuilder.Entity<User>().HasQueryFilter(p => !p.IsRemoved);
-            //Insert Base Rolls
-            ////Insert Base Contactstypes
-            builder.Entity<ContactType>().HasData(new ContactType { Id = 1, Title = ContactsTypeTitle.Mobail, Value = ContactsTypeValue.Mobail });
-            builder.Entity<ContactType>().HasData(new ContactType { Id = 2, Title = ContactsTypeTitle.Phone, Value = ContactsTypeValue.Phone });
-            builder.Entity<ContactType>().HasData(new ContactType { Id = 3, Title = ContactsTypeTitle.Email, Value = ContactsTypeValue.Email });
-            builder.Entity<ContactType>().HasData(new ContactType { Id = 4, Title = ContactsTypeTitle.Address, Value = ContactsTypeValue.Address });
+            //Seed Data
+            SeedData(builder);
 
-            builder.Entity<Role>().HasData(new Role { Name = UserRolesName.Admin, PersianTitle = UserRoleTitle.Admin,NormalizedName="ADMIN" });
-            builder.Entity<Role>().HasData(new Role { Name = UserRolesName.Operator, PersianTitle = UserRoleTitle.Operator, NormalizedName = "OPERATOR" });
-            builder.Entity<Role>().HasData(new Role { Name = UserRolesName.Customer, PersianTitle = UserRoleTitle.Customer, NormalizedName = "CUSTOMER" });
+            //-- عدم نمایش اطلاعات حذف شده
+            ApplyQueryFilter(builder);
+
+        }
+        private void ApplyQueryFilter(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().HasQueryFilter(p => !p.IsRemoved);
+            //modelBuilder.Entity<Role>().HasQueryFilter(p => !p.IsRemoved);
+            modelBuilder.Entity<Categories>().HasQueryFilter(p => !p.IsRemoved);
         }
 
+        private void SeedData(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Role>().HasData(new Role { Name = UserRolesName.Admin, PersianTitle = UserRoleTitle.Admin, NormalizedName = "ADMIN" });
+            modelBuilder.Entity<Role>().HasData(new Role { Name = UserRolesName.Operator, PersianTitle = UserRoleTitle.Operator, NormalizedName = "OPERATOR" });
+            modelBuilder.Entity<Role>().HasData(new Role { Name = UserRolesName.Customer, PersianTitle = UserRoleTitle.Customer, NormalizedName = "CUSTOMER" });
+
+            modelBuilder.Entity<ContactType>().HasData(new ContactType { Id = Guid.NewGuid().ToString(), Title = ContactsTypeTitle.Mobail, Value = ContactsTypeValue.Mobail });
+            modelBuilder.Entity<ContactType>().HasData(new ContactType { Id = Guid.NewGuid().ToString(), Title = ContactsTypeTitle.Phone, Value = ContactsTypeValue.Phone });
+            modelBuilder.Entity<ContactType>().HasData(new ContactType { Id = Guid.NewGuid().ToString(), Title = ContactsTypeTitle.Email, Value = ContactsTypeValue.Email });
+            modelBuilder.Entity<ContactType>().HasData(new ContactType { Id = Guid.NewGuid().ToString(), Title = ContactsTypeTitle.Address, Value = ContactsTypeValue.Address });
+        }
 
     }
 }

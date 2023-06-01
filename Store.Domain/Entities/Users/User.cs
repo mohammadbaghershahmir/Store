@@ -9,9 +9,8 @@ using System.Threading.Tasks;
 
 namespace Store.Domain.Entities.Users
 {
-    public class User: IdentityUser,IBaseEntity
+    public class User: IdentityUser
     {
-         
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string?    FullName { get; set; }
@@ -19,6 +18,7 @@ namespace Store.Domain.Entities.Users
         public bool IsActive { get; set; }
         public DateTime? BirthDay { get; set; }
         public string? ProfileImage { get; set; }
+        //Base Entity
         public DateTime? InsertTime { get ; set ; }
         public DateTime? UpdateTime { get ; set ; }
         public bool IsRemoved { get ; set; }

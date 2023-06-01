@@ -18,5 +18,6 @@ namespace Store.Application.Services.Users.Command.Site.SignInUser
         [Required]
         public string Password { get; set; }
         public string Url { get; set; } = "/";
+        public bool RememberMe { get; set; }
     }
 }

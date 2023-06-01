@@ -19,16 +19,22 @@ using System.Net;
 using Store.Domain.Entities.Users;
 using Identity.Bugeto.Helpers;
 using Microsoft.AspNetCore.StaticFiles.Infrastructure;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel;
+using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption;
+using Microsoft.AspNetCore.DataProtection;
+using Store.Application.Services.Users.Command.Site.LogOutUser;
+using Store.Application.Interfaces.FacadPattern;
+using Store.Application.Services.Products.Category.FacadPattern;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDbContext<DatabaseContex>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("CmsConnectionString")));
-builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true).AddRoles<Role>()
-              .AddEntityFrameworkStores<DatabaseContex>()
+builder.Services.AddIdentity<User,Role>(
+    options => options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<DatabaseContex>()
               .AddDefaultTokenProviders();
-builder.Services.AddRazorPages();
+builder.Services.AddDistributedMemoryCache();
 //Scopeds
 builder.Services.AddScoped<IDatabaseContext, DatabaseContex>();
 builder.Services.AddScoped<IGetUsersServices, GetUsersServices>();
@@ -43,6 +49,8 @@ builder.Services.AddScoped<ICheckMobileExitsService, CheckMobileService>();
 builder.Services.AddScoped<ICheckEmailService,CheckEmailService>();
 builder.Services.AddScoped<ISignUpUserService, SignUpUserService>();
 builder.Services.AddScoped<ISignInUserService, SignInUserService>();
+builder.Services.AddScoped<IlogOutUser, LogOutUserService>();
+builder.Services.AddScoped<IProductFacad, ProductFacad>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -58,15 +66,12 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-app.MapRazorPages();
-
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
          name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"
         );
-
     endpoints.MapControllerRoute(
       name: "areas",
       pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"

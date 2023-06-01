@@ -16191,3 +16191,6 @@ div#today-schedule {
 mark.p-1.bg-yellow-200 {
     margin: 0 4px;
 }
+.w-100{
+    width:100%!important;
+}

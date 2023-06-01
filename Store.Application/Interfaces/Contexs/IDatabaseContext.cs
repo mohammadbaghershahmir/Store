@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
+using Store.Domain.Entities.Products;
 using Store.Domain.Entities.Users;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace Store.Application.Interfaces.Contexs
     {
         DbSet<Contact> Contacts { get; set; }
         DbSet<ContactType> ContactTypes { get; set; }
+         DbSet<Categories> Categories { get; set; }
         int SaveChanges(bool acceptAllChangesOnSuccess);
         int SaveChanges();
         void Dispose();

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Store.Domain.Entities.Users
 {
-    public class Role:IdentityRole,IBaseEntity
+    public class Role:IdentityRole
     {
       
 
@@ -17,6 +17,7 @@ namespace Store.Domain.Entities.Users
         public string? PersianTitle { get; set; }
         public DateTime? BirthDay { get; set; }
         public string? ProfileImage { get; set; }
+        //Base Entity
         public DateTime? InsertTime { get; set; }
         public DateTime? UpdateTime { get; set; }
         public bool IsRemoved { get; set; }

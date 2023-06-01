@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "toastify-js@1.12.0",
+      "destination": "wwwroot/SiteTemplate/Library/toastify-js/"
+    },
+    {
+      "library": "jquery-validate@1.19.5",
+      "destination": "wwwroot/SiteTemplate/Library/jquery-validate/"
+    },
+    {
+      "library": "jquery-validation-unobtrusive@4.0.0",
+      "destination": "wwwroot/SiteTemplate/Library/jquery-validation-unobtrusive/"
+    },
+    {
+      "library": "jquery@3.7.0",
+      "destination": "wwwroot/SiteTemplate/Library/jquery/"
+    },
+    {
+      "library": "toastr.js@2.1.4",
+      "destination": "wwwroot/SiteTemplate/Library/toastr.js/"
+    }
+  ]
+}

@@ -9,6 +9,7 @@ namespace Store.Domain.Entities.Commons
 {
     public  interface IBaseEntity
     {
+         Guid Id { get; set; } 
          DateTime? InsertTime { get; set; }
          DateTime? UpdateTime { get; set; }
          bool IsRemoved { get; set; }

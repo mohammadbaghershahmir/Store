@@ -14,6 +14,7 @@ using Store.Domain.Entities.Users;
 using Store.Common.Dto;
 using Store.Common.Constant;
 using Store.Application.Services.Users.Queries.GetRoles;
+using Store.Application.Services.Users.Command.Site.LogOutUser;
 
 namespace EndPointStore.Controllers
 {
@@ -21,11 +22,13 @@ namespace EndPointStore.Controllers
 	{
 		private readonly ISignUpUserService _signUpUserService;
 		private readonly ISignInUserService _signInUserService;
-		//private readonly SignInManager<Login> _signInManager;
-        public AuthenticationController(ISignUpUserService signUpUserService, ISignInUserService signInUserService)
+		private readonly IlogOutUser _ilogOutUser;
+        //private readonly SignInManager<Login> _signInManager;
+        public AuthenticationController(ISignUpUserService signUpUserService, ISignInUserService signInUserService, IlogOutUser ilogOutUser)
 		{
 			_signUpUserService = signUpUserService;
 			_signInUserService = signInUserService;
+			_ilogOutUser= ilogOutUser;
 			//_signInManager = signInManager;
         }
 		[HttpGet]
@@ -64,12 +67,12 @@ namespace EndPointStore.Controllers
 				  Password = signInUser.Password
 				  ,UserName=signInUser.UserName,
 				  Url=signInUser.Url});
-            HttpContext.Response.Cookies.Append(
-            "cookieKey",
-            "cookieValue",
-            new CookieOptions { IsEssential = true }
-        );
             return Json(result);
+		}
+		public async Task<IActionResult> LogOut()
+		{
+			await _ilogOutUser.Execute();
+			return RedirectToAction("Index","Home");
 		}
 	}
 }

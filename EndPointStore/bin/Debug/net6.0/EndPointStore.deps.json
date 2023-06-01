@@ -2789,6 +2789,7 @@
           "Microsoft.EntityFrameworkCore": "6.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.13",
           "PersianDatePicker": "1.1.0",
           "Store.Application": "1.0.0",
           "Store.Domain": "1.0.0",

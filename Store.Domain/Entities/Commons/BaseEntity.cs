@@ -9,6 +9,8 @@ namespace Store.Domain.Entities.Commons
 {
     public  class BaseEntity<Tkey>
     {
+       
+        public  Tkey Id { get; set; }
         public DateTime? InsertTime { get; set; }
         public DateTime? UpdateTime { get; set; }
         public bool IsRemoved { get; set; } = false;
@@ -16,9 +18,9 @@ namespace Store.Domain.Entities.Commons
         [Timestamp]
         public byte[] RowVersion { get; set; }
     }
-    //public abstract class BaseEntity : BaseEntity<string>
-    //{
+    public abstract class BaseEntity : BaseEntity<string>
+    {
 
-    //}
+    }
 }
 

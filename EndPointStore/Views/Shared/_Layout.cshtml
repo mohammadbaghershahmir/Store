@@ -75,9 +75,10 @@
                 </div>
                 @if (SignInManager.IsSignedIn(User))
                 {
-                    <a  class="header-widget" title=@User.Identity.Name>
-                     <img src="/SiteTemplate/assets/images/user.png" alt="user">             
+                    <a href="Profile" class="header-widget" title=@User.Identity.Name>
+                        <img src="/SiteTemplate/assets/images/user.png" alt="user">
                     </a>
+                    <a asp-action="Logout" asp-controller="Authentication" ><span>خروج</span></a>
                 }
                 else
                 {

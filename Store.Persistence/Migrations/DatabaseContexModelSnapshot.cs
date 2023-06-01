@@ -163,19 +163,92 @@ namespace Store.Persistence.Migrations
                     b.ToTable("UserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Store.Domain.Entities.Products.Categories", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CssClass")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Icon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("InsertTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("MyProperty")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ParentCategoryId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
+                    b.Property<string>("Slug")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Sort")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentCategoryId");
+
+                    b.ToTable("Categories");
+                });
+
             modelBuilder.Entity("Store.Domain.Entities.Users.Contact", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    b.Property<string>("ContactTypeId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("ContactTypeId")
-                        .HasColumnType("int");
+                    b.Property<DateTime?>("InsertTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -195,11 +268,8 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.Users.ContactType", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CssClass")
                         .HasColumnType("nvarchar(max)");
@@ -207,8 +277,26 @@ namespace Store.Persistence.Migrations
                     b.Property<string>("Icon")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("InsertTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -220,25 +308,29 @@ namespace Store.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            Id = "a8804956-6244-4cdc-8e43-6f1ee6bdb842",
+                            IsRemoved = false,
                             Title = "تلفن همراه",
                             Value = "Mobail"
                         },
                         new
                         {
-                            Id = 2,
+                            Id = "b5f2d1b5-e4ae-4d35-9b39-2610ead11393",
+                            IsRemoved = false,
                             Title = "تلفن",
                             Value = "Phone"
                         },
                         new
                         {
-                            Id = 3,
+                            Id = "772b648c-4d4b-467f-93ef-b681fc13b6bd",
+                            IsRemoved = false,
                             Title = "ایمیل",
                             Value = "Email"
                         },
                         new
                         {
-                            Id = 4,
+                            Id = "3295469d-e90f-4e32-8801-787d7b1aaa78",
+                            IsRemoved = false,
                             Title = "آدرس",
                             Value = "Address"
                         });
@@ -375,8 +467,7 @@ namespace Store.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ed9412ca-50bf-4c65-83ec-4ecefc7629c5",
-                            ConcurrencyStamp = "b798ac58-e38d-439c-8d03-9c2e01b33cc0",
+                            Id = "79a679be-401d-48fb-a523-22eb81b2d732",
                             Name = "Admin",
                             NormalizedName = "ADMIN",
                             IsRemoved = false,
@@ -384,8 +475,7 @@ namespace Store.Persistence.Migrations
                         },
                         new
                         {
-                            Id = "3577fc3d-aa72-4611-9a33-96d2057407c0",
-                            ConcurrencyStamp = "12943d24-1f4a-46bc-8338-f5d4ce91032d",
+                            Id = "92925b16-a406-4ddd-b455-b9e8aae5d7da",
                             Name = "Operator",
                             NormalizedName = "OPERATOR",
                             IsRemoved = false,
@@ -393,8 +483,7 @@ namespace Store.Persistence.Migrations
                         },
                         new
                         {
-                            Id = "ccc10108-9c43-443e-b58b-68c60368c694",
-                            ConcurrencyStamp = "71c47b17-1ad6-4c03-90f7-d1a16b50c733",
+                            Id = "9adb37af-ca67-4fcb-8b56-37ec6263c68f",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER",
                             IsRemoved = false,
@@ -453,6 +542,15 @@ namespace Store.Persistence.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Store.Domain.Entities.Products.Categories", b =>
+                {
+                    b.HasOne("Store.Domain.Entities.Products.Categories", "ParentCategory")
+                        .WithMany("SubCategories")
+                        .HasForeignKey("ParentCategoryId");
+
+                    b.Navigation("ParentCategory");
+                });
+
             modelBuilder.Entity("Store.Domain.Entities.Users.Contact", b =>
                 {
                     b.HasOne("Store.Domain.Entities.Users.ContactType", "ContactType")
@@ -470,6 +568,11 @@ namespace Store.Persistence.Migrations
                     b.Navigation("ContactType");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Store.Domain.Entities.Products.Categories", b =>
+                {
+                    b.Navigation("SubCategories");
                 });
 
             modelBuilder.Entity("Store.Domain.Entities.Users.ContactType", b =>

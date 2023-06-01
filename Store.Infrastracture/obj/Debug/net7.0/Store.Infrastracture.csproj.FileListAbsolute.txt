@@ -1,0 +1,12 @@
+E:\Stor-Project\Store\Store.Infrastracture\bin\Debug\net7.0\Store.Infrastracture.deps.json
+E:\Stor-Project\Store\Store.Infrastracture\bin\Debug\net7.0\Store.Infrastracture.dll
+E:\Stor-Project\Store\Store.Infrastracture\bin\Debug\net7.0\Store.Infrastracture.pdb
+E:\Stor-Project\Store\Store.Infrastracture\obj\Debug\net7.0\Store.Infrastracture.csproj.AssemblyReference.cache
+E:\Stor-Project\Store\Store.Infrastracture\obj\Debug\net7.0\Store.Infrastracture.GeneratedMSBuildEditorConfig.editorconfig
+E:\Stor-Project\Store\Store.Infrastracture\obj\Debug\net7.0\Store.Infrastracture.AssemblyInfoInputs.cache
+E:\Stor-Project\Store\Store.Infrastracture\obj\Debug\net7.0\Store.Infrastracture.AssemblyInfo.cs
+E:\Stor-Project\Store\Store.Infrastracture\obj\Debug\net7.0\Store.Infrastracture.csproj.CoreCompileInputs.cache
+E:\Stor-Project\Store\Store.Infrastracture\obj\Debug\net7.0\Store.Infrastracture.dll
+E:\Stor-Project\Store\Store.Infrastracture\obj\Debug\net7.0\refint\Store.Infrastracture.dll
+E:\Stor-Project\Store\Store.Infrastracture\obj\Debug\net7.0\Store.Infrastracture.pdb
+E:\Stor-Project\Store\Store.Infrastracture\obj\Debug\net7.0\ref\Store.Infrastracture.dll

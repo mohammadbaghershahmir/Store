@@ -30,7 +30,7 @@ namespace Store.Application.Services.Users.Command.Site.SignInUser
         {
             //Query
             var user=await _userManager.FindByEmailAsync(request.UserName);
-            var pass = await _userManager.CheckPasswordAsync(user,request.Password);
+            var pass = await _userManager.CheckPasswordAsync(user, request.Password);
             var GetRol = await _userManager.GetRolesAsync(user);
             //Check User
             if (user==null)
@@ -48,47 +48,36 @@ namespace Store.Application.Services.Users.Command.Site.SignInUser
 
             try
             {
-                if (pass)
+                  var res=  _signInManager.PasswordSignInAsync(request.UserName, request.Password,request.RememberMe, false).Result;
+                if(res.Succeeded)
                 {
-                    var result = _signInManager.SignInAsync(user, true, authenticationMethod:null);
+                    List<string> roles = new List<string>();
+                    //Check Role
+                    try
                     {
-                        List<string> roles = new List<string>();
-                        //Check Role
-                        try
-                        {
-                           
-                            roles.AddRange(GetRol);
 
-                        }
-                        catch (Exception)
-                        {
+                        roles.AddRange(GetRol);
 
-                            throw;
-                        }
-
-                        //Login
-                        return new ResultDto<ResultUserLoginDto>()
-                        {
-                            Data = new ResultUserLoginDto()
-                            {
-                                Roles = roles,
-                                UserId = user.Id,
-                                FullName = user.FullName,
-                                UserName = user.UserName
-                            },
-                            IsSuccess = true,
-                            Message = "ورود به سایت با موفقیت انجام شد",
-                        };
-                        //if (!result.Succeeded)
-                        //{
-                        //    //foreach (var item in result.ToList())
-                        //    //{
-                        //    //	message += item.Description + Environment.NewLine;
-                        //    //}
-                        //}
                     }
-                }
-                
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+                    //Login
+                    return new ResultDto<ResultUserLoginDto>()
+                    {
+                        Data = new ResultUserLoginDto()
+                        {
+                            Roles = roles,
+                            UserId = user.Id,
+                            FullName = user.FullName,
+                            UserName = user.UserName
+                        },
+                        IsSuccess = true,
+                        Message = "ورود به سایت با موفقیت انجام شد",
+                    };
+                }         
             }
             catch (AggregateException ex)
             {

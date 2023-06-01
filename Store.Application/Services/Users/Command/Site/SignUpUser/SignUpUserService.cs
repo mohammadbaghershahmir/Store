@@ -51,11 +51,11 @@ namespace Store.Application.Services.Users.Command.Site.SignUpUser
 					var resultrole = await _userManager.AddToRoleAsync(user, UserRolesName.Customer);
                     //Login User
                     await   _signInManager.SignOutAsync();
-                   //var SignIn=  _signInManager.PasswordSignInAsync(user, Request.Password, false, true).Result;
-                   // if (SignIn.Succeeded)
-                   // {
-						//Show Result
-						return new ResultDto<ResultRegisterUserDto>()
+                    var SignIn = _signInManager.PasswordSignInAsync(user, Request.Password, false, true).Result;
+                    if (SignIn.Succeeded)
+                    {
+                        //Show Result
+                        return new ResultDto<ResultRegisterUserDto>()
 						{
 							Data = new ResultRegisterUserDto()
 							{
@@ -64,8 +64,8 @@ namespace Store.Application.Services.Users.Command.Site.SignUpUser
 							IsSuccess = true,
 							Message = MessageInUser.MessageInsert,
 						};
-					//}
-				}
+                    }
+                }
 				return new ResultDto<ResultRegisterUserDto>()
 				{
 					Data = new ResultRegisterUserDto()
