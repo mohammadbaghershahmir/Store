@@ -24,44 +24,40 @@ namespace Store.Application.Services.Products.Category.Commands.DeleteCategory
         public static List<DeleteListCategoryDto> AllCategory = new List<DeleteListCategoryDto>();
         public async Task<ResultDto> Execute(string Id)
         {
-            // var category=_databaseContext.Categories.Where(r=>r.Id == Id).ToList();
-            // var list = category.FirstOrDefault();
-            // if(list.ParentCategoryId==null)
-            // {
-
-            //     //Remove Logical
-
-
-            // }
-            //else
-            // {
-            //     list.RemoveTime = DateTime.Now;
-            //     list.IsRemoved = true;
-            //     await _databaseContext.SaveChangesAsync();
-            // }
-
-          
-            var listCategory = await _context.Categories.Where(i=>i.Id==Id).Select
+            Category.Clear();
+            AllCategory.Clear();
+            var listCategory = await _context.Categories.Select
                 (
                 e => new DeleteListCategoryDto()
                 {
-                    IsRemove=e.IsRemoved,
-                    RemoveTime=e.RemoveTime,
-                    ParentId=e.ParentCategoryId,
-                    Id=e.Id
+                    Id = e.Id,
+                    ParentId = e.ParentCategoryId,
                 }
                 ).ToListAsync();
 
             AllCategory.AddRange(listCategory);
 
-            foreach (var item in listCategory.Where(e => e.ParentId == null))
+            foreach (var item in listCategory.Where(e=> e.Id==Id))
             {
                 int level = 1;
-                item.IsRemove = true;
-                item.RemoveTime = DateTime.Now;
-                _context.SaveChanges();
-                var child = listCategory.ToList();
+                Category.Add(new DeleteListCategoryDto()
+                {
+                    Id = item.Id,
+                    ParentId = item.ParentId,
+                });
+                var child = listCategory.Where(y => y.ParentId == item.Id).ToList();
                 listGenerator(child, level);
+            }
+            foreach (var remove in Category)
+            {
+                var ItemRemove = _context.Categories.Where(r => r.Id == remove.Id).FirstOrDefault();
+                if (ItemRemove != null)
+                {
+                    ItemRemove.IsRemoved = true;
+                    ItemRemove.RemoveTime = DateTime.Now;
+                    await _context.SaveChangesAsync();
+                }
+                
             }
             //Show Result
             return new ResultDto()
@@ -78,16 +74,21 @@ namespace Store.Application.Services.Products.Category.Commands.DeleteCategory
                 var childN = AllCategory.Where(p => p.ParentId == itemChild.Id).ToList();
                 if (childN.Any())
                 {
-                    itemChild.RemoveTime = DateTime.Now;
-                    itemChild.IsRemove = true;
-                    _context.SaveChanges();
+                    Category.Add(new DeleteListCategoryDto()
+
+                    {
+                        Id = itemChild.Id,
+                        ParentId = itemChild.ParentId,
+                    });
                     listGenerator(childN, level);
                 }
                 else
                 {
-                    itemChild.RemoveTime = DateTime.Now;
-                    itemChild.IsRemove = true;
-                    _context.SaveChanges();
+                    Category.Add(new DeleteListCategoryDto()
+                    {
+                        Id = itemChild.Id,
+                        ParentId = itemChild.ParentId,
+                    });
                 }
             }
             return;

@@ -30,7 +30,11 @@ namespace Store.Application.Services.Products.Category.Commands.GetParentCategor
                     Id=e.Id,
                     Name=e.Name,
                     ParentId=e.ParentCategoryId,
-                    InsertTime=e.InsertTime
+                    InsertTime=e.InsertTime,
+                    IsActive= e.IsActive,
+                    Slug=e.Slug,
+                    Description=e.Description,
+                    OrginallName=e.Name
                 }
                 ).OrderByDescending(p => p.InsertTime).ToListAsync();
 
@@ -44,7 +48,11 @@ namespace Store.Application.Services.Products.Category.Commands.GetParentCategor
                     Id = item.Id,
                     Name = item.Name,
                     ParentId=item.ParentId,
-                    ParentName="اصلی"  
+                    ParentName="اصلی",
+                    IsActive=item.IsActive,
+                    Slug=item.Slug,
+                    Description= item.Description,
+                    OrginallName = item.Name
                 });
                 var child= listCategory.Where(y=>y.ParentId==item.Id).ToList();
                 listGenerator(child, level);
@@ -63,10 +71,13 @@ namespace Store.Application.Services.Products.Category.Commands.GetParentCategor
 
                     {
                         Id=itemChild.Id,
-                        Name=itemChild.Name+" "+GetDashCount(level),
+                        Name= GetDashCount(level) + " " + itemChild.Name,
                         ParentId=itemChild.ParentId,
-                        ParentName=AllCategory.Where(t=>t.Id== itemChild.ParentId).FirstOrDefault()?.Name
-
+                        ParentName=AllCategory.Where(t=>t.Id== itemChild.ParentId).FirstOrDefault()?.Name,
+                        IsActive= itemChild.IsActive,
+                        Slug= itemChild.Slug,
+                        Description= itemChild.Description,
+                        OrginallName = itemChild.Name
                     });
                     listGenerator(childN, level);
                 }
@@ -75,9 +86,13 @@ namespace Store.Application.Services.Products.Category.Commands.GetParentCategor
                     Category.Add(new ParentCategoryDto()
                     {
                         Id = itemChild.Id,
-                        Name = itemChild.Name + " " + GetDashCount(level),
+                        Name = GetDashCount(level) + " " + itemChild.Name,
                         ParentId = itemChild.ParentId,
-                        ParentName= AllCategory.Where(t => t.Id == itemChild.ParentId).FirstOrDefault()?.Name
+                        ParentName= AllCategory.Where(t => t.Id == itemChild.ParentId).FirstOrDefault()?.Name,
+                        IsActive=itemChild.IsActive,
+                        Slug= itemChild.Slug,
+                        Description = itemChild.Description,
+                        OrginallName = itemChild.Name
                     });
                 }
             }

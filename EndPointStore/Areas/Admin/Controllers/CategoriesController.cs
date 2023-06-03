@@ -25,7 +25,7 @@ namespace EndPointStore.Areas.Admin.Controllers
             {
                 Id = null,
                 ParentId = null,
-                Name = "هیچکدام"
+                Name = "هیچکدام",
             }
           );
             list.AddRange(listView);
@@ -44,6 +44,8 @@ namespace EndPointStore.Areas.Admin.Controllers
             var result = await _productFacad.AddCategoryService.Execute(
                 new RequestCatgoryDto
                 {
+                   
+                    OrginalName = addCategory.Name,
                     ParentId = addCategory.ParentId,
                     Name = addCategory.Name,
                     CssClass = addCategory.CssClass,
@@ -51,7 +53,8 @@ namespace EndPointStore.Areas.Admin.Controllers
                     Description = addCategory.Description,
                     IsActive = addCategory.IsActive,
                     Slug = addCategory.Slug,
-                    Sort = addCategory.Sort
+                    Sort = addCategory.Sort,
+                    Id= addCategory.Id,
                 }
                 );
             return Json(result);

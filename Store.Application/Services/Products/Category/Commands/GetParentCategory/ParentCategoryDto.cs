@@ -10,9 +10,13 @@ namespace Store.Application.Services.Products.Category.Commands.GetParentCategor
     public class ParentCategoryDto
     {
         public string? Id   { get; set; }
+        public string? OrginallName { get; set; }
         public  string? Name { get; set; }
         public string? ParentId { get; set; }
         public string? ParentName { get; set; }
         public DateTime? InsertTime { get; set; }
+        public bool IsActive { get; set; }
+        public string? Slug { get; set; }
+        public string? Description { get; set; }
     }
 }

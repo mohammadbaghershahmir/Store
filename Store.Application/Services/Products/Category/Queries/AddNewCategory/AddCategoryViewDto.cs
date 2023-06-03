@@ -11,6 +11,7 @@ namespace Store.Application.Services.Products.Category.Queries.AddNewCategory
 {
     public class AddCategoryViewDto
     {
+        public string? Id { get; set; }
         public string?  ParentId { get; set; }
         [Required]
         [MaxLength(50)]
@@ -23,5 +24,6 @@ namespace Store.Application.Services.Products.Category.Queries.AddNewCategory
         public string? CssClass { get; set; }
         public int Sort { get; set; } = 0;
         public bool IsActive { get; set; }
+        public bool IsEdit { get; set; }
     }
 }
