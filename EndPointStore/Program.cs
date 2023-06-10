@@ -26,37 +26,38 @@ using Microsoft.AspNetCore.DataProtection;
 using Store.Application.Services.Users.Command.Site.LogOutUser;
 using Store.Application.Interfaces.FacadPattern;
 using Store.Application.Services.Products.Category.FacadPattern;
+using Store.Application.Services.FileManager.Queries.ListDirectory;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DatabaseContex>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("CmsConnectionString")));
-builder.Services.AddIdentity<User,Role>(
+builder.Services.AddIdentity<User, Role>(
     options => options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<DatabaseContex>()
               .AddDefaultTokenProviders();
 builder.Services.AddDistributedMemoryCache();
 //Scopeds
 builder.Services.AddScoped<IDatabaseContext, DatabaseContex>();
 builder.Services.AddScoped<IGetUsersServices, GetUsersServices>();
-builder.Services.AddScoped<IGetRolesService,GetRolesService>();
-builder.Services.AddScoped<IRegisterUserService,RegisterUserService>();
+builder.Services.AddScoped<IGetRolesService, GetRolesService>();
+builder.Services.AddScoped<IRegisterUserService, RegisterUserService>();
 builder.Services.AddScoped<IRemoveService, RemoveUserService>();
 builder.Services.AddScoped<IGetEditUserService, GetEditUserService>();
 builder.Services.AddScoped<IEditUserService, EditUserService>();
-builder.Services.AddScoped<ICheckUserExitsService,CheckUserService>();
+builder.Services.AddScoped<ICheckUserExitsService, CheckUserService>();
 builder.Services.AddScoped<ICheckEmailService, CheckEmailService>();
 builder.Services.AddScoped<ICheckMobileExitsService, CheckMobileService>();
-builder.Services.AddScoped<ICheckEmailService,CheckEmailService>();
+builder.Services.AddScoped<ICheckEmailService, CheckEmailService>();
 builder.Services.AddScoped<ISignUpUserService, SignUpUserService>();
 builder.Services.AddScoped<ISignInUserService, SignInUserService>();
 builder.Services.AddScoped<IlogOutUser, LogOutUserService>();
+builder.Services.AddScoped<IFileDirectoryService, FileDirectoryServices>();
 builder.Services.AddScoped<IProductFacad, ProductFacad>();
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
- 
+
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();

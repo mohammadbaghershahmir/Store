@@ -56,7 +56,6 @@
             <div class="w-full sm:w-auto relative ml-auto mt-3 sm:mt-0">
             </div>
             <div class="w-full sm:w-auto flex">
-                <button class="btn btn-primary shadow-md ml-2">تماس تصویری</button>
                 <div class="dropdown">
                     <button class="dropdown-toggle btn px-2 box text-gray-700 dark:text-gray-300" aria-expanded="false">
                         <span class="w-5 h-5 flex items-center justify-center"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus w-4 h-4"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> </span>
@@ -228,7 +227,6 @@
             $("#AddCategoryView_Description").val(currentItem.attr("data-description"));
             if (currentItem.attr("data-isactive")=="True"){
                 $("#AddCategoryView_IsActive").attr("checked","true");
-               
             }
              else{
                     $("#AddCategoryView_IsActive").removeAttr("checked");

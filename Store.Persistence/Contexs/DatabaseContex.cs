@@ -6,6 +6,7 @@ using Store.Application.Interfaces.Contexs;
 using Store.Common.Constant;
 using Store.Common.Constant.Roles;
 using Store.Domain.Entities.Commons;
+using Store.Domain.Entities.Media;
 using Store.Domain.Entities.Products;
 using Store.Domain.Entities.Users;
 using System;
@@ -26,6 +27,10 @@ namespace Store.Persistence.Contexs
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<ContactType> ContactTypes { get; set; }
         public DbSet<Categories> Categories { get; set; }
+        public DbSet<Media> Medias { get; set; }
+        public DbSet<MediaType> MediaTypes { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             //modelBuilder.Entity<User>().HasQueryFilter(p => !p.IsRemoved);

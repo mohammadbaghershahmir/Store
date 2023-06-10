@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5wEgS+yP/LZClmc9A3wJxpHPw/rt93gr8pYOGZ/sKH0hvpJMRp8Q6886yR0XIr2fhP0WeOSQig7tG1ivvVwGUA==",
+  "dgSpecHash": "C6Z2uFPXnKULDGknRYlCjwPcmCx25soNoeF3Ph4l5y1cF1cc3OtSUdm9ONJ9f/u2x6FK4ALZlKHvzwpIfLV0ew==",
   "success": true,
   "projectFilePath": "E:\\Stor-Project\\Store\\Store.Application\\Store.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\moham\\.nuget\\packages\\fluentftp\\46.0.2\\fluentftp.46.0.2.nupkg.sha512",
     "C:\\Users\\moham\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.antiforgery\\2.1.1\\microsoft.aspnetcore.antiforgery.2.1.1.nupkg.sha512",
     "C:\\Users\\moham\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

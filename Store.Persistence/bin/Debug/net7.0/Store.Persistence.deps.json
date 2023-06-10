@@ -29,6 +29,14 @@
           "jQuery": "1.9.0"
         }
       },
+      "FluentFTP/46.0.2": {
+        "runtime": {
+          "lib/net6.0/FluentFTP.dll": {
+            "assemblyVersion": "46.0.2.0",
+            "fileVersion": "46.0.2.0"
+          }
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -3098,6 +3106,7 @@
       },
       "Store.Application/1.0.0": {
         "dependencies": {
+          "FluentFTP": "46.0.2",
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Mvc": "2.1.3",
           "Microsoft.Build.Framework": "16.9.0",
@@ -3140,6 +3149,13 @@
       "sha512": "sha512-+OganGYT1i1uIwZPa+AQUT3F3XxWUgFpFoYj+ujM4U5ZJYywW+nEl3v+A5BElLZNbk0FkFFZV4JixIfL6Q4xfg==",
       "path": "bootstrap/3.3.1",
       "hashPath": "bootstrap.3.3.1.nupkg.sha512"
+    },
+    "FluentFTP/46.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DWdIT+tAzypO8cDeh+o5kqRx1DWBRHmwnzjc4TStpjwxZf+FyQ0draXmmghBiT+c5mOnqcbV631+w0xbMvoVZg==",
+      "path": "fluentftp/46.0.2",
+      "hashPath": "fluentftp.46.0.2.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",

@@ -2417,6 +2417,10 @@
       "PackagePath": "staticwebassets\\SiteTemplate\\assets\\vendor\\venobox\\venobox.min.js"
     },
     {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\Uploads\\122.pdf",
+      "PackagePath": "staticwebassets\\Uploads\\122.pdf"
+    },
+    {
       "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

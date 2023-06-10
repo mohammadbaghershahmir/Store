@@ -163,6 +163,83 @@ namespace Store.Persistence.Migrations
                     b.ToTable("UserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Store.Domain.Entities.Media.Media", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Alt")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("InsertTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("MediaTypeId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
+                    b.Property<string>("Src")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MediaTypeId");
+
+                    b.ToTable("Medias");
+                });
+
+            modelBuilder.Entity("Store.Domain.Entities.Media.MediaType", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("InsertTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MediaTypes");
+                });
+
             modelBuilder.Entity("Store.Domain.Entities.Products.Categories", b =>
                 {
                     b.Property<string>("Id")
@@ -185,9 +262,6 @@ namespace Store.Persistence.Migrations
 
                     b.Property<bool>("IsRemoved")
                         .HasColumnType("bit");
-
-                    b.Property<string>("MyProperty")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -308,28 +382,28 @@ namespace Store.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a8804956-6244-4cdc-8e43-6f1ee6bdb842",
+                            Id = "52d96222-9f94-42d4-ae2c-ad77b4ed04c9",
                             IsRemoved = false,
                             Title = "تلفن همراه",
                             Value = "Mobail"
                         },
                         new
                         {
-                            Id = "b5f2d1b5-e4ae-4d35-9b39-2610ead11393",
+                            Id = "8febc229-50c9-4b61-94b7-a3726701a300",
                             IsRemoved = false,
                             Title = "تلفن",
                             Value = "Phone"
                         },
                         new
                         {
-                            Id = "772b648c-4d4b-467f-93ef-b681fc13b6bd",
+                            Id = "7a7f9c29-c7ec-44e9-8430-431fb4ef6e55",
                             IsRemoved = false,
                             Title = "ایمیل",
                             Value = "Email"
                         },
                         new
                         {
-                            Id = "3295469d-e90f-4e32-8801-787d7b1aaa78",
+                            Id = "ad4b62d2-7df6-47ec-ba13-25c2a8433212",
                             IsRemoved = false,
                             Title = "آدرس",
                             Value = "Address"
@@ -467,7 +541,7 @@ namespace Store.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "79a679be-401d-48fb-a523-22eb81b2d732",
+                            Id = "c165fc8a-b7dc-4720-b1dc-1b68f6d5557c",
                             Name = "Admin",
                             NormalizedName = "ADMIN",
                             IsRemoved = false,
@@ -475,7 +549,7 @@ namespace Store.Persistence.Migrations
                         },
                         new
                         {
-                            Id = "92925b16-a406-4ddd-b455-b9e8aae5d7da",
+                            Id = "3aab564e-74a9-4d94-926a-150fe7e98169",
                             Name = "Operator",
                             NormalizedName = "OPERATOR",
                             IsRemoved = false,
@@ -483,7 +557,7 @@ namespace Store.Persistence.Migrations
                         },
                         new
                         {
-                            Id = "9adb37af-ca67-4fcb-8b56-37ec6263c68f",
+                            Id = "5e9e2f76-5b91-484b-9597-271bf7b3aa73",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER",
                             IsRemoved = false,
@@ -542,6 +616,17 @@ namespace Store.Persistence.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Store.Domain.Entities.Media.Media", b =>
+                {
+                    b.HasOne("Store.Domain.Entities.Media.MediaType", "MediaType")
+                        .WithMany("Medias")
+                        .HasForeignKey("MediaTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("MediaType");
+                });
+
             modelBuilder.Entity("Store.Domain.Entities.Products.Categories", b =>
                 {
                     b.HasOne("Store.Domain.Entities.Products.Categories", "ParentCategory")
@@ -568,6 +653,11 @@ namespace Store.Persistence.Migrations
                     b.Navigation("ContactType");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Store.Domain.Entities.Media.MediaType", b =>
+                {
+                    b.Navigation("Medias");
                 });
 
             modelBuilder.Entity("Store.Domain.Entities.Products.Categories", b =>

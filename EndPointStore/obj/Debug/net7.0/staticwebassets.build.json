@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qh3QA37Gg8RuoND8YRaTKogQoV6p6sDTba5wXb2Y5QU=",
+  "Hash": "/tzTNvlRdsndtvcxtebR1XmnFpPmravwDhRK5oMCtdQ=",
   "Source": "EndPointStore",
   "BasePath": "_content/EndPointStore",
   "Mode": "Default",
@@ -10317,6 +10317,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\SiteTemplate\\Library\\toastify-js\\toastify-es.min.js"
+    },
+    {
+      "Identity": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\Uploads\\122.pdf",
+      "SourceId": "EndPointStore",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\",
+      "BasePath": "_content/EndPointStore",
+      "RelativePath": "Uploads/122.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\122.pdf"
     }
   ]
 }

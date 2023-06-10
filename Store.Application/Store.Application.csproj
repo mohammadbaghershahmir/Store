@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentFTP" Version="46.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.3" />
     <PackageReference Include="Microsoft.Build.Framework" Version="15.1.548" />
@@ -20,6 +21,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Store.Common\Store.Common.csproj" />
     <ProjectReference Include="..\Store.Domain\Store.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\FileManager\Commands\" />
   </ItemGroup>
 
 </Project>

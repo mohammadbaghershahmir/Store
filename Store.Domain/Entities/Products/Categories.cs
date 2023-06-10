@@ -9,7 +9,6 @@ namespace Store.Domain.Entities.Products
 {
     public class Categories : BaseEntity
     {
-        public string? MyProperty { get; set; }
         public virtual Categories ParentCategory { get; set; }
         public string? ParentCategoryId { get; set; }
         public string? Name { get; set; }
