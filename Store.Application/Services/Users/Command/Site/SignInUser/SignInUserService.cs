@@ -30,8 +30,6 @@ namespace Store.Application.Services.Users.Command.Site.SignInUser
         {
             //Query
             var user=await _userManager.FindByEmailAsync(request.UserName);
-            var pass = await _userManager.CheckPasswordAsync(user, request.Password);
-            var GetRol = await _userManager.GetRolesAsync(user);
             //Check User
             if (user==null)
             {
@@ -48,7 +46,9 @@ namespace Store.Application.Services.Users.Command.Site.SignInUser
 
             try
             {
-                  var res=  _signInManager.PasswordSignInAsync(request.UserName, request.Password,request.RememberMe, false).Result;
+				var pass = await _userManager.CheckPasswordAsync(user, request.Password);
+				var GetRol = await _userManager.GetRolesAsync(user);
+				var res =  _signInManager.PasswordSignInAsync(request.UserName, request.Password,request.RememberMe, false).Result;
                 if(res.Succeeded)
                 {
                     List<string> roles = new List<string>();

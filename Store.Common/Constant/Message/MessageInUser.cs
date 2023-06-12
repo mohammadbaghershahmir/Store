@@ -18,6 +18,10 @@ namespace Store.Common.Constant
         public const string MessageUpdate = "ویرایش کاربر با موفقیت انجام شد!";
         public const string WarningDeleteCategory = "با حذف دسته بندی اصلی تمام زیر دسته های آن حذف میشود آیا موافقید؟";
         public const string MessageSuccessDirectory = "پوشه با موفقیت ایجاد شد";
-		
+		public const string MessageDirectoryExist = "پوشه ایی با همین نام وجود دارد!";
+		public const string UploadSuccess = "فایل مورد نظر با موفقیت آپلود شد";
+		public const string UploadInvalid = "مشکلی در آپلود فایل وجود دارد";
+
+
 	}
 }

@@ -37,33 +37,13 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
         <ul class="border-t border-theme-29 py-5 hidden">
             <li>
-                <a href="javascript:;.html" class="menu menu--active">
+                <a href="" class="menu">
                     <div class="menu__icon"> <i data-feather="home"></i> </div>
-                    <div class="menu__title"> دشبرد <i data-feather="chevron-down" class="menu__sub-icon transform rotate-180"></i> </div>
+                    <div class="menu__title"> دشبرد </div>
                 </a>
-                <ul class="menu__sub-open">
-                    <li>
-                        <a href="index.html" class="menu menu--active">
-                            <div class="menu__icon"> <i data-feather="activity"></i> </div>
-                            <div class="menu__title"> نمای کل 1 </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="side-menu-light-dashboard-overview-2.html" class="menu">
-                            <div class="menu__icon"> <i data-feather="activity"></i> </div>
-                            <div class="menu__title"> نمای کل 2 </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="side-menu-light-dashboard-overview-3.html" class="menu">
-                            <div class="menu__icon"> <i data-feather="activity"></i> </div>
-                            <div class="menu__title"> نمای کل 3 </div>
-                        </a>
-                    </li>
-                </ul>
             </li>
             <li>
-                <a href="~/admin/users/index class="menu">
+                <a href="~/admin/users/index" class="menu">
                     <div class="menu__icon"> <i data-feather="users"></i> </div>
                     <div class="menu__title"> مدیریت کاربران </div>
                 </a>
@@ -120,69 +100,16 @@ License: You must have a valid license purchased only from themeforest(the above
             <div class="side-nav__devider my-6"></div>
             <ul>
                 <li>
-                    <a href="javascript:;.html" class="side-menu side-menu--active">
+                    <a href="" class="side-menu">
                         <div class="side-menu__icon"> <i data-feather="home"></i> </div>
-                        <div class="side-menu__title">
-                            دشبرد
-                            <div class="side-menu__sub-icon transform rotate-180"> <i data-feather="chevron-down"></i> </div>
-                        </div>
+                        <div class="side-menu__title">دشبرد </div>
                     </a>
-                    <ul class="side-menu__sub-open">
-                        <li>
-                            <a href="index.html" class="side-menu side-menu--active">
-                                <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                <div class="side-menu__title"> نمای کل 1 </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-dashboard-overview-2.html" class="side-menu">
-                                <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                <div class="side-menu__title"> نمای کل 2 </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-dashboard-overview-3.html" class="side-menu">
-                                <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                <div class="side-menu__title"> نمای کل 3 </div>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <li>
                     <a href="~/admin/users/index" class="side-menu">
                         <div class="side-menu__icon"> <i data-feather="users"></i> </div>
                         <div class="side-menu__title"> مدیریت کاربران </div>
                     </a>
-                </li>
-                <li>
-                    
-                    <a href="javascript:;" class="side-menu">
-                        <div class="side-menu__icon"> <i data-feather="box"></i> </div>
-                        <div class="side-menu__title">
-                            چینش منو
-                            <div class="side-menu__sub-icon "> <i data-feather="chevron-down"></i> </div>
-                        </div>
-                    </a>
-                    <ul class="">
-                        <li>
-                            <a href="index.html" class="side-menu">
-                                <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                <div class="side-menu__title"> منو کنار </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="simple-menu-light-dashboard-overview-1.html" class="side-menu">
-                                <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                <div class="side-menu__title"> منو ساده </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="top-menu-light-dashboard-overview-1.html" class="side-menu">
-                                <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                <div class="side-menu__title"> منو بالا </div>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <li>
                     <a href="~/admin/categories/index" class="side-menu">
@@ -443,3 +370,12 @@ License: You must have a valid license purchased only from themeforest(the above
    
 </body>
 </html>
+    <script>
+            const activePage = window.location.pathname;
+    const navLinks = document.querySelectorAll('.side-nav ul li a').
+        forEach(link => {
+            if (link.href.includes(`${activePage}`)) {
+                link.classList.add('side-menu--active');
+            }
+        });
+</script>

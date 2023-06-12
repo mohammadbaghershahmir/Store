@@ -32,13 +32,21 @@ namespace Store.Application.Services.FileManager.Commands.CreateDirectory
 					string password = _configuration.GetSection("FtpPassword").Value;
 					string ftpRoot = _configuration.GetSection("ftpRoot").Value;
 					string BaseUrl = _configuration.GetSection("BaseUrl").Value;
-					string url = ftpRoot + path;
+					string url = ftpRoot + path+"/"+name;
 					client.Host = ftpServer;
 					client.Credentials = new NetworkCredential(username, password);
-					client.CreateDirectory(path + "/" + name);
-					client.Disconnect();
+					if(!client.DirectoryExists(url))
+					{
+						client.CreateDirectory(url);
+						client.Disconnect();
+						return new ResultDto() { IsSuccess = true, Message = MessageInUser.MessageSuccessDirectory };
+					}
+					else
+					{
+						return new ResultDto() { IsSuccess = false, Message = MessageInUser.MessageDirectoryExist };
+					}
+
 				}
-				return new ResultDto() {IsSuccess=true,Message=MessageInUser.MessageSuccessDirectory};
 			}
 			catch (Exception)
 			{

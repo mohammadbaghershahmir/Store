@@ -4,6 +4,11 @@
 @{
 	Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
+@section Head
+	{
+	<link rel="stylesheet" href="/AdminTemplate/assets/css/persian-datepicker.min.css" />
+	<link rel="stylesheet" href="/AdminTemplate/Library/toastify-js/toastify.min.css" />
+}
 <!-- BEGIN: Content -->
 <div class="content">
 
@@ -29,23 +34,27 @@
 			<div class="intro-y flex flex-col-reverse sm:flex-row items-center">
 				<div class="w-full sm:w-auto relative ml-auto mt-3 sm:mt-0">
 					<button onclick="goToRoot()" class="btn btn-elevated-secondary w-24 ml-1 mb-2">ریشه اصلی</button>
-					<button onclick="BackToListDirectoty()" class="btn btn-primary w-24 inline-block ml-1 mb-2">بازگشت</button>
+					<button id="backToDirectory" onclick="BackToListDirectoty()" class="d-none btn btn-primary w-24 inline-block ml-1 mb-2">بازگشت</button>
 				</div>
 				<div class="w-full sm:w-auto flex">
-					<button class="btn btn-primary shadow-md ml-2">بارگذاری فایل های جدید</button>
+					<button id="remove-files" class="d-none btn btn-danger w-32 ml-2 mb-2"> <i data-feather="trash" class="w-4 h-4 ml-2"></i>حذف</button>
+					<button onclick="uploadSelect()" class="btn btn-primary shadow-md ml-2">بارگذاری فایل های جدید</button>
 					<div class="dropdown">
 						<button class="dropdown-toggle btn px-2 box text-gray-700 dark:text-gray-300" aria-expanded="false">
 							<span class="w-5 h-5 flex items-center justify-center"> <i class="w-4 h-4" data-feather="plus"></i> </span>
 						</button>
 						<div class="dropdown-menu w-40">
 							<div class="dropdown-menu__content box dark:bg-dark-1 p-2">
-								<button  class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="folder" class="w-4 h-4 ml-2"></i>افزودن پوشه</button>
+								<button id="CreateDirectory"  class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="folder" class="w-4 h-4 ml-2"></i>افزودن پوشه</button>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- END: File Manager Filter -->
+			<div class="progress h-3 rounded mt-3 d-none">
+				<div class="progress-bar w-3/4 bg-theme-1 rounded" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+			</div>
 			<!-- BEGIN: Directory & Files -->
 			<div id="directory-item" class="intro-y grid grid-cols-12 gap-3 sm:gap-6 mt-5">
 				<div class="intro-y col-span-12 sm:col-span-12 md:col-span-12 2xl:col-span-12">
@@ -78,15 +87,20 @@
 </div>
 <!-- END: Content -->
 @section Scripts{
+		<link href="~/AdminTemplate/assets/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+	<script src="~/AdminTemplate/assets/Sweetalert2/sweetalert2.min.js"></script>
 	<script src="~/AdminTemplate/assets/js/jquery.js"></script>
-	<script src="~/AdminTemplate/assets/js/main.js"></script>
 	<script src="~/AdminTemplate/Library/toastify-js/toastify.min.js"></script>
+	<script src="~/AdminTemplate/assets/js/main.js"></script>
 	<script>
 		let Directory = "";
 		let Directories=[""];
+		let ArryRemoveItem = [""];
 		//Open Folder
 		function openFile(path) {
 			$("#directory-item").html(loading);
+	     	$("#backToDirectory").removeClass("d-none");
+			$('#remove-files').addClass("d-none");
 			Directories.push(path);
 			Directory += path;
 			getDirectoryList();
@@ -94,6 +108,8 @@
 		//Back To Directory
 		function BackToListDirectoty(){
 			$("#directory-item").html(loading);
+			$('#remove-files').addClass("d-none");
+
 			Directories.pop();
 			if (Directories.length>0)
 			{
@@ -101,14 +117,17 @@
 
 				return a+b;
 			})
+			if(Directories.length==1)
+			{
+					$("#backToDirectory").addClass("d-none");
+			}
 			}
 			getDirectoryList();
-
-
 		}
 		//Go to Root
 		function goToRoot(){
 			$("#directory-item").html(loading);
+			            $('#remove-files').addClass("d-none");
 			Directory = "";
 			getDirectoryList();
 			Directories=[""];
@@ -116,6 +135,108 @@
 		$(document).ready(function () {
 			getDirectoryList();
 		});
+		//Upload files
+		function uploadSelect() {
+			let input = document.createElement('input');
+			//input.accept = 'application/pdf';
+			input.multiple = true,
+				input.type = 'file';
+			input.onchange = () => {
+				let files = input.files;
+				FrmData = new FormData();
+				for (var i = 0; i < files.length; i++) {
+					FrmData.append("Files", files[i]);
+				}
+				FrmData.append("Directory", Directory);
+				//upload ajax
+				$.ajax({
+					type: 'POST',
+					url: 'UploadFiles',
+					data: FrmData,
+					contentType: false,
+					processData: false,
+					cache: false,
+					xhr: function () {
+						$('.progress').removeClass("d-none");
+						var xhr = new window.XMLHttpRequest();
+						xhr.upload.addEventListener('progress', function (e) {
+							if (e.lengthComputable) {
+								var percentage = Math.round((e.loaded * 100) / e.total);
+								$('.progress .progress-bar').css('width', percentage + '%');
+								$('.progress .progress-bar').text(percentage + '%');
+							}
+						}, false);
+						return xhr;
+					},
+					success: function (response) {
+						if (response.isSuccess == true) {
+							$('.progress').addClass("d-none");
+							successToastify.showToast();
+							getDirectoryList();
+						} else {
+							//error
+							$('.progress').addClass("d-none");
+							dangerToastify.showToast();
+						}
+					},
+					error: function (error) {
+						console.log(error);
+					}
+				});
+			}
+			input.click();
+		}
+		//DeleteFile
+		//Select For Remove Files Or Directoory
+        $(document).on('click','.form-check-input', function (e) {
+            $('#remove-files').addClass("d-none");
+            ArryRemoveItem = [];
+            let directoryItem = $('#directory-item').children();
+            $("input:checkbox[name=item]:checked").each(function (index, value) {
+                ArryRemoveItem.push($(value).attr('data-name'));
+            });
+            if (ArryRemoveItem.length > 0) {
+                $('#remove-files').removeClass("d-none");
+				$('#remove-files').html(`<i data-feather="trash" class="w-4 h-4 ml-2"></i> حذف (${ArryRemoveItem.length})`);
+            }
+        });
+        //Remove Files Or Directoory
+        $(document).on('click','#remove-files',function(){
+			swal.fire({
+				title: 'حذف کاربر',
+				text: "کاربر گرامی از حذف آیتم ها مطمئن هستید؟",
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#d33',
+				cancelButtonColor: '#7cacbe',
+				confirmButtonText: 'بله ، آیتم حذف شود',
+				cancelButtonText: 'خیر'
+			}).then((result) => {
+				if (result.value) {
+               $("#directory-item").html(loading);
+					$('#remove-files').addClass("d-none");
+					let model = {
+						ArryRemoveItem, Directory
+					}
+					ajaxFunc("RemoveFiles", model, "POST",
+						function (result) {
+							if (result.isSuccess) {
+								successToastify.showToast();
+								getDirectoryList();
+								$('#remove-files').addClass("d-none");
+							} else {
+								$('#notify-text-failed').text(result.message);
+								dangerToastify.showToast();
+								getDirectoryList();
+							}
+						},
+						function (error) {
+							console.log(error);
+						}
+					);
+				}
+			})
+        });
 		//GetList
 		function getDirectoryList() {
 			var model = {
@@ -131,7 +252,7 @@
 								html += `<div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 xxl:col-span-2">
 																				<div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
 																					<div class="absolute left-0 top-0 mt-3 ml-3">
-																						<input class="form-check-input border border-gray-500" type="checkbox">
+																								<input data-name=${item.name} name="item" class="form-check-input border border-gray-500" type="checkbox">
 																					</div>`;
 								if (item.fileTypeEnum == 0) {
 									html += `<div onclick="openFile('${item.directory}')" class="w-3/5 file__icon file__icon--empty-directory mx-auto"></div>`;
@@ -214,5 +335,26 @@
 																<div class="text-center text-xs mt-2" > لطفا منتظر بمانید...</div>
 																	</div>
 																	</div>`;
+	//CreateDirectory
+		$("#CreateDirectory").on('click', function () {
+		var name=prompt("نام پوشه را وارد کنید");
+		  var data={Directory,name}
+			ajaxFunc("CreateDirectory", data, "POST",
+				function (result) {
+					if (result.isSuccess) {
+						$("#UserForm").trigger("reset");
+						successToastify.showToast();
+						getDirectoryList();
+					} else {
+						dangerToastify.showToast();
+					}
+				},
+				function (error) {
+					dangerToastify.showToast();
+					console.log(error);
+				}
+			)
+
+		})
 	</script>
 }

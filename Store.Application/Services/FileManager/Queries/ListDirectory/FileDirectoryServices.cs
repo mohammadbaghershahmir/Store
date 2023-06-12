@@ -125,7 +125,7 @@ namespace Store.Application.Services.FileManager.Queries.ListDirectory
 
                     }
                     client.Disconnect();
-                    return directoryItems;
+                    return directoryItems.OrderByDescending(w=>w.FileTypeEnum==FileTypeEnum.Directory).ToList();
                 }
                 catch (WebException ex)
                 {

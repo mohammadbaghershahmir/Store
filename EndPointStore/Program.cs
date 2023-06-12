@@ -27,6 +27,9 @@ using Store.Application.Services.Users.Command.Site.LogOutUser;
 using Store.Application.Interfaces.FacadPattern;
 using Store.Application.Services.Products.Category.FacadPattern;
 using Store.Application.Services.FileManager.Queries.ListDirectory;
+using Store.Application.Services.FileManager.Commands.CreateDirectory;
+using Store.Application.Services.FileManager.Commands.UploadFiles;
+using Store.Application.Services.FileManager.Commands.RemoveFiles;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -52,12 +55,14 @@ builder.Services.AddScoped<ISignUpUserService, SignUpUserService>();
 builder.Services.AddScoped<ISignInUserService, SignInUserService>();
 builder.Services.AddScoped<IlogOutUser, LogOutUserService>();
 builder.Services.AddScoped<IFileDirectoryService, FileDirectoryServices>();
+builder.Services.AddScoped<ICreateDirectory, CreateDirectoryService>();
+builder.Services.AddScoped<IUploadFileService, UploadFileService>();
+builder.Services.AddScoped<IRemoveFilesOrDirectoriesService, RemoveFilesOrDirectoriesService>();
 builder.Services.AddScoped<IProductFacad, ProductFacad>();
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
