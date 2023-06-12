@@ -26,7 +26,7 @@ namespace Store.Application.Services.Products.Category.Commands.DeleteCategory
         {
             Category.Clear();
             AllCategory.Clear();
-            var listCategory = await _context.Categories.Select
+            var listCategory = await _context.Category.Select
                 (
                 e => new DeleteListCategoryDto()
                 {
@@ -50,7 +50,7 @@ namespace Store.Application.Services.Products.Category.Commands.DeleteCategory
             }
             foreach (var remove in Category)
             {
-                var ItemRemove = _context.Categories.Where(r => r.Id == remove.Id).FirstOrDefault();
+                var ItemRemove = _context.Category.Where(r => r.Id == remove.Id).FirstOrDefault();
                 if (ItemRemove != null)
                 {
                     ItemRemove.IsRemoved = true;

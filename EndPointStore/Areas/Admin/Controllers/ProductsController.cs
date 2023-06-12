@@ -14,5 +14,11 @@ namespace EndPointStore.Areas.Admin.Controllers
           
             return View();
         }
-    }
+        [HttpGet]
+		public async Task<IActionResult> CreateProduct()
+		{
+
+			return View();
+		}
+	}
 }

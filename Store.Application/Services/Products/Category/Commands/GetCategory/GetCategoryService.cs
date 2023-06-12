@@ -18,7 +18,7 @@ namespace Store.Application.Services.Products.Category.Commands.GetCategory
         }
         public async Task<ResultDto<List<CategoriesDto>>> Execute(string? Id)
         {
-            var categories = _context.Categories.
+            var categories = _context.Category.
                  Include(p => p.ParentCategory)
                  .Include(s => s.SubCategories).
                  Where(pp => pp.ParentCategoryId == Id)

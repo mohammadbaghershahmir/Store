@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Store.Application.Interfaces.Contexs;
 using Store.Common.Dto;
-using Store.Domain.Entities.Products;
+using Store.Domain.Entities.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +23,7 @@ namespace Store.Application.Services.Products.Category.Commands.GetParentCategor
         {
             Category.Clear();
             AllCategory.Clear();
-            var listCategory =await _context.Categories.Select
+            var listCategory =await _context.Category.Select
                 (
                 e => new ParentCategoryDto()
                 {

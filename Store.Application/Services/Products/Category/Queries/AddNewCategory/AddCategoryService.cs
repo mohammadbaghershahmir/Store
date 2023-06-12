@@ -2,7 +2,7 @@
 using Store.Application.Interfaces.Contexs;
 using Store.Common.Constant;
 using Store.Common.Dto;
-using Store.Domain.Entities.Products;
+using Store.Domain.Entities.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +24,7 @@ namespace Store.Application.Services.Products.Category.Queries.AddNewCategory
             if (requestCatgoryDto.Id != null)
             {
 
-                var EditList = await _context.Categories.FindAsync(requestCatgoryDto.Id);
+                var EditList = await _context.Category.FindAsync(requestCatgoryDto.Id);
                 EditList.Name = requestCatgoryDto.Name;
                 EditList.Slug = requestCatgoryDto.Slug;
                 EditList.IsActive = requestCatgoryDto.IsActive;
@@ -34,7 +34,7 @@ namespace Store.Application.Services.Products.Category.Queries.AddNewCategory
             }
             else
             {
-                Categories categories = new Categories()
+                Domain.Entities.Product.Category categories = new Domain.Entities.Product.Category()
 
                 {
                     Id = Guid.NewGuid().ToString(),
@@ -49,7 +49,7 @@ namespace Store.Application.Services.Products.Category.Queries.AddNewCategory
                     ParentCategory = GetCategories(requestCatgoryDto.ParentId),
                 };
                 //Add Category
-                _context.Categories.Add(categories);
+                _context.Category.Add(categories);
                 _context.SaveChanges();
             }
             return new ResultDto()
@@ -58,9 +58,9 @@ namespace Store.Application.Services.Products.Category.Queries.AddNewCategory
                 Message = "ثبت موفق"
             };
         }
-        private  Categories GetCategories(string? ParentId)
+        private Domain.Entities.Product.Category GetCategories(string? ParentId)
         {
-            return  _context.Categories.Find(ParentId);
+            return  _context.Category.Find(ParentId);
         }
     }
 }

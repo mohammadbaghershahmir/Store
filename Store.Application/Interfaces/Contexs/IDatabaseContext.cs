@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
-using Store.Domain.Entities.Media;
-using Store.Domain.Entities.Products;
+using Store.Domain.Entities.Medias;
+using Store.Domain.Entities.Product;
 using Store.Domain.Entities.Users;
 using System;
 using System.Collections.Generic;
@@ -14,11 +14,18 @@ namespace Store.Application.Interfaces.Contexs
     public interface IDatabaseContext
     {
         DbSet<Contact> Contacts { get; set; }
-        DbSet<ContactType> ContactTypes { get; set; }
-         DbSet<Categories> Categories { get; set; }
-        public DbSet<Media> Medias { get; set; }
-        public DbSet<MediaType> MediaTypes { get; set; }
-        int SaveChanges(bool acceptAllChangesOnSuccess);
+         DbSet<ContactType> ContactType { get; set; }
+         DbSet<Category> Category { get; set; }
+         DbSet<Media> Medias { get; set; }
+         DbSet<MediaType> MediaTypes { get; set; }
+		 DbSet<Brands> Brands { get; set; }
+        DbSet<Comments> Comments { get; set; }
+        DbSet<Feature> Features { get; set; }
+		 DbSet<ItemTag> ItemTags { get; set; }
+		 DbSet<Products> Products { get; set; }
+		 DbSet<Rate> Rates { get; set; }
+	     DbSet<Tag> Tags { get; set; }
+		int SaveChanges(bool acceptAllChangesOnSuccess);
         int SaveChanges();
         void Dispose();
         Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = new CancellationToken());
