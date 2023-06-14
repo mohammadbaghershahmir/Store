@@ -23,4 +23,9 @@
     <ProjectReference Include="..\Store.Domain\Store.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\Products\Brands\Queries\" />
+    <Folder Include="Services\Products\Commands\" />
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,457 @@
+﻿@using EndPointStore.Areas.Admin.Models.ViewModelProduct;
+@model ViewModelProducts;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+	ViewData["Title"] = "ایجاد محصول";
+	Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="intro-y box py-5 sm:py-15 mt-3">
+	<div class="px-5 sm:px-15">
+		<form>
+		<!-- BEGIN: Uplaod Product -->
+		<div class="intro-y box p-5">
+			<div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
+				<div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-feather="chevron-down" class="w-4 h-4 mr-2"></i> اپلود تصاویر </div>
+				<div class="mt-5">
+					<div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5  first:mt-0 first:pt-0">
+						<div class="form-label xl:w-64  xl:!ml-10">
+							<div class="text-right">
+								<div class="flex items-center">
+									<div class="font-medium">تصویر کوچک</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full mt-3 xl:mt-0 d-flex d-inline-flex">
+							<input  type="text" class="form-control" placeholder="آدرس تصویر">
+							<button class="btn btn-primary mr-1 w-44"> <i data-feather="plus" class="w-4 h-4 mr-2"></i> انتخاب </button>
+						</div>
+					</div>
+					<div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5  first:mt-0 first:pt-0">
+						<div class="form-label xl:w-64  xl:!ml-10">
+							<div class="text-right">
+								<div class="flex items-center">
+									<div class="font-medium">تصویر اصلی</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full mt-3 xl:mt-0 d-flex d-inline-flex">
+							<input id="product-name" type="text" class="form-control" placeholder="آدرس تصویر">
+							<button class="btn btn-primary mr-1 w-44"> <i data-feather="plus" class="w-4 h-4 mr-2"></i> انتخاب </button>
+						</div>
+					</div>
+					<div class="form-inline items-start flex-col xl:flex-row mt-10">
+						<div class="w-full mt-3 xl:mt-0 flex-1 xl:!ml-10 xl:w-64">
+							<div class="text-right">
+								<div class="flex items-center">
+									<div class="font-medium">تصویر محصول</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-label w-full xl:w-64 ">
+							<div class="select-image">
+								<div class="grid grid-cols-10 gap-5 pl-4 pr-5">
+									<div class="col-span-5 md:col-span-2 h-28 relative image-fit cursor-pointer zoom-in">
+										<img class="rounded-md" alt="Midone - HTML Admin Template" src="~/AdminTemplate/images/preview-11.jpg">
+										<div title="Remove this image?" class="tooltip w-5 h-5 flex items-center justify-center absolute rounded-full text-white bg-danger right-0 top-0 -mr-2 -mt-2"> <i data-feather="x" class="w-4 h-4"></i> </div>
+									</div>
+									<div class="col-span-5 md:col-span-2 h-28 relative image-fit cursor-pointer zoom-in">
+										<img class="rounded-md" alt="Midone - HTML Admin Template" src="~/AdminTemplate/assets/images/preview-11.jpg">
+										<div title="Remove this image?" class="tooltip w-5 h-5 flex items-center justify-center absolute rounded-full text-white bg-danger right-0 top-0 -mr-2 -mt-2"> <i data-feather="x" class="w-4 h-4"></i> </div>
+									</div>
+									<div class="col-span-5 md:col-span-2 h-28 relative image-fit cursor-pointer zoom-in">
+										<img class="rounded-md" alt="Midone - HTML Admin Template" src="~/AdminTemplate/assets/images/preview-11.jpg">
+										<div title="Remove this image?" class="tooltip w-5 h-5 flex items-center justify-center absolute rounded-full text-white bg-danger right-0 top-0 -mr-2 -mt-2"> <i data-feather="x" class="w-4 h-4"></i> </div>
+									</div>
+									<div class="col-span-5 md:col-span-2 h-28 relative image-fit cursor-pointer zoom-in">
+										<img class="rounded-md" alt="Midone - HTML Admin Template" src="~/AdminTemplate/assets/images/preview-11.jpg">
+										<div title="Remove this image?" class="tooltip w-5 h-5 flex items-center justify-center absolute rounded-full text-white bg-danger right-0 top-0 -mr-2 -mt-2"> <i data-feather="x" class="w-4 h-4"></i> </div>
+									</div>
+									<div class="col-span-5 md:col-span-2 h-28 relative image-fit cursor-pointer zoom-in">
+										<img class="rounded-md" alt="Midone - HTML Admin Template" src="~/AdminTemplate/assets/images/preview-11.jpg">
+										<div title="Remove this image?" class="tooltip w-5 h-5 flex items-center justify-center absolute rounded-full text-white bg-danger right-0 top-0 -mr-2 -mt-2"> <i data-feather="x" class="w-4 h-4"></i> </div>
+									</div>
+								</div>
+
+								<div class="px-4 pb-4 mt-5 flex items-center justify-center  relative">
+									<i data-feather="image" class="w-4 h-4 mr-2"></i> <span class="text-primary mr-1">انتخاب تصاویر محصول</span>
+									<div id="horizontal-form-1" class="w-full h-full top-0 left-0 absolute opacity-0 cursor-pointer"></div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END: Uplaod Product -->
+		<!-- BEGIN: Product Information -->
+		<div class="intro-y box p-5 mt-5">
+			<div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
+				<div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-feather="chevron-down" class="w-4 h-4 mr-2"></i>اطلاعات محصول</div>
+				<div class="mt-5">
+					<div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
+						<div class="form-label xl:w-64 xl:!ml-10">
+							<div class="text-right">
+								<div class="flex items-center">
+									<div class="font-medium">نام محصول</div>
+									<div class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">اجباری</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full mt-3 xl:mt-0 flex-1">
+								<input asp-for="AddNewProduct.Name" required type="text" class="form-control" placeholder="نام محصول">
+								<span asp-validation-for="AddNewProduct.Name" class="text-danger"></span>
+						</div>
+					</div>
+					<div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
+						<div class="form-label xl:w-64 xl:!ml-10">
+							<div class="text-right">
+								<div class="flex items-center">
+									<div class="font-medium">آدرس دوستدارن سِو</div>
+									<div class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">اجباری</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full mt-3 xl:mt-0 flex-1">
+							<input id="slag-name" type="text" class="form-control" placeholder="آدرس سِو">
+							<div class="form-help text-right"></div>
+						</div>
+					</div>
+					<div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
+						<div class="form-label xl:w-64 xl:!ml-10">
+							<div class="text-right">
+								<div class="flex items-center">
+									<div class="font-medium">برند</div>
+									<div class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">اجباری</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full mt-3 xl:mt-0 flex-1">
+							<select asp-for="AddNewProduct.BrandId" asp-items="@ViewBag.Brands" class="form-select">
+							</select>
+						</div>
+					</div>
+					<div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
+						<div class="form-label xl:w-64 xl:!ml-10">
+							<div class="text-right">
+								<div class="flex items-center">
+									<div class="font-medium">دسته بندی</div>
+									<div class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">اجباری</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full mt-3 xl:mt-0 flex-1">
+							<select asp-for="AddNewProduct.CategoryId" asp-items="@ViewBag.Category" class="form-select">
+							</select>
+						</div>
+					</div>
+					<div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5  first:mt-0 first:pt-0">
+						<div class="form-label xl:w-64  xl:!ml-10">
+							<div class="text-right">
+								<div class="flex items-center">
+									<div class="font-medium">تگ</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full mt-3 xl:mt-0 d-flex d-inline-flex">
+							<select asp-for="AddNewProduct.TagsId" data-placeholder="تگ را انتخاب کنید" data-search="true" class="tail-select w-full bg-gray-100" multiple="" asp-items=@ViewBag.Tags>
+							</select>
+								<a href="javascript:;" data-toggle="modal" id="ShowTagsModal" data-target="#header-footer-modal-preview" class="btn btn-primary mr-1 w-16"> <i data-feather="plus" class="w-4 h-4 mr-2"></i></a>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		<!-- END: Product Information -->
+		<!-- BEGIN: Product Detail -->
+		<div class="intro-y box p-5 mt-5">
+			<div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
+				<div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-feather="chevron-down" class="w-4 h-4 mr-2"></i> جزییات محصول </div>
+				<div class="mt-5">
+					<div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
+						<div class="form-label xl:w-64 xl:!ml-10">
+							<div class="text-right">
+								<div class="flex items-center">
+									<div class="font-medium">توضیحات محصول</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full mt-3 xl:mt-0 flex-1" id="standard-editor">
+							<div class="preview">
+								<div class="editor">
+									<p> متن محتوای ویرایشگر</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END: Product Detail -->
+		<!-- BEGIN: Product Variant (Details) -->
+		<div class="intro-y box p-5 mt-5">
+			<div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
+				<div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-feather="chevron-down" class="w-4 h-4 mr-2"></i> ویژگی محصول </div>
+				<div class="mt-5">
+					<div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
+						<div class="form-label xl:w-64 xl:!ml-10">
+							<div class="text-right">
+								<div class="flex items-center">
+									<div class="font-medium">اطلاعات ویژگی</div>
+								</div>
+								<div class="leading-relaxed text-slate-500 text-xs mt-3">افزودن ویژگی به جزئیات محصول در وب سایت</div>
+							</div>
+						</div>
+						<div class="w-full mt-3 xl:mt-0 flex-1">
+							<div class="sm:grid grid-cols-3 gap-2">
+								<input id="Title-Feature" type="text" class="form-control mt-2 sm:mt-0" placeholder="عنوان">
+									<input id="Value-Feature" type="text" class="form-control mt-2 sm:mt-0" placeholder="مقدار">
+									<button type="button" id="Add-Feature-To-List" class="btn btn-primary mt-2 sm:mt-0"> اضافه کردن به لیست </button>
+							</div>
+						</div>
+					</div>
+					<div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
+
+						<div class="form-label xl:w-64 xl:!ml-10">
+							<div class="text-right">
+								<div class="flex items-center">
+									<div class="font-medium">لیست ویژگی ها</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full mt-3 xl:mt-0 flex-1">
+								<div class="table-container overflow-x-auto">
+								<table id="Table-Feature" class="table border">
+									<thead>
+										<tr>
+											<th class="bg-slate-50 dark:bg-darkmode-800 text-slate-500 whitespace-nowrap w-45percent">عنوان</th>
+											<th class="bg-slate-50 dark:bg-darkmode-800 text-slate-500 whitespace-nowrap w-45percent">مقدار</th>
+											<th class="bg-slate-50 dark:bg-darkmode-800 text-slate-500 whitespace-nowrap w-10percent">عملیات</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+										</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END: Product Variant (Details) -->
+		<!-- BEGIN: Product Management -->
+		<div class="intro-y box p-5 mt-5">
+			<div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
+				<div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-feather="chevron-down" class="w-4 h-4 mr-2"></i> مدیریت محصولات </div>
+				<div class="mt-5">
+					<div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
+						<div class="form-label xl:w-64 xl:!ml-10">
+							<div class="text-right">
+								<div class="flex items-center">
+									<div class="font-medium">وضعیت محصول</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full mt-3 xl:mt-0 flex-1">
+							<div class="form-check form-switch">
+								<input id="product-status-active" class="form-check-input" type="checkbox">
+								<label class="form-check-label" for="product-status-active">فعال</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
+						<div class="form-label xl:w-64 xl:!ml-10">
+							<div class="text-right">
+								<div class="flex items-center">
+									<div class="font-medium">قیمت</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full mt-3 xl:mt-0 flex-1">
+
+							<div class="sm:grid grid-cols-1 gap-2">
+								<div class="input-group">
+									<div class="input-group-text">ریال</div>
+										<input asp-for="AddNewProduct.Price" required type="number" class="form-control" placeholder="قیمت">
+								</div>
+                      <span asp-validation-for="AddNewProduct.Price" class="text-danger"></span>
+							</div>
+						</div>
+					</div>
+					<div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
+						<div class="form-label xl:w-64 xl:!ml-10">
+							<div class="text-right">
+								<div class="flex items-center">
+									<div class="font-medium">هزینه پست</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full mt-3 xl:mt-0 flex-1">
+							<div class="sm:grid grid-cols-1 gap-2">
+								<div class="input-group">
+									<div class="input-group-text">ریال</div>
+										<input asp-for="AddNewProduct.PostageFee" required class=" form-control" placeholder="هزینه">
+								</div>
+                              <span asp-validation-for="AddNewProduct.PostageFee" class="text-danger"></span>
+							</div>
+						</div>
+					</div>
+					<div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
+						<div class="form-label xl:w-64 xl:!ml-10">
+							<div class="text-right">
+								<div class="flex items-center">
+									<div class="font-medium">مقدار بر اساس هزینه پست</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full mt-3 xl:mt-0 flex-1">
+							<div class="sm:grid grid-cols-1 gap-2">
+								<div class="input-group">
+									<div class="input-group-text">ریال</div>
+									<input asp-for="AddNewProduct.PostageFeeBasedQuantity" required type="number" class="form-control" placeholder="مقدار">
+								</div>
+                              <span asp-validation-for="AddNewProduct.PostageFeeBasedQuantity" class="text-danger"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END: Product Management -->
+	<div class="flex justify-end grid-cols-4 md:flex-row gap-2 mt-5">
+			<button type="button" class="btn py-3 border-slate-300 dark:border-darkmode-400 text-slate-500 w-full md:w-52">لغو</button>
+			<button type="button" class="btn py-3 border-slate-300 dark:border-darkmode-400 text-slate-500 w-full md:w-52">ثبت و اضافه کردن محصول</button>
+			<button type="submit" class="btn py-3 btn-primary w-full md:w-52">ثبت</button>
+		</div>
+		</form>
+	</div>
+	</div>
+<!-- Modal -->
+<!-- BEGIN: Modal Content -->
+<div id="header-footer-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<!-- BEGIN: Modal Header -->
+			<div class="modal-header">
+				<h2 class="font-medium text-base ml-auto">افزودن تگ</h2>
+				<div class="dropdown sm:hidden">
+					<a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false"> <i data-feather="more-horizontal" class="w-5 h-5 text-gray-600 dark:text-gray-600"></i> </a>
+				</div>
+			</div> <!-- END: Modal Header -->
+			<!-- BEGIN: Modal Body -->
+			<div class="modal-body grid grid-cols-1 gap-4 gap-y-3">
+				<div class="col-span-12 sm:col-span-6"> <label for="modal-form-1" class="form-label">نام تگ</label> 
+					<form>
+						<div class="input-form mt-1  intro-y col-span-12 sm:col-span-6">
+						<input asp-for="AddNewProduct.NameTag" required type="text" class="form-control" placeholder="عنوان">
+							<span id="danger-tag" class="d-none text-danger "></span>
+						</div>
+					</form>
+					</div>
+			</div> <!-- END: Modal Body -->
+			<!-- BEGIN: Modal Footer -->
+			<div class="modal-footer text-right">
+			<button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">لغو</button>
+				<button id="CreateTag" type="submit"  class="btn btn-primary w-20">ثبت</button>
+			</div> <!-- END: Modal Footer -->
+		</div>
+	</div>
+</div> <!-- END: Modal Content -->
+@section Scripts{
+	<script src="~/AdminTemplate/assets/js/jquery.js"></script>
+	<script src="~/AdminTemplate/Library/toastify-js/toastify.min.js"></script>
+	<script src="~/AdminTemplate/Library/jquery-validate/jquery.validate.min.js"></script>
+	<script src="~/AdminTemplate/Library/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+	<script src="~/AdminTemplate/Library/jquery-validate/localization/messages_fa.min.js"></script>
+	<script src="~/AdminTemplate/assets/js/main.js"></script>
+	<script>
+		//Add Feature To list
+		$("#Add-Feature-To-List").click(function () {
+			var Title = $("#Title-Feature").val();
+			var Value = $("#Value-Feature").val();
+			if (Title.length == 0)
+			{
+				$("#Title-Feature").focus().css("border","1px solid red");
+			}
+			if (Value.length == 0) {
+				$("#Value-Feature").focus().css("border", "1px solid red");
+			}
+			else{
+                $("#Title-Feature").css("border","");
+				$("#Value-Feature").css("border","");
+				var newRow = $("<tr>");
+				var titleCell = $("<td>").text(Title);
+				var valueCell = $("<td>").text(Value);
+				var deleteCell = $("<td>").html('<button id="delete-feature" class="btn btn-danger mr-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash w-4 h-4"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>');
+				newRow.append(titleCell, valueCell, deleteCell);
+				$("#Table-Feature tbody").append(newRow);
+
+				// پاک کردن مقادیر تکس باکس‌ها
+				$("#Title-Feature").val("");
+				$("#Value-Feature").val("");
+			}
+		});
+		//Delete Feature From Table
+		$("#Table-Feature").on("click", "#delete-feature", function () {
+			// پیدا کردن سطر مربوط به آیتم
+			var row = $(this).closest("tr");
+			// حذف سطر از جدول
+			row.remove();
+		});
+		//Show Tag Modal
+		$("#ShowTagsModal").on('click',function(){
+		$("#header-footer-modal-preview").show();
+		})
+		//AddTag
+		$("#CreateTag").on('click', function () {
+			var nameTag = $('#AddNewProduct_NameTag').val()
+			if(nameTag=="")
+			{
+				$('#danger-tag').removeClass("d-none");
+				$('#danger-tag').text("تکمیل این فیلد اجباری است.");
+				return;
+			}
+		   else{
+				$('#danger-tag').addClass("d-none");
+				var data = { nameTag }
+				ajaxFunc("AddTag", data, "POST",
+					function (result) {
+						if (result.isSuccess) {
+							$('#AddNewProduct_NameTag').val("");
+							$("#header-footer-modal-preview").hide();
+							successToastify.showToast();
+							getDirectoryList();
+						} else {
+							dangerToastify.showToast();
+						}
+					},
+					function (error) {
+						dangerToastify.showToast();
+						console.log(error);
+					}
+				)
+		   }
+			
+		})
+	//Get List Tags
+			function getDirectoryList() {
+			ajaxFunc("GetListTags",null, "GET",
+				function (result) {
+					if (result.isSuccess) {
+						let html = "";
+							result.data.map(item => {
+							html +=`<li class="dropdown-option" data-key="${item.id}" data-group="#">${item.name}</li>`;
+							});
+						$(".dropdown-optgroup").html(html);
+					}
+				},
+				function (error) {
+					console.log(error);
+				}
+			);
+		}
+	</script>
+}
+
+

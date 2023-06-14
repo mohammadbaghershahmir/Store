@@ -25,11 +25,11 @@ using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption;
 using Microsoft.AspNetCore.DataProtection;
 using Store.Application.Services.Users.Command.Site.LogOutUser;
 using Store.Application.Interfaces.FacadPattern;
-using Store.Application.Services.Products.Category.FacadPattern;
 using Store.Application.Services.FileManager.Queries.ListDirectory;
 using Store.Application.Services.FileManager.Commands.CreateDirectory;
 using Store.Application.Services.FileManager.Commands.UploadFiles;
 using Store.Application.Services.FileManager.Commands.RemoveFiles;
+using Store.Application.Services.Products.FacadPattern;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.

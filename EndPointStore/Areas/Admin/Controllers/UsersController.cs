@@ -114,14 +114,30 @@ namespace EndPointStore.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(string Id)
         {
-            ViewBag.Roles = new SelectList(_rolesService.Execute().Data, "Name", "PersianTitle");
+			if (!ModelState.IsValid)
+			{
+				return Json(new ResultDto
+				{
+					IsSuccess = false,
+					Message = MessageInUser.IsValidForm
+				});
+			}
+			ViewBag.Roles = new SelectList(_rolesService.Execute().Data, "Name", "PersianTitle");
             var result = await _geteditUserService.Execute(Id);
             return View(result);
         }
         [HttpPost]
         public async Task<IActionResult> Edit(EditUserDto request)
         {
-            var result = await _editUserService.Execute(new EditUserDto
+			if (!ModelState.IsValid)
+			{
+				return Json(new ResultDto
+				{
+					IsSuccess = false,
+					Message = MessageInUser.IsValidForm
+				});
+			}
+			var result = await _editUserService.Execute(new EditUserDto
             {
                 Id = request.Id,
                 Name = request.Name,
