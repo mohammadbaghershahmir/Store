@@ -24,8 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Products\Brands\Queries\" />
-    <Folder Include="Services\Products\Commands\" />
+    <Folder Include="Services\ProductsSite\Brands\Queries\" />
+    <Folder Include="Services\ProductsSite\Commands\" />
   </ItemGroup>
 
 </Project>

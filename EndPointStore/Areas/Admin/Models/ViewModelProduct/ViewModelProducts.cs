@@ -1,6 +1,6 @@
-﻿using Store.Application.Services.Products.Brands.Commands.GetBrandsList;
-using Store.Application.Services.Products.Category.Commands.GetParentCategory;
-using Store.Application.Services.Products.Queries.AddNewProduct;
+﻿using Store.Application.Services.ProductsSite.Brands.Commands.GetBrandsList;
+using Store.Application.Services.ProductsSite.Category.Commands.GetParentCategory;
+using Store.Application.Services.ProductsSite.Queries.AddNewProduct;
 using Store.Common.Dto;
 
 namespace EndPointStore.Areas.Admin.Models.ViewModelProduct

@@ -889,6 +889,10 @@
       "PackagePath": "staticwebassets\\AdminTemplate\\assets\\js\\persian-datepicker.min.js"
     },
     {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\js\\select-files.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\assets\\js\\select-files.js"
+    },
+    {
       "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\Library\\jquery-validate\\additional-methods.js",
       "PackagePath": "staticwebassets\\SiteTemplate\\Library\\jquery-validate\\additional-methods.js"
     },

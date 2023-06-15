@@ -1,10 +1,11 @@
-﻿using Store.Application.Services.Products.Brands.Commands.GetBrandsList;
-using Store.Application.Services.Products.Category.Commands.DeleteCategory;
-using Store.Application.Services.Products.Category.Commands.GetCategory;
-using Store.Application.Services.Products.Category.Commands.GetParentCategory;
-using Store.Application.Services.Products.Category.Queries.AddNewCategory;
-using Store.Application.Services.Products.Tags.Commands.GetTagsList;
-using Store.Application.Services.Products.Tags.Queries.AddNewTag;
+﻿using Store.Application.Services.ProductsSite.Brands.Commands.GetBrandsList;
+using Store.Application.Services.ProductsSite.Category.Commands.DeleteCategory;
+using Store.Application.Services.ProductsSite.Category.Commands.GetCategory;
+using Store.Application.Services.ProductsSite.Category.Commands.GetParentCategory;
+using Store.Application.Services.ProductsSite.Category.Queries.AddNewCategory;
+using Store.Application.Services.ProductsSite.Queries.AddNewProduct;
+using Store.Application.Services.ProductsSite.Tags.Commands.GetTagsList;
+using Store.Application.Services.ProductsSite.Tags.Queries.AddNewTag;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,5 +23,6 @@ namespace Store.Application.Interfaces.FacadPattern
         IGetBrandListService GetBrandListService { get;}
         IAddTagService AddTagService { get;}
         IGetTagsListService GetTagsListService { get;}
+        IAddProductService AddProductService { get;}
     }
 }

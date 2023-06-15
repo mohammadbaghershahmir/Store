@@ -10,6 +10,7 @@ namespace Store.Common.Constant.Enum_Type_Contacts
     {
         Directory,
         Image,
+        Video,
         Other
 
     }

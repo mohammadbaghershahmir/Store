@@ -23,6 +23,10 @@ namespace Store.Common.Constant
 		public const string UploadInvalid = "مشکلی در آپلود فایل وجود دارد";
 		public const string ExistTag = "تگی با همین نام وجود دارد";
 		public const string IsValidForm = "مقادیر فرم تکمیل نشده است!";
+		public const string InsertProduct = "محصول مورد نظر با موفقیت ثبت شد!";
+		public const string ExistSlug = "آدرس سِو با همین نام وجود دارد";
+
+
 
 	}
 }

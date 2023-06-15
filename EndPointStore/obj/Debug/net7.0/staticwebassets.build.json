@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/tzTNvlRdsndtvcxtebR1XmnFpPmravwDhRK5oMCtdQ=",
+  "Hash": "Gj/OUqd6FWzrEurbC6kJbG0S9jZqOG848U+2wlsAxoM=",
   "Source": "EndPointStore",
   "BasePath": "_content/EndPointStore",
   "Mode": "Default",
@@ -1443,6 +1443,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\AdminTemplate\\assets\\js\\persian-datepicker.min.js"
+    },
+    {
+      "Identity": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\js\\select-files.js",
+      "SourceId": "EndPointStore",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\",
+      "BasePath": "_content/EndPointStore",
+      "RelativePath": "AdminTemplate/assets/js/select-files.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\AdminTemplate\\assets\\js\\select-files.js"
     },
     {
       "Identity": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\AdminTemplate\\assets\\Sweetalert2\\sweetalert2.min.css",

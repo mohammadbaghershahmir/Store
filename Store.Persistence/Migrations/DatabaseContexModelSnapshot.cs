@@ -477,10 +477,6 @@ namespace Store.Persistence.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("BrandId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("BrandsId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -721,28 +717,28 @@ namespace Store.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "459179d7-de63-4db7-b586-04bddf8f5d48",
+                            Id = "91060bdb-5c1b-4089-993f-f5b903b540cc",
                             IsRemoved = false,
                             Title = "تلفن همراه",
                             Value = "Mobail"
                         },
                         new
                         {
-                            Id = "a4c72b18-4f6c-4111-8568-ff032c3f7406",
+                            Id = "5855b0d5-f9e5-4492-89c0-67f7c8c00b4c",
                             IsRemoved = false,
                             Title = "تلفن",
                             Value = "Phone"
                         },
                         new
                         {
-                            Id = "177486a2-0f96-4259-9b10-a657c88df435",
+                            Id = "8248f382-8fe6-4234-9169-dec0a77929c9",
                             IsRemoved = false,
                             Title = "ایمیل",
                             Value = "Email"
                         },
                         new
                         {
-                            Id = "b55d121c-2cdd-4101-9c77-5581559c07f0",
+                            Id = "916ff9ec-cff4-4792-b4ba-4b482ee4d020",
                             IsRemoved = false,
                             Title = "آدرس",
                             Value = "Address"
@@ -880,7 +876,7 @@ namespace Store.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "135c2084-0f5e-46bf-98ba-c03f4ff46d8a",
+                            Id = "ee1e08ef-43d9-44b4-ade2-c7bcff69384e",
                             Name = "Admin",
                             NormalizedName = "ADMIN",
                             IsRemoved = false,
@@ -888,7 +884,7 @@ namespace Store.Persistence.Migrations
                         },
                         new
                         {
-                            Id = "5075a2dc-ef9b-4f7f-a7a0-fdd29fd4d82a",
+                            Id = "2cc86fbc-68f9-429c-b194-b407ce505a3f",
                             Name = "Operator",
                             NormalizedName = "OPERATOR",
                             IsRemoved = false,
@@ -896,7 +892,7 @@ namespace Store.Persistence.Migrations
                         },
                         new
                         {
-                            Id = "5e645d5b-2a28-473d-bdce-d3b10a81d893",
+                            Id = "a07eee99-122f-49e8-bf7b-17944c15a287",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER",
                             IsRemoved = false,

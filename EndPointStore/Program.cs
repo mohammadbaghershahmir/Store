@@ -29,7 +29,7 @@ using Store.Application.Services.FileManager.Queries.ListDirectory;
 using Store.Application.Services.FileManager.Commands.CreateDirectory;
 using Store.Application.Services.FileManager.Commands.UploadFiles;
 using Store.Application.Services.FileManager.Commands.RemoveFiles;
-using Store.Application.Services.Products.FacadPattern;
+using Store.Application.Services.ProductsSite.FacadPattern;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
