@@ -9860,7 +9860,8 @@ img, video {
 }
 
 .rounded-md {
-    border-radius: .375rem
+    border-radius: .375rem;
+    object-fit:contain!important;
 }
 
 .rounded-lg {
@@ -17522,10 +17523,6 @@ mark.p-1.bg-yellow-200 {
         color: rgb(var(--color-success) / var(--tw-text-opacity));
     }
 }
-.select-image {
-    border: 2px dashed #ccc;
-    border-radius:8px;
-}
 .text-danger
 {
     color:red;
@@ -17533,4 +17530,15 @@ mark.p-1.bg-yellow-200 {
 .table-container {
     height: 150px;
     overflow: auto;
+}
+.h-28{
+    height:7rem;
+}
+.svg__close {
+    color: red;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid;
+    width:20px;
+    height:20px;
 }

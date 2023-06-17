@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Store.Application.Interfaces.FacadPattern;
-using Store.Application.Services.ProductsSite.Category.Commands.GetParentCategory;
-using Store.Application.Services.ProductsSite.Category.Queries.AddNewCategory;
+using Store.Application.Services.ProductsSite.Commands.AddNewCategory;
+using Store.Application.Services.ProductsSite.Queries.GetParentCategory;
 using Store.Application.Services.Users.Command.DeleteUser;
 
 namespace EndPointStore.Areas.Admin.Controllers

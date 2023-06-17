@@ -28,7 +28,6 @@ namespace Store.Persistence.Contexs
         public DbSet<ContactType> ContactType { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<Media> Medias { get; set; }
-        public DbSet<MediaType> MediaTypes { get; set; }
 		public DbSet<Brands> Brands { get; set; }
         public DbSet<Comments> Comments { get; set; }
         public DbSet<Feature> Features { get; set; }
@@ -179,6 +178,7 @@ namespace Store.Persistence.Contexs
             modelBuilder.Entity<User>().HasQueryFilter(p => !p.IsRemoved);
             //modelBuilder.Entity<Role>().HasQueryFilter(p => !p.IsRemoved);
             modelBuilder.Entity<Category>().HasQueryFilter(p => !p.IsRemoved);
+            modelBuilder.Entity<Products>().HasQueryFilter(p => !p.IsRemoved);
         }
 
         private void SeedData(ModelBuilder modelBuilder)

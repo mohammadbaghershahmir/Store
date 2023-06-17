@@ -5,18 +5,16 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using NuGet.Packaging;
 using Store.Application.Interfaces.FacadPattern;
-using Store.Application.Services.FileManager.Queries.ListDirectory;
-
-using Store.Application.Services.ProductsSite.Category.Commands.GetParentCategory;
-using Store.Application.Services.ProductsSite.Category.Queries.AddNewCategory;
-using Store.Application.Services.ProductsSite.Queries.AddNewProduct;
-using Store.Application.Services.ProductsSite.Tags.Commands.GetTagsList;
+using Store.Application.Services.ProductsSite.Commands.AddNewProduct;
+using Store.Application.Services.ProductsSite.Queries.GetProductsList;
 using Store.Common.Constant;
 using Store.Common.Dto;
+using Store.Application.Services.ProductsSite.Queries.GetTagsList;
+using Store.Application.Services.Users.Command.DeleteUser;
 
 namespace EndPointStore.Areas.Admin.Controllers
 {
-  
+
     [Area("Admin")]
     public class ProductsController : Controller
     {
@@ -25,10 +23,17 @@ namespace EndPointStore.Areas.Admin.Controllers
 		{
 			_productFacad = productFacad;
 		}
-		public async Task<IActionResult> Index()
+		[HttpGet]
+		public async Task<IActionResult> Index(string searchkey, int page = 1)
         {
-          
-            return View();
+			var listProducts =await _productFacad.GetProductsListService.Execute(	
+				new RequstGetProductsDto
+				{
+					SearchKey = searchkey,
+					Page=page
+				}
+				);
+            return View(listProducts);
         }
 		[HttpPost]
 		public async Task<IActionResult> AddTag(string nameTag)
@@ -91,6 +96,7 @@ namespace EndPointStore.Areas.Admin.Controllers
 					UserId=product.UserId,
 					TagsId=product.TagsId,
 					FeatureList=product.FeatureList,
+					UrlImagList=product.UrlImagList,
 				}
 				);
 			return Json(resultProduct);
@@ -113,5 +119,11 @@ namespace EndPointStore.Areas.Admin.Controllers
 				Message=""
 			});
 		}
-	}
+        [HttpPost]
+        public async Task<IActionResult> Delete(string? ProductId)
+        {
+			var resultRemove = await _productFacad.RemoveProductService.Execute(ProductId);
+            return Json(resultRemove);
+        }
+    }
 }

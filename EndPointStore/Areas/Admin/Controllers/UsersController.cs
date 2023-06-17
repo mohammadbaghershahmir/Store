@@ -53,7 +53,7 @@ namespace EndPointStore.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index(string searchkey, int page = 1)
         {
-            var t = await _usersServices.Execute(
+            var ResultUsers = await _usersServices.Execute(
 
                 new RequestGetUsersDto
                 {
@@ -62,14 +62,7 @@ namespace EndPointStore.Areas.Admin.Controllers
                     SearchKey = searchkey,
                 }
                 );
-            return View(await _usersServices.Execute(
-
-                new RequestGetUsersDto
-                {
-                    Page = page,
-                    SearchKey = searchkey,
-                }
-                ));
+            return View(ResultUsers);
         }
         [HttpGet]
         public IActionResult Create()

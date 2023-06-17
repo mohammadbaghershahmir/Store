@@ -1888,7 +1888,8 @@
       },
       "Store.Domain/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
+          "Store.Common": "1.0.0"
         },
         "runtime": {
           "Store.Domain.dll": {}

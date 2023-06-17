@@ -1,4 +1,4 @@
-﻿using Store.Common.Constant.Enum_Type_Contacts;
+﻿using Store.Common.Constant.FileTypeManager;
 using System;
 using System.Collections.Generic;
 using System.Linq;

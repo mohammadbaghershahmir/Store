@@ -25,8 +25,9 @@ namespace Store.Common.Constant
 		public const string IsValidForm = "مقادیر فرم تکمیل نشده است!";
 		public const string InsertProduct = "محصول مورد نظر با موفقیت ثبت شد!";
 		public const string ExistSlug = "آدرس سِو با همین نام وجود دارد";
+        public const string RemoveProduct = "حذف محصول با موفقیت انجام شد!";
 
 
 
-	}
+    }
 }

@@ -4630,7 +4630,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
+          "Store.Common": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Store.Domain.dll": {}

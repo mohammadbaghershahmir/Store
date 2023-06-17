@@ -17,7 +17,6 @@ namespace Store.Application.Interfaces.Contexs
          DbSet<ContactType> ContactType { get; set; }
          DbSet<Category> Category { get; set; }
          DbSet<Media> Medias { get; set; }
-         DbSet<MediaType> MediaTypes { get; set; }
 		 DbSet<Brands> Brands { get; set; }
         DbSet<Comments> Comments { get; set; }
         DbSet<Feature> Features { get; set; }

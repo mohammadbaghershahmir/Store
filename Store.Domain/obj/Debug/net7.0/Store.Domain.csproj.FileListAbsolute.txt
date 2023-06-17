@@ -10,3 +10,6 @@ E:\Stor-Project\Store\Store.Domain\obj\Debug\net7.0\Store.Domain.dll
 E:\Stor-Project\Store\Store.Domain\obj\Debug\net7.0\refint\Store.Domain.dll
 E:\Stor-Project\Store\Store.Domain\obj\Debug\net7.0\Store.Domain.pdb
 E:\Stor-Project\Store\Store.Domain\obj\Debug\net7.0\ref\Store.Domain.dll
+E:\Stor-Project\Store\Store.Domain\bin\Debug\net7.0\Store.Common.dll
+E:\Stor-Project\Store\Store.Domain\bin\Debug\net7.0\Store.Common.pdb
+E:\Stor-Project\Store\Store.Domain\obj\Debug\net7.0\Store.Domain.csproj.CopyComplete

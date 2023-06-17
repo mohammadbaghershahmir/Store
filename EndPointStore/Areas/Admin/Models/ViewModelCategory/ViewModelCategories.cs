@@ -1,5 +1,5 @@
-﻿using Store.Application.Services.ProductsSite.Category.Commands.GetParentCategory;
-using Store.Application.Services.ProductsSite.Category.Queries.AddNewCategory;
+﻿using Store.Application.Services.ProductsSite.Commands.AddNewCategory;
+using Store.Application.Services.ProductsSite.Queries.GetParentCategory;
 
 namespace EndPointStore.Areas.Admin.Models.ViewModelCategory
 {

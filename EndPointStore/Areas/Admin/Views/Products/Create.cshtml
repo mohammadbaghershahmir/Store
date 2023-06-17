@@ -22,7 +22,7 @@
 							</div>
 						</div>
 						<div class="w-full mt-3 xl:mt-0 d-flex d-inline-flex">
-								<input id="MinPic" type="text" class="form-control" placeholder="آدرس تصویر">
+								<input dir="ltr" id="MinPic" type="text" class="form-control" placeholder="آدرس تصویر">
 								<a href="javascript:;" data-toggle="modal" id="ShowImageModal" data-target="#modalSelectFiles"  data-selector-id="MinPic" class="btn btn-primary mr-1 w-44 select-image"> <i data-feather="plus" class="w-4 h-4 mr-2"></i> انتخاب </a>
 						</div>
 					</div>
@@ -35,12 +35,12 @@
 							</div>
 						</div>
 						<div class="w-full mt-3 xl:mt-0 d-flex d-inline-flex">
-							<input id="mainpic"  type="text" class="form-control" placeholder="آدرس تصویر">
+							<input dir="ltr" id="mainpic"  type="text" class="form-control" placeholder="آدرس تصویر">
 								<a href="javascript:;" data-toggle="modal" id="ShowImageModal" data-target="#modalSelectFiles" data-selector-id="mainpic" class=" btn btn-primary mr-1 w-44 select-image"> <i data-feather="plus" class="w-4 h-4 mr-2"></i> انتخاب </a>
 						</div>
 					</div>
 					<div class="form-inline items-start flex-col xl:flex-row mt-10">
-						<div class="w-full mt-3 xl:mt-0 flex-1 xl:!ml-10 xl:w-64">
+						<div class="w-full mt-3 xl:mt-0 flex-2 xl:!ml-10 xl:w-64">
 							<div class="text-right">
 								<div class="flex items-center">
 									<div class="font-medium">تصویر محصول</div>
@@ -48,7 +48,7 @@
 							</div>
 						</div>
 						<div class="w-full mt-3 xl:mt-0 flex-1 border-2 border-dashed dark:border-darkmode-400 rounded-md pt-4">
-                                <div class="grid grid-cols-10 gap-5 pl-4 pr-5" id="box-selected-images">
+								<div class="intro-y grid grid-cols-12 gap-3 sm:gap-6 mt-5" id="box-selected-images">
                                 </div>
                                 <div class="px-4 pb-4 mt-5 flex items-center justify-center cursor-pointer relative">
 									<i data-feather="image" class="w-4 h-4 mr-2"></i> <span class="text-primary mr-1">انتخاب تصاویر محصول</span>
@@ -354,19 +354,19 @@
 		<div class="modal-content">
 			<!-- BEGIN: Modal Header -->
 			<div class="modal-header">
-				<h2 class="font-medium text-base mr-auto">
-					File Manager
+				<h2 class="font-medium text-base ml-auto">
+					مدیریت فایل
 				</h2>
-				<button id="back-button" onclick="backToLastDirectory()" class="btn btn-primary w-32 mr-2 d-none">
-					<i data-feather="corner-up-left" class="w-4 h-4 mr-2"></i> Back
+				<button id="back-button" onclick="backToLastDirectory()" class="btn btn-primary w-32 ml-2 d-none">
+					<i data-feather="corner-up-left" class="w-4 h-4 ml-2"></i> بازگشت
 				</button>
-				<button onclick="goToRoot()" class="btn btn-secondary w-24 inline-block mr-1 ">Root</button>
+				<button onclick="goToRoot()" class="btn btn-secondary w-24 inline-block ml-1 ">ریشه</button>
 				<div class="dropdown sm:hidden">
 					<a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-feather="more-horizontal" class="w-5 h-5 text-slate-500"></i> </a>
 					<div class="dropdown-menu w-40">
 						<ul class="dropdown-content">
 							<li>
-								<a href="javascript:;" class="dropdown-item"> <i data-feather="file" class="w-4 h-4 mr-2"></i> Download Docs </a>
+								<a href="javascript:;" class="dropdown-item"> <i data-feather="file" class="w-4 h-4 ml-2"></i> دانلود فایل </a>
 							</li>
 						</ul>
 					</div>
@@ -374,7 +374,7 @@
 			</div>
 			<!-- END: Modal Header -->
 			<!-- BEGIN: Modal Body -->
-			<div id="filemanager-body" class="modal-body grid grid-cols-12 gap-4 gap-y-3">
+			<div id="filemanager-body" class="intro-y grid grid-cols-12 gap-3 sm:gap-6 mt-5 modal-body">
 			</div>
 			<!-- END: Modal Body -->
 			<!-- BEGIN: Modal Footer -->
@@ -513,14 +513,15 @@
 				let pic = $('#mainpic').val()
 				//Get Editor
 				var content = $('#standard-editor .editor').html();
-				//let content = tinymce.get('#standard-editor').getContent();
 				let categoryId = $('#AddNewProduct_CategoryId').val()
 				let brandId = $('#AddNewProduct_BrandId').val()
 				let tagsId = tagsIdlist
 				let featureList =featureListItem
+				let urlImagList=[];
+				urlImagList=selectedFiles;
 				var data = {
 					name,price,quantity,postageFee,postageFeeBasedQuantity,
-					slug, isActive, minPic, pic, content, categoryId, brandId, tagsId, featureList
+					slug, isActive, minPic, pic, content, categoryId, brandId, tagsId, featureList, urlImagList
                     }
 				ajaxFunc("create", data, "POST",
                         function (result) {

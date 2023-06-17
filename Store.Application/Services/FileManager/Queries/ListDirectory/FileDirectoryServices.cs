@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Microsoft.VisualBasic.FileIO;
-using Store.Common.Constant.Enum_Type_Contacts;
+using Store.Common.Constant.FileTypeManager;
 using Store.Common.Dto;
 using System;
 using System.Collections.Generic;

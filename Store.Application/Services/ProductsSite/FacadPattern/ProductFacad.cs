@@ -1,13 +1,16 @@
-﻿using Store.Application.Interfaces.Contexs;
+﻿using Microsoft.Extensions.Configuration;
+using Store.Application.Interfaces.Contexs;
 using Store.Application.Interfaces.FacadPattern;
-using Store.Application.Services.ProductsSite.Brands.Commands.GetBrandsList;
-using Store.Application.Services.ProductsSite.Category.Commands.DeleteCategory;
-using Store.Application.Services.ProductsSite.Category.Commands.GetCategory;
-using Store.Application.Services.ProductsSite.Category.Commands.GetParentCategory;
-using Store.Application.Services.ProductsSite.Category.Queries.AddNewCategory;
-using Store.Application.Services.ProductsSite.Queries.AddNewProduct;
-using Store.Application.Services.ProductsSite.Tags.Commands.GetTagsList;
-using Store.Application.Services.ProductsSite.Tags.Queries.AddNewTag;
+using Store.Application.Services.ProductsSite.Commands.AddNewCategory;
+using Store.Application.Services.ProductsSite.Commands.AddNewProduct;
+using Store.Application.Services.ProductsSite.Commands.AddNewTag;
+using Store.Application.Services.ProductsSite.Commands.DeleteCategory;
+using Store.Application.Services.ProductsSite.Commands.DeleteProducts;
+using Store.Application.Services.ProductsSite.Queries.GetBrandsList;
+using Store.Application.Services.ProductsSite.Queries.GetCategory;
+using Store.Application.Services.ProductsSite.Queries.GetParentCategory;
+using Store.Application.Services.ProductsSite.Queries.GetProductsList;
+using Store.Application.Services.ProductsSite.Queries.GetTagsList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,9 +22,12 @@ namespace Store.Application.Services.ProductsSite.FacadPattern
     public class ProductFacad : IProductFacad
     {
         private readonly IDatabaseContext _context;
-        public ProductFacad(IDatabaseContext context)
+        private readonly IConfiguration _configuration;
+
+        public ProductFacad(IDatabaseContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration= configuration;
         }
         private AddCategoryService _addCategoryService;
         private IGetCategory _getCategory;
@@ -31,6 +37,8 @@ namespace Store.Application.Services.ProductsSite.FacadPattern
         private IAddTagService _addTagService;
         private IGetTagsListService _getTagsListService;
         private IAddProductService _addProductService;
+        private IGetProductsListService _getProductsListService;
+        private IRemoveProductService _removeProductService;
         //Add Category
         public AddCategoryService AddCategoryService
         {
@@ -93,5 +101,22 @@ namespace Store.Application.Services.ProductsSite.FacadPattern
 				return _addProductService = _addProductService ?? new AddProductService(_context);
 			}
 		}
-	}
+        //GetProducts List
+        public IGetProductsListService GetProductsListService
+        {
+            get
+            {
+                return _getProductsListService = _getProductsListService ?? new GetProductsListService(_context,_configuration);
+            }
+        }
+        //Remove Product
+        public IRemoveProductService RemoveProductService
+        {
+            get
+            {
+                return _removeProductService = _removeProductService ?? new RemoveProductService(_context);
+            }
+
+        }
+    }
 }

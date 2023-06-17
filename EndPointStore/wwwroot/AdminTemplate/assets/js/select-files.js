@@ -65,10 +65,10 @@ $(document).on('click', '#remove-from-list', function (e) {
 function renderImageList() {
     let html = "";
     selectedFiles.map(item => {
-        html += `<div class="col-span-5 md:col-span-2 h-28 relative image-fit cursor-pointer zoom-in">
+        html += ` <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 xxl:col-span-2 h-28 mr-2 relative image-fit cursor-pointer zoom-in">
                                                                    <img class="rounded-md" alt="${item}" src="${ftpRoot}${item}">
                                            <div title="Remove this image?" data-path="${item}" id="remove-from-list" class="tooltip w-5 h-5 flex items-center justify-center absolute rounded-full text-white bg-danger right-0 top-0 -mr-2 -mt-2">
-                                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="x" data-feather="x" class="lucide lucide-x w-4 h-4"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                           <svg xmlns="http://www.w3.org/2000/svg" class="svg__close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="x" data-feather="x" class="lucide lucide-x w-4 h-4"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                                            </div>
                                        </div>`;
     });
@@ -133,8 +133,8 @@ function getDirectoryList() {
                 if (result.data.length > 0) {
                   
                     result.data.map(item => {
-                        html += `<div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 2xl:col-span-2">
-                                                   <div  class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in"> `;
+                        html += `<div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 xxl:col-span-2">
+                                                   <div  class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">`;
                         if (item.fileTypeEnum == 0) {
                             html += `<div onclick="openFile('${item.directory}')"  class="w-3/5 file__icon file__icon--directory mx-auto"></div>`;
                            
@@ -168,19 +168,6 @@ function getDirectoryList() {
                         }
                         html+= `<a href="" class="block font-medium mt-4 text-center truncate">${item.name}</a>
                                                    <div class="text-slate-500 text-xs text-center mt-0.5">${item.size}</div>
-                                                         <div class="absolute top-0 right-0 mr-2 mt-3 dropdown ml-auto">
-                                                             <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false" data-tw-toggle="dropdown"> <i data-feather="more-vertical" class="w-5 h-5 text-slate-500"></i> </a>
-                                                             <div class="dropdown-menu w-40">
-                                                                 <ul class="dropdown-content">
-                                                                     <li>
-                                                                         <a href="" class="dropdown-item"> <i data-feather="users" class="w-4 h-4 mr-2"></i> Share File </a>
-                                                                     </li>
-                                                                     <li>
-                                                                         <a href="" class="dropdown-item"> <i data-feather="trash" class="w-4 h-4 mr-2"></i> Delete </a>
-                                                                     </li>
-                                                                 </ul>
-                                                             </div>
-                                                         </div>
                                                      </div>
                                                  </div>`;
                     });
@@ -198,19 +185,24 @@ function getDirectoryList() {
     );
 }
 let loading = `<div class="intro-y col-span-12 sm:col-span-12 md:col-span-12 2xl:col-span-12">
-                <div class="col-span-6 sm:col-span-3 xl:col-span-2 flex flex-col justify-end items-center">
-                    <svg width="25" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" stroke="rgb(30, 41, 59)" class="w-8 h-8">
-                        <g fill="none" fill-rule="evenodd" stroke-width="4">
-                            <circle cx="22" cy="22" r="1">
-                                <animate attributeName="r" begin="0s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite"></animate>
-                                <animate attributeName="stroke-opacity" begin="0s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite"></animate>
-                            </circle>
-                            <circle cx="22" cy="22" r="1">
-                                <animate attributeName="r" begin="-0.9s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite"></animate>
-                                <animate attributeName="stroke-opacity" begin="-0.9s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite"></animate>
-                            </circle>
-                        </g>
-                    </svg>
-                    <div class="text-center text-xs mt-2">لطفا منتظر بمانید...</div>
-                </div>
-               </div>`;
+			<div class="col-span-12 sm:col-span-12 xl:col-span-12 flex flex-col justify-end items-center">
+				<svg width="30" viewBox = "0 0 45 45" xmlns = "http://www.w3.org/2000/svg" stroke = "rgb(45, 55, 72)" class="w-8 h-8">
+					<g fill="none" fill - rule="evenodd" transform = "translate(1 1)" stroke - width="3">
+						<circle cx="22" cy = "22" r = "6" stroke - opacity="0">
+							<animate attributeName="r" begin = "1.5s" dur = "3s" values = "6;22" calcMode = "linear" repeatCount = "indefinite"> </animate>
+								<animate attributeName = "stroke-opacity" begin = "1.5s" dur = "3s" values = "1;0" calcMode = "linear" repeatCount = "indefinite"> </animate>
+									<animate attributeName = "stroke-width" begin = "1.5s" dur = "3s" values = "2;0" calcMode = "linear" repeatCount = "indefinite"> </animate>
+										</circle>
+										<circle cx = "22" cy = "22" r = "6" stroke - opacity="0">
+											<animate attributeName="r" begin = "3s" dur = "3s" values = "6;22" calcMode = "linear" repeatCount = "indefinite"> </animate>
+												<animate attributeName = "stroke-opacity" begin = "3s" dur = "3s" values = "1;0" calcMode = "linear" repeatCount = "indefinite"> </animate>
+													<animate attributeName = "stroke-width" begin = "3s" dur = "3s" values = "2;0" calcMode = "linear" repeatCount = "indefinite"> </animate>
+														</circle>
+														<circle cx = "22" cy = "22" r = "8">
+															<animate attributeName="r" begin = "0s" dur = "1.5s" values = "6;1;2;3;4;5;6" calcMode = "linear" repeatCount = "indefinite"> </animate>
+																</circle>
+																</g>
+																</svg>
+																<div class="text-center text-xs mt-2" > لطفا منتظر بمانید...</div>
+																	</div>
+																	</div>`;

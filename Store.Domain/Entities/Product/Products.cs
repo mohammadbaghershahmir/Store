@@ -26,7 +26,7 @@ namespace Store.Domain.Entities.Product
         public virtual Category Category { get; set; }
 		public string CategoryId { get; set; }
 		public virtual Brands Brands { get; set; }
-		public string BrandsId { get; set; }
+		public string? BrandsId { get; set; }
 		public virtual User User { get; set; }
 		public string UserId { get; set; }
 		public ICollection<ItemTag> ItemTags { get; set; }

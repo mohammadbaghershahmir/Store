@@ -180,9 +180,8 @@ namespace Store.Persistence.Migrations
                     b.Property<bool>("IsRemoved")
                         .HasColumnType("bit");
 
-                    b.Property<string>("MediaTypeId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("MediaType")
+                        .HasColumnType("int");
 
                     b.Property<string>("ProductsId")
                         .IsRequired()
@@ -205,45 +204,9 @@ namespace Store.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MediaTypeId");
-
                     b.HasIndex("ProductsId");
 
                     b.ToTable("Medias");
-                });
-
-            modelBuilder.Entity("Store.Domain.Entities.Medias.MediaType", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("InsertTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsRemoved")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("RemoveTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .IsRequired()
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("rowversion");
-
-                    b.Property<DateTime?>("UpdateTime")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("MediaTypes");
                 });
 
             modelBuilder.Entity("Store.Domain.Entities.Product.Brands", b =>
@@ -478,7 +441,6 @@ namespace Store.Persistence.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("BrandsId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CategoryId")
@@ -717,28 +679,28 @@ namespace Store.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "91060bdb-5c1b-4089-993f-f5b903b540cc",
+                            Id = "7ac2d33a-be25-459c-9781-6ed7faae84f8",
                             IsRemoved = false,
                             Title = "تلفن همراه",
                             Value = "Mobail"
                         },
                         new
                         {
-                            Id = "5855b0d5-f9e5-4492-89c0-67f7c8c00b4c",
+                            Id = "3807978c-c477-4f8f-a30b-cac4af4dfcf2",
                             IsRemoved = false,
                             Title = "تلفن",
                             Value = "Phone"
                         },
                         new
                         {
-                            Id = "8248f382-8fe6-4234-9169-dec0a77929c9",
+                            Id = "bd490f0b-4261-4102-8358-7b17da0aeab2",
                             IsRemoved = false,
                             Title = "ایمیل",
                             Value = "Email"
                         },
                         new
                         {
-                            Id = "916ff9ec-cff4-4792-b4ba-4b482ee4d020",
+                            Id = "5c714ff8-cbfd-4962-83b2-2ea1f744bfa3",
                             IsRemoved = false,
                             Title = "آدرس",
                             Value = "Address"
@@ -876,7 +838,7 @@ namespace Store.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ee1e08ef-43d9-44b4-ade2-c7bcff69384e",
+                            Id = "ec9cbad1-2f13-4fd6-9bed-b2b0e261f3e4",
                             Name = "Admin",
                             NormalizedName = "ADMIN",
                             IsRemoved = false,
@@ -884,7 +846,7 @@ namespace Store.Persistence.Migrations
                         },
                         new
                         {
-                            Id = "2cc86fbc-68f9-429c-b194-b407ce505a3f",
+                            Id = "8d57532c-0930-471b-89e0-3aaf316ad5bd",
                             Name = "Operator",
                             NormalizedName = "OPERATOR",
                             IsRemoved = false,
@@ -892,7 +854,7 @@ namespace Store.Persistence.Migrations
                         },
                         new
                         {
-                            Id = "a07eee99-122f-49e8-bf7b-17944c15a287",
+                            Id = "2dbee74b-5a72-467a-bc38-db2b636c9b24",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER",
                             IsRemoved = false,
@@ -953,19 +915,11 @@ namespace Store.Persistence.Migrations
 
             modelBuilder.Entity("Store.Domain.Entities.Medias.Media", b =>
                 {
-                    b.HasOne("Store.Domain.Entities.Medias.MediaType", "MediaType")
-                        .WithMany("Medias")
-                        .HasForeignKey("MediaTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Store.Domain.Entities.Product.Products", "Products")
                         .WithMany("Medias")
                         .HasForeignKey("ProductsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("MediaType");
 
                     b.Navigation("Products");
                 });
@@ -1038,9 +992,7 @@ namespace Store.Persistence.Migrations
                 {
                     b.HasOne("Store.Domain.Entities.Product.Brands", "Brands")
                         .WithMany("Products")
-                        .HasForeignKey("BrandsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BrandsId");
 
                     b.HasOne("Store.Domain.Entities.Product.Category", "Category")
                         .WithMany("Products")
@@ -1097,11 +1049,6 @@ namespace Store.Persistence.Migrations
                     b.Navigation("ContactType");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Store.Domain.Entities.Medias.MediaType", b =>
-                {
-                    b.Navigation("Medias");
                 });
 
             modelBuilder.Entity("Store.Domain.Entities.Product.Brands", b =>

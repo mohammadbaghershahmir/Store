@@ -22,7 +22,7 @@ namespace Store.Application.Services.Users.Command.DeleteUser
         }
         public async Task<ResultDto> Execute(string Id)
         {
-            var user =  _userManager.FindByIdAsync(Id).Result;
+            var user =await _userManager.FindByIdAsync(Id);
             //Find User
             if (user == null)
             {
