@@ -1,6 +1,7 @@
 ﻿using EndPointStore.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Store.Application.Interfaces.FacadPattern;
 using System.Diagnostics;
 
 namespace EndPointStore.Controllers
@@ -9,13 +10,16 @@ namespace EndPointStore.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+		private readonly IProductFacad _productFacad;
+		public HomeController(ILogger<HomeController> logger, IProductFacad productFacad)
         {
             _logger = logger;
+            _productFacad = productFacad;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var categories =await _productFacad.GetParentCategory.Execute();
+
             return View();
         }
 

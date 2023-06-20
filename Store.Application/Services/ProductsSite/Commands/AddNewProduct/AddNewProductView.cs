@@ -20,6 +20,7 @@ namespace Store.Application.Services.ProductsSite.Commands.AddNewProduct
         public string? BrandId { get; set; }
         public string? UserId { get; set; }
         public string? Content { get; set; }
+        public string? Description { get; set; }
         [Required]
         [Range(0, double.MaxValue)]
         public double Price { get; set; }

@@ -26,8 +26,6 @@ namespace Store.Common.Constant
 		public const string InsertProduct = "محصول مورد نظر با موفقیت ثبت شد!";
 		public const string ExistSlug = "آدرس سِو با همین نام وجود دارد";
         public const string RemoveProduct = "حذف محصول با موفقیت انجام شد!";
-
-
-
-    }
+		public const string MessageUpdateProduct = "ویرایش محصول با موفقیت انجام شد!";
+	}
 }

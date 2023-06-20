@@ -28,22 +28,31 @@ namespace Store.Application.Services.Users.Queries.Edit
         }
         public async Task<EditUserDto> Execute(string Id)
         {
-            var user = await _userManager.FindByIdAsync(Id);
-            var listRol=await _userManager.GetRolesAsync(user);
-            //Fill To Field
-            return new EditUserDto
+            try
             {
-                Id = Id,
-                Name = user.FirstName,
-                LastName = user.LastName,
-                Gender = user.Gender,
-                Mobile = user.PhoneNumber,
-                Email = user.Email,
-                //Phone = usrlist.Contacts.Where(p => p.ContactTypeId == (long)ContactTypeEnum.Phone).FirstOrDefault()?.Value,
-                //Address = usrlist.Contacts.Where(p => p.ContactTypeId == (long)ContactTypeEnum.Address).FirstOrDefault()?.Value,
-                IsActive = user.IsActive,
-                IdesInRole =listRol.ToArray()
-            };
+                var user = await _userManager.FindByIdAsync(Id);
+                var listRol = await _userManager.GetRolesAsync(user);
+                //Fill To Field
+                return new EditUserDto
+                {
+                    Id = Id,
+                    Name = user.FirstName,
+                    LastName = user.LastName,
+                    Gender = user.Gender,
+                    Mobile = user.PhoneNumber,
+                    Email = user.Email,
+                    //Phone = usrlist.Contacts.Where(p => p.ContactTypeId == (long)ContactTypeEnum.Phone).FirstOrDefault()?.Value,
+                    //Address = usrlist.Contacts.Where(p => p.ContactTypeId == (long)ContactTypeEnum.Address).FirstOrDefault()?.Value,
+                    IsActive = user.IsActive,
+                    IdesInRole = listRol.ToArray()
+                };
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
     }
 }

@@ -2053,6 +2053,10 @@
       "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\newsletter.jpg"
     },
     {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\no-image.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\no-image.jpg"
+    },
+    {
       "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\offer\\01.jpg",
       "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\offer\\01.jpg"
     },

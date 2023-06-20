@@ -144,11 +144,7 @@ namespace EndPointStore.Areas.Admin.Controllers
                 IdesInRole = request.IdesInRole
             }
            );
-            return Json(new ResultDto
-            {
-                IsSuccess = true,
-                Message = MessageInUser.MessageUpdate
-            });
+            return Json(result);
         }
     }
 }

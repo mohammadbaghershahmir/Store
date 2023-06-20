@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Gj/OUqd6FWzrEurbC6kJbG0S9jZqOG848U+2wlsAxoM=",
+  "Hash": "MJYxN4x13zfXgLgzVBWpHIrxdjXunrlbjFpp56nZpAw=",
   "Source": "EndPointStore",
   "BasePath": "_content/EndPointStore",
   "Mode": "Default",
@@ -6305,6 +6305,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\SiteTemplate\\assets\\images\\newsletter.jpg"
+    },
+    {
+      "Identity": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\no-image.jpg",
+      "SourceId": "EndPointStore",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\",
+      "BasePath": "_content/EndPointStore",
+      "RelativePath": "SiteTemplate/assets/images/no-image.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\SiteTemplate\\assets\\images\\no-image.jpg"
     },
     {
       "Identity": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\images\\offer\\01.jpg",

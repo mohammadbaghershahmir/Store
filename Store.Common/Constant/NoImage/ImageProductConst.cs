@@ -8,6 +8,6 @@ namespace Store.Common.Constant.NoImage
 {
     public class ImageProductConst
     {
-        public const string NoImage ="";
+        public const string NoImage = @"\SiteTemplate\assets\images\no-image.jpg";
     }
 }

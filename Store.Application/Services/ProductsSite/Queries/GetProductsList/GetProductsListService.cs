@@ -42,7 +42,7 @@ namespace Store.Application.Services.ProductsSite.Queries.GetProductsList
                     Category = p.Category.Name,
                     IsActive = p.IsActive,
                     Name = p.Name,
-                    Pic = string.IsNullOrEmpty(p.MinPic) ? ImageProductConst.NoImage : BaseUrl + p.Pic,
+                    Pic = string.IsNullOrEmpty(p.MinPic) ? ImageProductConst.NoImage : BaseUrl + p.MinPic,
                     Price = p.Price,
                     Quantity = p.Quantity,
                     InsertTime = p.InsertTime

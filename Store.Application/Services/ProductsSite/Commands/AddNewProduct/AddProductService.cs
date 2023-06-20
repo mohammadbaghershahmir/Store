@@ -47,6 +47,7 @@ namespace Store.Application.Services.ProductsSite.Commands.AddNewProduct
                     MinPic = requestAddProductDto.MinPic,
                     Pic = requestAddProductDto.Pic,
                     Content = requestAddProductDto.Content,
+                    Description=requestAddProductDto.Description,
                     Slug = requestAddProductDto.Slug,
                     CategoryId = requestAddProductDto.CategoryId,
                     BrandsId = requestAddProductDto.BrandId,

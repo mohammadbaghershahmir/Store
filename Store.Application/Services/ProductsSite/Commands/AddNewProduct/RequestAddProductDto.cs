@@ -13,6 +13,7 @@ namespace Store.Application.Services.ProductsSite.Commands.AddNewProduct
         public string? BrandId { get; set; }
         public string UserId { get; set; }
         public string? Content { get; set; }
+        public string? Description { get; set; }
         public double Price { get; set; }
         public double LastPrice { get; set; }
         public long Quantity { get; set; }

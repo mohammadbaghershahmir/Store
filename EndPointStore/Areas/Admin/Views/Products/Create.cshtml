@@ -139,6 +139,29 @@
 				</div>
 			</div>
 		<!-- END: Product Information -->
+			<!-- BEGIN: Product Description -->
+			<div class="intro-y box p-5 mt-5">
+				<div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
+					<div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down w-4 h-4 mr-2"><polyline points="6 9 12 15 18 9"></polyline></svg> جزییات محصول </div>
+					<div class="mt-5">
+						<div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
+							<div class="form-label xl:w-64 xl:!ml-10">
+								<div class="text-right">
+									<div class="flex items-center">
+										<div class="font-medium">توضیحات محصول</div>
+									</div>
+								</div>
+							</div>
+							<div class="w-full mt-3 xl:mt-0 flex-1" id="standard-editor">
+								<div class="preview">
+									<textarea asp-for="AddNewProduct.Description" class="form-control" placeholder="توضیحات خود را وارد کنید"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END: Product Description -->
 		<!-- BEGIN: Product Detail -->
 		<div class="intro-y box p-5 mt-5">
 			<div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
@@ -513,6 +536,7 @@
 				let pic = $('#mainpic').val()
 				//Get Editor
 				var content = $('#standard-editor .editor').html();
+				var description = $('#AddNewProduct_Description').val()
 				let categoryId = $('#AddNewProduct_CategoryId').val()
 				let brandId = $('#AddNewProduct_BrandId').val()
 				let tagsId = tagsIdlist
@@ -521,7 +545,7 @@
 				urlImagList=selectedFiles;
 				var data = {
 					name,price,quantity,postageFee,postageFeeBasedQuantity,
-					slug, isActive, minPic, pic, content, categoryId, brandId, tagsId, featureList, urlImagList
+					slug, isActive, minPic, pic, content, description, categoryId, brandId, tagsId, featureList, urlImagList
                     }
 				ajaxFunc("create", data, "POST",
                         function (result) {

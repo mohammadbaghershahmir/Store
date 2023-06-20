@@ -65,7 +65,7 @@ $(document).on('click', '#remove-from-list', function (e) {
 function renderImageList() {
     let html = "";
     selectedFiles.map(item => {
-        html += ` <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 xxl:col-span-2 h-28 mr-2 relative image-fit cursor-pointer zoom-in">
+        html += `<div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 xxl:col-span-2 h-28 mr-2 relative image-fit cursor-pointer zoom-in">
                                                                    <img class="rounded-md" alt="${item}" src="${ftpRoot}${item}">
                                            <div title="Remove this image?" data-path="${item}" id="remove-from-list" class="tooltip w-5 h-5 flex items-center justify-center absolute rounded-full text-white bg-danger right-0 top-0 -mr-2 -mt-2">
                                            <svg xmlns="http://www.w3.org/2000/svg" class="svg__close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="x" data-feather="x" class="lucide lucide-x w-4 h-4"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -120,10 +120,10 @@ function getDirectoryList() {
         Directory
     }
     if (selectMultiple) {
-        $("#upload-modal-footer").html(`<button type="button" data-tw-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">لغو</button>
+        $("#upload-modal-footer").html(`<button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">لغو</button>
                          <button type="button" id="btn-select-images" class="btn btn-primary w-20">انتخاب</button>`);
     } else {
-        $("#upload-modal-footer").html(`<button type="button" data-tw-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">لغو</button>`);
+        $("#upload-modal-footer").html(`<button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">لغو</button>`);
     }
     ajaxFunc(UrlGet, model, "POST",
         function (result) {

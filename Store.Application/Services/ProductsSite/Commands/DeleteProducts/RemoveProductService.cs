@@ -31,7 +31,7 @@ namespace Store.Application.Services.ProductsSite.Commands.DeleteProducts
                 //Remove Logical
                 deleteProduct.RemoveTime= DateTime.Now;
                 deleteProduct.IsRemoved = true;
-                _context.SaveChanges();
+             await _context.SaveChangesAsync();
                 //Show Result
                 return new ResultDto()
                 {

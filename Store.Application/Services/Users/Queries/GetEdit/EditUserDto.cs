@@ -30,7 +30,7 @@ namespace Store.Application.Services.Users.Queries.Edit
         public string? Address { get; set; }
         public string[] IdesInRole { get; set; }
 
-        public List<LoginDto> Login { get; set; }
+        //public List<LoginDto> Login { get; set; }
 
 
     }

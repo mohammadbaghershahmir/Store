@@ -31,7 +31,7 @@
                 CSS LINK PART START
     =======================================-->
     <!-- FAVICON -->
-    <link rel="icon" href="/SiteTemplate/assets/images/favicon.png">
+    <link rel="icon" href="/SiteTemplate/assets//SiteTemplate/assets/images/favicon.png">
 
     <!-- FONTS -->
     <link rel="stylesheet" href="SiteTemplate/assets/fonts/flaticon/flaticon.css">
@@ -55,17 +55,10 @@
 <body>
     <div class="backdrop"></div>
     <a class="backtop fas fa-arrow-up" href="#"></a>
-
-    <div class="header-top alert fade show">
-        <p>20% تخفیف برای اعضای جدید <a href="~/authentication/signup">همین حالا عضو شوید!</a></p>
-        <button data-bs-dismiss="alert"><i class="fas fa-times"></i></button>
-    </div>
-
-
     <!--=====================================
                 HEADER PART START
     =======================================-->
-<header class="header-part">
+    <header class="header-part">
         <div class="container">
             <div class="header-content">
                 <div class="header-media-group">
@@ -76,26 +69,26 @@
                 @if (SignInManager.IsSignedIn(User))
                 {
                     <a href="Profile" class="header-widget" title=@User.Identity.Name>
-                        <img src="/SiteTemplate/assets/images/user.png" alt="user">
+                        <img src="/SiteTemplate/assets//SiteTemplate/assets/images/user.png" alt="user">
                     </a>
-                    <a asp-action="Logout" asp-controller="Authentication" ><span>خروج</span></a>
+                    <a asp-action="Logout" asp-controller="Authentication"><span>خروج</span></a>
                 }
                 else
                 {
-                <a href="index.html" class="header-logo">
-                    <img src="/SiteTemplate/assets/images/logo.png" alt="logo">
-                </a>
-                <a href="~/authentication/login" class="header-widget" title="My Account">
-@*                    <img src="/SiteTemplate/assets/images/user.png" alt="user">
-*@                    <span>ورود</span>
-                </a>
-                <div class="header-widget">
-                <span>|</span>
+                    <a href="index.html" class="header-logo">
+                        <img src="/SiteTemplate/assets/images/logo.png" alt="logo">
+                    </a>
+                    <a href="~/authentication/login" class="header-widget" title="My Account">
+                        @*                    <img src="/SiteTemplate/assets//SiteTemplate/assets/images/user.png" alt="user">
+                    *@                    <span>ورود</span>
+                    </a>
+                    <div class="header-widget">
+                        <span>|</span>
 
-                </div>
-                <a href="~/authentication/signup" class="header-widget" title="My Account">
-                    <span>ثبت نام</span>
-                </a>
+                    </div>
+                    <a href="~/authentication/signup" class="header-widget" title="My Account">
+                        <span>ثبت نام</span>
+                    </a>
                 }
                 <form class="header-form">
                     <input type="text" placeholder="جست و جو کن ...">
@@ -124,11 +117,269 @@
                 HEADER PART END
     =======================================-->
     <!--=====================================
-                NAVBAR PART START
+      <!--=====================================
+                    NAVBAR PART START
+        =======================================-->
+    <nav class="navbar-part">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="navbar-content">
+                        <ul class="navbar-list">
+                            <li class="navbar-item dropdown">
+                                <a class="navbar-link dropdown-arrow" href="#">خانه</a>
+                                <ul class="dropdown-position-list">
+                                    <li><a href="home-grid.html">صفحه اصلی گرید</a></li>
+                                    <li><a href="index.html">صفحه اصلی</a></li>
+                                    <li><a href="home-classic.html">صفحه اصلی کلاسیک</a></li>
+                                    <li><a href="home-standard.html">صفحه اصلی استاندارد</a></li>
+                                    <li><a href="home-category.html">صفحه اصلی دسته بندی</a></li>
+                                </ul>
+                            </li>
+                            <li class="navbar-item dropdown-megamenu">
+                                <a class="navbar-link dropdown-arrow" href="#">فروشگاه</a>
+                                <div class="megamenu">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <div class="megamenu-wrap">
+                                                    <h5 class="megamenu-title">صفحات فروشگاه</h5>
+                                                    <ul class="megamenu-list">
+                                                        <li><a href="shop-5column.html">فروشگاه 5 ستون</a></li>
+                                                        <li><a href="shop-4column.html">فروشگاه 4 ستون</a></li>
+                                                        <li><a href="shop-3column.html">فروشگاه 3 ستون</a></li>
+                                                        <li><a href="shop-2column.html">فروشگاه 2 ستون</a></li>
+                                                        <li><a href="shop-1column.html">فروشگاه 1 ستون</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="megamenu-wrap">
+                                                    <h5 class="megamenu-title">صفحات محصول</h5>
+                                                    <ul class="megamenu-list">
+                                                        <li><a href="product-tab.html">محصول تک تب</a></li>
+                                                        <li><a href="product-grid.html">محصول تک ستون</a></li>
+                                                        <li><a href="product-video.html">محصول تک ویدیو</a></li>
+                                                        <li><a href="product-simple.html">معرفی محصول</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="megamenu-wrap">
+                                                    <h5 class="megamenu-title">اقدامات کاربر</h5>
+                                                    <ul class="megamenu-list">
+                                                        <li><a href="wishlist.html">لیست علاقه مندی ها</a></li>
+                                                        <li><a href="compare.html">مقایسه</a></li>
+                                                        <li><a href="checkout.html">تسویه حساب</a></li>
+                                                        <li><a href="orderlist.html">تاریخچه سفارش ها</a></li>
+                                                        <li><a href="invoice.html">فاکتور سفارش</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="megamenu-wrap">
+                                                    <h5 class="megamenu-title">صفحات دیگر</h5>
+                                                    <ul class="megamenu-list">
+                                                        <li><a href="all-category.html">دسته بندی ها</a></li>
+                                                        <li><a href="brand-list.html">لیست برند ها</a></li>
+                                                        <li><a href="brand-single.html">معرفی برند</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="navbar-item dropdown-megamenu">
+                                <a class="navbar-link dropdown-arrow" href="#">دسته بندی</a>
+                                <div class="megamenu">
+                                    <div class="container megamenu-scroll">
+                                        <div class="row row-cols-5">
+                                            <div class="col">
+                                                <div class="megamenu-wrap">
+                                                    <h5 class="megamenu-title">سبزیجات</h5>
+                                                    <ul class="megamenu-list">
+                                                        <li><a href="#">هویج</a></li>
+                                                        <li><a href="#">کلم بروکلی</a></li>
+                                                        <li><a href="#">مارچوبه</a></li>
+                                                        <li><a href="#">گل کلم</a></li>
+                                                        <li><a href="#">بادمجان</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="megamenu-wrap">
+                                                    <h5 class="megamenu-title">میوه ها</h5>
+                                                    <ul class="megamenu-list">
+                                                        <li><a href="#">سیب</a></li>
+                                                        <li><a href="#">پرتقال</a></li>
+                                                        <li><a href="#">موز</a></li>
+                                                        <li><a href="#">توت فرنگی</a></li>
+                                                        <li><a href="#">هندوانه</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="megamenu-wrap">
+                                                    <h5 class="megamenu-title">مزارع لبنی</h5>
+                                                    <ul class="megamenu-list">
+                                                        <li><a href="#">کره</a></li>
+                                                        <li><a href="#">پنیر</a></li>
+                                                        <li><a href="#">شیر</a></li>
+                                                        <li><a href="#">تخم مرغ</a></li>
+                                                        <li><a href="#">کرم</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="megamenu-wrap">
+                                                    <h5 class="megamenu-title">غذاهای دریایی</h5>
+                                                    <ul class="megamenu-list">
+                                                        <li><a href="#">خرچنگ</a></li>
+                                                        <li><a href="#">اختاپوس</a></li>
+                                                        <li><a href="#">میگو</a></li>
+                                                        <li><a href="#">هالابوس</a></li>
+                                                        <li><a href="#">اسب دریایی</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="megamenu-wrap">
+                                                    <h5 class="megamenu-title">غذاهای رژیمی</h5>
+                                                    <ul class="megamenu-list">
+                                                        <li><a href="#">سالمون</a></li>
+                                                        <li><a href="#">آووکادو</a></li>
+                                                        <li><a href="#">سبزهای برگدار</a></li>
+                                                        <li><a href="#">سیب زمینی آب پز</a></li>
+                                                        <li><a href="#">پنیر کلبه</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="megamenu-wrap">
+                                                    <h5 class="megamenu-title">فست فودها</h5>
+                                                    <ul class="megamenu-list">
+                                                        <li><a href="#">برگر</a></li>
+                                                        <li><a href="#">میلک شیک</a></li>
+                                                        <li><a href="#">ساندویچ</a></li>
+                                                        <li><a href="#">دونات</a></li>
+                                                        <li><a href="#">پیتزا</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="megamenu-wrap">
+                                                    <h5 class="megamenu-title">نوشیدنی ها</h5>
+                                                    <ul class="megamenu-list">
+                                                        <li><a href="#">کوکتل</a></li>
+                                                        <li><a href="#">نوشابه سخت</a></li>
+                                                        <li><a href="#">شامپاین</a></li>
+                                                        <li><a href="#">شراب</a></li>
+                                                        <li><a href="#">جو</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="megamenu-wrap">
+                                                    <h5 class="megamenu-title">گوشت ها</h5>
+                                                    <ul class="megamenu-list">
+                                                        <li><a href="#">کوفته</a></li>
+                                                        <li><a href="#">سوسیس</a></li>
+                                                        <li><a href="#">طیور</a></li>
+                                                        <li><a href="#">مرغ</a></li>
+                                                        <li><a href="#">گاو</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="megamenu-wrap">
+                                                    <h5 class="megamenu-title">ماهی ها</h5>
+                                                    <ul class="megamenu-list">
+                                                        <li><a href="#">فیل ماهی</a></li>
+                                                        <li><a href="#">پمفرت</a></li>
+                                                        <li><a href="#">گروه‌ها</a></li>
+                                                        <li><a href="#">آنچوی</a></li>
+                                                        <li><a href="#">ماهی خال مخالی</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="megamenu-wrap">
+                                                    <h5 class="megamenu-title">غذاهای خشک</h5>
+                                                    <ul class="megamenu-list">
+                                                        <li><a href="#">نودل</a></li>
+                                                        <li><a href="#">شیر پودر</a></li>
+                                                        <li><a href="#">آجیل و مخمر</a></li>
+                                                        <li><a href="#">بادام</a></li>
+                                                        <li><a href="#">کدو تنبل</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="navbar-item dropdown">
+                                <a class="navbar-link dropdown-arrow" href="#">صفحات</a>
+                                <ul class="dropdown-position-list">
+                                    <li><a href="faq.html">سوالات متداول</a></li>
+                                    <li><a href="offer.html">تخفیفات</a></li>
+                                    <li><a href="profile.html">پروفایل من</a></li>
+                                    <li><a href="wallet.html">کیف پول من</a></li>
+                                    <li><a href="about.html">درباره ما</a></li>
+                                    <li><a href="contact.html">ارتباط باما</a></li>
+                                    <li><a href="privacy.html">سیاست حفظ حریم خصوصی</a></li>
+                                    <li><a href="coming-soon.html">در دست ساخت</a></li>
+                                    <li><a href="blank-page.html">صفحه خالی</a></li>
+                                    <li><a href="error.html">خطای 404</a></li>
+                                    <li><a href="email-template.html">قالب ایمیل</a></li>
+                                </ul>
+                            </li>
+                            <li class="navbar-item dropdown">
+                                <a class="navbar-link dropdown-arrow" href="#">احراز هویت</a>
+                                <ul class="dropdown-position-list">
+                                    <li><a href="login.html">لاگین</a></li>
+                                    <li><a href="register.html">ثبت نام</a></li>
+                                    <li><a href="reset-password.html">حذف پسوورد</a></li>
+                                    <li><a href="change-password.html">تغییر پسوورد</a></li>
+                                </ul>
+                            </li>
+                            <li class="navbar-item dropdown">
+                                <a class="navbar-link dropdown-arrow" href="#">بلاگ ها</a>
+                                <ul class="dropdown-position-list">
+                                    <li><a href="blog-grid.html">بلاگ گریدبندی</a></li>
+                                    <li><a href="blog-standard.html">بلاگ استاندارد</a></li>
+                                    <li><a href="blog-details.html">اطلاعات بلاگ</a></li>
+                                    <li><a href="blog-author.html">نویسنده وبلاگ</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="navbar-info-group">
+                            <div class="navbar-info">
+                                <i class="icofont-ui-touch-phone"></i>
+                                <p>
+                                    <small>شماره تماس</small>
+                                    <span>9998 888 021</span>
+                                </p>
+                            </div>
+                            <div class="navbar-info">
+                                <i class="icofont-ui-email"></i>
+                                <p>
+                                    <small>ایمیل ما</small>
+                                    <span>support@greeny.com</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--=====================================
+                NAVBAR PART END
     =======================================-->
    @RenderBody();
-                 FOOTER PART START
-    =======================================-->
+               
     <footer class="footer-part">
         <div class="container">
             <div class="row">
@@ -219,6 +470,7 @@
             </div>
         </div>
     </footer>
+
     <!--=====================================
                   FOOTER PART END
     =======================================-->

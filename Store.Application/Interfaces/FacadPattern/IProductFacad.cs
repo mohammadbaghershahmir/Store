@@ -3,8 +3,10 @@ using Store.Application.Services.ProductsSite.Commands.AddNewProduct;
 using Store.Application.Services.ProductsSite.Commands.AddNewTag;
 using Store.Application.Services.ProductsSite.Commands.DeleteCategory;
 using Store.Application.Services.ProductsSite.Commands.DeleteProducts;
+using Store.Application.Services.ProductsSite.Commands.EditProducts;
 using Store.Application.Services.ProductsSite.Queries.GetBrandsList;
 using Store.Application.Services.ProductsSite.Queries.GetCategory;
+using Store.Application.Services.ProductsSite.Queries.GetEditProductsList;
 using Store.Application.Services.ProductsSite.Queries.GetParentCategory;
 using Store.Application.Services.ProductsSite.Queries.GetProductsList;
 using Store.Application.Services.ProductsSite.Queries.GetTagsList;
@@ -28,5 +30,7 @@ namespace Store.Application.Interfaces.FacadPattern
         IAddProductService AddProductService { get;}
         IGetProductsListService GetProductsListService { get;}
         IRemoveProductService RemoveProductService { get;}
+        IGetEditProductListService GetEditProductListService { get;}
+        IEditProductsService EditProductsService { get;}
     }
 }
