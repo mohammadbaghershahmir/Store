@@ -24,6 +24,7 @@ namespace Store.Persistence.Contexs
         public DatabaseContex(DbContextOptions options) : base(options)
         {
         }
+        public DbSet<User> Users { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<ContactType> ContactType { get; set; }
         public DbSet<Category> Category { get; set; }
@@ -35,7 +36,8 @@ namespace Store.Persistence.Contexs
 		public DbSet<Products> Products { get; set; }
 		public DbSet<Rate> Rates { get; set; }
 		public DbSet<Tag> Tags { get; set; }
-		protected override void OnModelCreating(ModelBuilder builder)
+
+        protected override void OnModelCreating(ModelBuilder builder)
         {
             //modelBuilder.Entity<User>().HasQueryFilter(p => !p.IsRemoved);
             // تنظیم محدودیت کلید خارجی 'FK_Rates_Users_UserId' در جدول 'Rates'

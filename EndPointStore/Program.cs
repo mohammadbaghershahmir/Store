@@ -32,6 +32,7 @@ using Store.Application.Services.FileManager.Commands.RemoveFiles;
 using Store.Application.Services.ProductsSite.FacadPattern;
 using Store.Application.Interfaces.FacadPatternSite;
 using Store.Application.Services.ProductsSite.FacadPatternSite;
+using Store.Application.Services.ProductsSite.Queries.GetCategoryForSite;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -62,6 +63,7 @@ builder.Services.AddScoped<IUploadFileService, UploadFileService>();
 builder.Services.AddScoped<IRemoveFilesOrDirectoriesService, RemoveFilesOrDirectoriesService>();
 builder.Services.AddScoped<IProductFacad, ProductFacad>();
 builder.Services.AddScoped<IProductFacadSite, ProductFacadSite>();
+builder.Services.AddScoped<IGetCategorySiteService, GetCategorySiteService>();
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.

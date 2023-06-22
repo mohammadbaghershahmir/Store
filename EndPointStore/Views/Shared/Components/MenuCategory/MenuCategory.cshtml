@@ -1,0 +1,32 @@
+﻿@using Store.Application.Services.ProductsSite.Queries.GetCategoryForSite;
+@model List<CategorySiteDto>;
+@{
+    Layout = null;
+}
+<li class="navbar-item dropdown-megamenu">
+    <a class="navbar-link dropdown-arrow" href="#">دسته بندی</a>
+    <div class="megamenu">
+        <div class="container megamenu-scroll">
+            <div class="row row-cols-5">
+                @foreach (var item in Model)
+                {
+                    <div class="col">
+                        <div class="megamenu-wrap">
+                            <h5 class="megamenu-title">@item.Name</h5>
+                            @if(item.Child.Count>0)
+                            {
+                                <ul class="megamenu-list">
+                                    @foreach (var child in item.Child)
+                                    {
+                                        <li><a href="#">@child.NameChild</a></li>
+
+                                    }
+                                </ul>
+                            } 
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</li>

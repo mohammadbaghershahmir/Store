@@ -9,6 +9,6 @@ namespace Store.Application.Services.ProductsSite.Queries.GetProductsForSite
 {
     public interface IGetProductsForSiteService
 	{
-        Task<ResultDto<ResultProductsForSiteDto>> Execute(int page);
+        Task<ResultDto<ResultProductsForSiteDto>> Execute(string SearchKey, int page);
 	}
 }

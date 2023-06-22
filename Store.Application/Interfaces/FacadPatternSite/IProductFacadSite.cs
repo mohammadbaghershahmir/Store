@@ -1,4 +1,6 @@
-﻿using Store.Application.Services.ProductsSite.Queries.GetDetailProductsForSite;
+﻿using Store.Application.Services.ProductsSite.Queries.GetCategoryForSite;
+using Store.Application.Services.ProductsSite.Queries.GetDetailProductModalForSite;
+using Store.Application.Services.ProductsSite.Queries.GetDetailProductsForSite;
 using Store.Application.Services.ProductsSite.Queries.GetProductsForSite;
 using System;
 using System.Collections.Generic;
@@ -12,5 +14,6 @@ namespace Store.Application.Interfaces.FacadPatternSite
 	{
 		IGetProductsForSiteService GetProductsForSiteService {  get; }
 		IGetDetailProductSiteService GetDetailProductSiteService { get; }
+		IGetProductDetailModalSiteService DetailProductModalSiteService { get; }
 	}
 }

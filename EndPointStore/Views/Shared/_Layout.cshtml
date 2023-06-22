@@ -34,19 +34,19 @@
     <link rel="icon" href="/SiteTemplate/assets//SiteTemplate/assets/images/favicon.png">
 
     <!-- FONTS -->
-    <link rel="stylesheet" href="SiteTemplate/assets/fonts/flaticon/flaticon.css">
-    <link rel="stylesheet" href="SiteTemplate/assets/fonts/icofont/icofont.min.css">
-    <link rel="stylesheet" href="SiteTemplate/assets/fonts/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="/SiteTemplate/assets/fonts/flaticon/flaticon.css">
+    <link rel="stylesheet" href="/SiteTemplate/assets/fonts/icofont/icofont.min.css">
+    <link rel="stylesheet" href="/SiteTemplate/assets/fonts/fontawesome/fontawesome.min.css">
 
     <!-- VENDOR -->
-    <link rel="stylesheet" href="SiteTemplate/assets/vendor/venobox/venobox.min.css">
-    <link rel="stylesheet" href="SiteTemplate/assets/vendor/slickslider/slick.min.css">
-    <link rel="stylesheet" href="SiteTemplate/assets/vendor/niceselect/nice-select.min.css">
-    <link rel="stylesheet" href="SiteTemplate/assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/SiteTemplate/assets/vendor/venobox/venobox.min.css">
+    <link rel="stylesheet" href="/SiteTemplate/assets/vendor/slickslider/slick.min.css">
+    <link rel="stylesheet" href="/SiteTemplate/assets/vendor/niceselect/nice-select.min.css">
+    <link rel="stylesheet" href="/SiteTemplate/assets/vendor/bootstrap/bootstrap.min.css">
 
     <!-- CUSTOM -->
-    <link rel="stylesheet" href="SiteTemplate/assets/css/main.css">
-    <link rel="stylesheet" href="SiteTemplate/assets/css/home-standard.css">
+    <link rel="stylesheet" href="/SiteTemplate/assets/css/main.css">
+    <link rel="stylesheet" href="/SiteTemplate/assets/css/home-standard.css">
 
     <!--=====================================
                 CSS LINK PART END
@@ -90,10 +90,7 @@
                         <span>ثبت نام</span>
                     </a>
                 }
-                <form class="header-form">
-                    <input type="text" placeholder="جست و جو کن ...">
-                    <button><i class="fas fa-search"></i></button>
-                </form>
+               @await Component.InvokeAsync("Search")
 
                 <div class="header-widget-group">
                     <a href="compare.html" class="header-widget" title="Compare List">
@@ -190,135 +187,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="navbar-item dropdown-megamenu">
-                                <a class="navbar-link dropdown-arrow" href="#">دسته بندی</a>
-                                <div class="megamenu">
-                                    <div class="container megamenu-scroll">
-                                        <div class="row row-cols-5">
-                                            <div class="col">
-                                                <div class="megamenu-wrap">
-                                                    <h5 class="megamenu-title">سبزیجات</h5>
-                                                    <ul class="megamenu-list">
-                                                        <li><a href="#">هویج</a></li>
-                                                        <li><a href="#">کلم بروکلی</a></li>
-                                                        <li><a href="#">مارچوبه</a></li>
-                                                        <li><a href="#">گل کلم</a></li>
-                                                        <li><a href="#">بادمجان</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="megamenu-wrap">
-                                                    <h5 class="megamenu-title">میوه ها</h5>
-                                                    <ul class="megamenu-list">
-                                                        <li><a href="#">سیب</a></li>
-                                                        <li><a href="#">پرتقال</a></li>
-                                                        <li><a href="#">موز</a></li>
-                                                        <li><a href="#">توت فرنگی</a></li>
-                                                        <li><a href="#">هندوانه</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="megamenu-wrap">
-                                                    <h5 class="megamenu-title">مزارع لبنی</h5>
-                                                    <ul class="megamenu-list">
-                                                        <li><a href="#">کره</a></li>
-                                                        <li><a href="#">پنیر</a></li>
-                                                        <li><a href="#">شیر</a></li>
-                                                        <li><a href="#">تخم مرغ</a></li>
-                                                        <li><a href="#">کرم</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="megamenu-wrap">
-                                                    <h5 class="megamenu-title">غذاهای دریایی</h5>
-                                                    <ul class="megamenu-list">
-                                                        <li><a href="#">خرچنگ</a></li>
-                                                        <li><a href="#">اختاپوس</a></li>
-                                                        <li><a href="#">میگو</a></li>
-                                                        <li><a href="#">هالابوس</a></li>
-                                                        <li><a href="#">اسب دریایی</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="megamenu-wrap">
-                                                    <h5 class="megamenu-title">غذاهای رژیمی</h5>
-                                                    <ul class="megamenu-list">
-                                                        <li><a href="#">سالمون</a></li>
-                                                        <li><a href="#">آووکادو</a></li>
-                                                        <li><a href="#">سبزهای برگدار</a></li>
-                                                        <li><a href="#">سیب زمینی آب پز</a></li>
-                                                        <li><a href="#">پنیر کلبه</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="megamenu-wrap">
-                                                    <h5 class="megamenu-title">فست فودها</h5>
-                                                    <ul class="megamenu-list">
-                                                        <li><a href="#">برگر</a></li>
-                                                        <li><a href="#">میلک شیک</a></li>
-                                                        <li><a href="#">ساندویچ</a></li>
-                                                        <li><a href="#">دونات</a></li>
-                                                        <li><a href="#">پیتزا</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="megamenu-wrap">
-                                                    <h5 class="megamenu-title">نوشیدنی ها</h5>
-                                                    <ul class="megamenu-list">
-                                                        <li><a href="#">کوکتل</a></li>
-                                                        <li><a href="#">نوشابه سخت</a></li>
-                                                        <li><a href="#">شامپاین</a></li>
-                                                        <li><a href="#">شراب</a></li>
-                                                        <li><a href="#">جو</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="megamenu-wrap">
-                                                    <h5 class="megamenu-title">گوشت ها</h5>
-                                                    <ul class="megamenu-list">
-                                                        <li><a href="#">کوفته</a></li>
-                                                        <li><a href="#">سوسیس</a></li>
-                                                        <li><a href="#">طیور</a></li>
-                                                        <li><a href="#">مرغ</a></li>
-                                                        <li><a href="#">گاو</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="megamenu-wrap">
-                                                    <h5 class="megamenu-title">ماهی ها</h5>
-                                                    <ul class="megamenu-list">
-                                                        <li><a href="#">فیل ماهی</a></li>
-                                                        <li><a href="#">پمفرت</a></li>
-                                                        <li><a href="#">گروه‌ها</a></li>
-                                                        <li><a href="#">آنچوی</a></li>
-                                                        <li><a href="#">ماهی خال مخالی</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="megamenu-wrap">
-                                                    <h5 class="megamenu-title">غذاهای خشک</h5>
-                                                    <ul class="megamenu-list">
-                                                        <li><a href="#">نودل</a></li>
-                                                        <li><a href="#">شیر پودر</a></li>
-                                                        <li><a href="#">آجیل و مخمر</a></li>
-                                                        <li><a href="#">بادام</a></li>
-                                                        <li><a href="#">کدو تنبل</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+                            @await Component.InvokeAsync("MenuCategory")
                             <li class="navbar-item dropdown">
                                 <a class="navbar-link dropdown-arrow" href="#">صفحات</a>
                                 <ul class="dropdown-position-list">
@@ -478,26 +347,26 @@
                 JS LINK PART START
     =======================================-->
     <!-- VENDOR -->
-    <script src="SiteTemplate/assets/vendor/bootstrap/jquery-1.12.4.min.js"></script>
-    <script src="SiteTemplate/assets/vendor/bootstrap/popper.min.js"></script>
-    <script src="SiteTemplate/assets/vendor/bootstrap/bootstrap.min.js"></script>
-    <script src="SiteTemplate/assets/vendor/countdown/countdown.min.js"></script>
-    <script src="SiteTemplate/assets/vendor/niceselect/nice-select.min.js"></script>
-    <script src="SiteTemplate/assets/vendor/slickslider/slick.min.js"></script>
-    <script src="SiteTemplate/assets/vendor/venobox/venobox.min.js"></script>
+    <script src="/SiteTemplate/assets/vendor/bootstrap/jquery-1.12.4.min.js"></script>
+    <script src="/SiteTemplate/assets/vendor/bootstrap/popper.min.js"></script>
+    <script src="/SiteTemplate/assets/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="/SiteTemplate/assets/vendor/countdown/countdown.min.js"></script>
+    <script src="/SiteTemplate/assets/vendor/niceselect/nice-select.min.js"></script>
+    <script src="/SiteTemplate/assets/vendor/slickslider/slick.min.js"></script>
+    <script src="/SiteTemplate/assets/vendor/venobox/venobox.min.js"></script>
 
     <!-- CUSTOM -->
-    <script src="SiteTemplate/assets/js/nice-select.js"></script>
-    <script src="SiteTemplate/assets/js/countdown.js"></script>
-    <script src="SiteTemplate/assets/js/accordion.js"></script>
-    <script src="SiteTemplate/assets/js/venobox.js"></script>
-    <script src="SiteTemplate/assets/js/slick.js"></script>
-    <script src="SiteTemplate/assets/js/main.js"></script>
-
+    <script src="/SiteTemplate/assets/js/nice-select.js"></script>
+    <script src="/SiteTemplate/assets/js/countdown.js"></script>
+    <script src="/SiteTemplate/assets/js/accordion.js"></script>
+    <script src="/SiteTemplate/assets/js/venobox.js"></script>
+    <script src="/SiteTemplate/assets/js/slick.js"></script>
+    <script src="/SiteTemplate/assets/js/main.js"></script>
+    @await RenderSectionAsync("Scripts",required:false)
     <!--=====================================
                 JS LINK PART END
     =======================================-->
-    @await RenderSectionAsync("Scripts",required:false)
+   
 </body>
 </html>
 

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Store.Application.Interfaces.Contexs;
+using Store.Common.Constant.Settings;
 
 namespace Store.Application.Services.ProductsSite.Queries.GetDetailProductsForSite
 {
@@ -18,20 +19,25 @@ namespace Store.Application.Services.ProductsSite.Queries.GetDetailProductsForSi
         public async Task<DetailProductSiteDto> Execute(string idProduct)
         {
             string BaseUrl = _configuration.GetSection("BaseUrl").Value;
-            var detailProductList = _context.Products.Include(it => it.ItemTags)
+            var lastWeekDate = DateTime.Now.AddDays(-7);
+            var detailProductList =await _context.Products.Include(it => it.ItemTags)
                  .ThenInclude(g => g.Tag).Include(i => i.Medias)
                  .Include(f => f.Features).
-                 Include(b => b.Brands).Include(r => r.Rates).Where(r=>r.Id==idProduct).FirstOrDefault();
+                 Include(b => b.Brands).Include(r => r.Rates).Where(r=>r.Id==idProduct).FirstOrDefaultAsync();
                 return new DetailProductSiteDto
                 {
                     Id = detailProductList.Id,
                     Brand = detailProductList.Brands.Name,
                     CodeProduct = 0,
+                    Content = detailProductList.Content,
                     Description = detailProductList.Description,
+                    Unit=Settings.UnitText,
                     FeatureList = detailProductList.Features.Select(q => new FeatureListDto { Title = q.DisplayName, Value = q.Value }).ToList(),
                     LastPrice = detailProductList.LastPrice,
                     Name = detailProductList.Name,
                     Price = detailProductList.Price,
+                    NewProduct = detailProductList.InsertTime >= lastWeekDate ? true : false,
+                    Discount = (float)Math.Round(((detailProductList.LastPrice - detailProductList.Price) / detailProductList.LastPrice) * 100, 1),
                     Star = detailProductList.Rates.Select(c => c.UserRate).FirstOrDefault(),
                     Tags = detailProductList.ItemTags.Select(c => new TagsListDto
                     {

@@ -1,5 +1,6 @@
 ﻿@using Store.Application.Services.ProductsSite.Queries.GetDetailProductsForSite;
 @model DetailProductSiteDto;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -56,7 +57,7 @@
     <!--=====================================
                 PRODUCT VIEW START
     =======================================-->
-    <div class="modal fade" id="product-view">
+@*    <div class="modal fade" id="product-view">
         <div class="modal-dialog">
             <div class="modal-content">
                 <button class="modal-close icofont-close" data-bs-dismiss="modal"></button>
@@ -110,8 +111,16 @@
                                     }
                                 </div>
                                 <h3 class="view-price">
-                                    <del>@Model.LastPrice ريال</del>
-                                    <span>@Model.Price ريال<small>/هر کیلو</small></span>
+                                    @if(Model.Price>=Model.LastPrice)
+                                    {
+                                     <span>@Model.Price @Model.Unit</span>
+                                    }
+                                    else
+                                    {
+                                    <span>@Model.Price @Model.Unit</span>
+                                    <del>@Model.LastPrice @Model.Unit</del>
+                                    }
+                                  
                                 </h3>
                                 <p class="view-desc">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
                                 <div class="view-list-group">
@@ -160,7 +169,7 @@
             </div>
         </div>
     </div>
-    <!--=====================================
+*@    <!--=====================================
                 PRODUCT VIEW END
     =======================================-->
     <!--=====================================
@@ -188,8 +197,11 @@
                 <div class="col-lg-6">
                     <div class="details-gallery">
                         <div class="details-label-group">
-                            <label class="details-label new">new</label>
-                            <label class="details-label off">-10%</label>
+                            <label class="details-label new">جدید</label>
+                            @if(Model.Discount>0)
+                            {
+                                <label dir="ltr" class="details-label off">@Model.Discount%</label>
+                            }
                         </div>
                         <ul class="details-preview">
                             @foreach (var image in Model.UrlImagList)
@@ -227,8 +239,15 @@
                           
                         </div>
                         <h3 class="details-price">
-                            <del>@Model.LastPrice.ToString("n0")تومان</del>
-                            <span>@Model.Price.ToString("n0") تومان<small>/برای هر کیلو</small></span>
+                            @if (Model.Price >= Model.LastPrice)
+                            {
+                                <span>@Model.Price @Model.Unit</span>
+                            }
+                            else
+                            {
+                                <span>@Model.Price @Model.Unit</span>
+                                <del>@Model.LastPrice @Model.Unit</del>
+                            }
                         </h3>
                         <p class="details-desc">@Model.Description</p>
                         <div class="details-list-group">
@@ -299,12 +318,7 @@
                     <div class="col-lg-6">
                         <div class="product-details-frame">
                             <div class="tab-descrip">
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد</p>                                    <ul>
-                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</li>
-                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</li>
-                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</li>
-                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</li>
-                                </ul>
+							@Html.Raw(@Model.Content)	
                             </div>
                         </div>
                     </div>

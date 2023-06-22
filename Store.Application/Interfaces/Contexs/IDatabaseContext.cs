@@ -24,7 +24,9 @@ namespace Store.Application.Interfaces.Contexs
 		 DbSet<Products> Products { get; set; }
 		 DbSet<Rate> Rates { get; set; }
 	     DbSet<Tag> Tags { get; set; }
-		int SaveChanges(bool acceptAllChangesOnSuccess);
+         DbSet<User> Users { get; set; }
+
+        int SaveChanges(bool acceptAllChangesOnSuccess);
         int SaveChanges();
         void Dispose();
         Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = new CancellationToken());

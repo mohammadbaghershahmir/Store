@@ -1,56 +1,10 @@
 ﻿@using Store.Application.Services.ProductsSite.Queries.GetProductsForSite
+@using Store.Common.Constant.Settings;
 @model ResultProductsForSiteDto;
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<head>
-    <!--=====================================
-                META TAG PART START
-    =======================================-->
-    <!-- REQUIRE META -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- AUTHOR META -->
-    <meta name="author" content="mrzic">
-    <meta name="email" content="mohammadnet687@gmail.com">
-    <meta name="profile" content="https://themeforest.net/user/mironcoder">
-
-    <!-- TEMPLATE META -->
-    <meta name="name" content="Greeny">
-    <meta name="title" content="Greeny - eCommerce HTML Template">
-    <meta name="keywords" content="organic, food, shop, ecommerce, store, html, bootstrap, template, agriculture, vegetables, webshop, farm, grocery, natural, online store">
-    <!--=====================================
-                META-TAG PART END
-    =======================================-->
-    <!-- WEBPAGE TITLE -->
-    <title>Index Home - Greeny</title>
-
-    <!--=====================================
-                CSS LINK PART START
-    =======================================-->
-    <!-- FAVICON -->
-    <link rel="icon" href="/SiteTemplate/assets/images/favicon.png">
-
-    <!-- /SiteTemplate/assets/fonts -->
-    <link rel="stylesheet" href="/SiteTemplate/assets/fonts/flaticon/flaticon.css">
-    <link rel="stylesheet" href="/SiteTemplate/assets/fonts/icofont/icofont.min.css">
-    <link rel="stylesheet" href="/SiteTemplate/assets/fonts/fontawesome/fontawesome.min.css">
-
-    <!-- VENDOR -->
-    <link rel="stylesheet" href="/SiteTemplate/assets/vendor/venobox/venobox.min.css">
-    <link rel="stylesheet" href="/SiteTemplate/assets/vendor/slickslider/slick.min.css">
-    <link rel="stylesheet" href="/SiteTemplate/assets/vendor/niceselect/nice-select.min.css">
-    <link rel="stylesheet" href="/SiteTemplate/assets/vendor/bootstrap/bootstrap.min.css">
-
-    <!-- CUSTOM -->
-    <link rel="stylesheet" href="/SiteTemplate/assets/css/main.css">
-    <link rel="stylesheet" href="/SiteTemplate/assets/css/index.css">
-    <!--=====================================
-                CSS LINK PART END
-    =======================================-->
-</head>
 <body>
     <!--=====================================
                  BANNER PART START
@@ -396,11 +350,6 @@
                                         <option value="2">توصیه</option>
                                     </select>
                                 </div>
-                                <div class="filter-action">
-                                    <a href="shop-3column.html" title="Three Column"><i class="fas fa-th"></i></a>
-                                    <a href="shop-2column.html" title="Two Column"><i class="fas fa-th-large"></i></a>
-                                    <a href="shop-1column.html" class="active" title="One Column"><i class="fas fa-th-list"></i></a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -411,7 +360,14 @@
                                 <div class="product-card">
                                     <div class="product-media">
                                         <div class="product-label">
-                                            <label class="label-text sale">فروش</label>
+                                            @if(item.NewProduct)
+                                            {
+                                             <label class="label-text new">جدید</label>
+                                            }
+                                            @if(item.Discount>0)
+                                            {
+                                           <label dir="ltr" class="details-label off">@item.Discount%</label>
+                                            }
                                         </div>
                                         <button class="product-wish wish">
                                             <i class="fas fa-heart"></i>
@@ -422,7 +378,7 @@
                                         <div class="product-widget">
                                             <a title="Product Compare" href="compare.html" class="fas fa-random"></a>
                                             <a title="Product Video" href="https://youtu.be/9xzcVxSBbG8" class="venobox fas fa-play" data-autoplay="true" data-vbtype="video"></a>
-                                            <a title="Product View" href="#" class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#product-view"></a>
+                                            <a href="javascript:;" title="Product View" class="fas fa-eye show-detail-modal" data-itemid="@item.Id"></a>
                                         </div>
                                     </div>
                                     <div class="product-content">
@@ -440,8 +396,15 @@
                                             <a href="product-video.html">@item.Title</a>
                                         </h6>
                                         <h6 class="product-price">
-                                            <del>@item.LastPrice.ToString("n0")</del>
-                                            <span>@item.Price.ToString("n0") ريال<small></small></span>
+                                            @if(item.Price>=item.LastPrice)
+                                            {
+                                                <span>@item.Price.ToString("n0") @item.Unit<small></small></span>
+                                            }
+                                            else
+                                            {
+                                                <span>@item.Price.ToString("n0") @item.Unit<small></small></span>
+                                                <del>@item.LastPrice.ToString("n0") @item.Unit</del>
+                                            }
                                         </h6>
                                         <button class="product-add" title="افزودن به سبد خرید">
                                             <i class="fas fa-shopping-basket"></i>
@@ -486,6 +449,220 @@
             </div>
         </div>
     </section>
-
+ <div class="modal fade" id="product-view">
+            <div class="modal-dialog"> 
+                <div class="modal-content">
+                    <button class="modal-close icofont-close" data-bs-dismiss="modal"></button>
+                    <div class="product-view">
+                    <div class="row" id="product-detail-modal">
+                        
+                    </div>
+                </div>
+                </div> 
+            </div> 
+        </div>
 </body>
+@section Scripts{
+ <script>
+        //Show Detail Modal
+        $(".show-detail-modal").on('click', function () {
+            let productId = $(this).attr('data-itemid');
+            getProductList(productId);
+            //$("#filemanager-body").html(loading);
+        })
+        //Get Product List
+        function getProductList(productId) {
+            var postData = {
+                productId
+            };
+            ajaxFunc("GetProductDetail", postData, "POST",
+                function (result) {
+                    let data=result.data;
+                    if (result.isSuccess) {
+                        //Stars
+                        let stars="";
+                        for(let i=1;i<=data.star;i++)
+                        {
+                            stars += `<i class="active icofont-star"></i>`
+                        }
+                        for (let i = 1; i <=(5 - data.star); i++) {
+                            stars += `<i class="icofont-star"></i>`
+                        }
+                        //Media
+                        let renderImages = "";
+                        data.urlImagList.map(item=>{
+                            renderImages += `<li><img src="${item.url}" alt="product"></li>`;
+                        });
+                        //Tags
+                        let tags= "";
+                        data.tags.map(item => {
+                            tags += `<li><a href="#">${item.name}</a></li>`;
+                        });
+                        //
+                        let html = `<div class="col-md-6 col-lg-6">
+                                    <div class="view-gallery">
+                                        <div class="view-label-group">
+                                                  ${((data.newProduct) ?`<label class="view-label new">جدید</label>` : ``)}
+                                                  ${((data.discount > 0) ? `<label class="view-label off">%${data.discount}</label>` : ``)}
+                                                </div>
+                                        <ul class="preview-slider slider-arrow">
+                                                   ${renderImages}
+                                        </ul>
+                                        <ul class="thumb-slider">
+                                                    ${renderImages}
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="view-details">
+                                        <h3 class="view-name">
+                                            <a href="product-video.html">${data.name}</a>
+                                        </h3>
+                                        <div class="view-meta">
+                                            <p>کد محصول:<span>${data.codeProduct}</span></p>
+                                                    <p>برند:<a href="#">${data.brand}</a></p>
+                                        </div>
+                                        <div class="view-rating">
+                                                    ${stars}
+                                        </div>
+                                        <h3 class="view-price">
+                                            ${((data.price >= data.lastPrice) ? `<span>${data.price} ${data.unit}</span>` : `<del>${data.lastPrice} ${data.unit}</del><span>${data.price} ${data.unit}</span>`)}
+                                           
+                                        </h3>
+                                        <p class="view-desc">${data.description}</p>
+                                        <div class="view-list-group">
+                                            <label class="view-list-title">تگ ها:</label>
+                                            <ul class="view-tag-list">
+                                              ${tags}
+                                            </ul>
+                                        </div>
+                                        <div class="view-list-group">
+                                            <label class="view-list-title">اشتراک:</label>
+                                            <ul class="view-share-list">
+                                                <li><a href="#" class="icofont-facebook" title="Facebook"></a></li>
+                                                <li><a href="#" class="icofont-twitter" title="Twitter"></a></li>
+                                                <li><a href="#" class="icofont-linkedin" title="Linkedin"></a></li>
+                                                <li><a href="#" class="icofont-instagram" title="Instagram"></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="view-add-group">
+                                            <button class="product-add" title="افزودن به سبد خرید">
+                                                <i class="fas fa-shopping-basket"></i>
+                                                <span>افزودن به سبد خرید</span>
+                                            </button>
+                                            <div class="product-action">
+                                                <button class="action-minus" title="کم کردن"><i class="icofont-minus"></i></button>
+                                                <input class="action-input" title="تعداد مورد نیاز" type="text" name="quantity" value="1">
+                                                <button class="action-plus" title="زیاد کردن"><i class="icofont-plus"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="view-action-group">
+                                            <a class="view-wish wish" href="#" title="افزودن به لیست علاقه مندی ها">
+                                                <i class="icofont-heart"></i>
+                                                <span>افزودن به علاقه مندی</span>
+                                            </a>
+                                            <a class="view-compare" href="compare.html" title="مقایسه با دگر محصولات">
+                                                <i class="fas fa-random"></i>
+                                                <span>مقایسه کن</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>`;
+                      
+                        $("#product-detail-modal").html(html);
+                        $("#product-view").modal('show');
+                        $('.preview-slider').slick({
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows: true,
+                            fade: true,
+                            rtl: true,
+                            asNavFor: '.thumb-slider',
+                            prevArrow: '<i class="icofont-arrow-right dandik"></i>',
+                            nextArrow: '<i class="icofont-arrow-left bamdik"></i>',
+                            responsive: [
+                                {
+                                    breakpoint: 576,
+                                    settings: {
+                                        slidesToShow: 1,
+                                        slidesToScroll: 1,
+                                        arrows: true,
+                                    }
+                                }
+                            ]
+                        });
+
+                        $('.thumb-slider').slick({
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                            asNavFor: '.preview-slider',
+                            rtl: true,
+                            dots: false,
+                            arrows: false,
+                            centerMode: true,
+                            focusOnSelect: true,
+                            responsive: [
+                                {
+                                    breakpoint: 992,
+                                    settings: {
+                                        slidesToShow: 3,
+                                        slidesToScroll: 1,
+                                    }
+                                },
+                                {
+                                    breakpoint: 768,
+                                    settings: {
+                                        slidesToShow: 3,
+                                        slidesToScroll: 1,
+                                    }
+                                },
+                                {
+                                    breakpoint: 576,
+                                    settings: {
+                                        slidesToShow: 3,
+                                        slidesToScroll: 1,
+                                    }
+                                },
+                                {
+                                    breakpoint: 400,
+                                    settings: {
+                                        slidesToShow: 2,
+                                        slidesToScroll: 1,
+                                    }
+                                }
+                            ]
+                        });
+                    }
+                },
+                function (error) {
+                    console.log(error);
+                }
+            )
+        }
+        //Loading
+        let loading =`<div class="intro-y col-span-12 sm:col-span-12 md:col-span-12 2xl:col-span-12">
+                            <div class="col-span-12 sm:col-span-12 xl:col-span-12 flex flex-col justify-end items-center">
+                                <svg width="30" viewBox = "0 0 45 45" xmlns = "http://www.w3.org/2000/svg" stroke = "rgb(45, 55, 72)" class="w-8 h-8">
+                                    <g fill="none" fill - rule="evenodd" transform = "translate(1 1)" stroke - width="3">
+                                        <circle cx="22" cy = "22" r = "6" stroke - opacity="0">
+                                            <animate attributeName="r" begin = "1.5s" dur = "3s" values = "6;22" calcMode = "linear" repeatCount = "indefinite"> </animate>
+                                                <animate attributeName = "stroke-opacity" begin = "1.5s" dur = "3s" values = "1;0" calcMode = "linear" repeatCount = "indefinite"> </animate>
+                                                    <animate attributeName = "stroke-width" begin = "1.5s" dur = "3s" values = "2;0" calcMode = "linear" repeatCount = "indefinite"> </animate>
+                                                        </circle>
+                                                        <circle cx = "22" cy = "22" r = "6" stroke - opacity="0">
+                                                            <animate attributeName="r" begin = "3s" dur = "3s" values = "6;22" calcMode = "linear" repeatCount = "indefinite"> </animate>
+                                                                <animate attributeName = "stroke-opacity" begin = "3s" dur = "3s" values = "1;0" calcMode = "linear" repeatCount = "indefinite"> </animate>
+                                                                    <animate attributeName = "stroke-width" begin = "3s" dur = "3s" values = "2;0" calcMode = "linear" repeatCount = "indefinite"> </animate>
+                                                                        </circle>
+                                                                        <circle cx = "22" cy = "22" r = "8">
+                                                                            <animate attributeName="r" begin = "0s" dur = "1.5s" values = "6;1;2;3;4;5;6" calcMode = "linear" repeatCount = "indefinite"> </animate>
+                                                                                </circle>
+                                                                                </g>
+                                                                                </svg>
+                                                                                <div class="text-center text-xs mt-2" > لطفا منتظر بمانید...</div>
+                                                                                    </div>
+                                                                                    </div>`;
+    </script>
+}
+
 

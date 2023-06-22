@@ -1,4 +1,5 @@
-﻿using Store.Application.Interfaces.Contexs;
+﻿using Microsoft.EntityFrameworkCore;
+using Store.Application.Interfaces.Contexs;
 using Store.Application.Services.ProductsSite.Commands.AddNewProduct;
 using Store.Application.Services.ProductsSite.Queries.GetEditProductsList;
 using Store.Common.Constant;
@@ -34,13 +35,23 @@ namespace Store.Application.Services.ProductsSite.Commands.EditProducts
 						Message = MessageInUser.IsValidForm
 					};
 				}
-				//Edit List Products
-				product.Name = editProductListDto.Name;
+                var brand = await _context.Brands.FindAsync(editProductListDto.BrandId);
+                var category = await _context.Category.FindAsync(editProductListDto.CategoryId);
+				var user = await _context.Users.FindAsync(editProductListDto.UserId);
+				var slug = await _context.Products.Where(s => s.Slug == editProductListDto.Slug && s.Slug != product.Slug).ToListAsync();
+                if (category == null) { return new ResultDto { IsSuccess = false, Message = "لطفا دسته بندی خود را انتخاب کنید!" }; }
+				if (user == null) { return new ResultDto { IsSuccess = false, Message = "کاربری جهت ویرایش وجود ندارد!" }; }
+				if (slug.Any()) { return new ResultDto { IsSuccess = false, Message = "آدرس سِو خود را تغییر دهید!" }; }
+                //Edit List Products
+                product.Name = editProductListDto.Name;
 				product.Content = editProductListDto.Content;
 				product.Description = editProductListDto.Description;
 				product.IsActive = editProductListDto.IsActive;
-				product.Price = editProductListDto.Price;
-				product.LastPrice = editProductListDto.LastPrice;
+                if (product.Price != editProductListDto.Price)
+                {
+                    product.LastPrice = product.Price;
+                    product.Price = editProductListDto.Price;
+                }
 				product.Quantity = editProductListDto.Quantity;
 				product.Slug = editProductListDto.Slug;
 				product.MinPic = editProductListDto.MinPic;

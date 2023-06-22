@@ -5,6 +5,7 @@ using Store.Application.Interfaces.Contexs;
 using Store.Common;
 using Store.Common.Constant.FileTypeManager;
 using Store.Common.Constant.NoImage;
+using Store.Common.Constant.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;

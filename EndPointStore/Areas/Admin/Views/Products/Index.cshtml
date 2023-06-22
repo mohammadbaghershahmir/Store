@@ -150,7 +150,6 @@
     //
         $("#ShowDeleteModal").on('click', function () {
             let productId = $(this).attr('data-itemid');
-            console.log(productId)
             $("#remove-product").attr('data-productid',productId)
             $("#delete-confirmation-modal").show();
         })

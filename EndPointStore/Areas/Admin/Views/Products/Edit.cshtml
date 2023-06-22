@@ -187,9 +187,9 @@
 						</div>
 						<div class="w-full mt-3 xl:mt-0 flex-1" id="standard-editor">
 							<div class="preview">
-								<div class="editor">
-									@Model.Content
-								</div>
+								<textarea class="editor">
+										@Html.Raw(@Model.Content)	
+								</textarea>
 							</div>
 						</div>
 					</div>
