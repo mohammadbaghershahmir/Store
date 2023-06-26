@@ -348,13 +348,14 @@
                                 </div>
                                 <div class="filter-short">
                                     <label class="filter-label">مرتب براساس :</label>
-                                    <select class="form-select filter-select" onchange="redirectToUrl(this)">
-                                        <option value="MostVisited">پربازدیدترین</option>
-                                        <option value="Bestselling">پرفروشترین</option>
-                                        <option value="Most-Popular">محبوبترین</option>
-                                        <option value="newest">جدیدترین</option>
-                                        <option value="cheapest">ارزانترین</option>
-                                        <option value="most-expensive">گرانترین</option>
+                                    <select class="form-select filter-select" onchange="sendParameter(this.value)">
+                                        <option value="0" >بدون انتخاب</option>
+                                        <option value="1" >پربازدیدترین</option>
+                                        <option value="2" >پرفروشترین</option>
+                                        <option value="3" >محبوب‌ترین</option>
+                                        <option value="4" >جدیدترین</option>
+                                        <option value="5" >ارزان‌ترین</option>
+                                        <option value="6" >گران‌ترین</option>
                                     </select>
                                 </div>
                             </div>
@@ -466,11 +467,27 @@
 @section Scripts{
  <script>
      //Filter Product
-        function redirectToUrl(element) {
-            var searchkeyValue = '@Context.Request.Query["SearchKey"]';
-            var orderingValue = element.value;
+        function sendParameter(value) {
+            var searchKey = '@Html.Raw(Context.Request.Query["SearchKey"])'; // استفاده از براکت و تگ
+            var ordering = ""; // مقدار ordering بر اساس گزینه انتخاب شده
 
-            var url = '/products?Searchkey='+ encodeURIComponent(searchkeyValue) + '&ordering=' + encodeURIComponent(orderingValue);
+            if (value === "0") {
+                ordering = "NotOrder";
+            } else if (value === "1") {
+                ordering = "MostVisited";
+            } else if (value === "2") {
+                ordering = "Bestselling";
+            } else if (value === "3") {
+                ordering = "MostPopular";
+            } else if (value === "4") {
+                ordering = "theNewest";
+            } else if (value === "5") {
+                ordering = "Cheapest";
+            } else if (value === "6") {
+                ordering = "theMostExpensive";
+            }
+
+            var url = "products?Searchkey=" + searchKey + "&ordering=" + ordering;
             window.location.href = url;
         }
      //Show Detail Modal
