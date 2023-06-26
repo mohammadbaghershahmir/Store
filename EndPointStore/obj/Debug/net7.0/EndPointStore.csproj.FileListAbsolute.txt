@@ -261,3 +261,4 @@ E:\Stor-Project\Store\EndPointStore\bin\Debug\net7.0\vi\Humanizer.resources.dll
 E:\Stor-Project\Store\EndPointStore\bin\Debug\net7.0\zh-CN\Humanizer.resources.dll
 E:\Stor-Project\Store\EndPointStore\bin\Debug\net7.0\zh-Hans\Humanizer.resources.dll
 E:\Stor-Project\Store\EndPointStore\bin\Debug\net7.0\zh-Hant\Humanizer.resources.dll
+E:\Stor-Project\Store\EndPointStore\bin\Debug\net7.0\LazZiya.TagHelpers.dll

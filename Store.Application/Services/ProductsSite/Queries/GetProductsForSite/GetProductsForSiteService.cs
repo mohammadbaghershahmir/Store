@@ -17,7 +17,7 @@ namespace Store.Application.Services.ProductsSite.Queries.GetProductsForSite
 			_context = context;
 			_configuration = configuration;
         }
-        public async Task<ResultDto<ResultProductsForSiteDto>> Execute( string SearchKey, int page)
+        public async Task<ResultDto<ResultProductsForSiteDto>> Execute(Ordering ordering, string SearchKey, int page, int pagesize)
 		{
             string BaseUrl = _configuration.GetSection("BaseUrl").Value;
             int totalRow = 0;
@@ -27,11 +27,34 @@ namespace Store.Application.Services.ProductsSite.Queries.GetProductsForSite
 			{
 				products = _context.Products.Where(n => n.Name.Contains(SearchKey) || n.Brands.Name.Contains(SearchKey) || n.Category.Name.Contains(SearchKey)).AsQueryable();
 			}
+			switch (ordering)
+			{
+				case Ordering.NotOrder:
+					products = products.OrderByDescending(i => i.Id).AsQueryable();
+					break;
+				case Ordering.MostVisited:
+                    products = products.OrderByDescending(i => i.ViewCount).AsQueryable();
+					break;
+                case Ordering.Bestselling:
+					break;
+				case Ordering.MostPopular:
+					break;
+				case Ordering.theNewest:
+                    products = products.OrderByDescending(i => i.InsertTime).AsQueryable();
+                    break;
+                case Ordering.Cheapest:
+                    products = products.OrderBy(p => p.Price).AsQueryable();
+                    break;
+                case Ordering.theMostExpensive:
+                    products = products.OrderByDescending(p => p.Price).AsQueryable();
+                    break;
+                default:
+					break;
+			}
 			return new ResultDto<ResultProductsForSiteDto> {
 
 				Data = new ResultProductsForSiteDto
 				{
-					TotalRow = totalRow,
 					Products = products.Select(w => new ProductsForSiteDto
 					{
 						Id = w.Id,
@@ -43,8 +66,9 @@ namespace Store.Application.Services.ProductsSite.Queries.GetProductsForSite
 						Star = w.Rates.Select(e => e.UserRate).FirstOrDefault(),
 						NewProduct = w.InsertTime >= lastWeekDate ?true:false,
 						Title = w.Name
-					}).ToPaged(page, 20, out totalRow).ToList(),
-				},
+					}).ToPaged(page, pagesize, out totalRow).ToList(),
+                    TotalRow = totalRow,
+                },
 				IsSuccess=true
 			};
 		}

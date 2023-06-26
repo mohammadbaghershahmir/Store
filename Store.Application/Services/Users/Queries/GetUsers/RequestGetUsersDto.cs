@@ -9,6 +9,7 @@ namespace Store.Application.Services.Users.Queries.GetUsers
     public class RequestGetUsersDto
     {
         public int Page { get; set; }
+        public int PageSize { get; set; }
         public string? SearchKey { get; set; }
     }
 }

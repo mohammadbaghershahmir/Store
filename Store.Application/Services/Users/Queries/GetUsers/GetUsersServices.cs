@@ -29,7 +29,7 @@ namespace Store.Application.Services.Users.Queries.GetUsers
             }
             //var contact = await _databaseContext.Contacts.Where(r => r.UserId == r.Id.ToString()).ToListAsync();
             int RowsCount = 0;
-            var userslistt = users.ToPaged(request.Page, 20, out RowsCount).Select(p => new GetUsersDto
+            var userslistt = users.ToPaged(request.Page,request.PageSize, out RowsCount).Select(p => new GetUsersDto
 
             {
                 FullName = p.FullName,

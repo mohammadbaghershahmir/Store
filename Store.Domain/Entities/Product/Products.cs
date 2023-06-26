@@ -16,6 +16,8 @@ namespace Store.Domain.Entities.Product
         public double  Price { get; set; }
         public double LastPrice { get; set; }
         public long Quantity { get; set; }
+        public int CodeProduct { get; set; }
+        public int ViewCount { get; set; }
         public string? Slug { get; set; }
         public double PostageFeeBasedQuantity { get; set; }
 		public double PostageFee { get; set; }

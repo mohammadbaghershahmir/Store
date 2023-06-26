@@ -447,6 +447,9 @@ namespace Store.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("CodeProduct")
+                        .HasColumnType("int");
+
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
@@ -504,6 +507,9 @@ namespace Store.Persistence.Migrations
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("ViewCount")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -679,28 +685,28 @@ namespace Store.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7ac2d33a-be25-459c-9781-6ed7faae84f8",
+                            Id = "7cf4db49-b1ad-497b-a696-2c6a0d926bd4",
                             IsRemoved = false,
                             Title = "تلفن همراه",
                             Value = "Mobail"
                         },
                         new
                         {
-                            Id = "3807978c-c477-4f8f-a30b-cac4af4dfcf2",
+                            Id = "e2b31a48-8177-4082-823c-b8768df8fbfa",
                             IsRemoved = false,
                             Title = "تلفن",
                             Value = "Phone"
                         },
                         new
                         {
-                            Id = "bd490f0b-4261-4102-8358-7b17da0aeab2",
+                            Id = "19205efc-2d32-4419-bbaa-b0d677449393",
                             IsRemoved = false,
                             Title = "ایمیل",
                             Value = "Email"
                         },
                         new
                         {
-                            Id = "5c714ff8-cbfd-4962-83b2-2ea1f744bfa3",
+                            Id = "2ebdb057-6498-4b0a-a5fd-63ed137f645e",
                             IsRemoved = false,
                             Title = "آدرس",
                             Value = "Address"
@@ -838,7 +844,7 @@ namespace Store.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ec9cbad1-2f13-4fd6-9bed-b2b0e261f3e4",
+                            Id = "41446ab8-2c35-4667-8153-b9ca50416d24",
                             Name = "Admin",
                             NormalizedName = "ADMIN",
                             IsRemoved = false,
@@ -846,7 +852,7 @@ namespace Store.Persistence.Migrations
                         },
                         new
                         {
-                            Id = "8d57532c-0930-471b-89e0-3aaf316ad5bd",
+                            Id = "7d620020-5a9f-4233-9e1e-917fd5f76027",
                             Name = "Operator",
                             NormalizedName = "OPERATOR",
                             IsRemoved = false,
@@ -854,7 +860,7 @@ namespace Store.Persistence.Migrations
                         },
                         new
                         {
-                            Id = "2dbee74b-5a72-467a-bc38-db2b636c9b24",
+                            Id = "13a6c507-f637-4006-8ccf-05e838058e2a",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER",
                             IsRemoved = false,

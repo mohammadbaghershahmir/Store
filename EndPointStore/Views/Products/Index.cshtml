@@ -1,9 +1,14 @@
-﻿@using Store.Application.Services.ProductsSite.Queries.GetProductsForSite
+﻿@addTagHelper *, LazZiya.TagHelpers
+@using Store.Application.Services.ProductsSite.Queries.GetProductsForSite
 @using Store.Common.Constant.Settings;
 @model ResultProductsForSiteDto;
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    int pageNumber = 1;
+    int pageSize = 20;
+    int.TryParse(Context.Request.Query["page"], out pageNumber);
+    int.TryParse(Context.Request.Query["pageSize"], out pageSize);
 }
 <body>
     <!--=====================================
@@ -343,11 +348,13 @@
                                 </div>
                                 <div class="filter-short">
                                     <label class="filter-label">مرتب براساس :</label>
-                                    <select class="form-select filter-select">
-                                        <option selected>پیش‌فرض</option>
-                                        <option value="3">پرطرفدار</option>
-                                        <option value="1">ویژه</option>
-                                        <option value="2">توصیه</option>
+                                    <select class="form-select filter-select" onchange="redirectToUrl(this)">
+                                        <option value="MostVisited">پربازدیدترین</option>
+                                        <option value="Bestselling">پرفروشترین</option>
+                                        <option value="Most-Popular">محبوبترین</option>
+                                        <option value="newest">جدیدترین</option>
+                                        <option value="cheapest">ارزانترین</option>
+                                        <option value="most-expensive">گرانترین</option>
                                     </select>
                                 </div>
                             </div>
@@ -423,26 +430,20 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="bottom-paginate">
-                                <p class="page-info">نمایش 12 از 60 نتیجه</p>
-                                <ul class="pagination">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">
-                                            <i class="fas fa-long-arrow-alt-right"></i>
-                                        </a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link active" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">...</li>
-                                    <li class="page-item"><a class="page-link" href="#">60</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">
-                                            <i class="fas fa-long-arrow-alt-left"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <paging total-records="@Model.TotalRow"
+                                page-no="@pageNumber==0?1:pageNumber"
+                                page-size="@pageSize==0?20:pageSize"
+                                show-prev-next="true"
+                                show-total-pages="false"
+                                show-total-records="false"
+                                show-page-size-nav="true"
+                                show-first-numbered-page="true"
+                                show-last-numbered-page="true"
+                                query-string-key-page-no="Page"
+                                query-string-key-page-size="PageSize"
+                                query-string-value="@@(Request.QueryString.Value)"
+                                gap-size="2"> 
+                            </paging>
                         </div>
                     </div>
                 </div>
@@ -464,7 +465,15 @@
 </body>
 @section Scripts{
  <script>
-        //Show Detail Modal
+     //Filter Product
+        function redirectToUrl(element) {
+            var searchkeyValue = '@Context.Request.Query["SearchKey"]';
+            var orderingValue = element.value;
+
+            var url = '/products?Searchkey='+ encodeURIComponent(searchkeyValue) + '&ordering=' + encodeURIComponent(orderingValue);
+            window.location.href = url;
+        }
+     //Show Detail Modal
         $(".show-detail-modal").on('click', function () {
             let productId = $(this).attr('data-itemid');
             getProductList(productId);

@@ -33,6 +33,9 @@ namespace Store.Application.Services.ProductsSite.Commands.AddNewProduct
                         Message = MessageInUser.ExistSlug
                     };
                 }
+                long ticks = DateTime.Now.Ticks;
+                Random random = new Random((int)(ticks & 0xffffffffL) | (int)(ticks >> 32));
+                int codeProduct = random.Next(1000, 10000);
                 //var SlugUnderLine = requestAddProductDto?.Slug?.Trim().Replace(" ", "_");
                 Products products = new Products()
                 {
@@ -40,6 +43,7 @@ namespace Store.Application.Services.ProductsSite.Commands.AddNewProduct
                     Name = requestAddProductDto.Name,
                     Price = requestAddProductDto.Price,
                     Quantity = requestAddProductDto.Quantity,
+                    CodeProduct=codeProduct,
                     LastPrice = requestAddProductDto.Price,
                     PostageFee = requestAddProductDto.PostageFee,
                     PostageFeeBasedQuantity = requestAddProductDto.PostageFeeBasedQuantity,

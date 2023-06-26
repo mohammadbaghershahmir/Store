@@ -9,6 +9,7 @@
       "EndPointStore/1.0.0": {
         "dependencies": {
           "FluentFTP": "46.0.2",
+          "LazZiya.TagHelpers": "6.0.2",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.0",
           "Microsoft.EntityFrameworkCore.Design": "6.0.0",
@@ -575,6 +576,14 @@
         }
       },
       "jQuery/1.9.0": {},
+      "LazZiya.TagHelpers/6.0.2": {
+        "runtime": {
+          "lib/net6.0/LazZiya.TagHelpers.dll": {
+            "assemblyVersion": "6.0.2.0",
+            "fileVersion": "6.0.2.0"
+          }
+        }
+      },
       "MD.BootstrapPersianDateTimePicker/2.3.0": {
         "dependencies": {
           "bootstrap": "3.3.1",
@@ -3301,6 +3310,13 @@
       "sha512": "sha512-bS6OGSd/QL39vKKhATpeehgZDCzV6foRJ52EocEGAB29VetwXkQHN6KQIBlBbW9VJzuHr+rQxHYZ13MnPGQ/vw==",
       "path": "jquery/1.9.0",
       "hashPath": "jquery.1.9.0.nupkg.sha512"
+    },
+    "LazZiya.TagHelpers/6.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qYWVS9Mx61jmYrI+iNhw6vyH5u4W/VsAy0aTeKplNDU63K2WVSI7RdvWKSXuti0kZn+iQGkwpHz820ukCTTpPQ==",
+      "path": "lazziya.taghelpers/6.0.2",
+      "hashPath": "lazziya.taghelpers.6.0.2.nupkg.sha512"
     },
     "MD.BootstrapPersianDateTimePicker/2.3.0": {
       "type": "package",

@@ -1,9 +1,14 @@
-﻿@using Store.Application.Services.Users.Queries.GetUsers;
+﻿@addTagHelper *, LazZiya.TagHelpers
+@using Store.Application.Services.Users.Queries.GetUsers;
 @model ResultGetUsersDto;
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
+   
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    int pageNumber = 1;
+    int pageSize = 20;
+    int.TryParse(Context.Request.Query["page"], out pageNumber);
+    int.TryParse(Context.Request.Query["pageSize"], out pageSize);
 }
 
 
@@ -89,24 +94,22 @@
     <!-- BEGIN: Pagination -->
     <div class="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
         <ul class="pagination">
-            <li>
-                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-right"></i> </a>
-            </li>
-            <li>
-                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-right"></i> </a>
-            </li>
-            <li> <a class="pagination__link" href="">...</a> </li>
-            <li> <a class="pagination__link" href="">1</a> </li>
-            <li> <a class="pagination__link pagination__link--active" href="">2</a> </li>
-            <li> <a class="pagination__link" href="">3</a> </li>
-            <li> <a class="pagination__link" href="">...</a> </li>
-            <li>
-                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-left"></i> </a>
-            </li>
-            <li>
-                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-left"></i> </a>
-            </li>
+            <paging total-records="@Model.Rows"
+                    page-no="@pageNumber==0?1:pageNumber"
+                    page-size="@pageSize==0?20:pageSize"
+                    show-prev-next="true"
+                    show-total-pages="false"
+                    show-total-records="false"
+                    show-page-size-nav="true"
+                    show-first-numbered-page="true"
+                    show-last-numbered-page="true"
+                    query-string-key-page-no="Page"
+                    query-string-key-page-size="PageSize"
+                    gap-size="2">
+                   
+            </paging>
         </ul>
+            
         <select class="w-20 form-select box mt-3 sm:mt-0">
             <option>10</option>
             <option>25</option>

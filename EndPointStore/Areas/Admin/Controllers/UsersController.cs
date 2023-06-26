@@ -51,15 +51,16 @@ namespace EndPointStore.Areas.Admin.Controllers
             _databaseContext = databaseContext;
 
         }
-        public async Task<IActionResult> Index(string searchkey, int page = 1)
+        public async Task<IActionResult> Index(string searchkey, int Page = 1,int PageSize=20)
         {
             var ResultUsers = await _usersServices.Execute(
 
                 new RequestGetUsersDto
                 {
 
-                    Page = page,
+                    Page = Page,
                     SearchKey = searchkey,
+                    PageSize= PageSize
                 }
                 );
             return View(ResultUsers);

@@ -37,7 +37,7 @@ namespace Store.Application.Services.ProductsSite.Queries.GetDetailProductModalF
                 {
                     Id = detailProductList.Id,
                     Brand = detailProductList.Brands.Name,
-                    CodeProduct = 0,
+                    CodeProduct = detailProductList.CodeProduct,
                     Unit=Settings.UnitText,
                     Description = string.IsNullOrEmpty(detailProductList.Description) ? "بدون توضیحات" :detailProductList.Description,
                     LastPrice = detailProductList.LastPrice,

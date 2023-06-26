@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Store.Application.Interfaces.FacadPattern;
 using Store.Application.Interfaces.FacadPatternSite;
+using Store.Application.Services.ProductsSite.Queries.GetProductsForSite;
 using Store.Common.Constant;
 using Store.Common.Dto;
 
@@ -13,9 +14,9 @@ namespace EndPointStore.Controllers
 		{
 			_productFacadSite = productFacadSite;
 		}
-		public async Task<IActionResult> Index(string? SearchKey,int page=1)
+		public async Task<IActionResult> Index(Ordering ordering,string? SearchKey,int page=1,int pageSize=20)
         {
-			var result = await _productFacadSite.GetProductsForSiteService.Execute(SearchKey,page);
+			var result = await _productFacadSite.GetProductsForSiteService.Execute(ordering,SearchKey,page,pageSize);
             return View(result.Data);
         }
 		public async Task<IActionResult> Detail(string Id)
