@@ -15,7 +15,7 @@ namespace Store.Domain.Entities.Medias
         public string? Alt { get; set; }
         public string? Description { get; set; }
         public FileTypeEnum MediaType { get; set; }
-        public virtual Products Products { get; set; }
-		public string ProductsId { get; set; }
+        public virtual Product.Product Product { get; set; }
+		public string ProductId { get; set; }
 	}
 }

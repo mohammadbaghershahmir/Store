@@ -25,8 +25,8 @@ namespace Store.Domain.Entities.Users
         public bool IsRemoved { get ; set; }
         public DateTime? RemoveTime { get ; set; }
         public ICollection<Contact> Contacts { get; set; }
-		public ICollection<Products> Products { get; set; }
+		public ICollection<Product.Product> Products { get; set; }
 		public ICollection<Rate> Rates { get; set; }
-		public ICollection<Comments> Comments { get; set; }
+		public ICollection<Comment> Comments { get; set; }
 	}
 }

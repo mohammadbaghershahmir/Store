@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Store.Application.Interfaces.Contexs;
 using Store.Common.Constant;
 using Store.Common.Constant.Roles;
+using Store.Domain.Entities.Carts;
 using Store.Domain.Entities.Commons;
 using Store.Domain.Entities.Medias;
 using Store.Domain.Entities.Product;
@@ -29,13 +30,15 @@ namespace Store.Persistence.Contexs
         public DbSet<ContactType> ContactType { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<Media> Medias { get; set; }
-		public DbSet<Brands> Brands { get; set; }
-        public DbSet<Comments> Comments { get; set; }
+		public DbSet<Brand> Brands { get; set; }
+        public DbSet<Comment> Comments { get; set; }
         public DbSet<Feature> Features { get; set; }
 		public DbSet<ItemTag> ItemTags { get; set; }
-		public DbSet<Products> Products { get; set; }
+		public DbSet<Product> Products { get; set; }
 		public DbSet<Rate> Rates { get; set; }
 		public DbSet<Tag> Tags { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -46,7 +49,7 @@ namespace Store.Persistence.Contexs
                 .WithMany(u => u.Rates)
                 .HasForeignKey(r => r.UserId)
                 .OnDelete(DeleteBehavior.NoAction);
-			builder.Entity<Comments>()
+			builder.Entity<Comment>()
 			   .HasOne(r => r.User)
 			   .WithMany(u => u.Comments)
 			   .HasForeignKey(r => r.UserId)
@@ -180,7 +183,10 @@ namespace Store.Persistence.Contexs
             modelBuilder.Entity<User>().HasQueryFilter(p => !p.IsRemoved);
             //modelBuilder.Entity<Role>().HasQueryFilter(p => !p.IsRemoved);
             modelBuilder.Entity<Category>().HasQueryFilter(p => !p.IsRemoved);
-            modelBuilder.Entity<Products>().HasQueryFilter(p => !p.IsRemoved);
+            modelBuilder.Entity<Product>().HasQueryFilter(p => !p.IsRemoved);
+            modelBuilder.Entity<Cart>().HasQueryFilter(p => !p.IsRemoved);
+            modelBuilder.Entity<CartItem>().HasQueryFilter(p => !p.IsRemoved);
+
         }
 
         private void SeedData(ModelBuilder modelBuilder)

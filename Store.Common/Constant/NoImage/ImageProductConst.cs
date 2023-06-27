@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ namespace Store.Common.Constant.NoImage
 {
     public class ImageProductConst
     {
+        
         public const string NoImage = @"\SiteTemplate\assets\images\no-image.jpg";
+        public const string FtpUrl = "https://corkstops.com";
     }
 }

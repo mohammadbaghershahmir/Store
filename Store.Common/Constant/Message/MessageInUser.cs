@@ -27,5 +27,13 @@ namespace Store.Common.Constant
 		public const string ExistSlug = "آدرس سِو با همین نام وجود دارد";
         public const string RemoveProduct = "حذف محصول با موفقیت انجام شد!";
 		public const string MessageUpdateProduct = "ویرایش محصول با موفقیت انجام شد!";
-	}
+        public const string RemoveCard = "حذف از سبد خرید با موفقیت انجام شد!";
+        public const string RemoveInvalidCard = "حذف از سبد خرید  انجام نشد!";
+        public const string NotFind = "یافت نشد!";
+        public const string MessageAddCartItem = "محصول به سبد خرید اضافه شد!";
+        public const string MessageInvalidCart = "خطایی وجود دارد!";
+        public const string MessageNotFoundCart = "آیتمی در سبد خرید وجود ندارد!";
+        public const string MessageDecreasedCart = "آیتم با موفقیت کم شد!";
+
+    }
 }
