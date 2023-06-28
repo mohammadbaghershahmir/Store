@@ -5,22 +5,17 @@ using Store.Common.Constant.NoImage;
 using Store.Common.Constant.Settings;
 using Store.Common.Dto;
 using Store.Domain.Entities.Carts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Store.Application.Services.Carts
 {
     public interface ICartService
     {
-        Task<ResultDto> AddToCard(string ProductId, Guid BrowserId);
+        Task<ResultDto> AddToCard(string ProductId, Guid BrowserId, int? count);
         Task<ResultDto> RemoveFromCard(string ProductId, Guid BrowserId);
         Task<ResultDto<CartDto>> GetMyCart(Guid BrowserId,string? UserId, bool? Forpay = false);
-        Task<ResultDto> AddCount(Guid Id);
-        Task<ResultDto> MinCount(Guid Id);
-        Task<ResultDto> Remove(Guid Id);
+        Task<ResultDto> AddCount(string Id);
+        Task<ResultDto> MinCount(string Id);
+        Task<ResultDto> Remove(string Id);
     }
     public class CartService : ICartService
     {
@@ -30,9 +25,9 @@ namespace Store.Application.Services.Carts
             _context= context;
         }
 
-        public async Task<ResultDto> AddCount(Guid Id)
+        public async Task<ResultDto> AddCount(string Id)
         {
-            var result = await _context.CartItems.FindAsync(Id);
+            var result =  _context.CartItems.Find(Id);
             if (result == null)
             {
                 return new ResultDto()
@@ -42,7 +37,6 @@ namespace Store.Application.Services.Carts
                 };
 
             }
-
             result.Count++;
             await _context.SaveChangesAsync();
             return new ResultDto()
@@ -52,44 +46,60 @@ namespace Store.Application.Services.Carts
             };
         }
 
-        public async Task<ResultDto> AddToCard(string ProductId, Guid BrowserId)
+        public async Task<ResultDto> AddToCard(string ProductId, Guid BrowserId, int? count)
         {
-            var card =await _context.Carts.Where(c => c.BrowserId == BrowserId && !c.Finished).FirstOrDefaultAsync();
-            if(card == null)
+            try
             {
-                Cart newCart = new Cart()
+                var cart =  _context.Carts
+                      .Where(p => p.BrowserId == BrowserId && p.Finished == false)
+                      .FirstOrDefault();
+                if (cart == null)
                 {
-                    Finished=false,
-                    BrowserId= BrowserId,
-                };
-                _context.Carts.Add(newCart);
-               await _context.SaveChangesAsync();
-                card = newCart;
-            }
-            var product = _context.Products.Find(ProductId);
-            var cardItem =await _context.CartItems.Where(p => p.ProductId == ProductId && p.CartId == card.Id).FirstOrDefaultAsync();
-            if(cardItem != null)
-            {
-                cardItem.Count++;
-            }
-            else
-            {
-                CartItem cartItem = new CartItem()
+                    Cart newCart = new Cart()
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                        Finished = false,
+                        BrowserId = BrowserId,
+                        InsertTime = DateTime.Now,
+                        IsRemoved = false
+                    };
+                    await _context.Carts.AddAsync(newCart);
+                    await _context.SaveChangesAsync();
+                    cart = newCart;
+                }
+                var product =  _context.Products.Find(ProductId);
+                var cartItem =  _context.CartItems
+                    .Where(p => p.ProductId == ProductId.ToString() && p.CartId == cart.Id)
+                    .FirstOrDefault();
+                if (cartItem != null)
                 {
-                    Cart = card,
-                    Count = 1,
-                    Price = product.Price,
-                    Product = product,
+                    cartItem.Count++;
+                }
+                else
+                {
+                    CartItem newCartItem = new CartItem()
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                        Cart = cart,
+                        Count = count.HasValue ? count.Value : 1,
+                        Price = product.Price,
+                        Product = product,
+                        InsertTime = DateTime.Now,
+                    };
+                    await _context.CartItems.AddAsync(newCartItem);
+                }
+                await _context.SaveChangesAsync();
+                return new ResultDto()
+                {
+                    IsSuccess = true,
+                    Message = $"محصول {product.Name} با موفقیت به سبد خرید اضافه شد"
                 };
-                _context.CartItems.Add(cardItem);
-               await _context.SaveChangesAsync();
             }
-            return new ResultDto()
+            catch (Exception ex)
             {
-                IsSuccess = true,
-                Message=$"محصول{product.Name} با موفقیت به سبد خرید اضافه شد"
-
-            };
+                var ee = ex.Message;
+                return new ResultDto() { IsSuccess = false };
+            }
         }
 
         public async Task<ResultDto<CartDto>> GetMyCart(Guid BrowserId, string? UserId, bool? Forpay = false)
@@ -116,12 +126,14 @@ namespace Store.Application.Services.Carts
                         ProductCount = cart.CartItems.Count(),
                         SumAmount = cart.CartItems.Sum(p => p.Price * p.Count),
                         CartId = cart.Id,
+                        Unit = Settings.UnitText,
                         CartItems = cart.CartItems.Select(p => new CartItemDto
                         {
                             Id = p.Id,
                             ProductId = p.ProductId,
                             Count = p.Count,
                             Price = p.Price = p.Product.Price,
+                            CountPerPrice=p.Price*p.Count,
                             ProductName = p.Product.Name,
                             ImageSrc = string.IsNullOrEmpty(p.Product.MinPic) ? ImageProductConst.NoImage : ImageProductConst.FtpUrl + p.Product.MinPic,
                         }).ToList(),
@@ -143,9 +155,9 @@ namespace Store.Application.Services.Carts
             }
         }
 
-        public async Task<ResultDto> MinCount(Guid Id)
+        public async Task<ResultDto> MinCount(string Id)
         {
-            var result = await _context.CartItems.FindAsync(Id);
+            var result =  _context.CartItems.Find(Id);
             if (result.Count <= 1)
             {
                 return new ResultDto()
@@ -173,7 +185,7 @@ namespace Store.Application.Services.Carts
             };
         }
 
-        public async Task<ResultDto> Remove(Guid Id)
+        public async Task<ResultDto> Remove(string Id)
         {
             var result = await _context.CartItems.FindAsync(Id);
             if (result == null)
@@ -224,6 +236,7 @@ namespace Store.Application.Services.Carts
         public string CartId { get; set; }
         public int ProductCount { get; set; }
         public double SumAmount { get; set; }
+        public string Unit { get; set; }
         public List<CartItemDto>  CartItems {  get; set; }
     }
     public class CartItemDto
@@ -234,5 +247,6 @@ namespace Store.Application.Services.Carts
         public string ImageSrc { get; set; }
         public int Count { get; set; }
         public double Price { get; set; }
+        public double CountPerPrice { get; set; }
     }
 }

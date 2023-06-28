@@ -414,7 +414,7 @@
                                                 <del>@item.LastPrice.ToString("n0") @item.Unit</del>
                                             }
                                         </h6>
-                                        <button class="product-add" title="افزودن به سبد خرید">
+                                        <button class="product-add" onclick="AddToCart('@item.Id')" title="افزودن به سبد خرید">
                                             <i class="fas fa-shopping-basket"></i>
                                             <span>افزودن</span>
                                         </button>

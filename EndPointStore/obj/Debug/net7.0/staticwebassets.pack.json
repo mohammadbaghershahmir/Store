@@ -2333,6 +2333,10 @@
       "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\accordion.js"
     },
     {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\js\\cart.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\cart.js"
+    },
+    {
       "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\js\\countdown.js",
       "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\countdown.js"
     },

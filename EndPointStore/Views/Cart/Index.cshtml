@@ -1,0 +1,59 @@
+﻿@using Store.Application.Services.Carts;
+@model CartDto
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--=====================================
+                  CART SIDEBAR PART START
+        =======================================-->
+<aside class="cart-sidebar">
+    <div class="cart-header">
+        <div class="cart-total">
+            <i class="fas fa-shopping-basket"></i>
+            <span>کل مورد (5)</span>
+        </div>
+        <button class="cart-close"><i class="icofont-close"></i></button>
+    </div>
+    <ul class="cart-list">
+        @foreach (var item in Model.CartItems)
+        {
+            <li class="cart-item">
+                <div class="cart-media">
+                    <a href="#"><img src="@item.ImageSrc" alt="product"></a>
+                    <button class="cart-delete"><i class="far fa-trash-alt"></i></button>
+                </div>
+                <div class="cart-info-group">
+                    <div class="cart-info">
+                        <h6><a href="product-single.html">@item.ProductName</a></h6>
+                        <p>قیمت واحد - @item.Price.ToString("n0")</p>
+                    </div>
+                    <div class="cart-action-group">
+                        <div class="product-action">
+                            <button onclick="LowOff('@item.Id')" class="action-minus" title="کم کردن"><i class="icofont-minus"></i></button>
+                            <input class="action-input" title="تعداد مورد نیاز" type="text" name="quantity" value="@item.Count">
+                            <button class="action-plus" title="زیاد کردن"><i class="icofont-plus"></i></button>
+                        </div>
+                        <h6>56 ريال</h6>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+    <div class="cart-footer">
+        <button class="coupon-btn">آیا کد تخفیف دارید؟</button>
+        <form class="coupon-form">
+            <input type="text" placeholder="کد تخفیف خود را وارد کنید">
+            <button type="submit"><span>ثبت</span></button>
+        </form>
+        <a class="cart-checkout-btn" href="checkout.html">
+            <span class="checkout-label">برو به تسویه حساب</span>
+            <span class="checkout-price">369 ريال</span>
+        </a>
+    </div>
+</aside>
+<!--=====================================
+            CART SIDEBAR PART END
+=======================================-->
+

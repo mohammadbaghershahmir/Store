@@ -47,7 +47,9 @@
     <!-- CUSTOM -->
     <link rel="stylesheet" href="/SiteTemplate/assets/css/main.css">
     <link rel="stylesheet" href="/SiteTemplate/assets/css/home-standard.css">
-
+    <link href="~/sitetemplate/assets/css/custom-toastify.css" rel="stylesheet" />
+    <link href="~/sitetemplate/library/toastify-js/toastify.min.css" rel="stylesheet" />
+    <link href="~/sitetemplate/library/toastify-js/toastify.css" rel="stylesheet" />
     <!--=====================================
                 CSS LINK PART END
     =======================================-->
@@ -247,8 +249,9 @@
     <!--=====================================
                 NAVBAR PART END
     =======================================-->
-   @RenderBody();
-               
+   @RenderBody()
+   @await Component.InvokeAsync("Cart")
+
     <footer class="footer-part">
         <div class="container">
             <div class="row">
@@ -356,17 +359,19 @@
     <script src="/SiteTemplate/assets/vendor/venobox/venobox.min.js"></script>
 
     <!-- CUSTOM -->
+    <script src="~/sitetemplate/library/toastify-js/toastify.min.js"></script>
+    <script src="~/sitetemplate/library/toastify-js/toastify.js"></script>
     <script src="/SiteTemplate/assets/js/nice-select.js"></script>
     <script src="/SiteTemplate/assets/js/countdown.js"></script>
     <script src="/SiteTemplate/assets/js/accordion.js"></script>
     <script src="/SiteTemplate/assets/js/venobox.js"></script>
     <script src="/SiteTemplate/assets/js/slick.js"></script>
     <script src="/SiteTemplate/assets/js/main.js"></script>
+    <script src="/SiteTemplate/assets/js/cart.js"></script>
     @await RenderSectionAsync("Scripts",required:false)
     <!--=====================================
                 JS LINK PART END
     =======================================-->
-   
 </body>
 </html>
 
