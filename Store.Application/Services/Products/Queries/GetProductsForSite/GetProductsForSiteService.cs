@@ -65,7 +65,8 @@ namespace Store.Application.Services.ProductsSite.Queries.GetProductsForSite
 						//Discount = (float)((w.LastPrice - w.Price) / w.LastPrice) * 100,
 						Star = w.Rates.Select(e => e.UserRate).FirstOrDefault(),
 						NewProduct = w.InsertTime >= lastWeekDate ?true:false,
-						Title = w.Name
+						Title = w.Name,
+						
 					}).ToPaged(page, pagesize, out totalRow).ToList(),
                     TotalRow = totalRow,
                 },

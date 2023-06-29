@@ -2,7 +2,7 @@
 using Store.Application.Interfaces.Contexs;
 using Store.Common.Constant;
 using Store.Common.Dto;
-using Store.Domain.Entities.Product;
+using Store.Domain.Entities.Products;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +34,7 @@ namespace Store.Application.Services.ProductsSite.Commands.AddNewCategory
             }
             else
             {
-                Domain.Entities.Product.Category categories = new Domain.Entities.Product.Category()
+             Category categories = new Category()
 
                 {
                     Id = Guid.NewGuid().ToString(),
@@ -58,7 +58,7 @@ namespace Store.Application.Services.ProductsSite.Commands.AddNewCategory
                 Message = "ثبت موفق"
             };
         }
-        private Domain.Entities.Product.Category GetCategories(string? ParentId)
+        private Category GetCategories(string? ParentId)
         {
             return _context.Category.Find(ParentId);
         }

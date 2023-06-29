@@ -8,7 +8,7 @@
 <!--=====================================
                   CART SIDEBAR PART START
         =======================================-->
-<aside class="cart-sidebar">
+
     <div class="cart-header">
         <div class="cart-total">
             <i class="fas fa-shopping-basket"></i>        
@@ -26,7 +26,7 @@
             {
                 <li class="cart-item">
                     <div class="cart-media">
-                        <a href="#"><img src="@item.ImageSrc" alt="product"></a>
+                        <a href="#"><img src="@item.ImageSrc" alt="@item.ProductName"></a>
                         <button onclick="RemoveFromCard('@item.ProductId')" class="cart-delete"><i class="far fa-trash-alt"></i></button>
                     </div>
                     <div class="cart-info-group">
@@ -58,7 +58,7 @@
             <span class="checkout-price">@Model.SumAmount @Model.Unit</span>
         </a>
     </div>
-</aside>
+
 <!--=====================================
             CART SIDEBAR PART END
 =======================================-->

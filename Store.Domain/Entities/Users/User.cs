@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Store.Domain.Entities.Commons;
-using Store.Domain.Entities.Product;
+using Store.Domain.Entities.Products;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -25,7 +25,7 @@ namespace Store.Domain.Entities.Users
         public bool IsRemoved { get ; set; }
         public DateTime? RemoveTime { get ; set; }
         public ICollection<Contact> Contacts { get; set; }
-		public ICollection<Product.Product> Products { get; set; }
+		public ICollection<Product> Products { get; set; }
 		public ICollection<Rate> Rates { get; set; }
 		public ICollection<Comment> Comments { get; set; }
 	}

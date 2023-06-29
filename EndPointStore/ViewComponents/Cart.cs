@@ -1,9 +1,11 @@
 ﻿using EndPointStore.Utilities;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Store.Application.Services.Carts;
 
 namespace EndPointStore.ViewComponents
 {
+    [ViewComponent(Name = "Cart")]
     public class Cart:ViewComponent
     {
         private readonly ICartService _cartService;
@@ -17,7 +19,8 @@ namespace EndPointStore.ViewComponents
         public IViewComponentResult Invoke()
         {
             var userId = ClaimUtility.GetUserId(HttpContext.User);
-            return View(viewName: "Cart", _cartService.GetMyCart(_cookiesManeger.GetBrowserId(HttpContext), userId).Result.Data);
+            var cart = _cartService.GetMyCart(_cookiesManeger.GetBrowserId(HttpContext), userId).Result.Data;
+            return View(viewName: "Cart", cart);
         }
     }
 }

@@ -19,6 +19,7 @@ namespace EndPointStore.Controllers
 			var result = await _productFacadSite.GetProductsForSiteService.Execute(ordering,SearchKey,page,pageSize);
             return View(result.Data);
         }
+        [HttpGet]
 		public async Task<IActionResult> Detail(string Id)
 		{
             if (!ModelState.IsValid)

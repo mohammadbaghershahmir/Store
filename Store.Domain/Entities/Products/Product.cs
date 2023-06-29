@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Store.Domain.Entities.Product
+namespace Store.Domain.Entities.Products
 {
 	public class Product:BaseEntity
 	{

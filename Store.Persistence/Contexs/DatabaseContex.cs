@@ -8,7 +8,7 @@ using Store.Common.Constant.Roles;
 using Store.Domain.Entities.Carts;
 using Store.Domain.Entities.Commons;
 using Store.Domain.Entities.Medias;
-using Store.Domain.Entities.Product;
+using Store.Domain.Entities.Products;
 using Store.Domain.Entities.Users;
 using System;
 using System.Collections.Generic;

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Store.Application.Interfaces.Contexs;
 using Store.Common.Dto;
-using Store.Domain.Entities.Product;
+using Store.Domain.Entities.Products;
 using System;
 using System.Collections.Generic;
 using System.Linq;

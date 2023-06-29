@@ -13,6 +13,7 @@ namespace Store.Application.Services.Carts
         Task<ResultDto> AddToCard(string ProductId, Guid BrowserId, int? count);
         Task<ResultDto> RemoveFromCard(string ProductId, Guid BrowserId);
         Task<ResultDto<CartDto>> GetMyCart(Guid BrowserId,string? UserId, bool? Forpay = false);
+        Task<ResultDto<BacketDto>> GetBacket(Guid BrowserId, string? UserId, bool? Forpay = false);
         Task<ResultDto> AddCount(string Id);
         Task<ResultDto> MinCount(string Id);
         Task<ResultDto> Remove(string Id);
@@ -99,6 +100,49 @@ namespace Store.Application.Services.Carts
             {
                 var ee = ex.Message;
                 return new ResultDto() { IsSuccess = false };
+            }
+        }
+
+        public async Task<ResultDto<BacketDto>> GetBacket(Guid BrowserId, string? UserId, bool? Forpay = false)
+        {
+            var cart = await _context.Carts
+                .Include(p => p.CartItems)
+                .ThenInclude(p => p.Product)
+                .Where(p => p.BrowserId == BrowserId && p.Finished == false)
+                .OrderByDescending(p => p.Id)
+                .FirstOrDefaultAsync();
+
+            if (UserId != null && cart != null && Forpay == false)
+            {
+                var user = await _context.Users.FindAsync(UserId);
+                cart.User = user;
+                await _context.SaveChangesAsync();
+            }
+            if (cart != null)
+            {
+                return new ResultDto<BacketDto>()
+                {
+                    Data = new BacketDto()
+                    {
+                        ProductCount = cart.CartItems.Count(),
+                        SumAmount = cart.CartItems.Sum(p => p.Price * p.Count),
+                        CartId = cart.Id,
+                        Unit=Settings.UnitText
+                    },
+                    IsSuccess = true,
+                };
+            }
+            else
+            {
+                return new ResultDto<BacketDto>()
+                {
+                    Data = new BacketDto()
+                    {
+                        ProductCount = 0,
+                        SumAmount = 0,
+                    },
+                    IsSuccess = false,
+                };
             }
         }
 
@@ -230,6 +274,13 @@ namespace Store.Application.Services.Carts
                 };
             }
         }
+    }
+    public class BacketDto
+    {
+        public string CartId { get; set; }
+        public int ProductCount { get; set; }
+        public double SumAmount { get; set; }
+        public string Unit { get; set; }
     }
     public class CartDto
     {

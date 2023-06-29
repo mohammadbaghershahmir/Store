@@ -1,6 +1,7 @@
 ﻿using EndPointStore.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using Store.Application.Services.Carts;
+using Store.Common.Dto;
 
 namespace EndPointStore.Controllers
 {
@@ -13,12 +14,29 @@ namespace EndPointStore.Controllers
             _cartService = cartService;
             cookiesManager = new CookiesManager();
         }
-        public async Task<IActionResult> GetMyCart()
+        [HttpGet]
+        public async Task<IActionResult> GetCartList()
         {
             var userId = ClaimUtility.GetUserId(User);
             var resultCart =await _cartService.GetMyCart(cookiesManager.GetBrowserId(HttpContext), userId, false);
-            return Json(resultCart.Data);
+            return Json(resultCart.IsSuccess);
         }
+        public IActionResult CartViewComponent()
+        {
+            return ViewComponent("Cart");
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetBacket()
+        {
+            var userId = ClaimUtility.GetUserId(User);
+            var resultCart = await _cartService.GetBacket(cookiesManager.GetBrowserId(HttpContext), userId, false);
+            return Json(resultCart.IsSuccess);
+        }
+        public IActionResult BacketViewComponent()
+        {
+            return ViewComponent("Backet");
+        }
+      
         [HttpPost]
         public async Task<IActionResult> AddToCart(string productId, int? count)
         {

@@ -8,6 +8,5 @@ namespace EndPointStore.ViewComponents
         {
             return View(viewName: "Search");
         }
-		
    }
 }
