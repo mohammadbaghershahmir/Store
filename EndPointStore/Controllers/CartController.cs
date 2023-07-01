@@ -14,6 +14,11 @@ namespace EndPointStore.Controllers
             _cartService = cartService;
             cookiesManager = new CookiesManager();
         }
+        public async Task<IActionResult> Index()
+        {
+           
+            return View();
+        }
         [HttpGet]
         public async Task<IActionResult> GetCartList()
         {

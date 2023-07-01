@@ -182,8 +182,8 @@ namespace EndPointStore.Areas.Admin.Controllers
 					Slug=editProductListDto.Slug,
 					TagsId=editProductListDto.TagsId,
 					UrlImagList= editProductListDto.UrlImagList,
-					UserId= "4c6ba01e-9282-434c-a7aa-c35565de1e7f"
-				}
+					UserId= "1acf9c4e-4ae6-4b6c-9461-bd7f1dc04954"
+                }
 				);
 			return Json(resulEdit);
 		}

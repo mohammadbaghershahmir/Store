@@ -93,12 +93,11 @@
                     </a>
                 }
                @await Component.InvokeAsync("Search")
-                <div class="header-widget-group" id="viewcomponent-backet">
-                    <button class="header-widget header-cart" title="Cartlist">
-               @await Component.InvokeAsync("Backet")
-                    </button>
+                <div class="header-widget-group" >
+                    <button class="header-widget header-cart" title="Cartlist" id="viewcomponent-backet">
+                     @await Component.InvokeAsync("Backet")
+                  </button>
                </div>
-                
             </div>
         </div>
     </header>
@@ -239,10 +238,10 @@
     <!--=====================================
                 NAVBAR PART END
     =======================================-->
-    <aside class="cart-sidebar" id="viewcomponent-cart">
-     @await Component.InvokeAsync("Cart")
-    </aside>
    @RenderBody()
+    <aside class="cart-sidebar" id="viewcomponent-cart">
+        @await Component.InvokeAsync("Cart")
+    </aside>
     <footer class="footer-part">
         <div class="container">
             <div class="row">

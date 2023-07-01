@@ -141,12 +141,12 @@ $('.wish').on('click', function(){
 //========================================
 //      ADD TO CART BUTTON FUNCTION
 //========================================
-$('.product-add').on('click', function(){
-    var productAdd = $(this).next('.product-action');
+//$('.product-add').on('click', function(){
+//    var productAdd = $(this).next('.product-action');
 
-    $(this).hide();
-    productAdd.css('display', 'flex');
-});
+//    $(this).hide();
+//    productAdd.css('display', 'flex');
+//});
 
 
 //========================================

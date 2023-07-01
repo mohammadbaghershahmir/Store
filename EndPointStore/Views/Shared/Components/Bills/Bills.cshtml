@@ -1,0 +1,259 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+<!--=====================================
+              BANNER PART START
+  =======================================-->
+<div class="col-lg-12">
+    <div class="alert-info">
+        <p>از مشتری های قدیمی ما هستید؟ <a href="login.html">وارد اکانت خود شوید.</a></p>
+    </div>
+</div>
+<div class="col-lg-12">
+    <div class="account-card">
+        <div class="account-title">
+            <h4>سفارش شما</h4>
+        </div>
+        <div class="account-content">
+            <div class="table-scroll">
+                <table class="table-list">
+                    <thead>
+                        <tr>
+                            <th scope="col">سریال</th>
+                            <th scope="col">محصول</th>
+                            <th scope="col">نام</th>
+                            <th scope="col">قیمت</th>
+                            <th scope="col">برند</th>
+                            <th scope="col">تعداد</th>
+                            <th scope="col">اقدامات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="table-serial"><h6>01</h6></td>
+                            <td class="table-image"><img src="images/product/01.jpg" alt="product"></td>
+                            <td class="table-name"><h6>نام محصول</h6></td>
+                            <td class="table-price"><h6>19ريال<small>/ کیلو</small></h6></td>
+                            <td class="table-vendor"><a href="#">مزرعه گرینی</a></td>
+                            <td class="table-quantity"><h6>3</h6></td>
+                            <td class="table-action">
+                                <a class="view" href="#" title="مشاهده سریع" data-bs-toggle="modal" data-bs-target="#product-view"><i class="fas fa-eye"></i></a>
+                                <a class="trash" href="#" title="حذف از لیست"><i class="icofont-trash"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table-serial"><h6>02</h6></td>
+                            <td class="table-image"><img src="images/product/02.jpg" alt="product"></td>
+                            <td class="table-name"><h6>نام محصول</h6></td>
+                            <td class="table-price"><h6>78 ريال<small>/ کیلو</small></h6></td>
+                            <td class="table-vendor"><a href="#">مزرعه گرینی</a></td>
+                            <td class="table-quantity"><h6>5</h6></td>
+                            <td class="table-action">
+                                <a class="view" href="#" title="مشاهده سریع" data-bs-toggle="modal" data-bs-target="#product-view"><i class="fas fa-eye"></i></a>
+                                <a class="trash" href="#" title="حذف از لیست"><i class="icofont-trash"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table-serial"><h6>03</h6></td>
+                            <td class="table-image"><img src="images/product/03.jpg" alt="product"></td>
+                            <td class="table-name"><h6>نام محصول</h6></td>
+                            <td class="table-price"><h6>68 ريال<small>/ کیلو</small></h6></td>
+                            <td class="table-vendor"><a href="#">مزرعه گرینی</a></td>
+                            <td class="table-quantity"><h6>2</h6></td>
+                            <td class="table-action">
+                                <a class="view" href="#" title="مشاهده سریع" data-bs-toggle="modal" data-bs-target="#product-view"><i class="fas fa-eye"></i></a>
+                                <a class="trash" href="#" title="حذف از لیست"><i class="icofont-trash"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table-serial"><h6>04</h6></td>
+                            <td class="table-image"><img src="images/product/04.jpg" alt="product"></td>
+                            <td class="table-name"><h6>نام محصول</h6></td>
+                            <td class="table-price"><h6>24 ريال<small>/ کیلو</small></h6></td>
+                            <td class="table-vendor"><a href="#">مزرعه گرینی</a></td>
+                            <td class="table-quantity"><h6>3</h6></td>
+                            <td class="table-action">
+                                <a class="view" href="#" title="مشاهده سریع" data-bs-toggle="modal" data-bs-target="#product-view"><i class="fas fa-eye"></i></a>
+                                <a class="trash" href="#" title="حذف از لیست"><i class="icofont-trash"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table-serial"><h6>05</h6></td>
+                            <td class="table-image"><img src="images/product/05.jpg" alt="product"></td>
+                            <td class="table-name"><h6>نام محصول</h6></td>
+                            <td class="table-price"><h6>34 ريال<small>/ کیلو</small></h6></td>
+                            <td class="table-vendor"><a href="#">مزرعه گرینی</a></td>
+                            <td class="table-quantity"><h6>7</h6></td>
+                            <td class="table-action">
+                                <a class="view" href="#" title="مشاهده سریع" data-bs-toggle="modal" data-bs-target="#product-view"><i class="fas fa-eye"></i></a>
+                                <a class="trash" href="#" title="حذف از لیست"><i class="icofont-trash"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="chekout-coupon">
+                <button class="coupon-btn">آیا کد تخفیف دارید؟</button>
+                <form class="coupon-form">
+                    <input type="text" placeholder="کد تخفیف خود را وارد کنید">
+                    <button type="submit"><span>اعمال</span></button>
+                </form>
+            </div>
+            <div class="checkout-charge">
+                <ul>
+                    <li>
+                        <span>جمع جزو</span>
+                        <span>267 ريال</span>
+                    </li>
+                    <li>
+                        <span>هزینه ارسال</span>
+                        <span>10 ريال</span>
+                    </li>
+                    <li>
+                        <span>تخفیف</span>
+                        <span>0</span>
+                    </li>
+                    <li>
+                        <span>جمع کل<small>(جمع جزء،هزینه ارسال)</small></span>
+                        <span>277 ريال</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-12">
+    <div class="account-card">
+        <div class="account-title">
+            <h4>برنامه تحویل</h4>
+        </div>
+        <div class="account-content">
+            <div class="row">
+                <div class="col-md-6 col-lg-4 alert fade show">
+                    <div class="profile-card schedule active">
+                        <h6>ویژه</h6>
+                        <p>ارسال زیر 90 دقیقه</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 alert fade show">
+                    <div class="profile-card schedule">
+                        <h6>8 صبح تا 10 شب</h6>
+                        <p>8:00 صبح تا 10:00 شب</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 alert fade show">
+                    <div class="profile-card schedule">
+                        <h6>فردا</h6>
+                        <p>ارسال فردا یا پسفردا</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-12">
+    <div class="account-card">
+        <div class="account-title">
+            <h4>آدرس ارسال</h4>
+            <button data-bs-toggle="modal" data-bs-target="#address-add">افزودن آدرس</button>
+        </div>
+        <div class="account-content">
+            <div class="row">
+                <div class="col-md-6 col-lg-4 alert fade show">
+                    <div class="profile-card address active">
+                        <h6>خانه</h6>
+                        <p>ایران -  تهران-  خیابان ظفر</p>
+                        <ul class="user-action">
+                            <li><button class="edit icofont-edit" title="ویرایش" data-bs-toggle="modal" data-bs-target="#address-edit"></button></li>
+                            <li><button class="trash icofont-ui-delete" title="حذف" data-bs-dismiss="alert"></button></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 alert fade show">
+                    <div class="profile-card address">
+                        <h6>دفتر</h6>
+                        <p>ایران - تهران - خیابان ولیعصر</p>
+                        <ul class="user-action">
+                            <li><button class="edit icofont-edit" title="ویرایش" data-bs-toggle="modal" data-bs-target="#address-edit"></button></li>
+                            <li><button class="trash icofont-ui-delete" title="حذف" data-bs-dismiss="alert"></button></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 alert fade show">
+                    <div class="profile-card address">
+                        <h6>شرکت</h6>
+                        <p>ایران - تهران - خیابان گاندی</p>
+                        <ul class="user-action">
+                            <li><button class="edit icofont-edit" title="ویرایش" data-bs-toggle="modal" data-bs-target="#address-edit"></button></li>
+                            <li><button class="trash icofont-ui-delete" title="حذف" data-bs-dismiss="alert"></button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-12">
+    <div class="account-card mb-0">
+        <div class="account-title">
+            <h4>نحوه پرداخت</h4>
+            <button data-bs-toggle="modal" data-bs-target="#payment-add">افزودن کارت بانکی</button>
+        </div>
+        <div class="account-content">
+            <div class="row">
+                <div class="col-md-6 col-lg-4 alert fade show">
+                    <div class="payment-card payment active">
+                        <img src="images/payment/png/01.png" alt="payment">
+                        <h4>شماره کارت</h4>
+                        <p>
+                            <span>****</span>
+                            <span>****</span>
+                            <span>****</span>
+                            <sup>1876</sup>
+                        </p>
+                        <h5>محمد محمدی</h5>
+                        <button class="trash icofont-ui-delete" title="حذف" data-bs-dismiss="alert"></button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 alert fade show">
+                    <div class="payment-card payment">
+                        <img src="images/payment/png/02.png" alt="payment">
+                        <h4>شماره کارت</h4>
+                        <p>
+                            <span>****</span>
+                            <span>****</span>
+                            <span>****</span>
+                            <sup>1876</sup>
+                        </p>
+                        <h5>محمد محمدی</h5>
+                        <button class="trash icofont-ui-delete" title="حذف" data-bs-dismiss="alert"></button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 alert fade show">
+                    <div class="payment-card payment">
+                        <img src="images/payment/png/03.png" alt="payment">
+                        <h4>شماره کارت</h4>
+                        <p>
+                            <span>****</span>
+                            <span>****</span>
+                            <span>****</span>
+                            <sup>1876</sup>
+                        </p>
+                        <h5>محمد محمدی</h5>
+                        <button class="trash icofont-ui-delete" title="حذف" data-bs-dismiss="alert"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="checkout-check">
+            <input type="checkbox" id="checkout-check">
+            <label for="checkout-check">با انجام این خرید شما با <a href="#">شرایط و ظوابط ما</a>موافقت می کنید.</label>
+        </div>
+        <div class="checkout-proced">
+            <a href="invoice.html" class="btn btn-inline">اقدام به پرداخت</a>
+        </div>
+    </div>
+</div>

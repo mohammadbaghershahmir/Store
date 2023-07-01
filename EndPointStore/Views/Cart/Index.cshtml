@@ -1,59 +1,172 @@
-﻿@using Store.Application.Services.Carts;
-@model CartDto
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<!--=====================================
-                  CART SIDEBAR PART START
-        =======================================-->
-<aside class="cart-sidebar">
-    <div class="cart-header">
-        <div class="cart-total">
-            <i class="fas fa-shopping-basket"></i>
-            <span>کل مورد (5)</span>
-        </div>
-        <button class="cart-close"><i class="icofont-close"></i></button>
+<link rel="stylesheet" href="/SiteTemplate/assets/css/checkout.css">
+<section class="inner-section single-banner" style="background: url(/SiteTemplate/assets/images/single-banner.jpg) no-repeat center;">
+    <div class="container">
+        <h2>تسویه حساب</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
+            <li class="breadcrumb-item"><a href="shop-4column.html">فروشگاه</a></li>
+            <li class="breadcrumb-item active" aria-current="page">تسویه حساب</li>
+        </ol>
     </div>
-    <ul class="cart-list">
-        @foreach (var item in Model.CartItems)
-        {
-            <li class="cart-item">
-                <div class="cart-media">
-                    <a href="#"><img src="@item.ImageSrc" alt="product"></a>
-                    <button class="cart-delete"><i class="far fa-trash-alt"></i></button>
-                </div>
-                <div class="cart-info-group">
-                    <div class="cart-info">
-                        <h6><a href="product-single.html">@item.ProductName</a></h6>
-                        <p>قیمت واحد - @item.Price.ToString("n0")</p>
-                    </div>
-                    <div class="cart-action-group">
-                        <div class="product-action">
-                            <button onclick="LowOff('@item.Id')" class="action-minus" title="کم کردن"><i class="icofont-minus"></i></button>
-                            <input class="action-input" title="تعداد مورد نیاز" type="text" name="quantity" value="@item.Count">
-                            <button class="action-plus" title="زیاد کردن"><i class="icofont-plus"></i></button>
-                        </div>
-                        <h6>56 ريال</h6>
-                    </div>
-                </div>
-            </li>
-        }
-    </ul>
-    <div class="cart-footer">
-        <button class="coupon-btn">آیا کد تخفیف دارید؟</button>
-        <form class="coupon-form">
-            <input type="text" placeholder="کد تخفیف خود را وارد کنید">
-            <button type="submit"><span>ثبت</span></button>
-        </form>
-        <a class="cart-checkout-btn" href="checkout.html">
-            <span class="checkout-label">برو به تسویه حساب</span>
-            <span class="checkout-price">369 ريال</span>
-        </a>
-    </div>
-</aside>
+</section>
 <!--=====================================
-            CART SIDEBAR PART END
+            BANNER PART END
 =======================================-->
+<!--=====================================
+            CHECKOUT PART START
+=======================================-->
+<section class="inner-section checkout-part">
+    <div class="container">
+        <div class="row">
+        @await Component.InvokeAsync("Bills")
+        </div>
+    </div>
+</section>
+<!--=====================================
+            CHECKOUT PART END
+=======================================-->
+<!--=====================================
+            MODAL ADD FORM START
+=======================================-->
+<!-- contact add form -->
+<div class="modal fade" id="contact-add">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <button class="modal-close" data-bs-dismiss="modal"><i class="icofont-close"></i></button>
+            <form class="modal-form">
+                <div class="form-title">
+                    <h3>افزودن شماره تماس جدید</h3>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">موضوع</label>
+                    <select class="form-select">
+                        <option selected>یک موضوع انتخاب کنید</option>
+                        <option value="primary">اصلی</option>
+                        <option value="secondary">فرعی</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">شماره</label>
+                    <input class="form-control" type="text" placeholder="لطفا شماره تلفن وارد کنید">
+                </div>
+                <button class="form-btn" type="submit">ذخیره شماره تلفن</button>
+            </form>
+        </div>
+    </div>
+</div>
 
+<!-- address add form -->
+<div class="modal fade" id="address-add">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <button class="modal-close" data-bs-dismiss="modal"><i class="icofont-close"></i></button>
+            <form class="modal-form">
+                <div class="form-title">
+                    <h3>افزودن آدرس جدید</h3>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">موضوع</label>
+                    <select class="form-select">
+                        <option selected>یک موضوع انتخاب کنید</option>
+                        <option value="home">خانه</option>
+                        <option value="office">دفتر</option>
+                        <option value="Bussiness">شرکت</option>
+                        <option value="academy">آمورشگاه</option>
+                        <option value="others">غیره</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">آدرس</label>
+                    <textarea class="form-control" placeholder="آدرس خود را وارد کنید"></textarea>
+                </div>
+                <button class="form-btn" type="submit">ذخیره آدرس جدید</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- payment add form -->
+<div class="modal fade" id="payment-add">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <button class="modal-close" data-bs-dismiss="modal"><i class="icofont-close"></i></button>
+            <form class="modal-form">
+                <div class="form-title">
+                    <h3>افزودن کارت جدید</h3>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">شماره کارت</label>
+                    <input class="form-control" type="text" placeholder="شماره کارت خود را وارد کنید">
+                </div>
+                <button class="form-btn" type="submit">ذخیره کارت جدید</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!--=====================================
+            MODAL ADD FORM END
+=======================================-->
+<!--=====================================
+            MODAL EDIT FORM START
+=======================================-->
+<!-- contact edit form -->
+<div class="modal fade" id="contact-edit">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <button class="modal-close" data-bs-dismiss="modal"><i class="icofont-close"></i></button>
+            <form class="modal-form">
+                <div class="form-title">
+                    <h3>ویرایش شماره تماس</h3>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">موضوع</label>
+                    <select class="form-select">
+                        <option value="primary" selected>اصلی</option>
+                        <option value="secondary">فرعی</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">شماره</label>
+                    <input class="form-control" type="text" value="0218888889">
+                </div>
+                <button class="form-btn" type="submit">ذخیره شماره تماس</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- address edit form -->
+<div class="modal fade" id="address-edit">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <button class="modal-close" data-bs-dismiss="modal"><i class="icofont-close"></i></button>
+            <form class="modal-form">
+                <div class="form-title">
+                    <h3>ویرایش آدرس</h3>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">موضوع</label>
+                    <select class="form-select">
+                        <option value="home" selected>خانه</option>
+                        <option value="office">دفتر</option>
+                        <option value="Bussiness">شرکت</option>
+                        <option value="academy">آموزشگاه</option>
+                        <option value="others">غیره</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">address</label>
+                    <textarea class="form-control" placeholder="ایران - تهران - خیابان ظفر"></textarea>
+                </div>
+                <button class="form-btn" type="submit">ذخیره آدرس</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!--=====================================
+            MODAL EDIT FORM END
+=======================================-->
