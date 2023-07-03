@@ -41,7 +41,18 @@ namespace EndPointStore.Controllers
         {
             return ViewComponent("Backet");
         }
-      
+        public IActionResult CartTableViewComponent()
+        {
+            return ViewComponent("CartTable");
+        }
+        public IActionResult provinceViewComponent()
+        {
+            return ViewComponent("Province");
+        }
+        public IActionResult CityViewComponent(string provinceId)
+        {
+            return ViewComponent("City", provinceId);
+        }
         [HttpPost]
         public async Task<IActionResult> AddToCart(string productId, int? count)
         {
@@ -71,5 +82,19 @@ namespace EndPointStore.Controllers
             var resultRemove = await _cartService.Remove(ProductId);
             return Json(resultRemove);
         }
+        [HttpPost]
+        public async Task<IActionResult> CreateAddressUser(RequestAddress requestAddress)
+        {
+          
+            return Json("fgdfgdfg");
+        }
+    }
+    public class RequestAddress
+    {
+        public string UserId { get; set; }
+        public string City { get; set; }
+        public int PostalCode { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Address { get; set; }
     }
 }

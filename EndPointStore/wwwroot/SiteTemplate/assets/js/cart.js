@@ -12,7 +12,8 @@
                     }
                 }).showToast();
                 GetListCart();
-                GetBacket()
+                GetBacket();
+                GetListCartTable();
             } else {
                 console.log(result.message);
             }
@@ -38,7 +39,8 @@ function Add(cartItemId) {
                     }
                 }).showToast();
                 GetListCart();
-                GetBacket()
+                GetBacket();
+                GetListCartTable();
             } else {
                 console.log(result.message);
             }
@@ -62,7 +64,9 @@ function LowOff(cartItemId) {
                     }
                 }).showToast();
                 GetListCart();
-                GetBacket()
+                GetBacket();
+                GetListCartTable();
+
             } else {
                 console.log(result.message);
             }
@@ -85,7 +89,8 @@ function RemoveFromCard(productId) {
                     }
                 }).showToast();
                 GetListCart();
-                GetBacket()
+                GetBacket();
+                GetListCartTable();
             } else {
             }
         },
@@ -95,7 +100,6 @@ function RemoveFromCard(productId) {
 }
 function GetListCart() {
     var base_url = window.location.origin;
-    console.log(base_url)
     $.ajax(base_url +'/Cart/CartViewComponent',
         {
             dataType: 'html', // type of response data
@@ -111,7 +115,6 @@ function GetListCart() {
 }
 function GetBacket() {
     var base_url = window.location.origin;
-    console.log(base_url)
     $.ajax(base_url + '/Cart/BacketViewComponent',
         {
             dataType: 'html', // type of response data
@@ -119,6 +122,21 @@ function GetBacket() {
 
             success: function (html, status, xhr) {   // success callback function     
                 $("#viewcomponent-backet").html(html);
+
+            },
+            error: function (jqXhr, textStatus, errorMessage) { // error callback
+            }
+        });
+}
+function GetListCartTable() {
+    var base_url = window.location.origin;
+    $.ajax(base_url + '/Cart/CartTableViewComponent',
+        {
+            dataType: 'html', // type of response data
+            timeout: 500,     // timeout milliseconds
+
+            success: function (html, status, xhr) {   // success callback function     
+                $("#CartTableContainer").html(html);
 
             },
             error: function (jqXhr, textStatus, errorMessage) { // error callback

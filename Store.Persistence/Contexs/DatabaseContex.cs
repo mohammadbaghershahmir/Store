@@ -8,6 +8,7 @@ using Store.Common.Constant.Roles;
 using Store.Domain.Entities.Carts;
 using Store.Domain.Entities.Commons;
 using Store.Domain.Entities.Medias;
+using Store.Domain.Entities.Post;
 using Store.Domain.Entities.Products;
 using Store.Domain.Entities.Users;
 using System;
@@ -39,6 +40,8 @@ namespace Store.Persistence.Contexs
 		public DbSet<Tag> Tags { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
+        public DbSet<Province> Provinces { get; set; }
+        public DbSet<UserAddress> UserAddresses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

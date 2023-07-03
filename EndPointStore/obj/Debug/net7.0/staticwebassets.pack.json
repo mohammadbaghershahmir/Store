@@ -2329,6 +2329,10 @@
       "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\video.jpg"
     },
     {
+      "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\js\\ChangeProvince.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\ChangeProvince.js"
+    },
+    {
       "Id": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\js\\accordion.js",
       "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\accordion.js"
     },

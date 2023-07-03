@@ -34,6 +34,7 @@ using Store.Application.Interfaces.FacadPatternSite;
 using Store.Application.Services.ProductsSite.FacadPatternSite;
 using Store.Application.Services.ProductsSite.Queries.GetCategoryForSite;
 using Store.Application.Services.Carts;
+using Store.Application.Services.Posts.Queries;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -66,6 +67,12 @@ builder.Services.AddScoped<IProductFacad, ProductFacad>();
 builder.Services.AddScoped<IProductFacadSite, ProductFacadSite>();
 builder.Services.AddScoped<IGetCategorySiteService, GetCategorySiteService>();
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IGetProvinceServices, GetProvinceServices>();
+builder.Services.AddScoped<IGetCityService, GetCityService>();
+builder.Services.AddScoped<IGetCityForPayServices, GetCityForPayServices>();
+
+
+
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.

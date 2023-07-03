@@ -1,12 +1,13 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using Store.Application.Services.Carts;
+@model CartDto
 @{
     Layout = null;
 }
 <!--=====================================
               BANNER PART START
   =======================================-->
+<div class="container">
+<div class="row">
 <div class="col-lg-12">
     <div class="alert-info">
         <p>از مشتری های قدیمی ما هستید؟ <a href="login.html">وارد اکانت خود شوید.</a></p>
@@ -32,66 +33,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="table-serial"><h6>01</h6></td>
-                            <td class="table-image"><img src="images/product/01.jpg" alt="product"></td>
-                            <td class="table-name"><h6>نام محصول</h6></td>
-                            <td class="table-price"><h6>19ريال<small>/ کیلو</small></h6></td>
-                            <td class="table-vendor"><a href="#">مزرعه گرینی</a></td>
-                            <td class="table-quantity"><h6>3</h6></td>
-                            <td class="table-action">
-                                <a class="view" href="#" title="مشاهده سریع" data-bs-toggle="modal" data-bs-target="#product-view"><i class="fas fa-eye"></i></a>
-                                <a class="trash" href="#" title="حذف از لیست"><i class="icofont-trash"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="table-serial"><h6>02</h6></td>
-                            <td class="table-image"><img src="images/product/02.jpg" alt="product"></td>
-                            <td class="table-name"><h6>نام محصول</h6></td>
-                            <td class="table-price"><h6>78 ريال<small>/ کیلو</small></h6></td>
-                            <td class="table-vendor"><a href="#">مزرعه گرینی</a></td>
-                            <td class="table-quantity"><h6>5</h6></td>
-                            <td class="table-action">
-                                <a class="view" href="#" title="مشاهده سریع" data-bs-toggle="modal" data-bs-target="#product-view"><i class="fas fa-eye"></i></a>
-                                <a class="trash" href="#" title="حذف از لیست"><i class="icofont-trash"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="table-serial"><h6>03</h6></td>
-                            <td class="table-image"><img src="images/product/03.jpg" alt="product"></td>
-                            <td class="table-name"><h6>نام محصول</h6></td>
-                            <td class="table-price"><h6>68 ريال<small>/ کیلو</small></h6></td>
-                            <td class="table-vendor"><a href="#">مزرعه گرینی</a></td>
-                            <td class="table-quantity"><h6>2</h6></td>
-                            <td class="table-action">
-                                <a class="view" href="#" title="مشاهده سریع" data-bs-toggle="modal" data-bs-target="#product-view"><i class="fas fa-eye"></i></a>
-                                <a class="trash" href="#" title="حذف از لیست"><i class="icofont-trash"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="table-serial"><h6>04</h6></td>
-                            <td class="table-image"><img src="images/product/04.jpg" alt="product"></td>
-                            <td class="table-name"><h6>نام محصول</h6></td>
-                            <td class="table-price"><h6>24 ريال<small>/ کیلو</small></h6></td>
-                            <td class="table-vendor"><a href="#">مزرعه گرینی</a></td>
-                            <td class="table-quantity"><h6>3</h6></td>
-                            <td class="table-action">
-                                <a class="view" href="#" title="مشاهده سریع" data-bs-toggle="modal" data-bs-target="#product-view"><i class="fas fa-eye"></i></a>
-                                <a class="trash" href="#" title="حذف از لیست"><i class="icofont-trash"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="table-serial"><h6>05</h6></td>
-                            <td class="table-image"><img src="images/product/05.jpg" alt="product"></td>
-                            <td class="table-name"><h6>نام محصول</h6></td>
-                            <td class="table-price"><h6>34 ريال<small>/ کیلو</small></h6></td>
-                            <td class="table-vendor"><a href="#">مزرعه گرینی</a></td>
-                            <td class="table-quantity"><h6>7</h6></td>
-                            <td class="table-action">
-                                <a class="view" href="#" title="مشاهده سریع" data-bs-toggle="modal" data-bs-target="#product-view"><i class="fas fa-eye"></i></a>
-                                <a class="trash" href="#" title="حذف از لیست"><i class="icofont-trash"></i></a>
-                            </td>
-                        </tr>
+                     @foreach (var cart in Model.CartItems)
+                        {
+                            <tr>
+                                <td class="table-serial"><h6>@cart.ProductCode</h6></td>
+                                <td class="table-image"><img src="@cart.ImageSrc" alt="@cart.ProductName"></td>
+                                <td class="table-name"><h6>@cart.ProductName</h6></td>
+                                <td class="table-price"><h6>@cart.Price.ToString("n0")</h6></td>
+                                <td class="table-vendor"><a href="#">@cart.BrandName</a></td>
+                                <td class="table-quantity"><h6>@cart.Count</h6></td>
+                                <td class="table-action">
+                                    <a class="trash" onclick="RemoveFromCard('@cart.Id')" title="حذف از لیست"><i class="icofont-trash"></i></a>
+                                </td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>
@@ -106,7 +61,7 @@
                 <ul>
                     <li>
                         <span>جمع جزو</span>
-                        <span>267 ريال</span>
+                        <span>@Model.SumAmount.ToString("n0")</span>
                     </li>
                     <li>
                         <span>هزینه ارسال</span>
@@ -256,4 +211,6 @@
             <a href="invoice.html" class="btn btn-inline">اقدام به پرداخت</a>
         </div>
     </div>
+</div>
+</div>
 </div>

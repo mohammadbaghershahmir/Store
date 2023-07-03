@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Storage;
 using Store.Domain.Entities.Carts;
 using Store.Domain.Entities.Medias;
+using Store.Domain.Entities.Post;
 using Store.Domain.Entities.Products;
 using Store.Domain.Entities.Users;
 using System;
@@ -28,6 +29,8 @@ namespace Store.Application.Interfaces.Contexs
          DbSet<User> Users { get; set; }
          DbSet<Cart> Carts { get; set; }
          DbSet<CartItem> CartItems { get; set; }
+        DbSet<Province> Provinces { get; set; }
+        DbSet<UserAddress> UserAddresses { get; set; }
         int SaveChanges(bool acceptAllChangesOnSuccess);
         int SaveChanges();
         void Dispose();

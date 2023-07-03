@@ -150,7 +150,7 @@ namespace Store.Application.Services.Carts
         {
             var cart = await _context.Carts
                .Include(p => p.CartItems)
-               .ThenInclude(p => p.Product)
+               .ThenInclude(p => p.Product).ThenInclude(b=>b.Brand)
                .Where(p => p.BrowserId == BrowserId && p.Finished == false)
                .OrderByDescending(p => p.Id)
                .FirstOrDefaultAsync();
@@ -175,10 +175,12 @@ namespace Store.Application.Services.Carts
                         {
                             Id = p.Id,
                             ProductId = p.ProductId,
+                            ProductCode=p.Product.CodeProduct,
                             Count = p.Count,
                             Price = p.Price = p.Product.Price,
                             CountPerPrice=p.Price*p.Count,
                             ProductName = p.Product.Name,
+                            BrandName=p.Product.Brand.Name,
                             ImageSrc = string.IsNullOrEmpty(p.Product.MinPic) ? ImageProductConst.NoImage : ImageProductConst.FtpUrl + p.Product.MinPic,
                         }).ToList(),
                     },
@@ -294,10 +296,12 @@ namespace Store.Application.Services.Carts
     {
         public string Id { get; set; }
         public string ProductId { get; set; }
+        public int ProductCode { get; set; }
         public string ProductName { get; set; }
         public string ImageSrc { get; set; }
         public int Count { get; set; }
         public double Price { get; set; }
         public double CountPerPrice { get; set; }
+        public string BrandName { get; set; }
     }
 }

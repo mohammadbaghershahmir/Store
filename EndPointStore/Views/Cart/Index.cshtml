@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -19,12 +20,8 @@
 <!--=====================================
             CHECKOUT PART START
 =======================================-->
-<section class="inner-section checkout-part">
-    <div class="container">
-        <div class="row">
-        @await Component.InvokeAsync("Bills")
-        </div>
-    </div>
+<section class="inner-section checkout-part" id="CartTableContainer">
+        @await Component.InvokeAsync("CartTable")
 </section>
 <!--=====================================
             CHECKOUT PART END
@@ -68,23 +65,22 @@
                 <div class="form-title">
                     <h3>افزودن آدرس جدید</h3>
                 </div>
+                    @await Component.InvokeAsync("Province")
+                    @await Component.InvokeAsync("City")
                 <div class="form-group">
-                    <label class="form-label">موضوع</label>
-                    <select class="form-select">
-                        <option selected>یک موضوع انتخاب کنید</option>
-                        <option value="home">خانه</option>
-                        <option value="office">دفتر</option>
-                        <option value="Bussiness">شرکت</option>
-                        <option value="academy">آمورشگاه</option>
-                        <option value="others">غیره</option>
-                    </select>
+                    <label class="form-label">شماره تماس</label>
+                    <input required id="phone-number-user" class="form-control" placeholder="شماره تماس خود را وارد کنید" type="number">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">کد پستی</label>
+                    <input required id="postalcode" class="form-control" placeholder="کد پستی خود را وارد کنید" type="number">
                 </div>
                 <div class="form-group">
                     <label class="form-label">آدرس</label>
-                    <textarea class="form-control" placeholder="آدرس خود را وارد کنید"></textarea>
+                    <textarea required id="address-user" class="form-control" placeholder="آدرس خود را وارد کنید"></textarea>
                 </div>
-                <button class="form-btn" type="submit">ذخیره آدرس جدید</button>
             </form>
+            <button type="submit" id="CreateAddress" class="form-btn">ذخیره آدرس جدید</button>
         </div>
     </div>
 </div>
@@ -160,7 +156,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label">address</label>
-                    <textarea class="form-control" placeholder="ایران - تهران - خیابان ظفر"></textarea>
+                    <textarea  class="form-control" placeholder="ایران - تهران - خیابان ظفر"></textarea>
                 </div>
                 <button class="form-btn" type="submit">ذخیره آدرس</button>
             </form>
@@ -170,3 +166,35 @@
 <!--=====================================
             MODAL EDIT FORM END
 =======================================-->
+@section Scripts{
+    <script>
+        //Send Address
+        $("#CreateAddress").on('click', function () {
+            var city = $('#input-city').val()
+            var phonenumber = $('#phone-number-user').val()
+            var postalcode = $('#postalcode').val()
+            var address = $('#address-user').val()
+            var data = { city, phonenumber, postalcode, address }
+            console.log(data);
+            ajaxFunc("Cart/CreateAddressUser", data, "POST",
+                function (result) {
+                    if (result.isSuccess) {
+                        $('#phone-number-user').val("");
+                        $('#postalcode').val("");
+                        $('#address-user').val("");
+                        successToastify.showToast();
+                        getTagsList();
+                    } else {
+                      
+                    }
+                },
+                function (error) {
+                    dangerToastify.showToast();
+                    console.log(error);
+                }
+            )
+
+
+        })
+    </script>
+}

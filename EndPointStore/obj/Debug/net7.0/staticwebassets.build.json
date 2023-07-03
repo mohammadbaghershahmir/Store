@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0FYKdaHn3CWOkVwqy1N5p/TAo0cIjBDzK6WArt7F8EA=",
+  "Hash": "RdHFWa5byCoKUpd2EWmqGlkbofE7EZrihTq6APgDnjc=",
   "Source": "EndPointStore",
   "BasePath": "_content/EndPointStore",
   "Mode": "Default",
@@ -7512,6 +7512,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\SiteTemplate\\assets\\js\\cart.js"
+    },
+    {
+      "Identity": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\js\\ChangeProvince.js",
+      "SourceId": "EndPointStore",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\",
+      "BasePath": "_content/EndPointStore",
+      "RelativePath": "SiteTemplate/assets/js/ChangeProvince.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\SiteTemplate\\assets\\js\\ChangeProvince.js"
     },
     {
       "Identity": "E:\\Stor-Project\\Store\\EndPointStore\\wwwroot\\SiteTemplate\\assets\\js\\countdown.js",
