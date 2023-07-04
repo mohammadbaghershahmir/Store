@@ -35,6 +35,8 @@ using Store.Application.Services.ProductsSite.FacadPatternSite;
 using Store.Application.Services.ProductsSite.Queries.GetCategoryForSite;
 using Store.Application.Services.Carts;
 using Store.Application.Services.Posts.Queries;
+using Store.Application.Services.UsersAddress.Commands.AddAddressServiceForSite;
+using Store.Application.Services.UsersAddress.Queries.GetAddressUserForSite;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -70,7 +72,8 @@ builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<IGetProvinceServices, GetProvinceServices>();
 builder.Services.AddScoped<IGetCityService, GetCityService>();
 builder.Services.AddScoped<IGetCityForPayServices, GetCityForPayServices>();
-
+builder.Services.AddScoped<IAddAddressServiceForSite, AddAddressServiceForSite>(); 
+builder.Services.AddScoped<IGetAddressUserForSite, GetAddressUserForSite>();
 
 
 

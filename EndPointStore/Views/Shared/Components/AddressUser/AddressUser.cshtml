@@ -1,0 +1,32 @@
+﻿@using Store.Application.Services.UsersAddress.Queries.GetAddressUserForSite;
+@model List<UserAddressDto>
+@{
+    Layout = null;
+}
+<div class="account-card">
+    <div class="account-title">
+        <h4>آدرس ارسال</h4>
+        <button data-bs-toggle="modal" data-bs-target="#address-add">افزودن آدرس</button>
+    </div>
+    <div class="account-content">
+        <div class="row">
+            @foreach (var item in Model)
+              {
+            <div class="col-md-6 col-lg-4 alert fade show">
+                    
+                        <div class="profile-card address ">
+                            <h6>خانه</h6>
+                            <p>آدرس:@item.Address</p>
+                            <p>شهر:@item.City</p>
+                            <p>کد پستی: @item.PostalCode</p>
+                            <p>شماره تماس: @item.PhoneNumber</p>
+                            <ul class="user-action">
+                            <li><button data-item-id="@item.Id" class="address-edit edit icofont-edit" title="ویرایش"></button></li>
+                                <li><button class="trash icofont-ui-delete" title="حذف" data-bs-dismiss="alert"></button></li>
+                            </ul>
+                        </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>

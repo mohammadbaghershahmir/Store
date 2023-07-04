@@ -1,18 +1,22 @@
 ﻿using EndPointStore.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using Store.Application.Services.Carts;
+using Store.Application.Services.UsersAddress.Commands.AddAddressServiceForSite;
+using Store.Common.Constant;
 using Store.Common.Dto;
 
 namespace EndPointStore.Controllers
 {
     public class CartController : Controller
     {
+        private readonly IAddAddressServiceForSite _addAddressService;
         private readonly ICartService  _cartService;
         private readonly CookiesManager cookiesManager;
-        public CartController(ICartService cartService)
+        public CartController(ICartService cartService, IAddAddressServiceForSite addAddressServiceForSite)
         {
             _cartService = cartService;
             cookiesManager = new CookiesManager();
+            _addAddressService = addAddressServiceForSite;
         }
         public async Task<IActionResult> Index()
         {
@@ -53,6 +57,10 @@ namespace EndPointStore.Controllers
         {
             return ViewComponent("City", provinceId);
         }
+        public IActionResult AddressUserViewComponent()
+        {
+            return ViewComponent("AddressUser");
+        }
         [HttpPost]
         public async Task<IActionResult> AddToCart(string productId, int? count)
         {
@@ -85,13 +93,25 @@ namespace EndPointStore.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAddressUser(RequestAddress requestAddress)
         {
-          
-            return Json("fgdfgdfg");
+            if(!ModelState.IsValid)
+            {
+                return Json(new ResultDto { IsSuccess = false, Message = MessageInUser.IsValidForm });
+            }
+            var userId = ClaimUtility.GetUserId(User);
+            var result =await _addAddressService.Execute(new RequestAddressDto
+            {
+                UserId = userId,
+                Address = requestAddress.Address,
+                City = requestAddress.City,
+                PhoneNumber = requestAddress.PhoneNumber,
+                PostalCode = requestAddress.PostalCode,
+            });
+            return Json(result);
         }
     }
     public class RequestAddress
     {
-        public string UserId { get; set; }
+        public string? UserId { get; set; }
         public string City { get; set; }
         public int PostalCode { get; set; }
         public string PhoneNumber { get; set; }

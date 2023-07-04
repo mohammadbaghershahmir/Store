@@ -1,9 +1,13 @@
-﻿
+﻿@using Store.Application.Services.UsersAddress.Queries.GetEditAddressUserForSite;
+@model EditAddressUserDto
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link rel="stylesheet" href="/SiteTemplate/assets/css/checkout.css">
+<link href="/SiteTemplate/assets/css/custom-toastify.css" rel="stylesheet" />
+<link href="/SiteTemplate/library/toastify-js/toastify.min.css" rel="stylesheet" />
+<link href="/SiteTemplate/library/toastify-js/toastify.css" rel="stylesheet" />
 <section class="inner-section single-banner" style="background: url(/SiteTemplate/assets/images/single-banner.jpg) no-repeat center;">
     <div class="container">
         <h2>تسویه حساب</h2>
@@ -144,22 +148,22 @@
                 <div class="form-title">
                     <h3>ویرایش آدرس</h3>
                 </div>
+                @await Component.InvokeAsync("Province")
+                @await Component.InvokeAsync("City")
                 <div class="form-group">
-                    <label class="form-label">موضوع</label>
-                    <select class="form-select">
-                        <option value="home" selected>خانه</option>
-                        <option value="office">دفتر</option>
-                        <option value="Bussiness">شرکت</option>
-                        <option value="academy">آموزشگاه</option>
-                        <option value="others">غیره</option>
-                    </select>
+                    <label class="form-label">شماره تماس</label>
+                    <input required id="phone-number-user" class="form-control" placeholder="شماره تماس خود را وارد کنید" type="number">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">address</label>
-                    <textarea  class="form-control" placeholder="ایران - تهران - خیابان ظفر"></textarea>
+                    <label class="form-label">کد پستی</label>
+                    <input required id="postalcode" class="form-control" placeholder="کد پستی خود را وارد کنید" type="number">
                 </div>
-                <button class="form-btn" type="submit">ذخیره آدرس</button>
+                <div class="form-group">
+                    <label class="form-label">آدرس</label>
+                    <textarea required id="address-user" class="form-control" placeholder="آدرس خود را وارد کنید"></textarea>
+                </div>
             </form>
+            <button class="form-btn" type="submit">ذخیره آدرس</button>
         </div>
     </div>
 </div>
@@ -182,10 +186,25 @@
                         $('#phone-number-user').val("");
                         $('#postalcode').val("");
                         $('#address-user').val("");
-                        successToastify.showToast();
-                        getTagsList();
+                        Toastify({
+                            text: result.message,
+                            className: "success",
+                            duration: 3000,
+                            style: {
+                                background: "linear-gradient(to right, #00b09b, #96c93d)",
+                            }
+                        }).showToast();
+                        GetListAddress();
+                        //$("#address-add").modal('hide');
                     } else {
-                      
+                        Toastify({
+                            text: result.message,
+                            className: "warning",
+                            duration: 3000,
+                            style: {
+                                background: "linear-gradient(to right, #00b09b, #96c93d)",
+                            }
+                        }).showToast();
                     }
                 },
                 function (error) {
@@ -196,5 +215,29 @@
 
 
         })
+        //Show  Modal EditAddress
+        $(".address-edit").on('click', function () {
+            let addressId = $(this).attr('data-item-id');
+            getAddressUserList(addressId);
+        })
+
+        function getAddressUserList(addressId) {
+            var postData = {
+                addressId
+            };
+            console.log(addressId)
+            $("#address-edit").modal('show');
+            //ajaxFunc("GetEditAddressUser", postData, "POST",
+            //    function (result) {
+            //        let data = result.data;
+            //        if (result.isSuccess) {
+
+            //        }
+            //    },
+            //    function (error) {
+            //        console.log(error);
+            //    }
+            //)
+        }
     </script>
 }

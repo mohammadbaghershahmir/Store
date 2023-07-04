@@ -34,6 +34,8 @@ namespace Store.Common.Constant
         public const string MessageInvalidCart = "خطایی وجود دارد!";
         public const string MessageNotFoundCart = "آیتمی در سبد خرید وجود ندارد!";
         public const string MessageDecreasedCart = "آیتم با موفقیت کم شد!";
+        public const string MessageUserNotLogin = "شما نمیتوانید قبل از لاگین شدن آدرسی ثبت کنید!";
+        public const string MessageUserAddressInsert = "آدرس شما با موفقیت ثبت شد!";
 
     }
 }
