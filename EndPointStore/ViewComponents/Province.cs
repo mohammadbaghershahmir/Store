@@ -20,7 +20,7 @@ namespace EndPointStore.ViewComponents
             _getCityService = getCityService;
             _getProvinceService = getProvinceService;
         }
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke ()
         {
             ViewBag.province = new SelectList(_getProvinceService.Execute().Result.Data, "Id", "ProvinceName");
             return View(viewName: "Province");

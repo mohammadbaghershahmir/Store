@@ -112,8 +112,14 @@
         </div>
     </div>
 </div>
-        <div class="col-lg-12" id="AddressUserContainer">
-@await Component.InvokeAsync("AddressUser")
+<div class="col-lg-12" id="AddressUserContainer">
+            <div class="account-card">
+                <div class="account-title">
+                    <h4>آدرس ارسال</h4>
+                    <button data-bs-toggle="modal" data-bs-target="#address-add">افزودن آدرس</button>
+                </div>
+                @await Component.InvokeAsync("AddressUser")
+            </div>
 </div>
 <div class="col-lg-12">
     <div class="account-card mb-0">

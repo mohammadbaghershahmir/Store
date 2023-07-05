@@ -3,11 +3,6 @@
 @{
     Layout = null;
 }
-<div class="account-card">
-    <div class="account-title">
-        <h4>آدرس ارسال</h4>
-        <button data-bs-toggle="modal" data-bs-target="#address-add">افزودن آدرس</button>
-    </div>
     <div class="account-content">
         <div class="row">
             @foreach (var item in Model)
@@ -21,12 +16,44 @@
                             <p>کد پستی: @item.PostalCode</p>
                             <p>شماره تماس: @item.PhoneNumber</p>
                             <ul class="user-action">
-                            <li><button data-item-id="@item.Id" class="address-edit edit icofont-edit" title="ویرایش"></button></li>
-                                <li><button class="trash icofont-ui-delete" title="حذف" data-bs-dismiss="alert"></button></li>
+                        <li><button id="show-edit" onclick="GetEditAddressUser('@item.Id')" data-item-id="@item.Id" class="edit icofont-edit" title="ویرایش" data-bs-toggle="modal" data-bs-target="#address-edit"></button></li>
+                            <li><button class="trash icofont-ui-delete" title="حذف" data-bs-dismiss="alert"></button></li>
                             </ul>
                         </div>
             </div>
             }
         </div>
     </div>
+<!-- address add form -->
+<div class="modal fade" id="address-add">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <button class="modal-close" data-bs-dismiss="modal"><i class="icofont-close"></i></button>
+            <form class="modal-form">
+                <div class="form-title">
+                    <h3>افزودن آدرس جدید</h3>
+                </div>
+                <div class="form-group">
+                    @await Component.InvokeAsync("Province")
+                </div>
+                <div class="city-component-container">
+                    @await Component.InvokeAsync("City")
+                </div>
+                <div class="form-group">
+                    <label class="form-label">شماره تماس</label>
+                    <input required id="phone-number-user" class="form-control" placeholder="شماره تماس خود را وارد کنید" type="number">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">کد پستی</label>
+                    <input required id="postalcode" class="form-control" placeholder="کد پستی خود را وارد کنید" type="number">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">آدرس</label>
+                    <textarea required id="address-user" class="form-control" placeholder="آدرس خود را وارد کنید"></textarea>
+                </div>
+                <button type="submit" id="CreateAddress" class="form-btn">ذخیره آدرس جدید</button>
+            </form>
+        </div>
+    </div>
 </div>
+

@@ -59,36 +59,6 @@
         </div>
     </div>
 </div>
-
-<!-- address add form -->
-<div class="modal fade" id="address-add">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <button class="modal-close" data-bs-dismiss="modal"><i class="icofont-close"></i></button>
-            <form class="modal-form">
-                <div class="form-title">
-                    <h3>افزودن آدرس جدید</h3>
-                </div>
-                    @await Component.InvokeAsync("Province")
-                    @await Component.InvokeAsync("City")
-                <div class="form-group">
-                    <label class="form-label">شماره تماس</label>
-                    <input required id="phone-number-user" class="form-control" placeholder="شماره تماس خود را وارد کنید" type="number">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">کد پستی</label>
-                    <input required id="postalcode" class="form-control" placeholder="کد پستی خود را وارد کنید" type="number">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">آدرس</label>
-                    <textarea required id="address-user" class="form-control" placeholder="آدرس خود را وارد کنید"></textarea>
-                </div>
-            </form>
-            <button type="submit" id="CreateAddress" class="form-btn">ذخیره آدرس جدید</button>
-        </div>
-    </div>
-</div>
-
 <!-- payment add form -->
 <div class="modal fade" id="payment-add">
     <div class="modal-dialog modal-dialog-centered">
@@ -148,8 +118,12 @@
                 <div class="form-title">
                     <h3>ویرایش آدرس</h3>
                 </div>
-                @await Component.InvokeAsync("Province")
-                @await Component.InvokeAsync("City")
+                <div id="edit-province" class="form-group">
+                @await Component.InvokeAsync("EditProvince")
+                </div>
+                <div class="edit-city-component-container">
+                @await Component.InvokeAsync("EditCity")
+                </div>
                 <div class="form-group">
                     <label class="form-label">شماره تماس</label>
                     <input required id="phone-number-user" class="form-control" placeholder="شماره تماس خود را وارد کنید" type="number">
@@ -162,8 +136,8 @@
                     <label class="form-label">آدرس</label>
                     <textarea required id="address-user" class="form-control" placeholder="آدرس خود را وارد کنید"></textarea>
                 </div>
+                <button class="form-btn" type="submit">ذخیره آدرس</button>
             </form>
-            <button class="form-btn" type="submit">ذخیره آدرس</button>
         </div>
     </div>
 </div>
@@ -216,22 +190,22 @@
 
         })
         //Show  Modal EditAddress
-        $(".address-edit").on('click', function () {
+        $("#show-edit").on('click', function () {
             let addressId = $(this).attr('data-item-id');
             getAddressUserList(addressId);
         })
-
         function getAddressUserList(addressId) {
             var postData = {
                 addressId
             };
-            console.log(addressId)
-            $("#address-edit").modal('show');
-            //ajaxFunc("GetEditAddressUser", postData, "POST",
+            //ajaxFunc("Cart/EditProvince", postData, "POST",
             //    function (result) {
-            //        let data = result.data;
             //        if (result.isSuccess) {
-
+            //            let html = "";
+            //            result.data.map(item => {
+            //                html+= `<option value="primary">${item.nameProvince}</option>`;
+            //            });
+            //            $(".province-select").html(html);
             //        }
             //    },
             //    function (error) {

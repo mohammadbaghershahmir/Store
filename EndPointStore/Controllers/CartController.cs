@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Store.Application.Services.Carts;
 using Store.Application.Services.UsersAddress.Commands.AddAddressServiceForSite;
+using Store.Application.Services.UsersAddress.Queries.GetEditAddressUserForSite;
 using Store.Common.Constant;
 using Store.Common.Dto;
 
@@ -10,13 +11,15 @@ namespace EndPointStore.Controllers
     public class CartController : Controller
     {
         private readonly IAddAddressServiceForSite _addAddressService;
+        private readonly IGetEditAddressUserForSite _getEditAddressUserForSite;
         private readonly ICartService  _cartService;
         private readonly CookiesManager cookiesManager;
-        public CartController(ICartService cartService, IAddAddressServiceForSite addAddressServiceForSite)
+        public CartController(ICartService cartService, IAddAddressServiceForSite addAddressServiceForSite,IGetEditAddressUserForSite getEditAddressUserForSite)
         {
             _cartService = cartService;
             cookiesManager = new CookiesManager();
             _addAddressService = addAddressServiceForSite;
+            _getEditAddressUserForSite = getEditAddressUserForSite;
         }
         public async Task<IActionResult> Index()
         {
@@ -48,6 +51,14 @@ namespace EndPointStore.Controllers
         public IActionResult CartTableViewComponent()
         {
             return ViewComponent("CartTable");
+        }
+        public IActionResult EditProvinceViewComponent(string addressId)
+        {
+            return ViewComponent("EditProvince",addressId);
+        }
+        public IActionResult EditCityViewComponent(string provinceId)
+        {
+            return ViewComponent(" EditCity", provinceId);
         }
         public IActionResult provinceViewComponent()
         {
@@ -108,7 +119,20 @@ namespace EndPointStore.Controllers
             });
             return Json(result);
         }
+        public async Task<IActionResult> GetEditAddressUser(string addressId)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Json(new ResultDto { IsSuccess = false, Message = MessageInUser.IsValidForm });
+            }
+            var result = await _getEditAddressUserForSite.Execute(addressId);
+            return Json(new ResultDto<EditAddressUserDto> {
+             Data=result
+            ,IsSuccess=true,
+            });
+        }
     }
+
     public class RequestAddress
     {
         public string? UserId { get; set; }

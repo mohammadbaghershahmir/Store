@@ -158,3 +158,26 @@ function GetListAddress() {
             }
         });
 }
+function GetEditAddressUser(id) {
+   
+
+    var addressId = {
+        addressId: id
+    };
+    console.log(addressId);
+    var base_url = window.location.origin;
+    $.ajax(base_url + '/Cart/EditProvinceViewComponent',
+        {
+            data: addressId,
+            dataType: 'html', // type of response data
+            timeout: 500,     // timeout milliseconds
+
+            success: function (html, status, xhr) {   // success callback function
+                $("#edit-province").html(html);
+            },
+            error: function (jqXhr, textStatus, errorMessage) { // error callback
+
+            }
+        });
+
+}
