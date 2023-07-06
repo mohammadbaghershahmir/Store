@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Store.Application.Services.Carts;
 using Store.Application.Services.Posts.Queries;
 using System.Xml.Linq;
+using Store.Application.Services.UsersAddress.Queries.GetEditAddressUserForSite;
+using EndPointStore.Controllers;
 
 namespace EndPointStore.ViewComponents
 {
@@ -12,18 +14,27 @@ namespace EndPointStore.ViewComponents
 		private readonly IGetProvinceServices _getProvinceService;
 		private readonly IGetCityService _getCityService;
 		private readonly ICartService _cartService;
-
+		private readonly IGetEditAddressUserForSite _getEditAddressUserForSite;
 		public EditCity(ICartService cartService, IGetProvinceServices getProvinceService,
-		   IGetCityService getCityService)
+		   IGetCityService getCityService, IGetEditAddressUserForSite getEditAddressUserForSite)
 		{
 			_cartService = cartService;
 			_getCityService = getCityService;
 			_getProvinceService = getProvinceService;
+			_getEditAddressUserForSite = getEditAddressUserForSite;
 		}
-		public IViewComponentResult Invoke(string provinceId)
+		public IViewComponentResult Invoke(EditCityViewComponentDto editCityViewComponentDto)
 		{
-			ViewBag.city = new SelectList(_getCityService.Execute(provinceId).Result.Data, "Id", "CityName");
-			return View(viewName: "EditCity");
+			var result = new EditAddressUserDto();
+            if (editCityViewComponentDto!=null)
+			{
+				if (editCityViewComponentDto.AddressId != null)
+				{
+					result = _getEditAddressUserForSite.Execute(editCityViewComponentDto.AddressId).Result;
+					ViewBag.EditCity = new SelectList(result.City, "Id", "CityName");
+				}
+            }
+			return View(viewName: "EditCity",result);
 		}
 	}
 }

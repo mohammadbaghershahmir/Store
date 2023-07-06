@@ -124,18 +124,7 @@
                 <div class="edit-city-component-container">
                 @await Component.InvokeAsync("EditCity")
                 </div>
-                <div class="form-group">
-                    <label class="form-label">شماره تماس</label>
-                    <input required id="phone-number-user" class="form-control" placeholder="شماره تماس خود را وارد کنید" type="number">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">کد پستی</label>
-                    <input required id="postalcode" class="form-control" placeholder="کد پستی خود را وارد کنید" type="number">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">آدرس</label>
-                    <textarea required id="address-user" class="form-control" placeholder="آدرس خود را وارد کنید"></textarea>
-                </div>
+                @await Component.InvokeAsync("DetailEditAddressUser")
                 <button class="form-btn" type="submit">ذخیره آدرس</button>
             </form>
         </div>
@@ -169,7 +158,7 @@
                             }
                         }).showToast();
                         GetListAddress();
-                        //$("#address-add").modal('hide');
+                        $("#address-add").modal('hide');
                     } else {
                         Toastify({
                             text: result.message,
@@ -189,29 +178,6 @@
 
 
         })
-        //Show  Modal EditAddress
-        $("#show-edit").on('click', function () {
-            let addressId = $(this).attr('data-item-id');
-            getAddressUserList(addressId);
-        })
-        function getAddressUserList(addressId) {
-            var postData = {
-                addressId
-            };
-            //ajaxFunc("Cart/EditProvince", postData, "POST",
-            //    function (result) {
-            //        if (result.isSuccess) {
-            //            let html = "";
-            //            result.data.map(item => {
-            //                html+= `<option value="primary">${item.nameProvince}</option>`;
-            //            });
-            //            $(".province-select").html(html);
-            //        }
-            //    },
-            //    function (error) {
-            //        console.log(error);
-            //    }
-            //)
-        }
+       
     </script>
 }

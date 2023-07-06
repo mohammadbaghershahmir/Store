@@ -158,13 +158,10 @@ function GetListAddress() {
             }
         });
 }
-function GetEditAddressUser(id) {
-   
-
+function GetEditAddressUserProvince(id) {
     var addressId = {
         addressId: id
     };
-    console.log(addressId);
     var base_url = window.location.origin;
     $.ajax(base_url + '/Cart/EditProvinceViewComponent',
         {
@@ -179,5 +176,28 @@ function GetEditAddressUser(id) {
 
             }
         });
+    GetEditAddressUserCity(id);
+    $("#address-edit").modal('show');
+}
+function GetEditAddressUserCity(id) {
+    let provinceId = $(".input-province-edit").val();
+    let addressId = id;
+    var data ={
+        provinceId,addressId
+    };
+    console.log(data)
+    var base_url = window.location.origin;
+    $.ajax(base_url + '/Cart/EditCityViewComponent',
+        {
+            data: data,
+            dataType: 'html', // type of response data
+            timeout: 500,     // timeout milliseconds
 
+            success: function (html, status, xhr) {   // success callback function
+                $(".edit-city-component-container").html(html);
+            },
+            error: function (jqXhr, textStatus, errorMessage) { // error callback
+
+            }
+        });
 }

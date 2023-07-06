@@ -21,36 +21,40 @@ namespace Store.Application.Services.UsersAddress.Queries.GetEditAddressUserForS
         }
         public async Task<EditAddressUserDto> Execute(string IdAddressUser)
         {
-            var listAddress =await _context.UserAddresses.Include(c=>c.City).Where(y=>y.Id==IdAddressUser).FirstOrDefaultAsync();
+            var listAddress = _context.UserAddresses.Include(c => c.City).Where(y => y.Id == IdAddressUser).FirstOrDefault();
+            var cityFromProvince = _context.Provinces.Where(r => r.ParrentId == listAddress.City.ParrentId);
             return new EditAddressUserDto
             {
 
                 Id = listAddress.Id,
                 Address = listAddress.Address,
-                City = new CityDto { Id = listAddress.City.Id, NameCity = listAddress.City.ParrentId != null ? listAddress.City.CityName : "" },
+                City =cityFromProvince.Select(q => new CityAddressDto
+                {
+                    CityName = q.CityName,
+                    Id = q.Id,
+                }
+                ).ToList(),
                 PhoneNumber = listAddress.Phone,
                 PostalCode = listAddress.PostalCode,
-                Province = new ProvinceDto { Id = listAddress.City.Id, NameProvince = listAddress.City.ParrentId == null ? listAddress.City.CityName:""}
+                Province = listAddress.City.ParrentId,
+                CityAcitve=listAddress.CityId,
             };
+
         }
     }
     public class EditAddressUserDto
     {
         public string Id { get; set; }
-        public ProvinceDto Province { get; set; }
-        public CityDto City { get; set; }
+        public string? Province { get; set; }
+        public List<CityAddressDto> City { get; set; }
+        public string CityAcitve { get; set; }
         public int PostalCode { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
     }
-    public class CityDto
+    public class CityAddressDto
     {
-        public string  Id { get; set; }
-        public string NameCity { get; set; }
-    }
-    public class ProvinceDto
-    {
-        public string? Id { get; set; }
-        public string NameProvince { get; set; }
+        public string Id { get; set; }
+        public string CityName { get; set; }
     }
 }

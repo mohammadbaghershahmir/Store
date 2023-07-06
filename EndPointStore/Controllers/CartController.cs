@@ -56,9 +56,10 @@ namespace EndPointStore.Controllers
         {
             return ViewComponent("EditProvince",addressId);
         }
-        public IActionResult EditCityViewComponent(string provinceId)
+       
+        public IActionResult EditCityViewComponent(EditCityViewComponentDto editCityViewComponentDto)
         {
-            return ViewComponent(" EditCity", provinceId);
+            return ViewComponent("EditCity",editCityViewComponentDto);
         }
         public IActionResult provinceViewComponent()
         {
@@ -71,6 +72,10 @@ namespace EndPointStore.Controllers
         public IActionResult AddressUserViewComponent()
         {
             return ViewComponent("AddressUser");
+        }
+        public IActionResult DetailEditAddressUserViewComponent()
+        {
+            return ViewComponent("DetailEditAddressUser");
         }
         [HttpPost]
         public async Task<IActionResult> AddToCart(string productId, int? count)
@@ -132,8 +137,13 @@ namespace EndPointStore.Controllers
             });
         }
     }
+    public class EditCityViewComponentDto
+    {
+        public string? ProvinceId { get; set; }
+        public string? AddressId { get; set; }
+    }
 
-    public class RequestAddress
+	public class RequestAddress
     {
         public string? UserId { get; set; }
         public string City { get; set; }

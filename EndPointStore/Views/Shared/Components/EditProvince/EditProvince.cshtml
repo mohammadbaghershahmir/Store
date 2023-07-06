@@ -4,5 +4,5 @@
     Layout = null;
 }
 <label class="form-label">انتخاب استان</label>
-<select id="input-province-edit" onchange="changeProvinceEdit()" name="province" asp-for="Province.Id" asp-items="ViewBag.province" class="form-select">
+<select onchange="changeProvinceEdit()"  asp-for="Province" asp-items="ViewBag.province" class="input-province-edit form-select">
 </select>
