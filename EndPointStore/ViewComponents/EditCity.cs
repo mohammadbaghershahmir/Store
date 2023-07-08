@@ -23,16 +23,16 @@ namespace EndPointStore.ViewComponents
 			_getProvinceService = getProvinceService;
 			_getEditAddressUserForSite = getEditAddressUserForSite;
 		}
-		public IViewComponentResult Invoke(EditCityViewComponentDto editCityViewComponentDto)
+		public IViewComponentResult Invoke(RequestEditCityDto editCityViewComponentDto)
 		{
 			var result = new EditAddressUserDto();
             if (editCityViewComponentDto!=null)
 			{
-				if (editCityViewComponentDto.AddressId != null)
+                if (editCityViewComponentDto.AddressId != null)
 				{
-					result = _getEditAddressUserForSite.Execute(editCityViewComponentDto.AddressId).Result;
-					ViewBag.EditCity = new SelectList(result.City, "Id", "CityName");
-				}
+					result = _getEditAddressUserForSite.Execute(editCityViewComponentDto).Result;
+                    ViewBag.EditCity = new SelectList(_getCityService.Execute(editCityViewComponentDto.ProvinceId).Result.Data, "Id", "CityName");
+                }
             }
 			return View(viewName: "EditCity",result);
 		}

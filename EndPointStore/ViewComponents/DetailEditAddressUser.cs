@@ -16,14 +16,14 @@ namespace EndPointStore.ViewComponents
         {
             _getEditAddressUserForSite = getEditAddressUserForSite;
         }
-        public IViewComponentResult Invoke(EditCityViewComponentDto editCityViewComponentDto)
+        public IViewComponentResult Invoke(RequestEditCityDto requestEdit)
         {
-            var result = new EditAddressUserDto();
-            if (editCityViewComponentDto != null)
+               EditAddressUserDto result=new EditAddressUserDto();
+            if(requestEdit != null)
             {
-                if (editCityViewComponentDto.AddressId != null)
+                if (requestEdit.AddressId != null)
                 {
-                    result = _getEditAddressUserForSite.Execute(editCityViewComponentDto.AddressId).Result;
+                    result = _getEditAddressUserForSite.Execute(requestEdit).Result;
                 }
             }
             return View(viewName: "DetailEditAddressUser", result);

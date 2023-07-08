@@ -121,12 +121,15 @@
                 <div id="edit-province" class="form-group">
                 @await Component.InvokeAsync("EditProvince")
                 </div>
-                <div class="edit-city-component-container">
+                <div id="edit-city-component-container">
                 @await Component.InvokeAsync("EditCity")
                 </div>
-                @await Component.InvokeAsync("DetailEditAddressUser")
-                <button class="form-btn" type="submit">ذخیره آدرس</button>
+                <div id="edit-detail-component-container">
+                 @await Component.InvokeAsync("DetailEditAddressUser")
+                </div>
+               
             </form>
+            <button id="edit-address-user" class="form-btn" type="submit">ذخیره آدرس</button>
         </div>
     </div>
 </div>
@@ -178,6 +181,43 @@
 
 
         })
-       
+        $("#edit-address-user").on('click', function () {
+            var id = $('#IdEditAddress').val()
+            var city = $('#CityAcitve').val()
+            var province = $('#Province').val()
+            var phonenumber = $('#PhoneNumber').val()
+            var postalcode = $('#PostalCode').val()
+            var address = $('#Address').val()
+            var data = {id,city, province,phonenumber, postalcode, address }
+            console.log(data);
+            ajaxFunc("Cart/EditAddressUser", data, "POST",
+                function (result) {
+                    if (result.isSuccess) {
+                        Toastify({
+                            text: result.message,
+                            className: "success",
+                            duration: 3000,
+                            style: {
+                                background: "linear-gradient(to right, #00b09b, #96c93d)",
+                            }
+                        }).showToast();
+                        GetListAddress();
+                    } else {
+                        Toastify({
+                            text: result.message,
+                            className: "warning",
+                            duration: 3000,
+                            style: {
+                                background: "linear-gradient(to right, #00b09b, #96c93d)",
+                            }
+                        }).showToast();
+                    }
+                },
+                function (error) {
+                    dangerToastify.showToast();
+                    console.log(error);
+                }
+            )
+        })
     </script>
 }

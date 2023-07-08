@@ -159,6 +159,7 @@ function GetListAddress() {
         });
 }
 function GetEditAddressUserProvince(id) {
+
     var addressId = {
         addressId: id
     };
@@ -177,6 +178,7 @@ function GetEditAddressUserProvince(id) {
             }
         });
     GetEditAddressUserCity(id);
+    GetDetailEditAddressUser(id);
     $("#address-edit").modal('show');
 }
 function GetEditAddressUserCity(id) {
@@ -185,7 +187,7 @@ function GetEditAddressUserCity(id) {
     var data ={
         provinceId,addressId
     };
-    console.log(data)
+    console.log(provinceId)
     var base_url = window.location.origin;
     $.ajax(base_url + '/Cart/EditCityViewComponent',
         {
@@ -194,7 +196,28 @@ function GetEditAddressUserCity(id) {
             timeout: 500,     // timeout milliseconds
 
             success: function (html, status, xhr) {   // success callback function
-                $(".edit-city-component-container").html(html);
+                $("#edit-city-component-container").html(html);
+            },
+            error: function (jqXhr, textStatus, errorMessage) { // error callback
+
+            }
+        });
+}
+function GetDetailEditAddressUser(id) {
+     let provinceId = $(".input-province-edit").val();
+    let addressId = id;
+    var data ={
+        provinceId,addressId
+    };
+    var base_url = window.location.origin;
+    $.ajax(base_url + '/Cart/DetailEditAddressUserViewComponent',
+        {
+            data: data,
+            dataType: 'html', // type of response data
+            timeout: 500,     // timeout milliseconds
+
+            success: function (html, status, xhr) {   // success callback function
+                $("#edit-detail-component-container").html(html);
             },
             error: function (jqXhr, textStatus, errorMessage) { // error callback
 

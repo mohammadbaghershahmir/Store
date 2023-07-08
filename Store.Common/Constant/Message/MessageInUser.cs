@@ -36,6 +36,7 @@ namespace Store.Common.Constant
         public const string MessageDecreasedCart = "آیتم با موفقیت کم شد!";
         public const string MessageUserNotLogin = "شما نمیتوانید قبل از لاگین شدن آدرسی ثبت کنید!";
         public const string MessageUserAddressInsert = "آدرس شما با موفقیت ثبت شد!";
+        public const string MessageUserAddressUpdate = "آدرس شما با موفقیت ویرایش شد!";
 
     }
 }

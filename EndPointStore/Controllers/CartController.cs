@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Store.Application.Services.Carts;
 using Store.Application.Services.UsersAddress.Commands.AddAddressServiceForSite;
+using Store.Application.Services.UsersAddress.Commands.EditAddressServiceForSite;
 using Store.Application.Services.UsersAddress.Queries.GetEditAddressUserForSite;
 using Store.Common.Constant;
 using Store.Common.Dto;
@@ -12,14 +13,19 @@ namespace EndPointStore.Controllers
     {
         private readonly IAddAddressServiceForSite _addAddressService;
         private readonly IGetEditAddressUserForSite _getEditAddressUserForSite;
+        private readonly IEditAddressUserForSite _editAddressUserForSite;
         private readonly ICartService  _cartService;
         private readonly CookiesManager cookiesManager;
-        public CartController(ICartService cartService, IAddAddressServiceForSite addAddressServiceForSite,IGetEditAddressUserForSite getEditAddressUserForSite)
+        public CartController(ICartService cartService, IAddAddressServiceForSite addAddressServiceForSite
+            ,IGetEditAddressUserForSite getEditAddressUserForSite, IEditAddressUserForSite editAddressUserForSite)
         {
             _cartService = cartService;
             cookiesManager = new CookiesManager();
             _addAddressService = addAddressServiceForSite;
             _getEditAddressUserForSite = getEditAddressUserForSite;
+            _editAddressUserForSite = editAddressUserForSite;
+           
+
         }
         public async Task<IActionResult> Index()
         {
@@ -52,16 +58,16 @@ namespace EndPointStore.Controllers
         {
             return ViewComponent("CartTable");
         }
-        public IActionResult EditProvinceViewComponent(string addressId)
+        public IActionResult EditProvinceViewComponent(RequestEditCityDto requestEdit)
         {
-            return ViewComponent("EditProvince",addressId);
+            return ViewComponent("EditProvince",requestEdit);
         }
        
-        public IActionResult EditCityViewComponent(EditCityViewComponentDto editCityViewComponentDto)
+        public IActionResult EditCityViewComponent(RequestEditCityDto editCityViewComponentDto)
         {
             return ViewComponent("EditCity",editCityViewComponentDto);
         }
-        public IActionResult provinceViewComponent()
+        public IActionResult ProvinceViewComponent()
         {
             return ViewComponent("Province");
         }
@@ -73,9 +79,9 @@ namespace EndPointStore.Controllers
         {
             return ViewComponent("AddressUser");
         }
-        public IActionResult DetailEditAddressUserViewComponent()
+        public IActionResult DetailEditAddressUserViewComponent(RequestEditCityDto requestEdit)
         {
-            return ViewComponent("DetailEditAddressUser");
+            return ViewComponent("DetailEditAddressUser", requestEdit);
         }
         [HttpPost]
         public async Task<IActionResult> AddToCart(string productId, int? count)
@@ -124,13 +130,31 @@ namespace EndPointStore.Controllers
             });
             return Json(result);
         }
-        public async Task<IActionResult> GetEditAddressUser(string addressId)
+        [HttpPost]
+        public async Task<IActionResult> EditAddressUser(RequestEditAddressUserDto requestEdit)
         {
             if (!ModelState.IsValid)
             {
                 return Json(new ResultDto { IsSuccess = false, Message = MessageInUser.IsValidForm });
             }
-            var result = await _getEditAddressUserForSite.Execute(addressId);
+            var result = await _editAddressUserForSite.Execute(new RequestEditAddressUserDto
+            {
+                 Id=requestEdit.Id,
+                 Address = requestEdit.Address,
+                City = requestEdit.City,
+                Province=requestEdit.Province,
+                PhoneNumber = requestEdit.PhoneNumber,
+                PostalCode = requestEdit.PostalCode,
+            });
+            return Json(result);
+        }
+        public async Task<IActionResult> GetEditAddressUser(RequestEditCityDto requestEdit)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Json(new ResultDto { IsSuccess = false, Message = MessageInUser.IsValidForm });
+            }
+            var result = await _getEditAddressUserForSite.Execute(requestEdit);
             return Json(new ResultDto<EditAddressUserDto> {
              Data=result
             ,IsSuccess=true,
@@ -139,8 +163,8 @@ namespace EndPointStore.Controllers
     }
     public class EditCityViewComponentDto
     {
-        public string? ProvinceId { get; set; }
-        public string? AddressId { get; set; }
+        public string ProvinceId { get; set; }
+        public string AddressId { get; set; }
     }
 
 	public class RequestAddress

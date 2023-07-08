@@ -38,6 +38,7 @@ using Store.Application.Services.Posts.Queries;
 using Store.Application.Services.UsersAddress.Commands.AddAddressServiceForSite;
 using Store.Application.Services.UsersAddress.Queries.GetAddressUserForSite;
 using Store.Application.Services.UsersAddress.Queries.GetEditAddressUserForSite;
+using Store.Application.Services.UsersAddress.Commands.EditAddressServiceForSite;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -76,6 +77,7 @@ builder.Services.AddScoped<IGetCityForPayServices, GetCityForPayServices>();
 builder.Services.AddScoped<IAddAddressServiceForSite, AddAddressServiceForSite>(); 
 builder.Services.AddScoped<IGetAddressUserForSite, GetAddressUserForSite>();
 builder.Services.AddScoped<IGetEditAddressUserForSite, GetEditAddressUserForSite>();
+builder.Services.AddScoped<IEditAddressUserForSite, EditAddressUserForSite>();
 
 
 
