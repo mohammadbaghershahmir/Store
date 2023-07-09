@@ -30,7 +30,6 @@ namespace Store.Application.Services.UsersAddress.Queries.GetEditAddressUserForS
                 .ToList();
             return new EditAddressUserDto
             {
-
                 IdEditAddress = listAddress.Id,
                 Address = listAddress.Address,
                 City =cityFromProvince.Select(q => new CityAddressDto

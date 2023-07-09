@@ -1,4 +1,5 @@
-﻿function AddToCart(productId) {
+﻿let currentProvinceId;
+function AddToCart(productId) {
     let count = 1;
     let model = { productId, count }
     ajaxFunc("/Cart/AddToCart", model, "POST",
@@ -158,8 +159,8 @@ function GetListAddress() {
             }
         });
 }
-function GetEditAddressUserProvince(id) {
-
+function GetEditAddressUserProvince(id, provinceId) {
+    currentProvinceId = provinceId;
     var addressId = {
         addressId: id
     };
@@ -182,7 +183,7 @@ function GetEditAddressUserProvince(id) {
     $("#address-edit").modal('show');
 }
 function GetEditAddressUserCity(id) {
-    let provinceId = $(".input-province-edit").val();
+    let provinceId = currentProvinceId;
     let addressId = id;
     var data ={
         provinceId,addressId

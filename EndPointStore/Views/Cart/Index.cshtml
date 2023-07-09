@@ -114,7 +114,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <button class="modal-close" data-bs-dismiss="modal"><i class="icofont-close"></i></button>
-            <form class="modal-form">
+            <form class="modal-form" id="frm-edit-address">
                 <div class="form-title">
                     <h3>ویرایش آدرس</h3>
                 </div>
@@ -127,9 +127,8 @@
                 <div id="edit-detail-component-container">
                  @await Component.InvokeAsync("DetailEditAddressUser")
                 </div>
-               
+               <button id="edit-address-user" class="form-btn" type="submit">ذخیره آدرس</button>
             </form>
-            <button id="edit-address-user" class="form-btn" type="submit">ذخیره آدرس</button>
         </div>
     </div>
 </div>
@@ -139,7 +138,8 @@
 @section Scripts{
     <script>
         //Send Address
-        $("#CreateAddress").on('click', function () {
+        $("#frm-add-address").on('submit', function () {
+            event.preventDefault();
             var city = $('#input-city').val()
             var phonenumber = $('#phone-number-user').val()
             var postalcode = $('#postalcode').val()
@@ -148,6 +148,7 @@
             console.log(data);
             ajaxFunc("Cart/CreateAddressUser", data, "POST",
                 function (result) {
+                    $("#address-add").modal('hide');
                     if (result.isSuccess) {
                         $('#phone-number-user').val("");
                         $('#postalcode').val("");
@@ -161,7 +162,6 @@
                             }
                         }).showToast();
                         GetListAddress();
-                        $("#address-add").modal('hide');
                     } else {
                         Toastify({
                             text: result.message,
@@ -181,7 +181,8 @@
 
 
         })
-        $("#edit-address-user").on('click', function () {
+        $("#frm-edit-address").on('submit', function () {
+            event.preventDefault();
             var id = $('#IdEditAddress').val()
             var city = $('#CityAcitve').val()
             var province = $('#Province').val()
@@ -193,6 +194,7 @@
             ajaxFunc("Cart/EditAddressUser", data, "POST",
                 function (result) {
                     if (result.isSuccess) {
+                        $("#address-add").modal('hide');
                         Toastify({
                             text: result.message,
                             className: "success",
@@ -219,5 +221,25 @@
                 }
             )
         })
+        function RemoveAddressUser(addressId)
+        {
+            let model = { addressId }
+            ajaxFunc("/Cart/RemoveAddressUser", model, "POST",
+                function (result) {
+                    if (result.isSuccess) {
+                        Toastify({
+                            text: result.message,
+                            className: "successs",
+                            style: {
+                                background: "linear-gradient(to right, #00b09b, #96c93d)",
+                            }
+                        }).showToast();
+                    } else {
+                    }
+                },
+                function (error) {
+                }
+            );
+        }
     </script>
 }

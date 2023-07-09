@@ -29,7 +29,8 @@ namespace Store.Application.Services.UsersAddress.Queries.GetAddressUserForSite
             City=w.City.CityName,
             PhoneNumber=w.Phone,
             PostalCode=w.PostalCode,
-            InsertTime=w.InsertTime
+            InsertTime=w.InsertTime,
+            Province=w.City.ParrentId,
             }).OrderByDescending(r=>r.InsertTime).ToListAsync();
             return userAddress;
         }
@@ -38,6 +39,7 @@ namespace Store.Application.Services.UsersAddress.Queries.GetAddressUserForSite
     {
         public string Id { get; set; }
         public string City { get; set; }
+        public string Province { get; set; }
         public int PostalCode { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }

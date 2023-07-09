@@ -17,5 +17,6 @@ namespace Store.Domain.Entities.Users
         public int PostalCode { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
+        public bool  Active { get; set; }
     }
 }

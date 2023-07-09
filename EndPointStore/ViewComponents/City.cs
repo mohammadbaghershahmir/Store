@@ -23,6 +23,10 @@ namespace EndPointStore.ViewComponents
         }
         public IViewComponentResult Invoke(string provinceId)
         {
+            if(string.IsNullOrWhiteSpace(provinceId))
+            {
+                provinceId = _getProvinceService.Execute().Result.Data.FirstOrDefault().Id;
+            }
             ViewBag.city = new SelectList(_getCityService.Execute(provinceId).Result.Data, "Id", "CityName");
             return View(viewName: "City");
         }

@@ -16,8 +16,8 @@
                             <p>کد پستی: @item.PostalCode</p>
                             <p>شماره تماس: @item.PhoneNumber</p>
                             <ul class="user-action">
-                            <li><button id="show-edit" onclick="GetEditAddressUserProvince('@item.Id')" class="edit icofont-edit" title="ویرایش"></button></li>
-                            <li><button class="trash icofont-ui-delete" title="حذف" data-bs-dismiss="alert"></button></li>
+                            <li><button id="show-edit"  onclick="GetEditAddressUserProvince('@item.Id','@item.Province')" class="edit icofont-edit" title="ویرایش"></button></li>
+                            <li><button onclick="RemoveAddressUser('@item.Id')" class="trash icofont-ui-delete" title="حذف" data-bs-dismiss="alert"></button></li>
                             </ul>
                         </div>
             </div>
@@ -29,7 +29,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <button class="modal-close" data-bs-dismiss="modal"><i class="icofont-close"></i></button>
-            <form class="modal-form">
+            <form class="modal-form" id="frm-add-address">
                 <div class="form-title">
                     <h3>افزودن آدرس جدید</h3>
                 </div>
@@ -51,9 +51,9 @@
                     <label class="form-label">آدرس</label>
                     <textarea required id="address-user" class="form-control" placeholder="آدرس خود را وارد کنید"></textarea>
                 </div>
+                <button id="CreateAddress" class="form-btn">ذخیره آدرس جدید</button>
             </form>
             <div class="form-group">
-                <button id="CreateAddress" class="form-btn">ذخیره آدرس جدید</button>
             </div>
         </div>
     </div>

@@ -37,6 +37,8 @@ namespace Store.Common.Constant
         public const string MessageUserNotLogin = "شما نمیتوانید قبل از لاگین شدن آدرسی ثبت کنید!";
         public const string MessageUserAddressInsert = "آدرس شما با موفقیت ثبت شد!";
         public const string MessageUserAddressUpdate = "آدرس شما با موفقیت ویرایش شد!";
+        public const string NotFindAddressUser = "آدرسی یافت نشد!";
+        public const string RemoveAddress = "حذف آدرس با موفقیت انجام شد!";
 
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Store.Application.Services.Carts;
 using Store.Application.Services.UsersAddress.Commands.AddAddressServiceForSite;
 using Store.Application.Services.UsersAddress.Commands.EditAddressServiceForSite;
+using Store.Application.Services.UsersAddress.Commands.RemoveAddressService_ForSite;
 using Store.Application.Services.UsersAddress.Queries.GetEditAddressUserForSite;
 using Store.Common.Constant;
 using Store.Common.Dto;
@@ -13,19 +14,22 @@ namespace EndPointStore.Controllers
     {
         private readonly IAddAddressServiceForSite _addAddressService;
         private readonly IGetEditAddressUserForSite _getEditAddressUserForSite;
+        private readonly IRemoveAddressUserForSite _removeAddressUserForSite;
         private readonly IEditAddressUserForSite _editAddressUserForSite;
         private readonly ICartService  _cartService;
         private readonly CookiesManager cookiesManager;
         public CartController(ICartService cartService, IAddAddressServiceForSite addAddressServiceForSite
-            ,IGetEditAddressUserForSite getEditAddressUserForSite, IEditAddressUserForSite editAddressUserForSite)
+            ,IGetEditAddressUserForSite getEditAddressUserForSite, 
+            IEditAddressUserForSite editAddressUserForSite,
+            IRemoveAddressUserForSite removeAddressUserForSite
+            )
         {
             _cartService = cartService;
             cookiesManager = new CookiesManager();
             _addAddressService = addAddressServiceForSite;
             _getEditAddressUserForSite = getEditAddressUserForSite;
             _editAddressUserForSite = editAddressUserForSite;
-           
-
+           _removeAddressUserForSite= removeAddressUserForSite;
         }
         public async Task<IActionResult> Index()
         {
@@ -159,6 +163,15 @@ namespace EndPointStore.Controllers
              Data=result
             ,IsSuccess=true,
             });
+        }
+        public async Task<IActionResult> RemoveAddressUser(string AddressId)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Json(new ResultDto { IsSuccess = false, Message = MessageInUser.IsValidForm });
+            }
+            var result = await _removeAddressUserForSite.Execute(AddressId);
+            return Json(result);
         }
     }
     public class EditCityViewComponentDto
