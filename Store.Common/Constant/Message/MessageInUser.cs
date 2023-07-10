@@ -22,7 +22,7 @@ namespace Store.Common.Constant
 		public const string UploadSuccess = "فایل مورد نظر با موفقیت آپلود شد";
 		public const string UploadInvalid = "مشکلی در آپلود فایل وجود دارد";
 		public const string ExistTag = "تگی با همین نام وجود دارد";
-		public const string IsValidForm = "مقادیر فرم تکمیل نشده است!";
+        public const string IsValidForm = "مقادیر فرم تکمیل نشده است!";
 		public const string InsertProduct = "محصول مورد نظر با موفقیت ثبت شد!";
 		public const string ExistSlug = "آدرس سِو با همین نام وجود دارد";
         public const string RemoveProduct = "حذف محصول با موفقیت انجام شد!";
@@ -34,10 +34,12 @@ namespace Store.Common.Constant
         public const string MessageInvalidCart = "خطایی وجود دارد!";
         public const string MessageNotFoundCart = "آیتمی در سبد خرید وجود ندارد!";
         public const string MessageDecreasedCart = "آیتم با موفقیت کم شد!";
-        public const string MessageUserNotLogin = "شما نمیتوانید قبل از لاگین شدن آدرسی ثبت کنید!";
+        public const string MessageUserNotLogin = "لطفاقبل از ثبت وارد سیستم شوید!";
         public const string MessageUserAddressInsert = "آدرس شما با موفقیت ثبت شد!";
         public const string MessageUserAddressUpdate = "آدرس شما با موفقیت ویرایش شد!";
         public const string NotFindAddressUser = "آدرسی یافت نشد!";
+        public const string NotFindBrand = "برندی یافت نشد!";
+        public const string RemoveBrand = "حذف برند با موفقیت انجام شد!";
         public const string RemoveAddress = "حذف آدرس با موفقیت انجام شد!";
 
     }

@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Store.Application.Interfaces.Contexs;
 using Store.Application.Interfaces.FacadPattern;
+using Store.Application.Services.Products.Commands.AddNewBrand;
+using Store.Application.Services.Products.Commands.DeleteBrand;
 using Store.Application.Services.ProductsSite.Commands.AddNewCategory;
 using Store.Application.Services.ProductsSite.Commands.AddNewProduct;
 using Store.Application.Services.ProductsSite.Commands.AddNewTag;
@@ -43,6 +45,8 @@ namespace Store.Application.Services.ProductsSite.FacadPattern
 		private IRemoveProductService _removeProductService;
 		private IGetEditProductListService _getEditProductListService;
 		private IEditProductsService _getEditProductsService;
+		private IAddNewBrandService _addNewBrandService;
+		private IRemoveBrandService _removeBrandService;
 		//Add Category
 		public AddCategoryService AddCategoryService
 		{
@@ -78,7 +82,7 @@ namespace Store.Application.Services.ProductsSite.FacadPattern
 		{
 			get
 			{
-				return _getBrandListService = _getBrandListService ?? new GetBrandListService(_context);
+				return _getBrandListService = _getBrandListService ?? new GetBrandListService(_context, _configuration);
 			}
 		}
 		//AddTag
@@ -138,5 +142,21 @@ namespace Store.Application.Services.ProductsSite.FacadPattern
 				return _getEditProductsService = _getEditProductsService ?? new EditProductsService(_context);
 			}
 		}
-	}
+
+        public IAddNewBrandService AddNewBrandService
+		{
+            get
+            {
+                return _addNewBrandService = _addNewBrandService ?? new AddNewBrandService(_context);
+            }
+        }
+
+        public IRemoveBrandService RemoveBrandService
+		{
+            get
+            {
+                return _removeBrandService = _removeBrandService ?? new RemoveBrandService(_context);
+            }
+        }
+    }
 }

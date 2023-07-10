@@ -1,15 +1,19 @@
 ﻿@using Store.Application.Services.UsersAddress.Queries.GetAddressUserForSite;
 @model List<UserAddressDto>
 @{
+    string ActiveClass = "";
     Layout = null;
 }
     <div class="account-content">
         <div class="row">
             @foreach (var item in Model)
               {
-            <div class="col-md-6 col-lg-4 alert fade show">
-                    
-                        <div class="profile-card address ">
+            if(item.Acitve)
+            {
+                ActiveClass = "active";
+            }
+            <div class="col-md-6 col-lg-4  alert fade show">
+                <div class="profile-card  contact @ActiveClass">
                             <h6>خانه</h6>
                             <p>آدرس:@item.Address</p>
                             <p>شهر:@item.City</p>

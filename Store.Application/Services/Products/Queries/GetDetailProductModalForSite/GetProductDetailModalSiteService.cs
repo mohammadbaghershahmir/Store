@@ -36,7 +36,7 @@ namespace Store.Application.Services.ProductsSite.Queries.GetDetailProductModalF
                 Data=new DetailProductModalSiteDto
                 {
                     Id = detailProductList.Id,
-                    Brand = detailProductList.Brand.Name,
+                    Brand = detailProductList.Brand==null?"بدون برند":detailProductList.Brand.Name,
                     CodeProduct = detailProductList.CodeProduct,
                     Unit=Settings.UnitText,
                     Description = string.IsNullOrEmpty(detailProductList.Description) ? "بدون توضیحات" :detailProductList.Description,

@@ -31,6 +31,7 @@ namespace Store.Application.Services.UsersAddress.Queries.GetAddressUserForSite
             PostalCode=w.PostalCode,
             InsertTime=w.InsertTime,
             Province=w.City.ParrentId,
+            Acitve=w.Active,
             }).OrderByDescending(r=>r.InsertTime).ToListAsync();
             return userAddress;
         }
@@ -43,6 +44,7 @@ namespace Store.Application.Services.UsersAddress.Queries.GetAddressUserForSite
         public int PostalCode { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
+        public bool Acitve { get; set; }
         public DateTime? InsertTime { get; set; }
     }
 }

@@ -79,6 +79,31 @@ namespace Store.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Provinces",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ParrentId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    CityName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Cost = table.Column<double>(type: "float", nullable: false),
+                    DeliverDay = table.Column<int>(type: "int", nullable: false),
+                    InsertTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsRemoved = table.Column<bool>(type: "bit", nullable: false),
+                    RemoveTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    RowVersion = table.Column<byte[]>(type: "rowversion", rowVersion: true, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Provinces", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Provinces_Provinces_ParrentId",
+                        column: x => x.ParrentId,
+                        principalTable: "Provinces",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Roles",
                 columns: table => new
                 {
@@ -274,6 +299,74 @@ namespace Store.Persistence.Migrations
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Products_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RequestPays",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Amount = table.Column<int>(type: "int", nullable: false),
+                    IsPay = table.Column<bool>(type: "bit", nullable: false),
+                    PayDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Authority = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RefId = table.Column<long>(type: "bigint", nullable: false),
+                    CityId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    InsertTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsRemoved = table.Column<bool>(type: "bit", nullable: false),
+                    RemoveTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    RowVersion = table.Column<byte[]>(type: "rowversion", rowVersion: true, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RequestPays", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_RequestPays_Provinces_CityId",
+                        column: x => x.CityId,
+                        principalTable: "Provinces",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_RequestPays_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserAddresses",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    CityId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    PostalCode = table.Column<int>(type: "int", nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false),
+                    InsertTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsRemoved = table.Column<bool>(type: "bit", nullable: false),
+                    RemoveTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    RowVersion = table.Column<byte[]>(type: "rowversion", rowVersion: true, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserAddresses", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UserAddresses_Provinces_CityId",
+                        column: x => x.CityId,
+                        principalTable: "Provinces",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UserAddresses_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
@@ -546,15 +639,84 @@ namespace Store.Persistence.Migrations
                         principalColumn: "Id");
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Orders",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    RequestPayId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    OrderState = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ProvinceName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CityName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PostalCode = table.Column<int>(type: "int", nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TrackingPost = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Seen = table.Column<bool>(type: "bit", nullable: false),
+                    InsertTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsRemoved = table.Column<bool>(type: "bit", nullable: false),
+                    RemoveTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    RowVersion = table.Column<byte[]>(type: "rowversion", rowVersion: true, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Orders", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Orders_RequestPays_RequestPayId",
+                        column: x => x.RequestPayId,
+                        principalTable: "RequestPays",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Orders_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "OrderDetails",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    OrderId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProductId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Price = table.Column<int>(type: "int", nullable: false),
+                    Count = table.Column<int>(type: "int", nullable: false),
+                    InsertTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsRemoved = table.Column<bool>(type: "bit", nullable: false),
+                    RemoveTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    RowVersion = table.Column<byte[]>(type: "rowversion", rowVersion: true, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OrderDetails", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_OrderDetails_Orders_OrderId",
+                        column: x => x.OrderId,
+                        principalTable: "Orders",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_OrderDetails_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "ContactType",
                 columns: new[] { "Id", "CssClass", "Icon", "InsertTime", "IsRemoved", "RemoveTime", "Title", "UpdateTime", "Value" },
                 values: new object[,]
                 {
-                    { "11095e41-6b82-4d9f-9f35-a5b73abe49e4", null, null, new DateTime(2023, 6, 29, 14, 22, 12, 297, DateTimeKind.Local).AddTicks(5602), false, null, "آدرس", null, "Address" },
-                    { "6ab2173f-0d06-4199-8e99-b922f58254b9", null, null, new DateTime(2023, 6, 29, 14, 22, 12, 297, DateTimeKind.Local).AddTicks(5566), false, null, "ایمیل", null, "Email" },
-                    { "934d85fb-480b-478d-8b1e-9b94904fa196", null, null, new DateTime(2023, 6, 29, 14, 22, 12, 297, DateTimeKind.Local).AddTicks(5410), false, null, "تلفن همراه", null, "Mobail" },
-                    { "ed803172-798e-4eaf-9e73-4186625eb3d4", null, null, new DateTime(2023, 6, 29, 14, 22, 12, 297, DateTimeKind.Local).AddTicks(5528), false, null, "تلفن", null, "Phone" }
+                    { "294b9d83-db29-44b6-bb44-8945f186add2", null, null, new DateTime(2023, 7, 10, 10, 43, 0, 360, DateTimeKind.Local).AddTicks(6617), false, null, "آدرس", null, "Address" },
+                    { "2ac28547-f2e9-4b30-ba9c-d41fa4458aa6", null, null, new DateTime(2023, 7, 10, 10, 43, 0, 360, DateTimeKind.Local).AddTicks(6473), false, null, "تلفن", null, "Phone" },
+                    { "4692ebae-a2dd-46ea-80c7-8b66378d4a4d", null, null, new DateTime(2023, 7, 10, 10, 43, 0, 360, DateTimeKind.Local).AddTicks(6370), false, null, "تلفن همراه", null, "Mobail" },
+                    { "a3d254d8-fd96-4e87-aff7-8bf0acef7843", null, null, new DateTime(2023, 7, 10, 10, 43, 0, 360, DateTimeKind.Local).AddTicks(6578), false, null, "ایمیل", null, "Email" }
                 });
 
             migrationBuilder.InsertData(
@@ -562,9 +724,9 @@ namespace Store.Persistence.Migrations
                 columns: new[] { "Id", "BirthDay", "ConcurrencyStamp", "Description", "Discriminator", "InsertTime", "IsRemoved", "Name", "NormalizedName", "PersianTitle", "ProfileImage", "RemoveTime", "UpdateTime" },
                 values: new object[,]
                 {
-                    { "58f81d0a-a86e-4b96-8db5-2efa122f691c", null, null, null, "Role", null, false, "Operator", "OPERATOR", "اپراتور", null, null, null },
-                    { "660fb1f2-a37c-41fa-9901-55566ddd3755", null, null, null, "Role", null, false, "Admin", "ADMIN", "مدیر سایت", null, null, null },
-                    { "df9012c7-75b9-406c-9c2f-18d8c6f976ed", null, null, null, "Role", null, false, "Customer", "CUSTOMER", "مشتری", null, null, null }
+                    { "19d7896a-fd23-4343-97fb-7d5fcb565cca", null, null, null, "Role", null, false, "Customer", "CUSTOMER", "مشتری", null, null, null },
+                    { "284e9066-4998-4a9a-b7dc-388f560a8ec5", null, null, null, "Role", null, false, "Admin", "ADMIN", "مدیر سایت", null, null, null },
+                    { "3c965915-2e31-4d2c-a4ff-94264276006c", null, null, null, "Role", null, false, "Operator", "OPERATOR", "اپراتور", null, null, null }
                 });
 
             migrationBuilder.CreateIndex(
@@ -633,6 +795,26 @@ namespace Store.Persistence.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_OrderDetails_OrderId",
+                table: "OrderDetails",
+                column: "OrderId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderDetails_ProductId",
+                table: "OrderDetails",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_RequestPayId",
+                table: "Orders",
+                column: "RequestPayId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_UserId",
+                table: "Orders",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Products_BrandId",
                 table: "Products",
                 column: "BrandId");
@@ -648,6 +830,11 @@ namespace Store.Persistence.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Provinces_ParrentId",
+                table: "Provinces",
+                column: "ParrentId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Rates_ProductId",
                 table: "Rates",
                 column: "ProductId");
@@ -655,6 +842,16 @@ namespace Store.Persistence.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Rates_UserId",
                 table: "Rates",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RequestPays_CityId",
+                table: "RequestPays",
+                column: "CityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RequestPays_UserId",
+                table: "RequestPays",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
@@ -668,6 +865,16 @@ namespace Store.Persistence.Migrations
                 column: "NormalizedName",
                 unique: true,
                 filter: "[NormalizedName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserAddresses_CityId",
+                table: "UserAddresses",
+                column: "CityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserAddresses_UserId",
+                table: "UserAddresses",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserClaims_UserId",
@@ -718,10 +925,16 @@ namespace Store.Persistence.Migrations
                 name: "Medias");
 
             migrationBuilder.DropTable(
+                name: "OrderDetails");
+
+            migrationBuilder.DropTable(
                 name: "Rates");
 
             migrationBuilder.DropTable(
                 name: "RoleClaims");
+
+            migrationBuilder.DropTable(
+                name: "UserAddresses");
 
             migrationBuilder.DropTable(
                 name: "UserClaims");
@@ -745,16 +958,25 @@ namespace Store.Persistence.Migrations
                 name: "Tags");
 
             migrationBuilder.DropTable(
+                name: "Orders");
+
+            migrationBuilder.DropTable(
                 name: "Products");
 
             migrationBuilder.DropTable(
                 name: "Roles");
 
             migrationBuilder.DropTable(
+                name: "RequestPays");
+
+            migrationBuilder.DropTable(
                 name: "Brands");
 
             migrationBuilder.DropTable(
                 name: "Category");
+
+            migrationBuilder.DropTable(
+                name: "Provinces");
 
             migrationBuilder.DropTable(
                 name: "Users");

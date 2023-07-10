@@ -31,6 +31,12 @@ namespace Store.Application.Services.UsersAddress.Commands.AddAddressServiceForS
                     Message = MessageInUser.MessageUserNotLogin
                 };
             }
+            bool IsActive = false;
+            var checkActive = _context.UserAddresses.ToList();
+            if(checkActive.Count==0)
+            {
+                IsActive= true;
+            }
             UserAddress userAddress = new UserAddress()
             {
                 Id = Guid.NewGuid().ToString(),
@@ -39,7 +45,8 @@ namespace Store.Application.Services.UsersAddress.Commands.AddAddressServiceForS
                 InsertTime = DateTime.Now,
                 UserId = requestAddress.UserId,
                 PostalCode = requestAddress.PostalCode,
-                Phone = requestAddress.PhoneNumber
+                Phone = requestAddress.PhoneNumber,
+                Active=IsActive,
             };
             await _context.UserAddresses.AddAsync(userAddress);
             await _context.SaveChangesAsync();

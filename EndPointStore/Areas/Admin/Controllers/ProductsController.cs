@@ -12,6 +12,8 @@ using Store.Common.Dto;
 using Store.Application.Services.ProductsSite.Queries.GetTagsList;
 using Store.Application.Services.Users.Command.DeleteUser;
 using Store.Application.Services.ProductsSite.Queries.GetEditProductsList;
+using EndPointStore.Utilities;
+using Store.Application.Services.ProductsSite.Queries.GetBrandsList;
 
 namespace EndPointStore.Areas.Admin.Controllers
 {
@@ -56,7 +58,14 @@ namespace EndPointStore.Areas.Admin.Controllers
 
 			var listCategory = await _productFacad.GetParentCategory.Execute();
 			var listBrands = await _productFacad.GetBrandListService.Execute();
-			var listTags = await _productFacad.GetTagsListService.Execute();
+            List<BrandsListDto> ItemBrands = new List<BrandsListDto>();
+            ItemBrands.Add(new BrandsListDto
+            {
+                Id = "",
+                Name = "بدون انتخاب"
+            });
+			ItemBrands.AddRange(listBrands);
+            var listTags = await _productFacad.GetTagsListService.Execute();
 			ViewModelProducts viewModelProducts = new ViewModelProducts()
 			{
 				AddNewProduct = new AddNewProductView(),
@@ -64,7 +73,7 @@ namespace EndPointStore.Areas.Admin.Controllers
 				ParentCategory = listCategory
 			};
 			ViewBag.Category = new SelectList(listCategory, "Id", "Name");
-			ViewBag.Brands = new SelectList(listBrands, "Id", "Name");
+			ViewBag.Brands = new SelectList(ItemBrands, "Id", "Name");
 			ViewBag.Tags = new SelectList(listTags, "Id", "Name");
 			return View(viewModelProducts);
 		}
@@ -79,7 +88,15 @@ namespace EndPointStore.Areas.Admin.Controllers
 					Message = MessageInUser.IsValidForm
 				});
 			}
-			var resultProduct = await _productFacad.AddProductService.Execute(
+            var userId = ClaimUtility.GetUserId(User);
+			if(userId == null)
+			{
+				return Json(new ResultDto() {
+				IsSuccess=false,
+				Message=MessageInUser.MessageUserNotLogin
+				});
+			}
+            var resultProduct = await _productFacad.AddProductService.Execute(
 				new RequestAddProductDto
 				{
 					Name = product.Name,
@@ -95,7 +112,7 @@ namespace EndPointStore.Areas.Admin.Controllers
 					Description=product.Description,
 					CategoryId = product.CategoryId,
 					BrandId = product.BrandId,
-					UserId = product.UserId,
+					UserId =userId,
 					TagsId = product.TagsId,
 					FeatureList = product.FeatureList,
 					UrlImagList = product.UrlImagList,

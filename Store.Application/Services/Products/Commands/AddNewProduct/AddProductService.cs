@@ -55,7 +55,7 @@ namespace Store.Application.Services.ProductsSite.Commands.AddNewProduct
                     Slug = requestAddProductDto.Slug,
                     CategoryId = requestAddProductDto.CategoryId,
                     BrandId = requestAddProductDto.BrandId,
-                    UserId = "1acf9c4e-4ae6-4b6c-9461-bd7f1dc04954",
+                    UserId = requestAddProductDto.UserId,
                     InsertTime = DateTime.Now,
                 };
                 //Add Products

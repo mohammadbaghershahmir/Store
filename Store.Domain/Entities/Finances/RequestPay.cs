@@ -21,7 +21,6 @@ namespace Store.Domain.Entities.Finances
         public long RefId { get; set; } = 0;
         public virtual Province City { get; set; }
         public string? CityId { get; set; }
-
         public virtual ICollection<Order> Orders { get; set; }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Store.Application.Interfaces.Contexs;
+using Store.Common.Constant.NoImage;
 using Store.Common.Dto;
 using System;
 using System.Collections.Generic;
@@ -12,31 +14,29 @@ namespace Store.Application.Services.ProductsSite.Queries.GetBrandsList
     public class GetBrandListService : IGetBrandListService
     {
         private readonly IDatabaseContext _context;
-        public GetBrandListService(IDatabaseContext context)
+        private readonly IConfiguration _configuration;
+        public GetBrandListService(IDatabaseContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration= configuration;
         }
-        public async Task<List<BrandsDto>> Execute()
+        public async Task<List<BrandsListDto>> Execute()
         {
-            List<BrandsDto> ItemBrands = new List<BrandsDto>();
-            ItemBrands.Add(new BrandsDto
-            {
-                Id = "",
-                Name = "بدون انتخاب"
-            });
+            string BaseUrl = _configuration.GetSection("BaseUrl").Value;
+           
             //Get List Brands
-            var Brands = _context.Brands.Select(b => new BrandsDto
+            var Brands = _context.Brands.Where(r=>r.IsRemoved==false).Select(b => new BrandsListDto
             {
 
                 Name = b.Name,
                 CssClass = b.CssClass,
                 Id = b.Id,
-                Pic = b.Pic,
-                Slug = b.Slug
+                Pic = string.IsNullOrEmpty(b.Pic) ? ImageProductConst.NoImage:BaseUrl +b.Pic,
+                Slug = b.Slug,
+                InsertTime=b.InsertTime
             }
-            );
-            ItemBrands.AddRange(Brands);
-            return ItemBrands;
+            ).ToList().OrderByDescending(i=>i.InsertTime).ToList();
+            return Brands;
         }
     }
 }

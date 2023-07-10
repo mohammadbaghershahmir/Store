@@ -248,6 +248,61 @@ namespace Store.Persistence.Migrations
                     b.ToTable("CartItems");
                 });
 
+            modelBuilder.Entity("Store.Domain.Entities.Finances.RequestPay", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Authority")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("InsertTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsPay")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("PayDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("RefId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CityId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("RequestPays");
+                });
+
             modelBuilder.Entity("Store.Domain.Entities.Medias.Media", b =>
                 {
                     b.Property<string>("Id")
@@ -292,6 +347,124 @@ namespace Store.Persistence.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("Medias");
+                });
+
+            modelBuilder.Entity("Store.Domain.Entities.Orders.Order", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CityName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("InsertTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OrderState")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PostalCode")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProvinceName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RequestPayId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
+                    b.Property<bool>("Seen")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("TrackingPost")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RequestPayId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("Store.Domain.Entities.Orders.OrderDetail", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("InsertTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("OrderId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProductId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderDetails");
                 });
 
             modelBuilder.Entity("Store.Domain.Entities.Post.Province", b =>
@@ -811,32 +984,32 @@ namespace Store.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7096a42e-e3bd-4cfd-8e74-d7ebe43ec9f5",
-                            InsertTime = new DateTime(2023, 7, 3, 13, 25, 6, 393, DateTimeKind.Local).AddTicks(7306),
+                            Id = "4692ebae-a2dd-46ea-80c7-8b66378d4a4d",
+                            InsertTime = new DateTime(2023, 7, 10, 10, 43, 0, 360, DateTimeKind.Local).AddTicks(6370),
                             IsRemoved = false,
                             Title = "تلفن همراه",
                             Value = "Mobail"
                         },
                         new
                         {
-                            Id = "8423e2d5-85b8-48bd-8e59-f7d176693f55",
-                            InsertTime = new DateTime(2023, 7, 3, 13, 25, 6, 393, DateTimeKind.Local).AddTicks(7401),
+                            Id = "2ac28547-f2e9-4b30-ba9c-d41fa4458aa6",
+                            InsertTime = new DateTime(2023, 7, 10, 10, 43, 0, 360, DateTimeKind.Local).AddTicks(6473),
                             IsRemoved = false,
                             Title = "تلفن",
                             Value = "Phone"
                         },
                         new
                         {
-                            Id = "40a238ec-64b1-4a4c-aeda-9360f318e49d",
-                            InsertTime = new DateTime(2023, 7, 3, 13, 25, 6, 393, DateTimeKind.Local).AddTicks(7528),
+                            Id = "a3d254d8-fd96-4e87-aff7-8bf0acef7843",
+                            InsertTime = new DateTime(2023, 7, 10, 10, 43, 0, 360, DateTimeKind.Local).AddTicks(6578),
                             IsRemoved = false,
                             Title = "ایمیل",
                             Value = "Email"
                         },
                         new
                         {
-                            Id = "f280eaba-58cc-46f0-abe4-fa0e7004bc6d",
-                            InsertTime = new DateTime(2023, 7, 3, 13, 25, 6, 393, DateTimeKind.Local).AddTicks(7561),
+                            Id = "294b9d83-db29-44b6-bb44-8945f186add2",
+                            InsertTime = new DateTime(2023, 7, 10, 10, 43, 0, 360, DateTimeKind.Local).AddTicks(6617),
                             IsRemoved = false,
                             Title = "آدرس",
                             Value = "Address"
@@ -946,6 +1119,9 @@ namespace Store.Persistence.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -1025,7 +1201,7 @@ namespace Store.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e290e060-0b85-4527-9799-c0ff883a3418",
+                            Id = "284e9066-4998-4a9a-b7dc-388f560a8ec5",
                             Name = "Admin",
                             NormalizedName = "ADMIN",
                             IsRemoved = false,
@@ -1033,7 +1209,7 @@ namespace Store.Persistence.Migrations
                         },
                         new
                         {
-                            Id = "1781abb6-66f4-4e71-b311-c1c52d483f5c",
+                            Id = "3c965915-2e31-4d2c-a4ff-94264276006c",
                             Name = "Operator",
                             NormalizedName = "OPERATOR",
                             IsRemoved = false,
@@ -1041,7 +1217,7 @@ namespace Store.Persistence.Migrations
                         },
                         new
                         {
-                            Id = "8029a060-291f-43eb-ab39-ebc2ee4d312a",
+                            Id = "19d7896a-fd23-4343-97fb-7d5fcb565cca",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER",
                             IsRemoved = false,
@@ -1128,6 +1304,23 @@ namespace Store.Persistence.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("Store.Domain.Entities.Finances.RequestPay", b =>
+                {
+                    b.HasOne("Store.Domain.Entities.Post.Province", "City")
+                        .WithMany()
+                        .HasForeignKey("CityId");
+
+                    b.HasOne("Store.Domain.Entities.Users.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("City");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Store.Domain.Entities.Medias.Media", b =>
                 {
                     b.HasOne("Store.Domain.Entities.Products.Product", "Product")
@@ -1135,6 +1328,44 @@ namespace Store.Persistence.Migrations
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Store.Domain.Entities.Orders.Order", b =>
+                {
+                    b.HasOne("Store.Domain.Entities.Finances.RequestPay", "RequestPay")
+                        .WithMany("Orders")
+                        .HasForeignKey("RequestPayId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("Store.Domain.Entities.Users.User", "User")
+                        .WithMany("Orders")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("RequestPay");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Store.Domain.Entities.Orders.OrderDetail", b =>
+                {
+                    b.HasOne("Store.Domain.Entities.Orders.Order", "Order")
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Store.Domain.Entities.Products.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
 
                     b.Navigation("Product");
                 });
@@ -1297,6 +1528,16 @@ namespace Store.Persistence.Migrations
                     b.Navigation("CartItems");
                 });
 
+            modelBuilder.Entity("Store.Domain.Entities.Finances.RequestPay", b =>
+                {
+                    b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("Store.Domain.Entities.Orders.Order", b =>
+                {
+                    b.Navigation("OrderDetails");
+                });
+
             modelBuilder.Entity("Store.Domain.Entities.Post.Province", b =>
                 {
                     b.Navigation("SubProvinces");
@@ -1347,6 +1588,8 @@ namespace Store.Persistence.Migrations
                     b.Navigation("Comments");
 
                     b.Navigation("Contacts");
+
+                    b.Navigation("Orders");
 
                     b.Navigation("Products");
 

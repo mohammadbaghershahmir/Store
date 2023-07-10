@@ -1,4 +1,6 @@
-﻿using Store.Application.Services.ProductsSite.Commands.AddNewCategory;
+﻿using Store.Application.Services.Products.Commands.AddNewBrand;
+using Store.Application.Services.Products.Commands.DeleteBrand;
+using Store.Application.Services.ProductsSite.Commands.AddNewCategory;
 using Store.Application.Services.ProductsSite.Commands.AddNewProduct;
 using Store.Application.Services.ProductsSite.Commands.AddNewTag;
 using Store.Application.Services.ProductsSite.Commands.DeleteCategory;
@@ -26,11 +28,13 @@ namespace Store.Application.Interfaces.FacadPattern
         IDeleteCategory GetDeleteCategory { get;}
         IGetBrandListService GetBrandListService { get;}
         IAddTagService AddTagService { get;}
+        IAddNewBrandService AddNewBrandService { get;}
         IGetTagsListService GetTagsListService { get;}
         IAddProductService AddProductService { get;}
         IGetProductsListService GetProductsListService { get;}
         IRemoveProductService RemoveProductService { get;}
         IGetEditProductListService GetEditProductListService { get;}
         IEditProductsService EditProductsService { get;}
+        IRemoveBrandService RemoveBrandService { get;}
     }
 }

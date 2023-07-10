@@ -7,7 +7,9 @@ using Store.Common.Constant;
 using Store.Common.Constant.Roles;
 using Store.Domain.Entities.Carts;
 using Store.Domain.Entities.Commons;
+using Store.Domain.Entities.Finances;
 using Store.Domain.Entities.Medias;
+using Store.Domain.Entities.Orders;
 using Store.Domain.Entities.Post;
 using Store.Domain.Entities.Products;
 using Store.Domain.Entities.Users;
@@ -42,9 +44,23 @@ namespace Store.Persistence.Contexs
         public DbSet<CartItem> CartItems { get; set; }
         public DbSet<Province> Provinces { get; set; }
         public DbSet<UserAddress> UserAddresses { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<RequestPay> RequestPays { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            
+            builder.Entity<Order>()
+               .HasOne(p => p.User)
+               .WithMany(p => p.Orders)
+               .OnDelete(DeleteBehavior.NoAction);
+
+            builder.Entity<Order>()
+                .HasOne(p => p.RequestPay)
+                .WithMany(p => p.Orders)
+                .OnDelete(DeleteBehavior.NoAction);
             //modelBuilder.Entity<User>().HasQueryFilter(p => !p.IsRemoved);
             // تنظیم محدودیت کلید خارجی 'FK_Rates_Users_UserId' در جدول 'Rates'
             builder.Entity<Rate>()
@@ -190,6 +206,8 @@ namespace Store.Persistence.Contexs
             modelBuilder.Entity<Cart>().HasQueryFilter(p => !p.IsRemoved);
             modelBuilder.Entity<CartItem>().HasQueryFilter(p => !p.IsRemoved);
             modelBuilder.Entity<UserAddress>().HasQueryFilter(p => !p.IsRemoved);
+            modelBuilder.Entity<Brand>().HasQueryFilter(p => !p.IsRemoved);
+
         }
 
         private void SeedData(ModelBuilder modelBuilder)

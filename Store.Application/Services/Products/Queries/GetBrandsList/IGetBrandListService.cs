@@ -9,6 +9,6 @@ namespace Store.Application.Services.ProductsSite.Queries.GetBrandsList
 {
     public interface IGetBrandListService
     {
-        Task<List<BrandsDto>> Execute();
+        Task<List<BrandsListDto>> Execute();
     }
 }

@@ -30,7 +30,7 @@ namespace Store.Application.Services.ProductsSite.Queries.GetDetailProductsForSi
                 return new DetailProductSiteDto
                 {
                     Id = detailProductList.Id,
-                    Brand = detailProductList.Brand.Name,
+                    Brand = detailProductList.Brand.Name==null?"بدون برند": detailProductList.Brand.Name,
                     CodeProduct = detailProductList.CodeProduct,
                     Content = detailProductList.Content,
                     Description = detailProductList.Description,

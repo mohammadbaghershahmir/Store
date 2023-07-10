@@ -180,7 +180,7 @@ namespace Store.Application.Services.Carts
                             Price = p.Price = p.Product.Price,
                             CountPerPrice=p.Price*p.Count,
                             ProductName = p.Product.Name,
-                            BrandName=p.Product.Brand.Name,
+                            BrandName=p.Product.Brand==null?"بدون برند":p.Product.Brand.Name,
                             ImageSrc = string.IsNullOrEmpty(p.Product.MinPic) ? ImageProductConst.NoImage : ImageProductConst.FtpUrl + p.Product.MinPic,
                         }).ToList(),
                     },
