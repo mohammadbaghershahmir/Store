@@ -24,6 +24,20 @@ namespace Store.Application.Services.Products.Commands.AddNewBrand
         }
         public async Task<ResultDto> Execute(BrandsDto brandsDto)
         {
+            if (brandsDto.Id != null)
+            {
+                var editBrands = _context.Brands.Find(brandsDto.Id);
+                editBrands.Name = brandsDto.Name;
+                editBrands.Slug = brandsDto.Slug;
+                editBrands.Pic = brandsDto.Image;
+                editBrands.UpdateTime = DateTime.Now;
+                await _context.SaveChangesAsync();
+                return new ResultDto()
+                {
+                    IsSuccess = true,
+                    Message = "ویرایش موفق"
+                };
+            }
             var checkSlug = _context.Brands.Where(b => b.Slug == brandsDto.Slug).FirstOrDefault();
             if(checkSlug!=null)
             {

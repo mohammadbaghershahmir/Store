@@ -33,7 +33,8 @@ namespace Store.Application.Services.ProductsSite.Queries.GetBrandsList
                 Id = b.Id,
                 Pic = string.IsNullOrEmpty(b.Pic) ? ImageProductConst.NoImage:BaseUrl +b.Pic,
                 Slug = b.Slug,
-                InsertTime=b.InsertTime
+                Url= string.IsNullOrEmpty(b.Pic) ? ImageProductConst.NoImage:b.Pic,
+                InsertTime =b.InsertTime
             }
             ).ToList().OrderByDescending(i=>i.InsertTime).ToList();
             return Brands;

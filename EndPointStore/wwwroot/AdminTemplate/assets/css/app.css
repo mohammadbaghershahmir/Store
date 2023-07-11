@@ -17542,4 +17542,7 @@ mark.p-1.bg-yellow-200 {
     width:20px;
     height:20px;
 }
+.box-select-image {
+    display: inline-flex !important;
+}
 
